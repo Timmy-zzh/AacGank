@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="daily"
             type="com.timmy.aacgank.bean.gank.DailyData" />
@@ -16,6 +17,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="btnClick"
+                android:text="变化" />
+
             <TextView
                 android:id="@+id/tv"
                 android:layout_width="wrap_content"
@@ -23,18 +32,6 @@
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@{daily.publishedAt}"-->
-                <!--android:textColor="@color/black" />-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@{daily.content}"-->
-                <!--android:textColor="@color/blue" />-->
         </LinearLayout>
     </ScrollView>
 

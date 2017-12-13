@@ -9,6 +9,7 @@ import android.databinding.ViewDataBinding;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.orhanobut.logger.Logger;
 import com.timmy.aacgank.R;
@@ -29,6 +30,8 @@ public class DailyActivity extends BaseActivity {
 
     private Gank gank;
     private ActivityDailyBinding binding;
+    private DailyViewModel viewModel;
+    private int num;
 
     public static void startAction(Context context, Gank gank) {
         Intent intent = new Intent(context, DailyActivity.class);
@@ -41,18 +44,18 @@ public class DailyActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_daily);
         gank = (Gank) getIntent().getSerializableExtra("data");
-        DailyViewModel  viewModel = ViewModelProviders.of(this).get(DailyViewModel.class);
-        subscribeUI(viewModel);
+        viewModel = ViewModelProviders.of(this).get(DailyViewModel.class);
+        subscribeUI();
     }
 
-    private void subscribeUI(DailyViewModel viewModel) {
+    private void subscribeUI() {
         Date date = DateUtil.stringToDate(gank.getPublishedAt());
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        viewModel.getDailyData(year,month,day).observe(this, new Observer<DailyData>() {
+        viewModel.getDailyData(year, month, day).observe(this, new Observer<DailyData>() {
             @Override
             public void onChanged(@Nullable DailyData dailyData) {
                 //获取到数据
@@ -60,6 +63,20 @@ public class DailyActivity extends BaseActivity {
                 binding.tv.setText(dailyData.toString());
             }
         });
+
+        viewModel.getClickMes().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(@Nullable Integer integer) {
+                binding.btn.setText(integer+"");
+            }
+        });
+
+
+    }
+
+    public void btnClick(View view) {
+        num++;
+        viewModel.changeNum(num);
     }
 
 }
