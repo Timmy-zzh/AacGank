@@ -10,9 +10,6 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 
-/**
- * Created by ps_an on 2016/3/11.
- */
 public class ImageUtil {
 
     public static void load(Context mContext, ImageView view, String uri) {

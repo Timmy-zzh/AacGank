@@ -67,7 +67,7 @@ public interface GankService {
      * http://gank.io/api/day/2015/08/07
      */
     @GET("day/{year}/{month}/{day}")
-    Call<BaseResult<GankResult>> getGankDetailData(@Path("year") int year, @Path("month") int month, @Path("day") int day);
+    Call<DailyData> getGankDetailData(@Path("year") int year, @Path("month") int month, @Path("day") int day);
 
     /**
      * 获取特定日期网站数据:

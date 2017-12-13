@@ -1,6 +1,7 @@
 package com.timmy.aacgank.ui.base;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.DialogFragment;
@@ -11,34 +12,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import butterknife.ButterKnife;
 import io.reactivex.disposables.CompositeDisposable;
 
 
-public abstract class BaseActivity extends AppCompatActivity  {
+public abstract class BaseActivity extends AppCompatActivity {
 
-    static final String LOADING_DIALOG_TAG = "loading_dialog";
-    private DialogFragment loadingDialogFragment;
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initContentView();
-        ButterKnife.bind(this);
-        init();
-    }
-
-    protected void init() {
-
-    }
-
-
-    protected void initContentView() {
-        setContentView(getLayoutId());
-    }
-
-    protected abstract int getLayoutId();
 
     @Override
     protected void onStop() {
@@ -46,34 +25,6 @@ public abstract class BaseActivity extends AppCompatActivity  {
         // clear all the subscriptions
         mDisposable.clear();
     }
-
-
-    /***************************************** Toolbar *****************************/
-
-    /**
-     * 开启回退功能 和设置标题  引入layout文件(toolbar)就可以使用
-     */
-//    public void setToolbarTitle(String title) {
-//        setTitle(title);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        if (toolbar != null) {
-//            toolbar.setTitle("");
-//            setSupportActionBar(toolbar);
-//            if (getSupportActionBar() != null)
-//                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//            toolbar.hideOverflowMenu();
-//        }
-//    }
-//
-//    public void setTitle(String title) {
-//        TextView mTvTitle = findViewById(R.id.toolbar_title);
-//        if (TextUtils.isEmpty(title)) {
-//            return;
-//        }
-//        if (mTvTitle != null) {
-//            mTvTitle.setText(title);
-//        }
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

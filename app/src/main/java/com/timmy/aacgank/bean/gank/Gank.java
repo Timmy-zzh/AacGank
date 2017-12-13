@@ -95,4 +95,19 @@ public class Gank implements Serializable {
     public void setWho(String who) {
         this.who = who;
     }
+
+    @Override
+    public String toString() {
+        return "Gank{" +
+                "_id='" + _id + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                ", desc='" + desc + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                ", type='" + type + '\'' +
+                ", url='" + url + '\'' +
+                ", used=" + used +
+                ", who='" + who + '\'' +
+                ", source='" + source + '\'' +
+                '}';
+    }
 }

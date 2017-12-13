@@ -6,13 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import io.reactivex.disposables.CompositeDisposable;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected Unbinder unbinder;
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
 
     /**
@@ -20,28 +17,10 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract int getFragmentLayout();
 
-    protected void init() {
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getFragmentLayout(), container, false);
-        unbinder = ButterKnife.bind(this, view);
         return view;
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        init();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        if (unbinder != null)
-            unbinder.unbind();
     }
 
     @Override

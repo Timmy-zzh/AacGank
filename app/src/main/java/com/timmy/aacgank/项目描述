@@ -1,13 +1,18 @@
 AacGank
+https://github.com/googlesamples/android-architecture-components
 整体项目架构采用Android Architecture Components
+
 数据来源为代码家
 
 项目功能点:
-首页福利
-
+Tab首页福利
+中间Android
+我的
+还有视频
 
 项目技术点包括
-DataBind
-vlayout
+DataBinding
+Adapter封装
+网络请求:Retrofit+RxJava2+AAC
 
 
