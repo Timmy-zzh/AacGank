@@ -4,11 +4,8 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.orhanobut.logger.Logger;
@@ -16,9 +13,9 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.DailyData;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ActivityDailyBinding;
-import com.timmy.aacgank.ui.base.BaseActivity;
 import com.timmy.aacgank.ui.daily.aac.DailyViewModel;
 import com.timmy.aacgank.util.DateUtil;
+import com.timmy.baselib.activity.TBaseBindingActivity;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -26,10 +23,9 @@ import java.util.Date;
 /**
  * DataBinding使用
  */
-public class DailyActivity extends BaseActivity {
+public class DailyActivity extends TBaseBindingActivity<ActivityDailyBinding> {
 
     private Gank gank;
-    private ActivityDailyBinding binding;
     private DailyViewModel viewModel;
     private int num;
 
@@ -40,15 +36,27 @@ public class DailyActivity extends BaseActivity {
     }
 
     @Override
+    protected void onRefresh() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_daily);
+        setContentView(R.layout.activity_daily);
         gank = (Gank) getIntent().getSerializableExtra("data");
         viewModel = ViewModelProviders.of(this).get(DailyViewModel.class);
         subscribeUI();
     }
 
     private void subscribeUI() {
+//        Executor executor = new Executor() {
+//            @Override
+//            public void execute(@NonNull Runnable command) {
+//
+//            }
+//        };
+
         Date date = DateUtil.stringToDate(gank.getPublishedAt());
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
@@ -70,13 +78,10 @@ public class DailyActivity extends BaseActivity {
                 binding.btn.setText(integer+"");
             }
         });
-
-
     }
 
     public void btnClick(View view) {
         num++;
         viewModel.changeNum(num);
     }
-
 }

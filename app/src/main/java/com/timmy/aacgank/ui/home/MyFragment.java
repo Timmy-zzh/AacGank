@@ -1,13 +1,11 @@
 package com.timmy.aacgank.ui.home;
 
 import com.timmy.aacgank.R;
-import com.timmy.aacgank.ui.base.BaseFragment;
+import com.timmy.aacgank.databinding.FragmentMyBinding;
+import com.timmy.baselib.fragment.TBaseFragment;
 
-/**
- * Created by admin on 2017/11/26.
- */
 
-public class MyFragment extends BaseFragment {
+public class MyFragment extends TBaseFragment<FragmentMyBinding> {
 
     public static MyFragment newInstance() {
         MyFragment fragment = new MyFragment();

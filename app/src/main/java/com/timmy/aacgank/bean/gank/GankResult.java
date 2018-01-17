@@ -1,13 +1,11 @@
 package com.timmy.aacgank.bean.gank;
 
-import com.timmy.aacgank.bean.base.SupperResult;
-
 import java.util.List;
 
 /**
  *
  */
-public class GankResult extends SupperResult {
+public class GankResult  {
 
     public List<String> category;
     public GankCategory results;

@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/topic</item>-->
+        <!--应用全局背景色-->
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- 设置activity切换动画 -->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+    <!--全屏-->
+    <style name="AppTheme.Full" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="activityAnimation" parent="@android:style/Animation.Activity">
+        <!-- 界面A打开界面B: A -> B  -->
+        <!--界面B进入动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/activity_slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_slide_right_out</item>
+    </style>
+
+    <!--&lt;!&ndash;开始0000000000000000000000000000000000000线条样式00000000000000000000000000000000&ndash;&gt;-->
+    <!--<style name="HorizontalLine">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:background">@color/T_F2</item>-->
+    <!--</style>-->
+
+    <!--<style name="VerticalLine">-->
+        <!--<item name="android:layout_height">match_parent</item>-->
+        <!--<item name="android:background">@color/T_F2</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;横竖自定义线&ndash;&gt;-->
+    <!--<style name="Line" parent="HorizontalLine">-->
+        <!--<item name="android:layout_height">1dp</item>-->
+    <!--</style>-->
+
+    <!--<style name="LineMargin" parent="HorizontalLine">-->
+        <!--<item name="android:layout_height">1dp</item>-->
+        <!--<item name="android:layout_marginLeft">15dp</item>-->
+        <!--<item name="android:layout_marginRight">15dp</item>-->
+    <!--</style>-->
+
+    <!--<style name="Line_H_1" parent="HorizontalLine">-->
+        <!--<item name="android:layout_height">1dp</item>-->
+    <!--</style>-->
+
+    <!--<style name="Line_V_1" parent="VerticalLine">-->
+        <!--<item name="android:layout_width">1dp</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;结束1111111111111111111111111111111111111线条样式11111111111111111111111111111111&ndash;&gt;-->
+
+    <!--&lt;!&ndash;开始0000000000000000000000000000000000000Dialog样式00000000000000000000000000000000&ndash;&gt;-->
+    <!--<style name="BottomDialog" parent="@style/Theme.AppCompat.Dialog">-->
+        <!--<item name="android:windowTitleStyle">@null</item>-->
+        <!--&lt;!&ndash;<item name="android:windowBackground">@android:color/transparent</item>&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/green_light</item>-->
+        <!--<item name="android:colorBackgroundCacheHint">@null</item>-->
+        <!--<item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>-->
+        <!--<item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>-->
+    <!--</style>-->
+
+    <!--<style name="BottomDialog.AnimationStyle" parent="android:Animation">-->
+        <!--<item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;结束1111111111111111111111111111111111111Dialog样式11111111111111111111111111111111&ndash;&gt;-->
+
+</resources>

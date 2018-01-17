@@ -1,4 +1,24 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+//ext {
+//    configuration = [
+//            compileSdkVersion: 26,
+//            buildToolsVersion: "26.0.2",
+//            minSdkVersion    : 14,
+//            targetSdkVersion : 23,
+//
+//            applicationId    : "com.timmy.aacgank",
+//            versionCode      : 10000,
+//            versionName      : "1.0.0"
+//    ]
+//    libraries = [
+//            supportVersion    : "26.1.0",
+//            retrofit          : "2.3.0",
+//            rxandroid         : "2.0.1",
+//            rxjava            : "2.1.7",
+//            okhttp            : "3.9.1",
+//            constraintLayout  : "1.0.2"
+//    ]
+//}
 
 buildscript {
     

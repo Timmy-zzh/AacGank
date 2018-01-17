@@ -1,10 +1,11 @@
 package com.timmy.aacgank.http.service;
 
-import com.timmy.aacgank.bean.base.BaseResult;
-import com.timmy.aacgank.bean.base.SimpleListResult;
+import com.timmy.aacgank.bean.base.BaseGankResult;
 import com.timmy.aacgank.bean.gank.DailyData;
 import com.timmy.aacgank.bean.gank.Gank;
-import com.timmy.aacgank.bean.gank.GankResult;
+import com.timmy.baselib.bean.BaseResult;
+
+import java.util.List;
 
 import io.reactivex.Flowable;
 import retrofit2.Call;
@@ -59,8 +60,8 @@ public interface GankService {
      * http://gank.io/api/data/福利/10/1
      */
     @GET("data/{type}/20/{page}")
-    Flowable<SimpleListResult<Gank>> getWelfares(@Path("type") String type,
-                                                 @Path("page") int page);
+    Flowable<BaseGankResult<List<Gank>>> getWelfares(@Path("type") String type,
+                                                     @Path("page") int page);
 
     /**
      * 每日数据： http://gank.io/api/day/年/月/日
