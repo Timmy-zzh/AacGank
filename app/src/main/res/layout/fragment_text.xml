@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="textFragment"
+            type="com.timmy.aacgank.ui.home.TextFrgment" />
+    </data>
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -10,7 +16,7 @@
             android:id="@+id/btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="handlerUse"
+            android:onClick="@{textFragment.handlerUse}"
             android:text="Handler使用"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"

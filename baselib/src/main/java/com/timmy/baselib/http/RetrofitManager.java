@@ -5,10 +5,12 @@ import com.timmy.baselib.http.interceptor.HeaderInterceptor;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Authenticator;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.Route;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -17,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Retrofit配置
  * 1.一个项目有多个域名请求情况
- * 2.
+ * 2.需要使用HashMap实现单例模式--控制每个不同的Retrofit
  */
 public class RetrofitManager {
 
@@ -43,6 +45,15 @@ public class RetrofitManager {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new HeaderInterceptor(null))//头部请求信息拦截器
                 .addInterceptor( new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))//打印信息拦截器
+//                .addNetworkInterceptor()
+                .retryOnConnectionFailure(true)//自动重连
+//                .authenticator(new Authenticator() {
+//                    @Override
+//                    public Request authenticate(Route route, Response response) throws IOException {
+//                        return null;
+//                    }
+//                })
+//                .cache()//缓存
                 .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)//连接超时时间
                 .writeTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS) //写操作 超时时间
                 .readTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS) //读操作 超时时间

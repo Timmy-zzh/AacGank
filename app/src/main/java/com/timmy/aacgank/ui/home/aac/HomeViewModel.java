@@ -16,8 +16,7 @@ import io.reactivex.Flowable;
 public class HomeViewModel extends BaseListViewModel<Gank> {
 
     public Flowable<BaseGankResult<List<Gank>>> getData(int page){
-        Flowable<BaseGankResult<List<Gank>>> resultFlowable = RetrofitManager.instance().create(GankService.class).getWelfares("福利", page);
-        return resultFlowable;
+        return HttpHelper.instance().getGankService().getWelfares("福利", page);
     }
 
     @Override

@@ -22,11 +22,15 @@ import com.timmy.baselib.http.rxjava2.BConsumer;
 import com.timmy.baselib.listener.NetResultListener;
 import com.timmy.baselib.utils.NetUtils;
 
+import org.reactivestreams.Subscription;
+
 import java.net.UnknownHostException;
 
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public abstract class TBaseFragment<DB extends ViewDataBinding> extends Fragment {
@@ -219,7 +223,23 @@ public abstract class TBaseFragment<DB extends ViewDataBinding> extends Fragment
         mDisposable.add(flowable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(AConsumer, BConsumer));
+                .subscribe(
+                        AConsumer,
+                        BConsumer
+//                        ,
+//                        new Action() {
+//                            @Override
+//                            public void run() throws Exception {
+//
+//                            }
+//                        },
+//                        new Consumer<Subscription>() {
+//                            @Override
+//                            public void accept(Subscription subscription) throws Exception {
+//
+//                            }
+//                        }
+                ));
     }
 
     /**
