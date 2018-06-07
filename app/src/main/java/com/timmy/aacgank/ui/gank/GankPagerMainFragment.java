@@ -11,7 +11,7 @@ import com.timmy.aacgank.C;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.base.BaseGankResult;
 import com.timmy.aacgank.bean.gank.Gank;
-import com.timmy.aacgank.ui.home.aac.GankViewModel;
+import com.timmy.aacgank.ui.gank.aac.GankViewModel;
 import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.base.fragment.DjPageLazyBaseFragment;

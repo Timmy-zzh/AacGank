@@ -23,7 +23,6 @@ public class HomeFragment extends DjBaseContentFragment<FragmentGankBinding> {
 
     @Override
     protected int getLayoutRes() {
-        LogUtils.d("onCreateView ");
         return R.layout.fragment_gank;
     }
 

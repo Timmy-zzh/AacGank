@@ -1,6 +1,6 @@
 <resources>
 
-     Base application theme.
+     <!--Base application theme.-->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--应用全局背景色-->
         <item name="android:windowBackground">@android:color/white</item>
@@ -13,6 +13,10 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="activityAnimation" parent="@android:style/Animation.Activity">
         <!-- 界面A打开界面B: A -> B  -->
         <!--界面B进入动画-->
@@ -21,6 +25,17 @@
         <item name="android:activityCloseEnterAnimation">@anim/activity_slide_left_in</item>
         <item name="android:activityCloseExitAnimation">@anim/activity_slide_right_out</item>
     </style>
+
+
+    <style name="CollapsingToolbarTitleDark" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#f2ecec</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="CollapsingToolbarTitleLight" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
 
     <!--开始0000000000000000000000000000000000000线条样式00000000000000000000000000000000-->
     <style name="HorizontalLine">

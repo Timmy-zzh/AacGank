@@ -40,7 +40,7 @@ public class GankPagerFragment extends GankPagerMainFragment {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Gank gank = (Gank) adapter.getData().get(position);
                 if (gankType.contains("福利")) {
-
+                    WelfareDetailActivity.startAction(getActivity(),view,gank.getUrl());
                 } else {
 //                    MeiziActivity.startAction(getContext(), gank.getUrl());
                 }
@@ -50,7 +50,6 @@ public class GankPagerFragment extends GankPagerMainFragment {
 
     @Override
     protected BaseDataBindingAdapter createAdapter(int position) {
-//        return AdapterFactory.getAdapter(position);
         switch (position) {
             case 0:
                 return new WelfareAdapter();
@@ -64,7 +63,6 @@ public class GankPagerFragment extends GankPagerMainFragment {
     protected RecyclerView.LayoutManager createLayoutManager(int position) {
         switch (position) {
             case 0:
-//                return new GridLayoutManager(getActivity(), 2);
                 return new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
             case 1:
                 return new LinearLayoutManager(getContext());
