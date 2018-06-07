@@ -1,36 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="gank"
-            type="com.timmy.aacgank.bean.gank.Gank"/>
+            type="com.timmy.aacgank.bean.gank.Gank" />
     </data>
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp">
 
-        <ImageView
+        <com.timmy.baselib.wiget.AutoHeightImageView
             android:id="@+id/iv"
+            autoImageUrl="@{gank.url}"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            imageUrl="@{gank.url}"
-            android:scaleType="centerCrop" />
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/blue"
-            android:maxLines="1"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:text="@{gank.desc}"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-    </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </layout>

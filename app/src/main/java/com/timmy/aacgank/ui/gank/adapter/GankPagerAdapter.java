@@ -23,27 +23,17 @@ public class GankPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-//        switch (position) {
-//            case 0:
-//                return GankPagerMainFragment.newInstance(gankTypes[position], position);
-//            case 1:
-//                return GankPagerMainFragment1.newInstance(gankTypes[position], position);
-//            case 2:
-//                return GankPagerMainFragment2.newInstance(gankTypes[position], position);
-//            case 3:
-//                return GankPagerMainFragment3.newInstance(gankTypes[position], position);
-//            case 4:
-//                return GankPagerMainFragment4.newInstance(gankTypes[position], position);
-//            default:
-//                return GankPagerMainFragment.newInstance(gankTypes[position], position);
-//        }
-//        return GankPagerMainFragment.newInstance(gankTypes[position],position);
         return GankPagerFragment.newInstance(gankTypes[position],position);
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return gankTypes[position];
     }
 
     @Override

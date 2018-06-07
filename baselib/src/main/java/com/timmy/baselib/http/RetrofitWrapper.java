@@ -33,12 +33,7 @@ public class RetrofitWrapper {
                         }
                     }
                 })//头部请求信息拦截器
-                .addInterceptor(new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-                    @Override
-                    public void log(String message) {
-                        LogUtils.d(message);
-                    }
-                }).setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))//打印信息拦截器
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))//打印信息拦截器
                 .retryOnConnectionFailure(true)//自动重连
 //                .sslSocketFactory(SslHelper.getSslSocketFactory(Utils.getContext()))//获取SslSocketFactory
 //                .hostnameVerifier(new HostnameVerifier() {

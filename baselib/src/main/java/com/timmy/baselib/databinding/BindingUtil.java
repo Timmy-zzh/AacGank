@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.timmy.baselib.R;
 import com.timmy.baselib.image.ImageUtil;
+import com.timmy.baselib.wiget.AutoHeightImageView;
 
 
 /**
@@ -28,6 +29,12 @@ public class BindingUtil {
     public static void loadImage(ImageView view, String url) {
         ImageUtil.loadImage(view.getContext(), url, view);
     }
+
+    @BindingAdapter({"autoImageUrl"})
+    public static void loadImage(AutoHeightImageView view, String url) {
+        ImageUtil.loadImage(view.getContext(), url, view);
+    }
+
 
     @BindingAdapter({"imageUrl", "placeholder"})
     public static void loadImage(ImageView view, String url, Drawable resourceId) {

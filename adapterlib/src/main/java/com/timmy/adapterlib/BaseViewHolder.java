@@ -15,6 +15,7 @@
  */
 package com.timmy.adapterlib;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -612,5 +613,10 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      */
     public void setAssociatedObject(Object associatedObject) {
         this.associatedObject = associatedObject;
+    }
+
+
+    public Context getContext(){
+        return itemView.getContext();
     }
 }

@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.timmy.aacgank.C;
 import com.timmy.aacgank.bean.gank.Gank;
-import com.timmy.aacgank.ui.gank.adapter.AdapterFactory;
+import com.timmy.aacgank.ui.gank.adapter.AndroidAdapter;
+import com.timmy.aacgank.ui.gank.adapter.WelfareAdapter;
 import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseQuickAdapter;
 
@@ -48,14 +50,22 @@ public class GankPagerFragment extends GankPagerMainFragment {
 
     @Override
     protected BaseDataBindingAdapter createAdapter(int position) {
-        return AdapterFactory.getAdapter(position);
+//        return AdapterFactory.getAdapter(position);
+        switch (position) {
+            case 0:
+                return new WelfareAdapter();
+            case 1:
+                return new AndroidAdapter();
+        }
+        return new WelfareAdapter();
     }
 
     @Override
     protected RecyclerView.LayoutManager createLayoutManager(int position) {
         switch (position) {
             case 0:
-                return new GridLayoutManager(getActivity(), 2);
+//                return new GridLayoutManager(getActivity(), 2);
+                return new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
             case 1:
                 return new LinearLayoutManager(getContext());
         }

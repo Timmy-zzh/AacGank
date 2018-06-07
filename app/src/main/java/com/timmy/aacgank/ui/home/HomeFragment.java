@@ -1,8 +1,5 @@
 package com.timmy.aacgank.ui.home;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 
 import com.timmy.aacgank.R;
@@ -25,38 +22,21 @@ public class HomeFragment extends DjBaseContentFragment<FragmentGankBinding> {
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        LogUtils.d("onAttach ");
-    }
-
-    @Override
     protected int getLayoutRes() {
         LogUtils.d("onCreateView ");
         return R.layout.fragment_gank;
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        LogUtils.d("onCreate ");
-    }
-
-    @Override
     protected void initBase() {
         super.initBase();
-        LogUtils.d("onViewCreated ");
         initView();
     }
 
     private void initView() {
         binding.tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);//可以滑动
-        for (String gankType : gankTypes) {
-            binding.tabLayout.addTab(binding.tabLayout.newTab().setText(gankType));
-        }
         //TabLayout与ViewPager进行滑动关联
-        binding.tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(binding.viewPager));
-        binding.viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding.tabLayout));
+        binding. tabLayout.setupWithViewPager(binding.viewPager);
         binding.viewPager.setAdapter(new GankPagerAdapter(getActivity().getSupportFragmentManager(),gankTypes));
     }
 
