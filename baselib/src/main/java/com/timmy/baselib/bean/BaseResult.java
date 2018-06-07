@@ -22,4 +22,16 @@ public class BaseResult<T> {
         return code == 0;
     }
 
+    public void setStatusCode(int statusCode) {
+        this.code = statusCode;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
 }

@@ -21,17 +21,17 @@ public class BindingUtil {
 
     @BindingAdapter({"circleImageUrl"})
     public static void loadCircleImage(ImageView view, String url) {
-        ImageUtil.loadGlideCircleTransform(view.getContext(), view, url, R.mipmap.ic_launcher_round);
+        ImageUtil.loadCircleImage(view.getContext(), view, url, R.mipmap.ic_launcher_round);
     }
 
     @BindingAdapter({"imageUrl"})
     public static void loadImage(ImageView view, String url) {
-        ImageUtil.load(view.getContext(), view, url);
+        ImageUtil.loadImage(view.getContext(), url, view);
     }
 
     @BindingAdapter({"imageUrl", "placeholder"})
     public static void loadImage(ImageView view, String url, Drawable resourceId) {
-        ImageUtil.load(view.getContext(), view, url);
+        ImageUtil.loadImage(view.getContext(), url, view);
     }
 
     @BindingAdapter({"htmlText"})

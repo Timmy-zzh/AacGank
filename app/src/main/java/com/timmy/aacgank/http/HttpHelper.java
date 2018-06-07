@@ -7,6 +7,8 @@ import com.timmy.baselib.http.rxjava2.BConsumer;
 
 import org.reactivestreams.Publisher;
 
+import java.util.Map;
+
 import io.reactivex.Flowable;
 import io.reactivex.FlowableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -15,10 +17,17 @@ import io.reactivex.schedulers.Schedulers;
 
 public class HttpHelper {
 
+    private static final String GANK_URL = "http://gank.io/api/";
     private GankService gankService;
 
     public static HttpHelper instance() {
         return HttpHelper.HttpHolder.INSTENCE;
+    }
+
+    static {
+        RetrofitManager.registerRetrofit(GANK_URL, null);
+
+
     }
 
     private static class HttpHolder {
@@ -28,7 +37,7 @@ public class HttpHelper {
     /////////////////////////////////////////////////////////////////////////////
     public GankService getGankService() {
         if (gankService == null)
-            gankService = RetrofitManager.instance().create(GankService.class);
+            gankService = RetrofitManager.getRetrofit(GANK_URL).create(GankService.class);
         return gankService;
     }
 

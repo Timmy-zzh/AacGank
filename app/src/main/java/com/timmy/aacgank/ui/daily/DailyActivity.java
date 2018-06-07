@@ -15,7 +15,8 @@ import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ActivityDailyBinding;
 import com.timmy.aacgank.ui.daily.aac.DailyViewModel;
 import com.timmy.aacgank.util.DateUtil;
-import com.timmy.baselib.activity.TBaseBindingActivity;
+import com.timmy.baselib.base.activity.DJBaseListBindingActivity;
+import com.timmy.baselib.base.activity.DjBaseBindingActivity;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -23,7 +24,7 @@ import java.util.Date;
 /**
  * DataBinding使用
  */
-public class DailyActivity extends TBaseBindingActivity<ActivityDailyBinding> {
+public class DailyActivity extends DjBaseBindingActivity<ActivityDailyBinding> {
 
     private Gank gank;
     private DailyViewModel viewModel;

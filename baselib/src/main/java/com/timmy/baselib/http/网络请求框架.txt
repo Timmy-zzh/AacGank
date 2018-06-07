@@ -1,3 +1,9 @@
-网络请求框架:
+网络请求框架: Retrofit + OkHttp + RxJava
+Retrofit:  https://github.com/square/retrofit
+RxJava:    https://github.com/ReactiveX/RxJava
+RxAndorid: https://github.com/ReactiveX/RxAndroid
+OkHttp:    https://github.com/square/okhttp
+
+参考:
 https://github.com/zhou-you/RxEasyHttp
 https://github.com/jeasonlzy/okhttp-OkGo

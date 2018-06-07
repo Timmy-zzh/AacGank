@@ -6,6 +6,7 @@ package com.timmy.baselib.bean;
  * @param <T>
  * @author Administrator
  */
+@Deprecated
 public class GetResult<T>  {
 
     private static final long serialVersionUID = 1L;

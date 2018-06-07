@@ -1,73 +1,34 @@
 package com.timmy.baselib.http;
 
-import com.timmy.baselib.http.interceptor.HeaderInterceptor;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import android.util.Log;
 
-import okhttp3.Authenticator;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.Route;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
+import java.util.HashMap;
 
 /**
- * Retrofit配置
- * 1.一个项目有多个域名请求情况
- * 2.需要使用HashMap实现单例模式--控制每个不同的Retrofit
+ * Retrofit管理器
+ * 项目不同之处有
+ * 1.BaseUrl
+ * 2.请求头信息不同
+ * 3.SSL证书设置
+ * 单例模式: 根据不同的BaseUrl获取自己需要的Retrofit
+ *
  */
 public class RetrofitManager {
 
-    private static final String GANK_URL = "http://gank.io/api/";
-    private final Retrofit retrofit;
-    private static final int CONNECT_TIMEOUT = 5;
+    //保存各种不同配置的RetrofitManager的容器
+    private static final HashMap<String, RetrofitWrapper> retrofitHashMap = new HashMap<>();
 
-    private static class RetrofitHolder {
-        private static RetrofitManager INSTENCE = new RetrofitManager(GANK_URL);
+    public static void registerRetrofit(String key,RetrofitWrapper.RetrofitFetcher retrofitFetcher){
+        if (retrofitHashMap.containsKey(key)){
+            Log.d("RetrofitManager","容器中已经存在该RetrofitManager实例,请直接getRetrofit(key)获取");
+            return;
+        }
+        RetrofitWrapper retrofit = new RetrofitWrapper(key,retrofitFetcher);
+        retrofitHashMap.put(key,retrofit);
     }
 
-    public static RetrofitManager instance() {
-        return RetrofitHolder.INSTENCE;
-    }
-
-    public static RetrofitManager instance(String baseUrl) {
-        RetrofitManager newInstance = new RetrofitManager(baseUrl);
-        return newInstance;
-    }
-
-    private RetrofitManager(String baseUrl) {
-        //拦截器
-        OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(new HeaderInterceptor(null))//头部请求信息拦截器
-                .addInterceptor( new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))//打印信息拦截器
-//                .addNetworkInterceptor()
-                .retryOnConnectionFailure(true)//自动重连
-//                .authenticator(new Authenticator() {
-//                    @Override
-//                    public Request authenticate(Route route, Response response) throws IOException {
-//                        return null;
-//                    }
-//                })
-//                .cache()//缓存
-                .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)//连接超时时间
-                .writeTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS) //写操作 超时时间
-                .readTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS) //读操作 超时时间
-                .build();
-
-        retrofit = new Retrofit.Builder()
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl(baseUrl)
-                .build();
-    }
-
-    public <T> T create(final Class<T> service) {
-        return retrofit.create(service);
+    public static RetrofitWrapper getRetrofit(String key){
+        return retrofitHashMap.get(key);
     }
 }

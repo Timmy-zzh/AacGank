@@ -2,10 +2,10 @@ package com.timmy.aacgank.ui.home;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentMyBinding;
-import com.timmy.baselib.fragment.TBaseFragment;
+import com.timmy.baselib.base.fragment.DjBaseBindingFragment;
 
 
-public class MyFragment extends TBaseFragment<FragmentMyBinding> {
+public class MyFragment extends DjBaseBindingFragment<FragmentMyBinding> {
 
     public static MyFragment newInstance() {
         MyFragment fragment = new MyFragment();
@@ -13,7 +13,12 @@ public class MyFragment extends TBaseFragment<FragmentMyBinding> {
     }
 
     @Override
-    protected int getFragmentLayout() {
+    protected int getLayoutRes() {
         return R.layout.fragment_my;
+    }
+
+    @Override
+    protected void onRefresh() {
+
     }
 }

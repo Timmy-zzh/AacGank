@@ -1,16 +1,12 @@
 package com.timmy.aacgank.ui.home;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 
-import com.orhanobut.logger.Logger;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentTextBinding;
 import com.timmy.aacgank.ui.other.HandlerActivity;
-import com.timmy.baselib.fragment.TBaseFragment;
+import com.timmy.baselib.base.fragment.DjBaseBindingFragment;
 import com.timmy.baselib.utils.LogUtils;
 
 import java.io.IOException;
@@ -23,7 +19,7 @@ import okhttp3.Response;
  * Created by admin on 2017/11/26.
  */
 
-public class TextFrgment extends TBaseFragment<FragmentTextBinding> {
+public class TextFrgment extends DjBaseBindingFragment<FragmentTextBinding> {
 
     private String TAG = "Timmy";
     public static TextFrgment newInstance() {
@@ -31,9 +27,15 @@ public class TextFrgment extends TBaseFragment<FragmentTextBinding> {
         return fragment;
     }
 
+
     @Override
-    protected int getFragmentLayout() {
-        return R.layout.fragment_text;
+    protected int getLayoutRes() {
+        return  R.layout.fragment_text;
+    }
+
+    @Override
+    protected void onRefresh() {
+
     }
 
     /**

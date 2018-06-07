@@ -1,26 +1,39 @@
+
 package com.timmy.baselib.utils;
 
+import android.content.Context;
 
-public class Utils {
+/**
+ * @author: lex
+ * @Email: ldlywt@gmail.com
+ * @Time: 2018/1/11 11:32
+ * @Description: 从主项目中传入一个全局的Application Context进来
+ */
+public final class Utils {
 
-    /**
-     * 返回正确的UserAgent * @return
-     */
-    public static String getUserAgent() {
-        String userAgent;
-        StringBuilder sb = new StringBuilder();
-        userAgent = System.getProperty("http.agent");//Dalvik/2.1.0 (Linux; U; Android 6.0.1; vivo X9L Build/MMB29M)
+    private static Context context;
 
-        for (int i = 0, length = userAgent.length(); i < length; i++) {
-            char c = userAgent.charAt(i);
-            if (c <= '\u001f' || c >= '\u007f') {
-                sb.append(String.format("\\u%04x", (int) c));
-            } else {
-                sb.append(c);
-            }
-        }
-        return sb.toString();
+    private Utils() {
+        throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
+    /**
+     * 初始化工具类
+     *
+     * @param context 上下文
+     */
+    public static void init(Context context) {
+        Utils.context = context.getApplicationContext();
+    }
+
+    /**
+     * 获取ApplicationContext
+     *
+     * @return ApplicationContext
+     */
+    public static Context getContext() {
+        if (context != null) return context;
+        throw new NullPointerException("u should init first");
+    }
 
 }
