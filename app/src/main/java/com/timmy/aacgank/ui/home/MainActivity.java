@@ -29,21 +29,15 @@ public class MainActivity extends DjBaseBindingActivity<ActivityMainBinding> imp
     @Override
     public void onAttachFragment(Fragment fragment) {
         super.onAttachFragment(fragment);
-//        if (mFragmensts[0] == null && fragment instanceof HomeFragment) {
-//            mFragmensts[0] = fragment;
-//        }
+        if (mFragmensts[0] == null && fragment instanceof HomeFragment) {
+            mFragmensts[0] = fragment;
+        }
 //        if (mFragmensts[1] == null && fragment instanceof ShoppingFragment) {
 //            mFragmensts[1] = fragment;
 //        }
 //        if (mFragmensts[2] == null && fragment instanceof MyFragment) {
 //            mFragmensts[2] = fragment;
 //        }
-        /*if (mFragmensts[2] == null && fragment instanceof CommunityFragment) {
-            mFragmensts[2] = fragment;
-        }
-        if (mFragmensts[3] == null && fragment instanceof MyFragment) {
-            mFragmensts[3] = fragment;
-        }*/
     }
 
     @Override

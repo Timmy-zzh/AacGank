@@ -1,6 +1,7 @@
 package com.timmy.aacgank.bean.gank;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Gank implements Serializable {
 
@@ -15,14 +16,17 @@ public class Gank implements Serializable {
 //            "who": "\u4ee3\u7801\u5bb6"
 
     private String _id;
-    private String createdAt;
-    private String desc;
-    private String publishedAt;
+    private String createdAt;//创建时间
+    private String desc;//描述,一般作为标题使用
+    private String publishedAt;//发布时间
     private String type;
-    private String url;
+    private String url;//项目跳转地址
     private boolean used;
-    private String who;
-    private String source;
+    private String who;//作者
+    private String source;//资源
+
+    public List<String> images;//项目展示图片
+
 
     public String getSource() {
         return source;

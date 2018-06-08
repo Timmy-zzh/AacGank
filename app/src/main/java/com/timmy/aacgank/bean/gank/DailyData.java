@@ -17,7 +17,7 @@ public class DailyData {
 //    public String title;
 
     public List<String> category;
-    public GankResult.GankCategory results;
+    public GankCategory results;
 
     public static class GankCategory {
         public List<Gank> Android;
@@ -27,12 +27,15 @@ public class DailyData {
         public List<Gank> App;
         public List<Gank> 休息视频;
 
-
         @Override
         public String toString() {
             return "GankCategory{" +
                     "Android=" + Android +
                     ", iOS=" + iOS +
+                    ", 前端=" + 前端 +
+                    ", 瞎推荐=" + 瞎推荐 +
+                    ", App=" + App +
+                    ", 休息视频=" + 休息视频 +
                     '}';
         }
     }

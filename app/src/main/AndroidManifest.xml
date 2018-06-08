@@ -37,7 +37,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.daily.DailyActivity" />
         <activity android:name=".ui.other.HandlerActivity" />
         <activity android:name=".ui.gank.WelfareDetailActivity"></activity>
     </application>

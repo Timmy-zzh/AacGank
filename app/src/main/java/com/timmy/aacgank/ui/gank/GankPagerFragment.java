@@ -40,7 +40,7 @@ public class GankPagerFragment extends GankPagerMainFragment {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Gank gank = (Gank) adapter.getData().get(position);
                 if (gankType.contains("福利")) {
-                    WelfareDetailActivity.startAction(getActivity(),view,gank.getUrl());
+                    WelfareDetailActivity.startAction(getActivity(),view,gank);
                 } else {
 //                    MeiziActivity.startAction(getContext(), gank.getUrl());
                 }
