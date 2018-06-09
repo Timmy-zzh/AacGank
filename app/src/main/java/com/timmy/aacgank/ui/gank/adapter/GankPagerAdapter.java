@@ -7,11 +7,6 @@ import android.view.ViewGroup;
 
 import com.timmy.aacgank.ui.gank.GankPagerFragment;
 
-
-/**
- * Created by Timmy on 2018/1/23.
- */
-
 public class GankPagerAdapter extends FragmentPagerAdapter {
 
     private final String[] gankTypes;

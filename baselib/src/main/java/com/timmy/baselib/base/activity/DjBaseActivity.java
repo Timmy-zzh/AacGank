@@ -10,13 +10,17 @@ import android.provider.Settings;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
+import com.timmy.baselib.R;
 import com.timmy.baselib.base.helper.ILoadingDialog;
 import com.timmy.baselib.base.helper.LoadingDialog;
 

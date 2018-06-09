@@ -3,6 +3,7 @@ package com.timmy.baselib.base.activity;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -50,7 +51,6 @@ public abstract class DjBaseBindingActivity<DB extends ViewDataBinding> extends 
 
     @Override
     public void setContentView(int layoutResID) {
-//        baseBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_base, null, false);
         baseBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_base, null, false);
         binding = DataBindingUtil.inflate(getLayoutInflater(), layoutResID, null, false);
         //子类布局填充
@@ -83,8 +83,8 @@ public abstract class DjBaseBindingActivity<DB extends ViewDataBinding> extends 
      */
     protected void initToolbar(Toolbar toolbar, TextView toolbarTitle) {
         toolbarTitle.setText(getTitle());
-        toolbar.setBackgroundColor(getResources().getColor(R.color.white));//设置Toolbar背景色
-        toolbar.setNavigationIcon(R.mipmap.ic_back);
+//        toolbar.setBackgroundColor(getResources().getColor(R.color.white));//设置Toolbar背景色
+//        toolbar.setNavigationIcon(R.mipmap.ic_back);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -95,6 +95,17 @@ public abstract class DjBaseBindingActivity<DB extends ViewDataBinding> extends 
     //是否展示顶部Toolbar
     protected void showToolbar(boolean show) {
         baseBinding.toolbar.toolbar.setVisibility(show ? View.VISIBLE : View.GONE);
+    }
+    /**
+     * 开启回退功能 和设置标题  引入layout文件(toolbar)就可以使用
+     */
+    public void setToolbarTitle(String title) {
+        if (TextUtils.isEmpty(title)) {
+            return;
+        }
+        if (baseBinding.toolbar.toolbarTitle != null) {
+            baseBinding.toolbar.toolbarTitle.setText(title);
+        }
     }
 
     @Override

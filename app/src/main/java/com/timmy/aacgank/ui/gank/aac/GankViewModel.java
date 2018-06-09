@@ -40,12 +40,24 @@ public class GankViewModel extends BaseListViewModel<Gank> {
     public List<Gank> getProjectList(DailyData dailyData) {
         List<Gank> resultList = new ArrayList<>();
         DailyData.GankCategory results = dailyData.results;
-        resultList.addAll(results.Android);
-        resultList.addAll(results.iOS);
-        resultList.addAll(results.App);
-        resultList.addAll(results.休息视频);
-        resultList.addAll(results.前端);
-        resultList.addAll(results.瞎推荐);
+        if (results.Android != null && results.Android.size() > 0) {
+            resultList.addAll(results.Android);
+        }
+        if (results.iOS != null && results.iOS.size() > 0) {
+            resultList.addAll(results.iOS);
+        }
+        if (results.App != null && results.App.size() > 0) {
+            resultList.addAll(results.App);
+        }
+        if (results.休息视频 != null && results.休息视频.size() > 0) {
+            resultList.addAll(results.休息视频);
+        }
+        if (results.前端 != null && results.前端.size() > 0) {
+            resultList.addAll(results.前端);
+        }
+        if (results.瞎推荐 != null && results.瞎推荐.size() > 0) {
+            resultList.addAll(results.瞎推荐);
+        }
         return resultList;
     }
 }

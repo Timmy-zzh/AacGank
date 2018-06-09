@@ -28,7 +28,9 @@ android {
             res.srcDirs = [
                     'src/main/res',
                     'src/main/res/layout',
+                    'src/main/res/layout/home',
                     'src/main/res/layout/gank',
+                    'src/main/res/layout/other',
             ]
         }
     }

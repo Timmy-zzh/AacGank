@@ -21,6 +21,7 @@ public class WelfareDetailAdapter extends BaseDataBindingAdapter<Gank, ItemWelfa
 
     @Override
     protected void convert(BaseViewHolder helper, ItemWelfareDetailBinding binding, Gank item) {
+        helper.addOnClickListener(R.id.tv_desc);
         binding.setGank(item);
         int position = getData().indexOf(item);
         if (position == 0) {

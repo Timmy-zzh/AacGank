@@ -85,6 +85,20 @@ public class DateUtil {
         return dateString;
     }
 
+    public static String getStringDate(String str) {
+        Date date = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            date = format.parse(str);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String dateString = formatter.format(date);
+        return dateString;
+    }
+
+
+
 
     /**
      * 获取现在时间
