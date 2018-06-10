@@ -31,16 +31,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.home.MainActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".ui.other.HandlerActivity" />
         <activity android:name=".ui.gank.WelfareDetailActivity" />
         <activity android:name=".ui.other.WebViewActivity" />
-
         <activity android:name=".ui.other.ImmersionActivity">
+
+        </activity>
+
+
+        <!--android:theme="@style/LauncherTheme"-->
+        <activity android:name=".ui.launcher.LauncherActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
