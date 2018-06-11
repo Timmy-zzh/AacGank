@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 
 import com.timmy.baselib.R;
-import com.timmy.baselib.base.activity.DjBaseBindingActivity;
+import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.base.helper.ILoadingLayout;
 import com.timmy.baselib.base.statusmanager.OnStatusChildClickListener;
 import com.timmy.baselib.base.statusmanager.StatusLayoutManager;
@@ -31,19 +31,19 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
-public abstract class DjBaseBindingFragment<DB extends ViewDataBinding> extends Fragment implements ILoadingLayout {
+public abstract class TBaseBindingFragment<DB extends ViewDataBinding> extends Fragment implements ILoadingLayout {
 
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
     protected DB binding;
     private FragmentBaseBinding baseBinding;
-    private DjBaseBindingActivity activity;
+    private TBaseBindingActivity activity;
     private StatusLayoutManager statusLayoutManager;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof DjBaseBindingActivity) {
-            activity = (DjBaseBindingActivity) context;
+        if (context instanceof TBaseBindingActivity) {
+            activity = (TBaseBindingActivity) context;
         }
     }
 

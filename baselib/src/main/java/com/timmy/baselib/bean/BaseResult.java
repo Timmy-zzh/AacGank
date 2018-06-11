@@ -2,9 +2,9 @@ package com.timmy.baselib.bean;
 
 public class BaseResult<T> {
 
-    private int code;
-    private String msg;
-    private T data;
+    public int code;
+    public String msg;
+    public T data;
 
     public T getData() {
         return data;

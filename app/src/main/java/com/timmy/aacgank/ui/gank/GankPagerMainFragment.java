@@ -16,7 +16,7 @@ import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.gank.aac.GankViewModel;
 import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseQuickAdapter;
-import com.timmy.baselib.base.fragment.DjPageLazyBaseFragment;
+import com.timmy.baselib.base.fragment.TPageLazyBaseFragment;
 import com.timmy.baselib.databinding.ActivityRefreshListBinding;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.http.rxjava2.BConsumer;
@@ -33,7 +33,7 @@ import io.reactivex.functions.Function;
  * 2.Adapter不同
  * 3.LayoutManager不同
  */
-public abstract class GankPagerMainFragment extends DjPageLazyBaseFragment<ActivityRefreshListBinding> {
+public abstract class GankPagerMainFragment extends TPageLazyBaseFragment<ActivityRefreshListBinding> {
 
     private GankViewModel viewModel;
     private int page = 1;

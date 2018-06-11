@@ -10,9 +10,9 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityMainBinding;
-import com.timmy.baselib.base.activity.DjBaseBindingActivity;
+import com.timmy.baselib.base.activity.TBaseBindingActivity;
 
-public class MainActivity extends DjBaseBindingActivity<ActivityMainBinding> implements BottomNavigationBar.OnTabSelectedListener {
+public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> implements BottomNavigationBar.OnTabSelectedListener {
 
     BottomNavigationBar bottomNavigationBar;
     private int lastSelectedPosition;

@@ -24,7 +24,7 @@ import com.timmy.aacgank.ui.gank.adapter.WelfareDetailAdapter;
 import com.timmy.aacgank.ui.other.WebViewActivity;
 import com.timmy.aacgank.util.DateUtil;
 import com.timmy.adapterlib.BaseQuickAdapter;
-import com.timmy.baselib.base.activity.DjBaseContentActivity;
+import com.timmy.baselib.base.activity.TBaseContentActivity;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.image.ImageUtil;
 import com.timmy.baselib.utils.LogUtils;
@@ -37,7 +37,7 @@ import java.util.List;
  * 1.共享元素开启界面
  * 2.
  */
-public class WelfareDetailActivity extends DjBaseContentActivity<ActivityWelfareDetailBinding> {
+public class WelfareDetailActivity extends TBaseContentActivity<ActivityWelfareDetailBinding> {
 
     private Gank gank;
     private GankViewModel viewModel;

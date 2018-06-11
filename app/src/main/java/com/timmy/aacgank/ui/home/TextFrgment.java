@@ -6,7 +6,7 @@ import android.view.View;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentTextBinding;
 import com.timmy.aacgank.ui.other.HandlerActivity;
-import com.timmy.baselib.base.fragment.DjBaseBindingFragment;
+import com.timmy.baselib.base.fragment.TBaseBindingFragment;
 import com.timmy.baselib.utils.LogUtils;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ import okhttp3.Response;
  * Created by admin on 2017/11/26.
  */
 
-public class TextFrgment extends DjBaseBindingFragment<FragmentTextBinding> {
+public class TextFrgment extends TBaseBindingFragment<FragmentTextBinding> {
 
     private String TAG = "Timmy";
     public static TextFrgment newInstance() {

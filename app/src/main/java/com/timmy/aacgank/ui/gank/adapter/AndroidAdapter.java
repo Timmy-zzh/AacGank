@@ -3,6 +3,7 @@ package com.timmy.aacgank.ui.gank.adapter;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ItemAndroidBinding;
+import com.timmy.aacgank.util.DateUtil;
 import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseViewHolder;
 
@@ -19,10 +20,6 @@ public class AndroidAdapter extends BaseDataBindingAdapter<Gank, ItemAndroidBind
     @Override
     protected void convert(BaseViewHolder helper, ItemAndroidBinding binding, Gank item) {
         binding.setGank(item);
+        helper.setText(R.id.tv_time, DateUtil.getStringDate(item.getPublishedAt()));
     }
-
-//    @Override
-//    protected void convert(ItemAndroidBinding binding, Gank item) {
-//        binding.setGank(item);
-//    }
 }

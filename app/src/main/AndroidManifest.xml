@@ -53,6 +53,8 @@
         <activity
             android:name=".ui.gank.VideoActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.gank.android.AndroidDetailActivity" />
+        <activity android:name=".ui.gank.IOSDetailActivity"></activity>
     </application>
 
 </manifest>

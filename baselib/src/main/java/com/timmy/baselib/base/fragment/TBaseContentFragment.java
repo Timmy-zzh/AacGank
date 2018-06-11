@@ -2,7 +2,7 @@ package com.timmy.baselib.base.fragment;
 
 import android.databinding.ViewDataBinding;
 
-public abstract class DjBaseContentFragment<DB extends ViewDataBinding> extends DjBaseBindingFragment<DB> {
+public abstract class TBaseContentFragment<DB extends ViewDataBinding> extends TBaseBindingFragment<DB> {
 
     @Override
     protected void initBase() {

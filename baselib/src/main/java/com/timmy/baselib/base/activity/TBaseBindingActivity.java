@@ -37,7 +37,7 @@ import io.reactivex.schedulers.Schedulers;
  * 加载状态/空界面/出错界面/内容展示
  * 暴露方法:用户可自行控制加载界面,空界面,和出错界面
  */
-public abstract class DjBaseBindingActivity<DB extends ViewDataBinding> extends DjBaseActivity implements ILoadingLayout {
+public abstract class TBaseBindingActivity<DB extends ViewDataBinding> extends TBaseActivity implements ILoadingLayout {
 
     protected DB binding;
     private ActivityBaseBinding baseBinding;
@@ -63,7 +63,7 @@ public abstract class DjBaseBindingActivity<DB extends ViewDataBinding> extends 
         initToolbar(baseBinding.toolbar.toolbar, baseBinding.toolbar.toolbarTitle);
         initStatusLayout();
         //判断当前是否有网络--统一处理无网状态展示
-        if (NetUtils.isConnected(DjBaseBindingActivity.this)) {
+        if (NetUtils.isConnected(TBaseBindingActivity.this)) {
             //默认内容:页面隐藏,展示加载页
             showLoadingLayout();
         } else {
@@ -131,13 +131,13 @@ public abstract class DjBaseBindingActivity<DB extends ViewDataBinding> extends 
                     @Override
                     public void onRetryClick(View view) {
                         //重试--在空界面和错误界面时,判断当前网络状态
-                        if (NetUtils.isConnected(DjBaseBindingActivity.this)) {
+                        if (NetUtils.isConnected(TBaseBindingActivity.this)) {
                             showLoadingLayout();
                             onRefresh();
                         } else {
 //                            showErrorLayout(new UnknownHostException());
                             showErrorLayout();
-                            Toast.makeText(DjBaseBindingActivity.this, "世界上最遥远的距离是我在这里,你却没有网!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(TBaseBindingActivity.this, "世界上最遥远的距离是我在这里,你却没有网!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })

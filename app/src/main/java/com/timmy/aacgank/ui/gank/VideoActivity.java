@@ -6,12 +6,12 @@ import android.os.Bundle;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityVideoBinding;
-import com.timmy.baselib.base.activity.DjBaseContentActivity;
+import com.timmy.baselib.base.activity.TBaseContentActivity;
 import com.timmy.baselib.utils.LogUtils;
 
 import cn.jzvd.JZVideoPlayer;
 
-public class VideoActivity extends DjBaseContentActivity<ActivityVideoBinding> {
+public class VideoActivity extends TBaseContentActivity<ActivityVideoBinding> {
 
     public static void startAction(Context activity, String url) {
         LogUtils.d("VideoActivity:" + url);

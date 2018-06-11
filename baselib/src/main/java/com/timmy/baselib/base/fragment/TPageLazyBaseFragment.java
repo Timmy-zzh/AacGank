@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 
 import com.timmy.baselib.R;
-import com.timmy.baselib.base.activity.DjBaseBindingActivity;
+import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.base.helper.ILoadingLayout;
 import com.timmy.baselib.base.statusmanager.OnStatusChildClickListener;
 import com.timmy.baselib.base.statusmanager.StatusLayoutManager;
@@ -67,12 +67,12 @@ import io.reactivex.schedulers.Schedulers;
  *      3.setUserVisibleHint()可见时,且之前没有加载过,再会加载数据
  *
  */
-public abstract class DjPageLazyBaseFragment<DB extends ViewDataBinding> extends Fragment implements ILoadingLayout {
+public abstract class TPageLazyBaseFragment<DB extends ViewDataBinding> extends Fragment implements ILoadingLayout {
 
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
     protected DB binding;
     private FragmentBaseBinding baseBinding;
-    private DjBaseBindingActivity activity;
+    private TBaseBindingActivity activity;
     private View rootView;
     private boolean isInited; // Fragment初始化完成
     private boolean isLoadedData;//是否已经加载过数据
@@ -109,8 +109,8 @@ public abstract class DjPageLazyBaseFragment<DB extends ViewDataBinding> extends
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof DjBaseBindingActivity) {
-            activity = (DjBaseBindingActivity) context;
+        if (context instanceof TBaseBindingActivity) {
+            activity = (TBaseBindingActivity) context;
         }
     }
 

@@ -32,14 +32,14 @@ import io.reactivex.disposables.CompositeDisposable;
  * 2.状态栏,
  * 3.和aac框架mDisposable初始化
  */
-public abstract class DjBaseActivity extends AppCompatActivity implements ILoadingDialog {
+public abstract class TBaseActivity extends AppCompatActivity implements ILoadingDialog {
 
     static final String LOADING_DIALOG_TAG = "loading_dialog";
     private DialogFragment loadingDialogFragment;
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
 //    private ImmersionBar mImmersionBar;
 
-    public  void startAction(Class<?> clazz) {
+    public void startAction(Class<?> clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }

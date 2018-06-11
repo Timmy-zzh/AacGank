@@ -1,5 +1,6 @@
-package com.timmy.baselib.base.fragment;
+package com.timmy.baselib.base.activity;
 
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -16,7 +17,16 @@ import com.timmy.baselib.http.rxjava2.BConsumer;
 import io.reactivex.Flowable;
 
 
-public abstract class DjBaseListBindingFragment<E, VM extends BaseListViewModel> extends DjBaseBindingFragment<ActivityRefreshListBinding> {
+/**
+ * 列表界面基类
+ * 不同的地方有这几处:
+ * 1.ViewModel
+ * 2.访问接口
+ * 3.Adapter
+ * E 为列表item数据
+ * VM 列表数据ViewModel
+ */
+public abstract class TBaseListBindingActivity<E, VM extends BaseListViewModel> extends TBaseBindingActivity<ActivityRefreshListBinding> {
 
     private VM viewModel;
     private int page = 1;
@@ -28,6 +38,14 @@ public abstract class DjBaseListBindingFragment<E, VM extends BaseListViewModel>
 
     protected abstract Flowable<BaseResult<PageListResult<E>>> getPageList(int page);
 
+    @Override
+    protected final void initBase() {
+        super.initBase();
+    }
+
+    protected void initBaseList() {
+    }
+
     public BaseDataBindingAdapter getAdapter() {
         return adapter;
     }
@@ -37,18 +55,20 @@ public abstract class DjBaseListBindingFragment<E, VM extends BaseListViewModel>
     }
 
     @Override
-    protected int getLayoutRes() {
-        return R.layout.activity_refresh_list;
-    }
-
-    @Override
-    protected void initBase() {
-        super.initBase();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getLayoutRes());
         adapter = createAdapter();
         viewModel = createViewModel();
+        initBaseList();
         initView();
         subscribeUI(false);
     }
+
+    public int getLayoutRes() {
+        return R.layout.activity_refresh_list;
+    }
+
 
     private void initView() {
         binding.swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright);
@@ -63,9 +83,8 @@ public abstract class DjBaseListBindingFragment<E, VM extends BaseListViewModel>
             }
         });
 
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        binding.recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.HORIZONTAL,10,AppUtils.getColor(R.color.T_F2)));
         binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //加载更多
         adapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override

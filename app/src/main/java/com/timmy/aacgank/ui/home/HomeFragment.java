@@ -5,7 +5,7 @@ import android.support.design.widget.TabLayout;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentGankBinding;
 import com.timmy.aacgank.ui.gank.adapter.GankPagerAdapter;
-import com.timmy.baselib.base.fragment.DjBaseContentFragment;
+import com.timmy.baselib.base.fragment.TBaseContentFragment;
 import com.timmy.baselib.utils.LogUtils;
 
 /**
@@ -13,7 +13,7 @@ import com.timmy.baselib.utils.LogUtils;
  * 1.获取数据,使用retrofit
  * 2.展示recyclerview
  */
-public class HomeFragment extends DjBaseContentFragment<FragmentGankBinding> {
+public class HomeFragment extends TBaseContentFragment<FragmentGankBinding> {
 
     private static String[] gankTypes = {"福利", "Android", "iOS", "休息视频", "拓展资源", "前端", "all"};
 

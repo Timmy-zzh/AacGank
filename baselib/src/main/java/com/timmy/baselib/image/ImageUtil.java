@@ -161,9 +161,8 @@ public class ImageUtil {
      * 获取图片Bitmap
      */
     public static Bitmap loadBitmap(Context context, String url) {
-        if (url.isEmpty()) {
+        if (url.isEmpty())
             return null;
-        }
 
         try {
             return Glide.with(context)
@@ -172,9 +171,7 @@ public class ImageUtil {
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                     .get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

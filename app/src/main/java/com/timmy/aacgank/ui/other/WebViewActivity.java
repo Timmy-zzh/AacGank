@@ -28,10 +28,10 @@ import com.timmy.aacgank.databinding.ActivityWebViewBinding;
 import com.timmy.aacgank.ui.home.MainActivity;
 import com.timmy.aacgank.ui.other.helper.JsInteration;
 import com.timmy.aacgank.ui.other.helper.MyWebViewClient;
-import com.timmy.baselib.base.activity.DjBaseContentActivity;
+import com.timmy.baselib.base.activity.TBaseContentActivity;
 
 
-public class WebViewActivity extends DjBaseContentActivity<ActivityWebViewBinding> {
+public class WebViewActivity extends TBaseContentActivity<ActivityWebViewBinding> {
 
 //    private static final String APP_CACHE_DIRNAME = "/webcache"; // web缓存目录
 

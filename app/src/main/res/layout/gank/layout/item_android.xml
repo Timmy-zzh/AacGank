@@ -22,8 +22,6 @@
                 android:id="@+id/tv_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:lines="2"
                 android:text="@{gank.desc}"
                 android:textColor="@color/T_00"
                 android:textSize="16sp" />
@@ -42,8 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/tv_desc"
-                android:layout_toLeftOf="@+id/tv_who"
-                android:text="@{gank.publishedAt}" />
+                android:layout_toLeftOf="@+id/tv_who" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

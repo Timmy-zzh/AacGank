@@ -47,9 +47,8 @@ public class GlideRoundTransform extends BitmapTransformation {
     }
 
     private static Bitmap roundCrop(BitmapPool pool, Bitmap source) {
-        if (source == null) {
+        if (source == null)
             return null;
-        }
 
         Bitmap result = pool.get(source.getWidth(), source.getHeight(), Bitmap.Config.ARGB_8888);
         if (result == null) {
@@ -62,6 +61,13 @@ public class GlideRoundTransform extends BitmapTransformation {
         paint.setAntiAlias(true);
         RectF rectF = new RectF(0f, 0f, source.getWidth(), source.getHeight());
         canvas.drawRoundRect(rectF, radius, radius, paint);
+
+        //方式2 使用Xfermode进行裁剪
+//        RectF rectF = new RectF(0f, 0f, source.getWidth(), source.getHeight());
+//        canvas.drawRoundRect(rectF, radius, radius, paint);
+//        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+//        canvas.drawBitmap(source, 0, 0, paint);
+
         return result;
     }
 
