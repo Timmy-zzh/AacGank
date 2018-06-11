@@ -1,6 +1,7 @@
 package com.timmy.baselib.image;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -11,13 +12,16 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
+
+import java.util.concurrent.ExecutionException;
 
 /**
  * 图片Glide
  */
 public class ImageUtil {
 
-    private ImageUtil(){
+    private ImageUtil() {
         throw new UnsupportedOperationException("说了不准初始化我，再初始化我就打你~~~");
     }
 
@@ -151,6 +155,29 @@ public class ImageUtil {
     public static void GuideClearMemory(Context mContext) {
         //清理内存缓存  可以在UI主线程中进行
         Glide.get(mContext).clearMemory();
+    }
+
+    /**
+     * 获取图片Bitmap
+     */
+    public static Bitmap loadBitmap(Context context, String url) {
+        if (url.isEmpty()) {
+            return null;
+        }
+
+        try {
+            return Glide.with(context)
+                    .load(url)
+                    .asBitmap()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                    .get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

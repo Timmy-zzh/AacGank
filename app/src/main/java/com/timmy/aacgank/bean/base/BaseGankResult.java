@@ -5,8 +5,8 @@ package com.timmy.aacgank.bean.base;
  */
 
 public class BaseGankResult<T> {
-    public boolean error;
-    public T results;
+    private boolean error;
+    private T results;
 
     public T getData() {
         return results;

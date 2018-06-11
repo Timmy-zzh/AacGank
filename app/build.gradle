@@ -48,7 +48,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
     //底部导航栏
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
-
     //leakcanary
     debugCompile "com.squareup.leakcanary:leakcanary-android:${LEAKCANARY_VERSION}"
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${LEAKCANARY_VERSION}"

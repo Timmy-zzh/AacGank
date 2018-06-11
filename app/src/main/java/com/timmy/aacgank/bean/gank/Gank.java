@@ -26,7 +26,32 @@ public class Gank implements Serializable {
     private String source;//资源
 
     public List<String> images;//项目展示图片
+    private int srcWidth;
+    private int srcHeight;
 
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    public int getSrcWidth() {
+        return srcWidth;
+    }
+
+    public void setSrcWidth(int srcWidth) {
+        this.srcWidth = srcWidth;
+    }
+
+    public int getSrcHeight() {
+        return srcHeight;
+    }
+
+    public void setSrcHeight(int srcHeight) {
+        this.srcHeight = srcHeight;
+    }
 
     public String getSource() {
         return source;

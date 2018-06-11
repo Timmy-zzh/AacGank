@@ -17,9 +17,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp">
 
-        <com.timmy.baselib.wiget.AutoHeightImageView
+        <com.timmy.baselib.wiget.AutoHeightImageView2
             android:id="@+id/iv"
-            autoImageUrl="@{gank.url}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

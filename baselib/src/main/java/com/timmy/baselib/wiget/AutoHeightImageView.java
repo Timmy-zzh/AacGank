@@ -8,6 +8,7 @@ import com.timmy.baselib.utils.LogUtils;
 
 /**
  * 为了更好的展示图片,因为图片的宽度是固定为屏幕的一半,高度的话就根据图片的宽高比进行设置
+ * 直接让ImageView自己去测量高度
  */
 public class AutoHeightImageView extends android.support.v7.widget.AppCompatImageView {
     public AutoHeightImageView(Context context) {
