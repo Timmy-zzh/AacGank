@@ -1,5 +1,9 @@
 package com.timmy.aacgank.ui.gank.adapter;
 
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.TextAppearanceSpan;
+
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ItemAndroidBinding;
@@ -20,15 +24,23 @@ public class WelfareDetailAdapter extends BaseDataBindingAdapter<Gank, ItemWelfa
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, ItemWelfareDetailBinding binding, Gank item) {
+    protected void convert(BaseViewHolder helper, ItemWelfareDetailBinding binding, Gank gank) {
         helper.addOnClickListener(R.id.tv_desc);
-        binding.setGank(item);
-        int position = getData().indexOf(item);
+        binding.setGank(gank);
+
+        String author = "(who:" + gank.getWho() + ")";
+        SpannableString spannableString = new SpannableString(author);
+        spannableString.setSpan(new TextAppearanceSpan(helper.getContext(), R.style.ViaTextAppearance), 0, author.length(), 0);
+        SpannableStringBuilder builder = new SpannableStringBuilder(" * " + gank.getDesc()).append(spannableString);
+        CharSequence gankText = builder.subSequence(0, builder.length());
+        helper.setText(R.id.tv_desc, gankText);
+
+        int position = getData().indexOf(gank);
         if (position == 0) {
             binding.setShow(true);
         } else if (position > 1) {
             Gank prePageItem = getData().get(position - 1);
-            if (item.getType().equals(prePageItem.getType())) {
+            if (gank.getType().equals(prePageItem.getType())) {
                 binding.setShow(false);
             } else {
                 binding.setShow(true);

@@ -25,4 +25,9 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="ViaTextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/T_BD</item>
+    </style>
+
 </resources>
