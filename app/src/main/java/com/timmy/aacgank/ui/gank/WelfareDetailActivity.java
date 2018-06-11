@@ -117,28 +117,26 @@ public class WelfareDetailActivity extends DjBaseContentActivity<ActivityWelfare
         gank = (Gank) getIntent().getSerializableExtra("data");
         viewModel = ViewModelProviders.of(this).get(GankViewModel.class);
         gank = (Gank) getIntent().getSerializableExtra("data");
-        ImageUtil.loadImage(this, gank.getUrl(), binding.ivImage);
-
-        binding.toolbar.setTitle(DateUtil.getStringDate(gank.getPublishedAt()));
+        if (gank != null) {
+            ImageUtil.loadImage(this, gank.getUrl(), binding.ivImage);
+            binding.toolbar.setTitle(DateUtil.getStringDate(gank.getPublishedAt()));
+        }
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new WelfareDetailAdapter();
         binding.recyclerView.setAdapter(mAdapter);
 
-//         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-//             @Override
-//             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-//
-//             }
-//         });
         mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 Gank gank = mAdapter.getData().get(position);
-                switch (view.getId()) {
-                    case R.id.tv_desc:
-                        WebViewActivity.startAction(getContext(), gank.getUrl());
-                        break;
+                if (view.getId() == R.id.tv_desc) {
+//                    if (gank.getType().contains("视频")) {
+//                        LogUtils.d("onItemChildClick:" + gank.getUrl());
+//                        VideoActivity.startAction(getContext(), gank.getUrl());
+//                    } else {
+                        WebViewActivity.startAction(getContext(), gank.getUrl(),gank.getDesc());
+//                    }
                 }
             }
         });

@@ -48,7 +48,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingTop="6dp"
-            android:text="@{gank.desc}"
+            android:text="@{` * `+gank.desc}"
             android:textColor="@color/T_00"
             android:textSize="@dimen/sp_16"
             tools:text="\u5e26\u611f\u7684\u65f6\u95f4\u65e5\u671f\u9009\u62e9\u5e93\u3002" />

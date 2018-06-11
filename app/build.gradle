@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.timmy.aacgank"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -51,5 +51,7 @@ dependencies {
     //leakcanary
     debugCompile "com.squareup.leakcanary:leakcanary-android:${LEAKCANARY_VERSION}"
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${LEAKCANARY_VERSION}"
+    //视频播放
+    compile 'cn.jzvd:jiaozivideoplayer:6.2.10'
 
 }

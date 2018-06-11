@@ -48,6 +48,7 @@ public class LauncherActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LauncherActivity.this, MainActivity.class));
+                LauncherActivity.this.finish();
             }
         });
     }

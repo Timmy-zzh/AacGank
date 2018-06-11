@@ -3,10 +3,12 @@ package com.timmy.aacgank.ui.other;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +18,14 @@ import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.orhanobut.logger.Logger;
 import com.timmy.aacgank.C;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityWebViewBinding;
+import com.timmy.aacgank.ui.home.MainActivity;
 import com.timmy.aacgank.ui.other.helper.JsInteration;
 import com.timmy.aacgank.ui.other.helper.MyWebViewClient;
 import com.timmy.baselib.base.activity.DjBaseContentActivity;
@@ -36,6 +41,13 @@ public class WebViewActivity extends DjBaseContentActivity<ActivityWebViewBindin
         context.startActivity(intent);
     }
 
+    public static void startAction(Context context, String url,String title) {
+        Intent intent = new Intent(context, WebViewActivity.class);
+        intent.putExtra(C.Params, url);
+        intent.putExtra(C.Params2, title);
+        context.startActivity(intent);
+    }
+
     public static void startActionData(Context context, String urlData) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra(C.Params1, urlData);
@@ -46,10 +58,47 @@ public class WebViewActivity extends DjBaseContentActivity<ActivityWebViewBindin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        init();
+        showToolbar(false);
+        initWeb();
+        initToolbarTitle();
     }
 
-    protected void init() {
+    private void initToolbarTitle() {
+        setSupportActionBar(binding.toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        binding.title.setFactory(new ViewSwitcher.ViewFactory() {
+
+            @Override
+            public View makeView() {
+                final TextView textView = new TextView(WebViewActivity.this);
+                textView.setTextAppearance(WebViewActivity.this, R.style.WebTitle);
+                textView.setSingleLine(true);
+                textView.setGravity(Gravity.CENTER_VERTICAL);
+                textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                textView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView.setSelected(true);
+                    }
+                }, 1738);
+
+                return textView;
+            }
+        });
+        //调用next方法显示下一个字符串
+        next(getIntent().getStringExtra(C.Params2));
+    }
+
+    //事件处理函数，控制显示下一个字符串
+    public void next(String title)
+    {
+        binding.title.setText(title);
+    }
+
+    protected void initWeb() {
         initWebView();
         Intent intent = getIntent();
         String url = intent.getStringExtra(C.Params);
@@ -155,7 +204,7 @@ public class WebViewActivity extends DjBaseContentActivity<ActivityWebViewBindin
                                                public void onReceivedTitle(WebView view, String title) {
                                                    super.onReceivedTitle(view, title);
                                                    if (!TextUtils.isEmpty(title)) {
-                                                       setToolbarTitle(title);
+//                                                       next(title);
                                                    }
                                                }
 
