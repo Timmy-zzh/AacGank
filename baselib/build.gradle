@@ -31,7 +31,7 @@ android {
                     'src/main/res',
                     'src/main/res/layout',
                     'src/main/res/layout/base',
-                    'src/main/res/layout/status',
+                    'src/main/res/layout/statusview',
                     'src/main/res/layout/widget',
             ]
         }

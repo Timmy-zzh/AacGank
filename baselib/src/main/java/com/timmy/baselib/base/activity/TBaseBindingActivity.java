@@ -40,7 +40,7 @@ import io.reactivex.schedulers.Schedulers;
 public abstract class TBaseBindingActivity<DB extends ViewDataBinding> extends TBaseActivity implements ILoadingLayout {
 
     protected DB binding;
-    private ActivityBaseBinding baseBinding;
+    protected ActivityBaseBinding baseBinding;
     private StatusLayoutManager statusLayoutManager;
 
     protected abstract void onRefresh();

@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.timmy.baselib.R;
 import com.timmy.baselib.base.helper.ILoadingDialog;
 import com.timmy.baselib.base.helper.LoadingDialog;
+import com.timmy.baselib.statusbar.StatusBarUtil;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -55,11 +56,7 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
      * https://github.com/gyf-dev/ImmersionBar
      */
     protected void setStatusBar() {
-        //在BaseActivity里初始化
-//        mImmersionBar = ImmersionBar.with(this)
-//                .statusBarDarkFont(true, 0.2f)
-//                .fitsSystemWindows(true);
-//        mImmersionBar.init();
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.c_redeem));
     }
 
     @Override

@@ -11,6 +11,7 @@ import com.timmy.aacgank.C;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.gank.adapter.AndroidAdapter;
 import com.timmy.aacgank.ui.gank.adapter.WelfareAdapter;
+import com.timmy.aacgank.ui.gank.android.AndroidDetailActivity;
 import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseQuickAdapter;
 
@@ -44,7 +45,7 @@ public class GankPagerFragment extends GankPagerMainFragment {
                         WelfareDetailActivity.startAction(getActivity(),view,gank);
                         break;
                     case "Android":
-
+                        AndroidDetailActivity.startAction(getActivity(),gank);
                         break;
                 }
             }
