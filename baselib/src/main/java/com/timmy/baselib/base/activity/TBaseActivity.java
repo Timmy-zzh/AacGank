@@ -47,7 +47,13 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBar();
+    }
+
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+//        //状态栏设置
+//        setStatusBar();
     }
 
     /**

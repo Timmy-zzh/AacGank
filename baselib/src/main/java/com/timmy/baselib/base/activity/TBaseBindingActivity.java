@@ -62,7 +62,8 @@ public abstract class TBaseBindingActivity<DB extends ViewDataBinding> extends T
         binding.getRoot().setLayoutParams(params);
         baseBinding.flContent.addView(binding.getRoot());
         getWindow().setContentView(baseBinding.getRoot());
-
+        //状态栏设置
+        setStatusBar();
         //初始化Toolbar
         initToolbar(baseBinding.toolbar.toolbar, baseBinding.toolbar.toolbarTitle);
         initStatusLayout();
@@ -100,6 +101,7 @@ public abstract class TBaseBindingActivity<DB extends ViewDataBinding> extends T
     protected void showToolbar(boolean show) {
         baseBinding.toolbar.toolbar.setVisibility(show ? View.VISIBLE : View.GONE);
     }
+
     /**
      * 开启回退功能 和设置标题  引入layout文件(toolbar)就可以使用
      */
