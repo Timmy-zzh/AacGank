@@ -38,7 +38,6 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
     static final String LOADING_DIALOG_TAG = "loading_dialog";
     private DialogFragment loadingDialogFragment;
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
-//    private ImmersionBar mImmersionBar;
 
     public void startAction(Class<?> clazz) {
         Intent intent = new Intent(this, clazz);
@@ -53,7 +52,7 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
 
     /**
      * 状态栏设置
-     * https://github.com/gyf-dev/ImmersionBar
+     * https://github.com/laobie/StatusBarUtil
      */
     protected void setStatusBar() {
         StatusBarUtil.setColor(this,getResources().getColor(R.color.c_redeem));
@@ -64,15 +63,6 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
         super.onStop();
         // clear all the subscriptions
         mDisposable.clear();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//        if (mImmersionBar != null) {
-//            mImmersionBar.destroy();  //在BaseActivity里销毁
-//        }
-//        AppManager.getInstance().killActivity(this);
     }
 
     @Override
@@ -139,7 +129,7 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
     protected void openPermissionsSetting(final int requestCode, String msg) {
         new android.app.AlertDialog.Builder(this)
                 .setTitle("帮助")
-//                .setMessage(getResources().getString(R.string.permission_tips))
+                .setMessage(getResources().getString(R.string.permission_tips))
                 .setMessage(msg)
                 .setPositiveButton("设置", new DialogInterface.OnClickListener() {
                     @Override

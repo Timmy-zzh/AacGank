@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  * 分页数据基类
  */
-
+@Deprecated()
 public class PageResult<T> extends BaseResult<PageList<T>> implements Serializable{
     private static final long serialVersionUID = -8598606133978446965L;
 

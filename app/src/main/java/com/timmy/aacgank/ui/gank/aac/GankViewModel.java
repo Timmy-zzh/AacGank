@@ -27,7 +27,7 @@ public class GankViewModel extends BaseListViewModel<Gank> {
 
 
     @Override
-    public Flowable<BaseResult<PageListResult<Gank>>> getPageList(int page) {
+    public Flowable<PageListResult<Gank>> getPageList(int page) {
         return null;
     }
 

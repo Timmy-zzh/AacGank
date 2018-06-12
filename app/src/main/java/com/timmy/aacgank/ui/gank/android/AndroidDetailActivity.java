@@ -47,7 +47,7 @@ public class AndroidDetailActivity extends TBaseContentActivity<ActivityAndroidD
 
         Random random = new Random();
        int color = 0xff000000 | random.nextInt(0xffffff);
-        baseBinding.toolbar.toolbar.setBackgroundColor(color);
+        getBaseBinding().toolbar.toolbar.setBackgroundColor(color);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//5.0+
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

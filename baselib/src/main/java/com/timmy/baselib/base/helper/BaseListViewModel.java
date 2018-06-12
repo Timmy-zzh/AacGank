@@ -13,6 +13,6 @@ import io.reactivex.Flowable;
  */
 public abstract class BaseListViewModel<E> extends ViewModel {
 
-    public abstract Flowable<BaseResult<PageListResult<E>>> getPageList(int page);
+    public abstract Flowable<PageListResult<E>> getPageList(int page);
 
 }

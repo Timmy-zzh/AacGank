@@ -1,5 +1,6 @@
 package com.timmy.baselib.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +8,6 @@ import java.util.List;
  * @param <T>
  */
 @SuppressWarnings("serial")
-@Deprecated()
-public class PageListResult<T> extends GetResult<List<T>> {
+public class PageListResult<T> extends BaseResult<PageList<T>> implements Serializable {
 
 }

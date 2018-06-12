@@ -18,5 +18,6 @@
     <string name="exception_http_error">网络连接异常，请稍后再试</string>
 
     <string name="image_transition">image_animation</string>
+    <string name="permission_tips">为方便您的使用,请开启下列权限.</string>
 
 </resources>

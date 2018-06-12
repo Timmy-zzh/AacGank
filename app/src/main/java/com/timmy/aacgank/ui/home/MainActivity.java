@@ -11,6 +11,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityMainBinding;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
+import com.timmy.baselib.statusbar.StatusBarUtil;
 
 public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -92,11 +93,13 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = HomeFragment.newInstance();
                 }
+                StatusBarUtil.setColor(this,getResources().getColor(R.color.orange));
                 break;
             case 1:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = TextFrgment.newInstance();
                 }
+                StatusBarUtil.setColor(this,getResources().getColor(R.color.teal));
                 break;
             case 2:
                 if (mFragmensts[position] == null) {

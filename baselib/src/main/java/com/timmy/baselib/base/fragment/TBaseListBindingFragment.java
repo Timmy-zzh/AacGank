@@ -8,6 +8,7 @@ import com.timmy.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.R;
 import com.timmy.baselib.base.helper.BaseListViewModel;
 import com.timmy.baselib.bean.BaseResult;
+import com.timmy.baselib.bean.PageList;
 import com.timmy.baselib.bean.PageListResult;
 import com.timmy.baselib.databinding.ActivityRefreshListBinding;
 import com.timmy.baselib.http.rxjava2.AConsumer;
@@ -26,7 +27,7 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
 
     protected abstract BaseDataBindingAdapter createAdapter();
 
-    protected abstract Flowable<BaseResult<PageListResult<E>>> getPageList(int page);
+    protected abstract Flowable<PageListResult<E>> getPageList(int page);
 
     public BaseDataBindingAdapter getAdapter() {
         return adapter;
@@ -83,13 +84,12 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
 
     private void subscribeUI(final boolean refresh) {
         bindSubscribe(getPageList(page)
-                , new AConsumer<BaseResult<PageListResult<E>>>() {
+                , new AConsumer<PageListResult<E>>() {
                     @Override
-                    public void onGetResult(BaseResult<PageListResult<E>> result) {
+                    public void onGetResult(PageListResult<E> result) {
                         if (refresh) {
                             binding.swipeRefreshLayout.setRefreshing(false);
                         }
-//                        Toast.toastErrorResult(result);
                         if (result != null && result.getData() != null
                                 && result.getData().getData() != null && !result.getData().getData().isEmpty()) {
                             showContentLayout();
@@ -116,20 +116,20 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
                 });
     }
 
-    private void handleData(PageListResult<E> pageListResult) {
+    private void handleData(PageList<E> pageList) {
         if (page <= 1) {
-            adapter.setNewData(pageListResult.getData());
-            if (pageListResult.isHasNext()) {
+            adapter.setNewData(pageList.getData());
+            if (pageList.isHasNext()) {
                 adapter.setEnableLoadMore(true);
             } else {
                 adapter.setEnableLoadMore(false);
                 adapter.loadMoreEnd(false);
             }
         } else {
-            adapter.addData(pageListResult.getData());
+            adapter.addData(pageList.getData());
             adapter.loadMoreComplete();//加载更多完成
-            if (pageListResult.isHasNext()) {//是否有下一页
-                adapter.setEnableLoadMore(pageListResult.isHasNext());
+            if (pageList.isHasNext()) {//是否有下一页
+                adapter.setEnableLoadMore(pageList.isHasNext());
             } else {
                 adapter.loadMoreEnd();//没有更多数据了
             }
