@@ -8,9 +8,9 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <LinearLayout
             android:id="@+id/ll_top_layout"
@@ -22,8 +22,8 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                app:navigationIcon="@mipmap/ic_back_white"
-                android:layout_height="?attr/actionBarSize">
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@mipmap/ic_back_white">
 
                 <TextView
                     android:id="@+id/toolbar_title"

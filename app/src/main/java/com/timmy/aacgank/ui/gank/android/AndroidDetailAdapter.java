@@ -14,7 +14,10 @@ import android.widget.TextView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.other.helper.MyWebViewClient;
+import com.timmy.aacgank.widget.IAdapter;
+import com.timmy.aacgank.widget.ScrollableTabView;
 import com.timmy.baselib.utils.LogUtils;
+import com.timmy.baselib.utils.ToastUtils;
 
 import java.util.List;
 
@@ -29,6 +32,7 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
     public final static int TYPE_WEBVIEW = 3;
     public final static int TYPE_DEAL_LIST = 4;
     private List<ItemType> typeList;
+    String[] texts = {"SAFK", "KSAHF", "氨分解", "阿道夫", "阿道夫", "扣扣哦","啊劳动纪律开发","拉萨多久","来得及开发","水电费"};
 
     public void setGank(Gank gank) {
         this.gank = gank;
@@ -56,7 +60,7 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
     }
 
     @Override
-    public void onBindViewHolder(TViewHolder holder, int position) {
+    public void onBindViewHolder(final TViewHolder holder, int position) {
         LogUtils.d(TAG + " > onBindViewHolder > position:" + position);
         switch (position) {
             case TYPE_IMAGE:
@@ -66,6 +70,39 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
 
                 break;
             case TYPE_REVIEW:
+                ScrollableTabView scrollableTabView = holder.itemView.findViewById(R.id.scroll_tab_view);
+                scrollableTabView.setAdapter(new IAdapter() {
+                    @Override
+                    public View getView(int position, ViewGroup parent) {
+                        TextView tv = (TextView) LayoutInflater.from(holder.itemView.getContext()).inflate(R.layout.item_tab, parent, false);
+
+//                        TextView tv = (TextView) mInflater.inflate(R.layout.tv,
+//                                parent, false);
+                        tv.setText(texts[position]);
+                        return tv;
+
+                    }
+
+                    @Override
+                    public void setItemView(View itemView, int position) {
+//                        TextView textView = itemView.findViewById(R.id.tv_tab);
+//                        textView.setText(texts[position]);
+                    }
+
+                    @Override
+                    public int getCount() {
+                        return texts.length;
+                    }
+                });
+
+                scrollableTabView.setOnTabItemClickListener(new ScrollableTabView.OnTabItemClickListener() {
+                    @Override
+                    public void onTabItemClick(View view, int position) {
+                        ToastUtils.showShort(texts[position]);
+//                        TextView textView = view.findViewById(R.id.tv_tab);
+//                        textView.setSelected(true);
+                    }
+                });
 
                 break;
             case TYPE_WEBVIEW:
@@ -85,10 +122,10 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
             default:
                 ImageView imageView = holder.itemView.findViewById(R.id.iv_deal);
                 TextView dealName = holder.itemView.findViewById(R.id.tv_deal_name);
-                dealName.setText("DealName :"+position);
-                if (position%2 == 0){
+                dealName.setText("DealName :" + position);
+                if (position % 2 == 0) {
                     imageView.setImageResource(R.mipmap.ic_002);
-                }else{
+                } else {
                     imageView.setImageResource(R.mipmap.ic_001);
                 }
 
@@ -117,4 +154,5 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
             super(itemView);
         }
     }
+
 }

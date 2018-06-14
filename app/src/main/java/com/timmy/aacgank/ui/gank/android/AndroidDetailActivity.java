@@ -2,28 +2,21 @@ package com.timmy.aacgank.ui.gank.android;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.LinearLayout;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ActivityAndroidDetailBinding;
-import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.base.activity.TBaseContentActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
 import com.timmy.baselib.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * 高仿淘宝商品详情页实现界面
@@ -67,6 +60,12 @@ public class AndroidDetailActivity extends TBaseContentActivity<ActivityAndroidD
         List<ItemType> typeList = getDealList(gank);
         mAdapter.setData(typeList);
 
+//        RecyclerView recyclerView = null;
+//        LinearLayoutManager linearLayoutManager;
+//        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+//        });
+//        StaggeredGridLayoutManager staggeredGridLayoutManager;
+
         final GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -86,10 +85,13 @@ public class AndroidDetailActivity extends TBaseContentActivity<ActivityAndroidD
                 }
             }
         });
-        binding.recyclerView.setLayoutManager(layoutManager);
+
+//        TestLayoutManager layoutManager = new TestLayoutManager(this);
+//        mAdapter.notifyDataSetChanged();
+//        mAdapter.notifyItemInserted();
 
         binding.recyclerView.setAdapter(mAdapter);
-
+        binding.recyclerView.setLayoutManager(layoutManager);
         binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
