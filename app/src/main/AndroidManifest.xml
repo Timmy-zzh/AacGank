@@ -30,7 +30,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.home.MainActivity">
+        <activity android:name=".ui.MainActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -54,7 +54,8 @@
             android:name=".ui.gank.VideoActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.gank.android.AndroidDetailActivity" />
-        <activity android:name=".ui.gank.IOSDetailActivity"></activity>
+        <activity android:name=".ui.gank.IOSDetailActivity" />
+        <activity android:name=".ui.cityselect.CitySelectActivity"></activity>
     </application>
 
 </manifest>

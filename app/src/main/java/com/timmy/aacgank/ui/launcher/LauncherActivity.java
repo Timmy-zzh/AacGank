@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.timmy.aacgank.R;
-import com.timmy.aacgank.ui.home.MainActivity;
+import com.timmy.aacgank.ui.MainActivity;
 
 public class LauncherActivity extends AppCompatActivity {
 

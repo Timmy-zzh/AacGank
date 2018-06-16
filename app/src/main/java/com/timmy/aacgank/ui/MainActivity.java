@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.home;
+package com.timmy.aacgank.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,9 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityMainBinding;
+import com.timmy.aacgank.ui.home.HomeFragment;
+import com.timmy.aacgank.ui.home.MyFragment;
+import com.timmy.aacgank.ui.home.TextFrgment;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
 
@@ -103,7 +106,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 break;
             case 2:
                 if (mFragmensts[position] == null) {
-                    mFragmensts[position] = MyFragment.newInstance();
+                    mFragmensts[position] = TextFrgment.newInstance();
                 }
                 break;
             case 3:
@@ -113,7 +116,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 break;
             case 4:
                 if (mFragmensts[position] == null) {
-                    mFragmensts[position] = TextFrgment.newInstance();
+                    mFragmensts[position] = MyFragment.newInstance();
                 }
                 break;
         }
