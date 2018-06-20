@@ -14,9 +14,9 @@ import java.util.Iterator;
 import java.util.List;
 
 //跟App相关的辅助类
-public class AppUtils {
+public class AppUtil {
 
-    private AppUtils() {
+    private AppUtil() {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
 

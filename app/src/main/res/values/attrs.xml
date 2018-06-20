@@ -2,9 +2,13 @@
 <resources>
 
 
-    <!--<style name="LetterBar">-->
-        <!--&lt;!&ndash;字母大小&ndash;&gt;-->
-        <!--<item name="letter_text_size" format="dimension"/>-->
-    <!--</style>-->
+    <declare-styleable name="LetterBar">
+        <attr name="letter_text_size" format="dimension"/>
+        <attr name="letter_text_color" format="reference|color"/>
+        <attr name="select_text_color" format="reference|color"/>
+        <attr name="hint_text_size" format="dimension"/>
+        <attr name="hint_text_color" format="reference|color"/>
+        <attr name="hint_bg_color" format="reference|color"/>
+    </declare-styleable>
 
 </resources>

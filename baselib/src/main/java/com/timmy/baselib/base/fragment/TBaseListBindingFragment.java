@@ -7,7 +7,6 @@ import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.R;
 import com.timmy.baselib.base.helper.BaseListViewModel;
-import com.timmy.baselib.bean.BaseResult;
 import com.timmy.baselib.bean.PageList;
 import com.timmy.baselib.bean.PageListResult;
 import com.timmy.baselib.databinding.ActivityRefreshListBinding;
@@ -65,7 +64,6 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
         });
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        binding.recyclerView.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.HORIZONTAL,10,AppUtils.getColor(R.color.T_F2)));
         binding.recyclerView.setAdapter(adapter);
         //加载更多
         adapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {

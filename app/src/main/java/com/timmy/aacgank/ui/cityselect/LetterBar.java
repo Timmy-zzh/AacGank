@@ -1,9 +1,11 @@
 package com.timmy.aacgank.ui.cityselect;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
@@ -13,6 +15,8 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.timmy.aacgank.R;
+import com.timmy.baselib.utils.DensityUtil;
+import com.timmy.baselib.utils.DensityUtils;
 
 
 /**
@@ -23,10 +27,9 @@ import com.timmy.aacgank.R;
  */
 public class LetterBar extends View {
 
-    private  Paint selectPaint;
-    private  Paint leftPaint;
-    private  Paint leftTextPaint;
-    private int mHeight;
+    private Paint selectPaint;
+    private Paint leftBgPaint;
+    private Paint leftTextPaint;
     private int letterTextSize = 30;
     private String[] letterArr;
     private int itemHeight;
@@ -34,11 +37,19 @@ public class LetterBar extends View {
     private int letterNum;
     private int pointX;
     private int baseLine;
-    private Paint bgPaint;
-    private int currPosition = 0;
+    private Paint letterBgPaint;
+    private int currPosition = -1;
     private int oldPosition; //之前选中的字母标示
     private OnLetterChangeListener mListener;
     private int leftBaseLine;
+    private int letterTextColor;
+    private int selectTextColor;
+    private int hintTextSize;
+    private int hintTextColor;
+    private int hintBgColor;
+    private int paddingTop;
+    private int paddingBottom;
+    private Path leftBgPath;
 
     public LetterBar(Context context) {
         this(context, null);
@@ -50,18 +61,24 @@ public class LetterBar extends View {
         letterNum = letterArr.length;
         //文本大小
         if (attrs != null) {
-
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.LetterBar);
+            letterTextSize = typedArray.getDimensionPixelSize(R.styleable.LetterBar_letter_text_size, 30);
+            letterTextColor = typedArray.getColor(R.styleable.LetterBar_letter_text_color, 0XFFA008);
+            selectTextColor = typedArray.getColor(R.styleable.LetterBar_select_text_color, 0XFFFFFF);
+            hintTextSize = typedArray.getDimensionPixelSize(R.styleable.LetterBar_hint_text_size, 48);
+            hintTextColor = typedArray.getColor(R.styleable.LetterBar_hint_text_color, 0XFFFFFF);
+            hintBgColor = typedArray.getColor(R.styleable.LetterBar_hint_bg_color, 0XD8D8D8);
+            typedArray.recycle();
         }
 
         initPaint();
     }
 
     private void initPaint() {
-
-        bgPaint = new Paint();
+        letterBgPaint = new Paint();
 
         letterPaint = new Paint();
-        letterPaint.setColor(Color.BLUE);
+        letterPaint.setColor(letterTextColor);
         letterPaint.setTextSize(letterTextSize);
         letterPaint.setTextAlign(Paint.Align.CENTER);
 //
@@ -79,26 +96,31 @@ public class LetterBar extends View {
 //        baseLine = itemHeight / 2 - (bottom + top) / 2;
 
         selectPaint = new Paint();
-        selectPaint.setColor(Color.WHITE);
+        selectPaint.setColor(selectTextColor);
         selectPaint.setTextSize(letterTextSize);
         selectPaint.setTextAlign(Paint.Align.CENTER);
 
-
-        leftPaint = new Paint();
-        leftPaint.setColor(Color.GREEN);
-
         leftTextPaint = new Paint();
-        leftTextPaint.setColor(Color.WHITE);
-        leftTextPaint.setTextSize(letterTextSize * 2);
+        leftTextPaint.setColor(hintTextColor);
+        leftTextPaint.setTextSize(hintTextSize);
         leftTextPaint.setTextAlign(Paint.Align.CENTER);
+
+        leftBgPaint = new Paint();
+        leftBgPaint.setColor(hintBgColor);
+
+        leftBgPath = new Path();
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        mHeight = getMeasuredHeight();
-        itemHeight = mHeight / letterArr.length;
-        Log.d("Timmy", "mHeight: " + mHeight + ",itemHeight:" + itemHeight);
+        paddingTop = DensityUtil.dp2px(30);
+        paddingBottom = DensityUtil.dp2px(20);
+
+        int letterHeight = getMeasuredHeight() - paddingTop - paddingBottom;
+
+        itemHeight = letterHeight / letterArr.length;
+        Log.d("Timmy", "mHeight: " + getMeasuredHeight() + ",itemHeight:" + itemHeight);
         pointX = (int) (getMeasuredWidth() - letterTextSize * 1.6);
 
         //基准线高度，为 itemHeight -
@@ -118,17 +140,27 @@ public class LetterBar extends View {
     public boolean dispatchTouchEvent(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
-        currPosition = (int) (y / itemHeight);
+        currPosition = (int) ((y - paddingTop) / itemHeight);
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 //控制触摸范围
-                if (x < getMeasuredWidth() - letterTextSize * 2.5) {
+                if (x < getMeasuredWidth() - letterTextSize * 2.5 || y < paddingTop) {
                     return false;
                 }
+                if (currPosition >= letterNum || currPosition < 0) {
+                    return true;
+                }
+                if (oldPosition != currPosition && mListener != null) {
+                    mListener.onLetterChange(letterArr[currPosition]);
+                }
+                oldPosition = currPosition;
                 //绘制
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
+                if (currPosition >= letterNum || currPosition < 0) {
+                    return true;
+                }
                 if (oldPosition != currPosition && mListener != null) {
                     mListener.onLetterChange(letterArr[currPosition]);
                 }
@@ -136,7 +168,8 @@ public class LetterBar extends View {
                 invalidate();
                 break;
             case MotionEvent.ACTION_UP:
-
+            case MotionEvent.ACTION_CANCEL:
+                currPosition = -1;
                 invalidate();
                 break;
         }
@@ -149,27 +182,29 @@ public class LetterBar extends View {
         //绘制字母和背景
         drawLetter(canvas);
         //绘制选中字母
-        drawSelectLetter(canvas);
+        if (currPosition >= 0) {
+            drawSelectLetter(canvas);
+        }
     }
 
     private void drawLetter(Canvas canvas) {
         //绘制背景
         RectF rectF = new RectF();
-        rectF.left = (int) (pointX - letterTextSize);
-        rectF.right = (int) (pointX + letterTextSize);
-        rectF.top = 0;
-        rectF.bottom = mHeight;
+        rectF.left = pointX - letterTextSize;
+        rectF.right = pointX + letterTextSize;
+        rectF.top = paddingTop;
+        rectF.bottom = getMeasuredHeight() - paddingBottom;
 
-        bgPaint.reset();
-        bgPaint.setColor(Color.RED);
-        bgPaint.setStyle(Paint.Style.FILL);
-        canvas.drawRoundRect(rectF, 30, 30, bgPaint);
+        letterBgPaint.reset();
+        letterBgPaint.setColor(Color.parseColor("#f5f5f5"));
+        letterBgPaint.setStyle(Paint.Style.FILL);
+        canvas.drawRoundRect(rectF, 30, 30, letterBgPaint);
 
-        bgPaint.reset();
-        bgPaint.setColor(Color.parseColor("#2d2d2d"));
-        bgPaint.setStrokeWidth(4);
-        bgPaint.setStyle(Paint.Style.STROKE);
-        canvas.drawRoundRect(rectF, 30, 30, bgPaint);
+        letterBgPaint.reset();
+        letterBgPaint.setColor(Color.parseColor("#2d2d2d"));
+        letterBgPaint.setStrokeWidth(2);
+        letterBgPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRoundRect(rectF, 30, 30, letterBgPaint);
 
 
         int letterY;
@@ -177,7 +212,7 @@ public class LetterBar extends View {
             if (i == currPosition) {
                 continue;
             }
-            letterY = itemHeight * i + baseLine;
+            letterY = itemHeight * i + baseLine + paddingTop;
             Log.d("Timmy", " i: " + i + ",letterY:" + letterY);
             canvas.drawText(letterArr[i], pointX, letterY, letterPaint);
         }
@@ -191,24 +226,40 @@ public class LetterBar extends View {
      * @param canvas
      */
     private void drawSelectLetter(Canvas canvas) {
-        bgPaint.reset();
-        bgPaint.setStyle(Paint.Style.FILL);
+        selectPaint.reset();
+        selectPaint.setStyle(Paint.Style.FILL);
+        selectPaint.setColor(letterTextColor);
         int cx = pointX;
-
-        int cy = (int) (itemHeight * (currPosition + 0.5) + 0.5);
+        int cy = (int) (itemHeight * (currPosition + 0.5) + 0.5 + paddingTop);
         int radius = (int) (letterTextSize * 0.7 + 0.5f);
-        canvas.drawCircle(cx, cy, radius, bgPaint);
+        canvas.drawCircle(cx, cy, radius, selectPaint);
 
-        int letterY = itemHeight * currPosition + baseLine;
-        Log.d("Timmy", " drawSelectLetter i: " + currPosition + ",letterY:" + letterY);
+        selectPaint.reset();
+        selectPaint.setColor(selectTextColor);
+        selectPaint.setTextSize(letterTextSize);
+        selectPaint.setTextAlign(Paint.Align.CENTER);
+        int letterY = itemHeight * currPosition + baseLine + paddingTop;
         canvas.drawText(letterArr[currPosition], pointX, letterY, selectPaint);
 
-        int leftCx = pointX - 3 * letterTextSize;
-        int leftRadius = letterTextSize * 2;
-        canvas.drawCircle(leftCx, cy, leftRadius, leftPaint);
+        //绘制背景
+        int leftCx = (int) (pointX - 1.5 * letterTextSize);//提示图形距离右侧的位置
+        int hintRadius = DensityUtil.dp2px(20);
+        int tempX = DensityUtil.dp2px(26); //切线距离圆心的位置
 
-        int leftLetterY = itemHeight * currPosition + leftBaseLine;
-        canvas.drawText(letterArr[currPosition], leftCx, leftLetterY, leftTextPaint);
+        leftBgPath.reset();
+        leftBgPath.moveTo(leftCx, cy);
+        RectF rectF = new RectF();
+        rectF.left = leftCx - tempX - hintRadius;
+        rectF.right = leftCx - tempX + hintRadius;
+        rectF.top = cy - hintRadius;
+        rectF.bottom = cy + hintRadius;
+        leftBgPath.arcTo(rectF, 60, 240);
+
+        leftBgPath.close();
+        canvas.drawPath(leftBgPath, leftBgPaint);
+
+        int leftLetterY = itemHeight * currPosition + leftBaseLine + paddingTop;
+        canvas.drawText(letterArr[currPosition], leftCx - tempX, leftLetterY, leftTextPaint);
     }
 
     //RecyclerView选中了某个字母

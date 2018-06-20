@@ -17,18 +17,15 @@ import java.util.List;
 
 /**
  * 水平方向可以滑动的tab
- * 布局结构为: HorizontalScrollView -> LinearLayout
+ * 布局结构为: HorizontalScrollView -> LinearLayout -->addView
  */
 public class ScrollableTabView extends HorizontalScrollView {
 
     private LinearLayout llContainer;
     private IAdapter mAdapter;
     private OnTabItemClickListener mTabItemListener;
-    private List<View> cacheViews;//视图缓存类,当某个item点击时,需要修改item的点击效果
-    //    private List<Integer> selectedIndex;//视图缓存类,当某个item点击时,需要修改item的点击效果
     private int mCount;
     private int mCurrSelected = 0;
-    private boolean isSelected = false;
 
     public ScrollableTabView(Context context) {
         this(context, null);
@@ -53,7 +50,6 @@ public class ScrollableTabView extends HorizontalScrollView {
         }
         this.mAdapter = adapter;
         mCount = mAdapter.getCount();
-        cacheViews = new ArrayList<>(mCount);
         buildMenuItems();
     }
 
@@ -67,7 +63,6 @@ public class ScrollableTabView extends HorizontalScrollView {
 
     private void buildMenuItems() {
         llContainer.removeAllViews();
-        cacheViews.clear();
         TagView tagViewContainer;
         for (int i = 0; i < mCount; i++) {
 
@@ -79,13 +74,6 @@ public class ScrollableTabView extends HorizontalScrollView {
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) tagView.getLayoutParams();
                 layoutParams.gravity = Gravity.CENTER_VERTICAL;
                 tagViewContainer.setLayoutParams(layoutParams);
-            } else {
-                MarginLayoutParams lp = new MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(dip2px(getContext(), 5),
-                        dip2px(getContext(), 5),
-                        dip2px(getContext(), 5),
-                        dip2px(getContext(), 5));
-                tagViewContainer.setLayoutParams(lp);
             }
 
             final int position = i;
@@ -95,53 +83,22 @@ public class ScrollableTabView extends HorizontalScrollView {
                     if (mTabItemListener != null) {
                         mTabItemListener.onTabItemClick(v, position);
                     }
-                    isSelected = true;
                     resetItemSelectState(position);
                 }
             });
 
             tagViewContainer.addView(tagView);
             llContainer.addView(tagViewContainer);
-
-//            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) tagView.getLayoutParams();
-//            layoutParams.gravity = Gravity.CENTER_VERTICAL;
-//            mAdapter.setItemView(tagView, i);
-//            final int position = i;
-//            tagView.setOnClickListener(new OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    if (mTabItemListener != null) {
-//                        mTabItemListener.onTabItemClick(v, position);
-//                    }
-//                    resetItemSelectState(position);
-//                }
-//            });
-//            llContainer.addView(tagView, layoutParams);
-//            cacheViews.add(tagView);
         }
     }
 
     private void resetItemSelectState(int position) {
         LogUtils.d("mCurrSelected:" + mCurrSelected + " ,position:" + position);
-        //遍历所有itemView,并设置当前点击的itemView效果
-//        for (int i = 0; i < mCount; i++) {
-//            View itemView = cacheViews.get(position);
-//            TextView textView = itemView.findViewById(R.id.tv_tab);
-//            llContainer.getChildAt(position).setSelected(i == position);
-
         TagView pre = (TagView) llContainer.getChildAt(mCurrSelected);
         TagView child = (TagView) llContainer.getChildAt(position);
-
         pre.setChecked(false);
         child.setChecked(true);
-
         mCurrSelected = position;
-//        }
-    }
-
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
     }
 
     public interface OnTabItemClickListener {

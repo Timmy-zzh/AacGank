@@ -59,16 +59,16 @@ public class CitySelectActivity extends TBaseContentActivity<ActivityCitySelectB
 
         binding.recyclerView.setAdapter(mAdapter);
 
-        binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-               LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-                int firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
-                SortModel item = (SortModel) mAdapter.getItem(firstVisibleItemPosition);
-                binding.letterBar.selectLetter(item.getLetters());
-            }
-        });
+//        binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//               LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+//                int firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
+//                SortModel item = (SortModel) mAdapter.getItem(firstVisibleItemPosition);
+//                binding.letterBar.selectLetter(item.getLetters());
+//            }
+//        });
     }
 
 

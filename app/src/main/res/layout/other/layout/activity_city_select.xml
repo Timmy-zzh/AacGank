@@ -16,6 +16,12 @@
             android:id="@+id/letter_bar"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            app:letter_text_color="@color/c_redeem"
+            app:select_text_color="@color/white"
+            app:letter_text_size="10sp"
+            app:hint_text_color="@color/white"
+            app:hint_bg_color="#d8d8d8"
+            app:hint_text_size="20sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
