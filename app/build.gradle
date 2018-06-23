@@ -40,17 +40,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    compile project(':baselib')
-    compile project(':adapterlib')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation project(':baselib')
+    implementation project(':adapterlib')
     //gson
-    compile 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.google.code.gson:gson:2.8.2'
     //底部导航栏
-    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
     //leakcanary
-    debugCompile "com.squareup.leakcanary:leakcanary-android:${LEAKCANARY_VERSION}"
-    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${LEAKCANARY_VERSION}"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${LEAKCANARY_VERSION}"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${LEAKCANARY_VERSION}"
     //视频播放
-    compile 'cn.jzvd:jiaozivideoplayer:6.2.10'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.10'
 
 }
