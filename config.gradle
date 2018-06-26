@@ -1,0 +1,49 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: '27.0.3',
+            minSdkVersion    : 16,
+            targetSdkVersion : 27,
+            versionCode      : 2,
+            versionName      : "2.0.0"
+    ]
+
+//            keyAlias          : "zaful",
+//            keyPassword       : "zaful2016",
+//            storeFile         : "../documents/keystore/zaful.jks",
+//            storePassword     : "zaful2016",
+//            debugKeyAlias     : "globale_clothes",
+//            debugKeyPassword  : "globale_clothes",
+//            debugStoreFile    : "../documents/keystore/globale_clothes.jks",
+//            debugStorePassword: "globale_clothes",
+//            apiVersion        : "api_android",//服务器api版本
+
+    configs = [
+            applicationId: "com.timmy.aacgank",
+            appName      : "AacGank",
+    ]
+
+    def dependVersion = [
+            support          : "27.1.1",
+            play_services    : "15.0.0",
+            google_api_client: "1.22.0",
+            butterknife      : "8.8.1",
+            retrofit         : "2.4.0",
+            firebase         : "15.0.2",
+    ]
+
+    dependencies = [
+            //base
+            "appcompatV7"       : "com.android.support:appcompat-v7:${dependVersion.support}",
+            "supportAnnotations": "com.android.support:support-annotations:${dependVersion.support}",
+            "supportV4"         : "com.android.support:support-v4:${dependVersion.support}",
+            "gridlayoutV7"      : "com.android.support:gridlayout-v7:${dependVersion.support}",
+            "recyclerviewV7"    : "com.android.support:recyclerview-v7:${dependVersion.support}",
+            "cardviewV7"        : "com.android.support:cardview-v7:${dependVersion.support}",
+            "design"            : "com.android.support:design:${dependVersion.support}",
+
+
+            "multidex"          : "com.android.support:multidex:1.0.1",
+    ]
+
+}

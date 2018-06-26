@@ -4,12 +4,6 @@ import android.content.Context;
 
 /**
  * 密度、像素单位转换工具类
- *
- * @author Copyright(C)2011-2016 Shyky Studio.
- * @version 1.2
- * @email sj1510706@163.com
- * @date 2016/5/30
- * @since 1.0
  */
 public final class DensityUtil {
     /**
