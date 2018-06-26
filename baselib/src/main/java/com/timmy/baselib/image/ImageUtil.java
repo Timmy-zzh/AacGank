@@ -14,8 +14,6 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 
-import java.util.concurrent.ExecutionException;
-
 /**
  * 图片Glide
  */
@@ -30,7 +28,7 @@ public class ImageUtil {
         RequestManager glideRequest = Glide.with(mContext);
         glideRequest
                 .load(uri)
-                .placeholder(placeholder)
+//                .placeholder(placeholder)
                 .transform(new GlideCircleTransform(mContext))
                 .error(placeholder)
                 .into(imageView);

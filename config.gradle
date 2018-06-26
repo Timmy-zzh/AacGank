@@ -24,26 +24,43 @@ ext {
     ]
 
     def dependVersion = [
-            support          : "27.1.1",
-            play_services    : "15.0.0",
-            google_api_client: "1.22.0",
-            butterknife      : "8.8.1",
-            retrofit         : "2.4.0",
-            firebase         : "15.0.2",
+            support    : "27.1.1",
+            aac_version: "1.1.1",
+            retrofit   : "2.4.0",
+            okhttp     : "3.10.0",
     ]
+
 
     dependencies = [
             //base
-            "appcompatV7"       : "com.android.support:appcompat-v7:${dependVersion.support}",
-            "supportAnnotations": "com.android.support:support-annotations:${dependVersion.support}",
-            "supportV4"         : "com.android.support:support-v4:${dependVersion.support}",
-            "gridlayoutV7"      : "com.android.support:gridlayout-v7:${dependVersion.support}",
-            "recyclerviewV7"    : "com.android.support:recyclerview-v7:${dependVersion.support}",
-            "cardviewV7"        : "com.android.support:cardview-v7:${dependVersion.support}",
-            "design"            : "com.android.support:design:${dependVersion.support}",
+            "appcompatV7"         : "com.android.support:appcompat-v7:${dependVersion.support}",
+            "supportAnnotations"  : "com.android.support:support-annotations:${dependVersion.support}",
+            "supportV4"           : "com.android.support:support-v4:${dependVersion.support}",
+            "gridlayoutV7"        : "com.android.support:gridlayout-v7:${dependVersion.support}",
+            "recyclerviewV7"      : "com.android.support:recyclerview-v7:${dependVersion.support}",
+            "cardviewV7"          : "com.android.support:cardview-v7:${dependVersion.support}",
+            "design"              : "com.android.support:design:${dependVersion.support}",
+            "constraintLayout"    : "com.android.support.constraint:constraint-layout:1.1.2",
+            "multidex"            : "com.android.support:multidex:1.0.3",
 
+            //AAC
+            "lifecycle_runtime"   : "android.arch.lifecycle:runtime:${dependVersion.aac_version}",
+            "lifecycle_compiler"  : "android.arch.lifecycle:compiler:${dependVersion.aac_version}",
+            "lifecycle_extensions": "android.arch.lifecycle:extensions:${dependVersion.aac_version}",
+            "room_runtime"        : "android.arch.persistence.room:runtime:${dependVersion.aac_version}",
+            "room_compiler"       : "android.arch.persistence.room:compiler:${dependVersion.aac_version}",
+            "room_rxjava2"        : "android.arch.persistence.room:rxjava2:${dependVersion.aac_version}",
+            "room_testing"        : "android.arch.persistence.room:testing:${dependVersion.aac_version}",
 
-            "multidex"          : "com.android.support:multidex:1.0.1",
+            //Retrofit+okhttp
+            "rxjava"              : "io.reactivex.rxjava2:rxjava:2.1.8",
+            "rxandroid"           : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            "okhttp"              : "com.squareup.okhttp3:okhttp:${dependVersion.okhttp}",
+            "okhttp_interceptor"  : "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp}",
+
+            "retrofit"            : "com.squareup.retrofit2:retrofit:${dependVersion.retrofit}",
+            "converter_gson"      : "com.squareup.retrofit2:converter-gson:${dependVersion.retrofit}",
+            "adapter_rxjava2"     : "com.squareup.retrofit2:adapter-rxjava2:${dependVersion.retrofit}",
+
     ]
-
 }
