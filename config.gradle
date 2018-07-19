@@ -30,9 +30,8 @@ ext {
             okhttp     : "3.10.0",
     ]
 
-
     dependencies = [
-            //base
+            //support
             "appcompatV7"         : "com.android.support:appcompat-v7:${dependVersion.support}",
             "supportAnnotations"  : "com.android.support:support-annotations:${dependVersion.support}",
             "supportV4"           : "com.android.support:support-v4:${dependVersion.support}",

@@ -20,7 +20,7 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
 
     private VM viewModel;
     private int page = 1;
-    private BaseDataBindingAdapter adapter;
+    private BaseDataBindingAdapter mAdapter;
 
     protected abstract VM createViewModel();
 
@@ -29,7 +29,7 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
     protected abstract Flowable<PageListResult<E>> getPageList(int page);
 
     public BaseDataBindingAdapter getAdapter() {
-        return adapter;
+        return mAdapter;
     }
 
     public VM getViewModel() {
@@ -44,7 +44,7 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
     @Override
     protected void initBase() {
         super.initBase();
-        adapter = createAdapter();
+        mAdapter = createAdapter();
         viewModel = createViewModel();
         initView();
         subscribeUI(false);
@@ -58,15 +58,15 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
                 binding.swipeRefreshLayout.setRefreshing(true);
                 //重新获取数据
                 page = 1;
-                adapter.setEnableLoadMore(false);//这里的作用是防止下拉刷新的时候还可以上拉加载
+                mAdapter.setEnableLoadMore(false);//这里的作用是防止下拉刷新的时候还可以上拉加载
                 subscribeUI(true);
             }
         });
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.setAdapter(mAdapter);
         //加载更多
-        adapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
                 page++;
@@ -106,7 +106,7 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
                         }
                         if (page > 1) {
                             page--;
-                            adapter.loadMoreFail();
+                            mAdapter.loadMoreFail();
                         } else {
                             showErrorLayout();
                         }
@@ -116,20 +116,20 @@ public abstract class TBaseListBindingFragment<E, VM extends BaseListViewModel> 
 
     private void handleData(PageList<E> pageList) {
         if (page <= 1) {
-            adapter.setNewData(pageList.getData());
+            mAdapter.setNewData(pageList.getData());
             if (pageList.isHasNext()) {
-                adapter.setEnableLoadMore(true);
+                mAdapter.setEnableLoadMore(true);
             } else {
-                adapter.setEnableLoadMore(false);
-                adapter.loadMoreEnd(false);
+                mAdapter.setEnableLoadMore(false);
+                mAdapter.loadMoreEnd(false);
             }
         } else {
-            adapter.addData(pageList.getData());
-            adapter.loadMoreComplete();//加载更多完成
+            mAdapter.addData(pageList.getData());
+            mAdapter.loadMoreComplete();//加载更多完成
             if (pageList.isHasNext()) {//是否有下一页
-                adapter.setEnableLoadMore(pageList.isHasNext());
+                mAdapter.setEnableLoadMore(pageList.isHasNext());
             } else {
-                adapter.loadMoreEnd();//没有更多数据了
+                mAdapter.loadMoreEnd();//没有更多数据了
             }
         }
     }

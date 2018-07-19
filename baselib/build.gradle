@@ -57,7 +57,7 @@ dependencies {
     api rootProject.ext.dependencies.room_runtime
     annotationProcessor rootProject.ext.dependencies.room_compiler
     api rootProject.ext.dependencies.room_rxjava2
-    testApi rootProject.ext.dependencies.room_testing
+    testImplementation rootProject.ext.dependencies.room_testing
 
     //Retrofit
     api rootProject.ext.dependencies.rxjava

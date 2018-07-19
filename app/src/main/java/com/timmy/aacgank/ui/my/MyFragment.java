@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.home;
+package com.timmy.aacgank.ui.my;
 
 import android.content.Intent;
 import android.view.View;

@@ -29,6 +29,9 @@ android {
                     'src/main/res/layout',
                     'src/main/res/layout/home',
                     'src/main/res/layout/gank',
+                    'src/main/res/layout/movie',
+                    'src/main/res/layout/book',
+                    'src/main/res/layout/music',
                     'src/main/res/layout/other',
             ]
         }
@@ -52,5 +55,7 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //视频播放
     implementation 'cn.jzvd:jiaozivideoplayer:6.2.10'
+
+    implementation 'com.timmy.tdialog:tdialog:2.0.0'
 
 }

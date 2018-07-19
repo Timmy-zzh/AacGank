@@ -1,4 +1,4 @@
-package com.timmy.aacgank.http.service;
+package com.timmy.aacgank.ui.gank.aac;
 
 import com.timmy.aacgank.bean.base.BaseGankResult;
 import com.timmy.aacgank.bean.gank.DailyData;

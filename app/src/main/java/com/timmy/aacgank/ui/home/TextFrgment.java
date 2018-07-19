@@ -27,7 +27,6 @@ public class TextFrgment extends TBaseBindingFragment<FragmentTextBinding> {
         return fragment;
     }
 
-
     @Override
     protected int getLayoutRes() {
         return  R.layout.fragment_text;

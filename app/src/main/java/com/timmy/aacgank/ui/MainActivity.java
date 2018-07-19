@@ -11,7 +11,8 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityMainBinding;
 import com.timmy.aacgank.ui.home.HomeFragment;
-import com.timmy.aacgank.ui.home.MyFragment;
+import com.timmy.aacgank.ui.movie.MovieFragment;
+import com.timmy.aacgank.ui.my.MyFragment;
 import com.timmy.aacgank.ui.home.TextFrgment;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
@@ -39,9 +40,9 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
 //        if (mFragmensts[1] == null && fragment instanceof ShoppingFragment) {
 //            mFragmensts[1] = fragment;
 //        }
-//        if (mFragmensts[2] == null && fragment instanceof MyFragment) {
-//            mFragmensts[2] = fragment;
-//        }
+        if (mFragmensts[2] == null && fragment instanceof MovieFragment) {
+            mFragmensts[2] = fragment;
+        }
     }
 
     @Override
@@ -65,8 +66,8 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Gank").setActiveColorResource(R.color.orange))//简书首页
                 .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp , "Music").setActiveColorResource(R.color.teal))//网易云音乐
                 .addItem(new BottomNavigationItem(R.drawable.ic_favorite_white_24dp, "Movie").setActiveColorResource(R.color.blue))//腾讯视频-视屏播放
-                .addItem(new BottomNavigationItem(R.drawable.ic_book_white_24dp, "Book").setActiveColorResource(R.color.blue))//书籍 GitHub
-                .addItem(new BottomNavigationItem(R.drawable.ic_github_circle_white_24dp, "My").setActiveColorResource(R.color.blue))//个人中心
+                .addItem(new BottomNavigationItem(R.drawable.ic_book_white_24dp, "Book").setActiveColorResource(R.color.pink))//书籍 GitHub
+                .addItem(new BottomNavigationItem(R.drawable.ic_github_circle_white_24dp, "My").setActiveColorResource(R.color.c_wallet_negative))//个人中心
                 .setFirstSelectedPosition(lastSelectedPosition)
                 .initialise();
 
@@ -106,18 +107,21 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 break;
             case 2:
                 if (mFragmensts[position] == null) {
-                    mFragmensts[position] = TextFrgment.newInstance();
+                    mFragmensts[position] = MovieFragment.newInstance();
                 }
+                StatusBarUtil.setColor(this,getResources().getColor(R.color.blue));
                 break;
             case 3:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = TextFrgment.newInstance();
                 }
+                StatusBarUtil.setColor(this,getResources().getColor(R.color.pink));
                 break;
             case 4:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = MyFragment.newInstance();
                 }
+                StatusBarUtil.setColor(this,getResources().getColor(R.color.c_wallet_negative));
                 break;
         }
         FragmentTransaction trx = fragmentManager.beginTransaction();
