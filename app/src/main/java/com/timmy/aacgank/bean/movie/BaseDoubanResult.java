@@ -13,4 +13,8 @@ public class BaseDoubanResult<T> {
     public String title;
     public List<T> subjects;
 
+    public boolean isHasNext() {
+        return (start + 1) * count < total;
+    }
+
 }

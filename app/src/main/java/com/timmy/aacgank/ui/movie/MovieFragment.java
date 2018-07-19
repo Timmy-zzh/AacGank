@@ -4,8 +4,10 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 
 import com.timmy.aacgank.R;
+import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.bean.movie.BaseDoubanResult;
 import com.timmy.aacgank.bean.movie.DoubanMovie;
 import com.timmy.aacgank.ui.movie.aac.MovieViewModel;
@@ -18,6 +20,8 @@ import com.timmy.baselib.databinding.ActivityRefreshListBinding;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.http.rxjava2.BConsumer;
 
+import java.util.List;
+
 /**
  * 豆瓣电影
  */
@@ -25,16 +29,18 @@ public class MovieFragment extends TBaseBindingFragment<ActivityRefreshListBindi
 
     private MovieAdapter mAdapter;
     private MovieViewModel viewModel;
+    private int page = 1;
+    private int start; //分页开始
 
-//    public static MovieFragment newInstance() {
-//        MovieFragment fragment = new MovieFragment();
-//        return fragment;
-//    }
-
-    public static MovieLiveDataFragment newInstance() {
-        MovieLiveDataFragment fragment = new MovieLiveDataFragment();
+    public static MovieFragment newInstance() {
+        MovieFragment fragment = new MovieFragment();
         return fragment;
     }
+
+//    public static MovieLiveDataFragment newInstance() {
+//        MovieLiveDataFragment fragment = new MovieLiveDataFragment();
+//        return fragment;
+//    }
 
     @Override
     protected int getLayoutRes() {
@@ -61,15 +67,30 @@ public class MovieFragment extends TBaseBindingFragment<ActivityRefreshListBindi
                 binding.swipeRefreshLayout.setRefreshing(true);
                 //重新获取数据
                 mAdapter.setEnableLoadMore(false);//这里的作用是防止下拉刷新的时候还可以上拉加载
+                page = 1;
                 subscribeUI(true);
             }
         });
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         binding.recyclerView.setAdapter(mAdapter);
+        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                page++;
+                subscribeUI(false);
+            }
+        }, binding.recyclerView);
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                DoubanMovie doubanMovie = mAdapter.getData().get(position);
+
+            }
+        });
     }
 
     private void subscribeUI(final boolean refresh) {
-        bindSubscribe(viewModel.getHotMovies()
+        bindSubscribe(viewModel.getHotMovies(page)
                 , new AConsumer<BaseDoubanResult<DoubanMovie>>() {
                     @Override
                     public void onGetResult(BaseDoubanResult<DoubanMovie> result) {
@@ -78,7 +99,7 @@ public class MovieFragment extends TBaseBindingFragment<ActivityRefreshListBindi
                         }
                         if (result != null && result.subjects != null && !result.subjects.isEmpty()) {
                             showContentLayout();
-                            mAdapter.setNewData(result.subjects);
+                            handleData(result);
                         } else {
                             showEmptyLayout();
                         }
@@ -94,5 +115,26 @@ public class MovieFragment extends TBaseBindingFragment<ActivityRefreshListBindi
                         showErrorLayout();
                     }
                 });
+    }
+
+    private void handleData(BaseDoubanResult<DoubanMovie> result) {
+        List<DoubanMovie> subjects = result.subjects;
+        if (page <= 1) {
+            mAdapter.setNewData(subjects);
+            if (result.isHasNext()) {
+                mAdapter.setEnableLoadMore(true);
+            } else {
+                mAdapter.setEnableLoadMore(false);
+                mAdapter.loadMoreEnd(false);
+            }
+        } else {
+            mAdapter.addData(subjects);
+            mAdapter.loadMoreComplete();//加载更多完成
+            if (result.isHasNext()) {//是否有下一页
+                mAdapter.setEnableLoadMore(result.isHasNext());
+            } else {
+                mAdapter.loadMoreEnd();//没有更多数据了
+            }
+        }
     }
 }

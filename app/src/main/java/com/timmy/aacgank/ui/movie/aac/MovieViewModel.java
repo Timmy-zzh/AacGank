@@ -11,12 +11,15 @@ import io.reactivex.Flowable;
 
 public class MovieViewModel extends ViewModel {
 
-    public Flowable<BaseDoubanResult<DoubanMovie>> getHotMovies() {
-        return HttpHelper.instance().getDoubanService().getHotMovies();
+    /**
+     * 第一页从0开始  :0~19
+     * 第二页从20开始: 20~39
+     *   2    40      40~60
+     * @param page
+     * @return
+     */
+    public Flowable<BaseDoubanResult<DoubanMovie>> getHotMovies(int page) {
+        return HttpHelper.instance().getDoubanService().getHotMovies((page-1)*20);
     }
-
-
-
-
 
 }
