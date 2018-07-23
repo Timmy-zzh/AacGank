@@ -2,21 +2,25 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--<data>-->
-        <!--<variable-->
-            <!--name="gank"-->
-            <!--type="Douban"/>-->
-    <!--</data>-->
+    <data>
+        <variable
+            name="movie"
+            type="com.timmy.aacgank.bean.movie.DoubanMovie"/>
+    </data>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        app:cardElevation="@dimen/_3sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp">
 
         <ImageView
             android:id="@+id/iv"
+            android:scaleType="centerCrop"
+            imageUrl="@{movie.images.medium}"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="@dimen/_240sdp" />
 
     </android.support.v7.widget.CardView>
 </layout>

@@ -1,5 +1,6 @@
 package com.timmy.aacgank.ui.cityselect;
 
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -38,6 +39,8 @@ public class CitySelectActivity extends TBaseContentActivity<ActivityCitySelectB
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_select);
+
+        LogUtils.d("Timmy", this.getClass().getSimpleName());
 
         binding.letterBar.setOnLetterChangeListener(new LetterBar.OnLetterChangeListener() {
             @Override
@@ -92,6 +95,7 @@ public class CitySelectActivity extends TBaseContentActivity<ActivityCitySelectB
     }
 
     String url = "https://www.baidu.com";
+
     //同步请求,需在子线程进行处理
     private void initDataSync() {
         //1.创建Client客户端实例
@@ -161,4 +165,13 @@ public class CitySelectActivity extends TBaseContentActivity<ActivityCitySelectB
 
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+//            setContentView(R.layout.portrait_layout);
+        } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            setContentView(R.layout.landscape_layout);
+        }
+    }
 }

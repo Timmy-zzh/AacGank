@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':adapterlib'
+include ':app', ':baselib', ':adapterlib',':ssp-android', ':sdp-android'

@@ -40,11 +40,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':baselib')
     implementation project(':adapterlib')
+    implementation project(':ssp-android')
+    implementation project(':sdp-android')
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.2'

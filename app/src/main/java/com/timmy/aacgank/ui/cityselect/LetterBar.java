@@ -125,7 +125,7 @@ public class LetterBar extends View {
         int letterHeight = getMeasuredHeight() - paddingTop - paddingBottom;
 
         itemHeight = letterHeight / letterArr.length;
-        Log.d("Timmy", "mHeight: " + getMeasuredHeight() + ",itemHeight:" + itemHeight);
+//        Log.d("Timmy", "mHeight: " + getMeasuredHeight() + ",itemHeight:" + itemHeight);
         pointX = (int) (getMeasuredWidth() - letterTextSize * 1.6);
 
         //基准线高度，为 itemHeight -
@@ -218,7 +218,7 @@ public class LetterBar extends View {
                 continue;
             }
             letterY = itemHeight * i + baseLine + paddingTop;
-            Log.d("Timmy", " i: " + i + ",letterY:" + letterY);
+//            Log.d("Timmy", " i: " + i + ",letterY:" + letterY);
             canvas.drawText(letterArr[i], pointX, letterY, letterPaint);
         }
     }

@@ -36,7 +36,7 @@ public abstract class TBaseBindingFragment<DB extends ViewDataBinding> extends F
     protected final CompositeDisposable mDisposable = new CompositeDisposable();
     protected DB binding;
     private FragmentBaseBinding baseBinding;
-    private TBaseBindingActivity activity;
+    protected TBaseBindingActivity activity;
     private StatusLayoutManager statusLayoutManager;
 
     @Override

@@ -8,15 +8,15 @@ ext {
             versionName      : "2.0.0"
     ]
 
-//            keyAlias          : "zaful",
-//            keyPassword       : "zaful2016",
-//            storeFile         : "../documents/keystore/zaful.jks",
-//            storePassword     : "zaful2016",
-//            debugKeyAlias     : "globale_clothes",
-//            debugKeyPassword  : "globale_clothes",
-//            debugStoreFile    : "../documents/keystore/globale_clothes.jks",
-//            debugStorePassword: "globale_clothes",
-//            apiVersion        : "api_android",//服务器api版本
+//            keyAlias          : "timmy",
+//            keyPassword       : "1391223",
+//            storeFile         : "../documents/keystore/timmy.jks",
+//            storePassword     : "1391223",
+//            debugKeyAlias     : "timmy",
+//            debugKeyPassword  : "timmy",
+//            debugStoreFile    : "../timmy/keystore/timmy.jks",
+//            debugStorePassword: "timmy",
+//            apiVersion        : "timmy",
 
     configs = [
             applicationId: "com.timmy.aacgank",
@@ -60,6 +60,8 @@ ext {
             "retrofit"            : "com.squareup.retrofit2:retrofit:${dependVersion.retrofit}",
             "converter_gson"      : "com.squareup.retrofit2:converter-gson:${dependVersion.retrofit}",
             "adapter_rxjava2"     : "com.squareup.retrofit2:adapter-rxjava2:${dependVersion.retrofit}",
+
+
 
     ]
 }

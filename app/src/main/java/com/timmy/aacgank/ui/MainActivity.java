@@ -12,6 +12,7 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityMainBinding;
 import com.timmy.aacgank.ui.home.HomeFragment;
 import com.timmy.aacgank.ui.movie.MovieFragment;
+import com.timmy.aacgank.ui.movie.MovieLiveDataFragment;
 import com.timmy.aacgank.ui.my.MyFragment;
 import com.timmy.aacgank.ui.home.TextFrgment;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
@@ -96,6 +97,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
             case 0:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = HomeFragment.newInstance();
+//                    mFragmensts[position] = MovieLiveDataFragment.newInstance();
                 }
                 StatusBarUtil.setColor(this,getResources().getColor(R.color.orange));
                 break;

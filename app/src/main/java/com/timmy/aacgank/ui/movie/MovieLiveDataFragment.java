@@ -27,6 +27,11 @@ public class MovieLiveDataFragment extends TBaseBindingFragment<ActivityRefreshL
     private MovieAdapter mAdapter;
     private DoubanViewModel viewModel;
 
+    public static MovieLiveDataFragment newInstance() {
+        MovieLiveDataFragment fragment = new MovieLiveDataFragment();
+        return fragment;
+    }
+
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_refresh_list;

@@ -21,9 +21,8 @@ public class MovieAdapter extends BaseDataBindingAdapter<DoubanMovie, ItemMovieB
 
     @Override
     protected void convert(BaseViewHolder helper, ItemMovieBinding binding, DoubanMovie item) {
-//        binding.setGank(item);
-//        helper.setText(R.id.tv_time, DateUtil.getStringDate(item.getPublishedAt()));
-        ImageView imageView = helper.getView(R.id.iv);
-        ImageUtil.loadImage(helper.getContext(), item.images.medium, imageView);
+        binding.setMovie(item);
+//        ImageView imageView = helper.getView(R.id.iv);
+//        ImageUtil.loadImage(helper.getContext(), item.images.medium, imageView);
     }
 }
