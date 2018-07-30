@@ -1,7 +1,10 @@
 package com.timmy.aacgank.ui.gank.android;
 
 import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +43,7 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
 
     @Override
     public TViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LogUtils.d(TAG + " > onCreateViewHolder > viewType:" + viewType);
+        Log.d(TAG , " > onCreateViewHolder > viewType:" + viewType);
         return new TViewHolder(LayoutInflater.from(parent.getContext()).inflate(getItemView(viewType), parent, false));
     }
 
@@ -60,8 +63,35 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
     }
 
     @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+//        Log.d(TAG , "Timmy111");
+        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager instanceof GridLayoutManager) {
+            final GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
+            gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+//                    Log.d(TAG ,  "position:" + position +
+//                            ",getItemViewType(position):" + getItemViewType(position) +
+//                            ",gridLayoutManager.getSpanCount():" + gridLayoutManager.getSpanCount());
+                    switch (getItemViewType(position)) {
+                        case AndroidDetailAdapter.TYPE_IMAGE:
+                        case AndroidDetailAdapter.TYPE_MAIN:
+                        case AndroidDetailAdapter.TYPE_REVIEW:
+                        case AndroidDetailAdapter.TYPE_WEBVIEW:
+                            return gridLayoutManager.getSpanCount();
+                        default:
+                            return 1;
+                    }
+                }
+            });
+        }
+    }
+
+            @Override
     public void onBindViewHolder(final TViewHolder holder, int position) {
-        LogUtils.d(TAG + " > onBindViewHolder > position:" + position);
+//        LogUtils.d(TAG + " > onBindViewHolder > position:" + position);
         switch (position) {
             case TYPE_IMAGE:
 
@@ -135,13 +165,13 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
 
     @Override
     public int getItemViewType(int position) {
-        LogUtils.d(TAG + " > getItemViewType > position:" + position);
+//        LogUtils.d(TAG + " > getItemViewType > position:" + position);
         return typeList.get(position).getType();
     }
 
     @Override
     public int getItemCount() {
-        LogUtils.d(TAG + " > getItemCount >");
+//        LogUtils.d(TAG + " > getItemCount >");
         return typeList.size();
     }
 

@@ -1,0 +1,121 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+class SDPFactory extends DefaultTask {
+
+    double baseW = 720
+    def supportStr = [120, 160, 213, 240, 300, 320, 340, 360, 380, 400, 480, 520, 560, 600, 720, 1080, 1280] as int[]
+//    def supportStr = [360] as int[]
+
+//    float sale = 2;
+
+    //正数
+    String WTemplate = "<dimen name=\"_{0}sdp\">{1}dp</dimen>"
+    //负数
+    String _WTemplate = "<dimen name=\"_minus{0}sdp\">{1}dp</dimen>"
+
+    @TaskAction
+    def generateXmlFile() {
+        for (int val : supportStr) {
+            generatePositiveFile(val)
+        }
+
+        for (int val : supportStr) {
+            generateNegativeFile(val)
+        }
+    }
+
+    //生成dp(正数)
+    def generatePositiveFile(float w) {
+        //创建目录
+        String resFolder = project.getProjectDir().getPath() + "/src/main/res/"
+        String folder = resFolder + "values-sw" + (int) w + "dp"
+        File fileDir = new File(folder)
+        if (!fileDir.exists()) {
+            fileDir.mkdir()
+        }
+
+        //创建文件
+        String fileName = folder + "/positive_sdps.xml"
+        File file = new File(fileName)
+        file.createNewFile()
+
+        PrintWriter printWriter = new PrintWriter(fileName)
+        printWriter.println("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+        printWriter.println("<resources>")
+
+        float cellw = w * 2 / baseW// 2表示屏幕密度xhdpi 120*2/1440
+        int i = 0
+        for (; i < baseW; i++) {
+            String content = WTemplate.replace("{0}", i + "").replace("{1}", change(cellw * i) + "")
+            printWriter.println(content)
+        }
+
+        printWriter.println(WTemplate.replace("{0}", baseW + "").replace("{1}", w + ""))
+        printWriter.println("</resources>")
+        printWriter.close()
+    }
+
+    //生成dp(负数)
+    def generateNegativeFile(float w) {
+        //创建目录
+        String resFolder = project.getProjectDir().getPath() + "/src/main/res/"
+        String folder = resFolder + "values-sw" + (int) w + "dp"
+        File fileDir = new File(folder)
+        if (!fileDir.exists()) {
+            fileDir.mkdir()
+        }
+
+        //创建文件
+        String fileName = folder + "/negative_sdps.xml"
+        File file = new File(fileName)
+        file.createNewFile()
+
+        PrintWriter printWriter = new PrintWriter(fileName)
+        printWriter.println("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+        printWriter.println("<resources>")
+
+        float cellw = w * 2 / baseW// 2表示屏幕密度xhdpi 120*2/1440
+        int i = -60
+        for (; i < baseW; i++) {
+            if (i < 0) {
+                String content = _WTemplate.replace("{0}", Math.abs(i) + "").replace("{1}", change(cellw * i) + "")
+                printWriter.println(content)
+            }
+        }
+
+        printWriter.println("</resources>")
+        printWriter.close()
+    }
+
+    static def change(a) {
+        int temp = (int) (a * 100)
+        return temp / 100f
+    }
+}
+
+//执行命令:gradlew i createSDP 即可生成
+task createSDP(type: SDPFactory) {
+}
+
+createSDP {
+}
+

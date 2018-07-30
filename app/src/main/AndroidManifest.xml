@@ -57,7 +57,8 @@
         <activity android:name=".ui.gank.android.AndroidDetailActivity" />
         <activity android:name=".ui.gank.IOSDetailActivity" />
         <activity android:name=".ui.cityselect.CitySelectActivity" />
-        <activity android:name=".ui.movie.MovieDetailActivity"></activity>
+        <activity android:name=".ui.movie.MovieDetailActivity" />
+        <activity android:name=".ui.movie.layoutManager.MyLayoutManagerActivity"></activity>
     </application>
 
 </manifest>

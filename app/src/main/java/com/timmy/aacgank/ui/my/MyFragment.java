@@ -18,7 +18,9 @@ import com.timmy.baselib.base.fragment.TBaseBindingFragment;
 
 import io.reactivex.functions.Consumer;
 
-
+/**
+ * 高仿京东个人中心
+ */
 public class MyFragment extends TBaseBindingFragment<FragmentMyBinding> {
 
     public static MyFragment newInstance() {
@@ -38,8 +40,8 @@ public class MyFragment extends TBaseBindingFragment<FragmentMyBinding> {
     @Override
     protected void initBase() {
         showContentLayout();
-        final RxPermissions rxPermissions = new RxPermissions(this);
-
+        binding.setFragment(this);
+//        final RxPermissions rxPermissions = new RxPermissions(this);
 //        rxPermissions.request(Manifest.permission.ACCESS_FINE_LOCATION)
 //                .subscribe(new Consumer<Boolean>() {
 //                    @Override
@@ -51,27 +53,32 @@ public class MyFragment extends TBaseBindingFragment<FragmentMyBinding> {
 //                });
 
 
-        binding.tvSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), CitySelectActivity.class));
-            }
-        });
+//        binding.tvSelect.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getContext(), CitySelectActivity.class));
+//            }
+//        });
+//
+//        getLifecycle().getCurrentState();
 
-        getLifecycle().getCurrentState();
+    }
+
+    public void onViewClicked(View view){
+        startActivity(new Intent(getContext(), CitySelectActivity.class));
     }
 
     private void requestLocation() {
-        binding.tvLocation.setText("check");
-//        //请求定位权限
-        LiveData<Location> locationLiveData = LocationLiveData.getInstance(getActivity().getApplication());
-        locationLiveData.observe(this, new Observer<Location>() {
-            @Override
-            public void onChanged(@Nullable Location location) {
-                if (location != null)
-                    binding.tvLocation.setText("Latitude:" + location.getLatitude() + ",Longitude" + location.getLongitude());
-            }
-        });
+//        binding.tvLocation.setText("check");
+////        //请求定位权限
+//        LiveData<Location> locationLiveData = LocationLiveData.getInstance(getActivity().getApplication());
+//        locationLiveData.observe(this, new Observer<Location>() {
+//            @Override
+//            public void onChanged(@Nullable Location location) {
+//                if (location != null)
+//                    binding.tvLocation.setText("Latitude:" + location.getLatitude() + ",Longitude" + location.getLongitude());
+//            }
+//        });
 
 //        new BoundLocationListener(this, new LocationListener() {
 //            @Override

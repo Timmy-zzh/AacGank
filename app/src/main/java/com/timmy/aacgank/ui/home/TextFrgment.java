@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentTextBinding;
+import com.timmy.aacgank.ui.movie.layoutManager.MyLayoutManagerActivity;
 import com.timmy.aacgank.ui.other.HandlerActivity;
 import com.timmy.baselib.base.fragment.TBaseBindingFragment;
 import com.timmy.baselib.utils.LogUtils;
@@ -95,6 +96,7 @@ public class TextFrgment extends TBaseBindingFragment<FragmentTextBinding> {
     }
 
     public void handlerUse(View view) {
-        startActivity(new Intent(getContext(), HandlerActivity.class));
+        startActivity(new Intent(getContext(), MyLayoutManagerActivity.class));
+//        startActivity(new Intent(getContext(), HandlerActivity.class));
     }
 }

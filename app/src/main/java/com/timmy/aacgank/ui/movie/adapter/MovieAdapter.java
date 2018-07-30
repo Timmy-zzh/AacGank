@@ -9,10 +9,6 @@ import com.timmy.adapterlib.BaseDataBindingAdapter;
 import com.timmy.adapterlib.BaseViewHolder;
 import com.timmy.baselib.image.ImageUtil;
 
-/**
- * {"福利", "Android", "iOS", "休息视频", "拓展资源", "前端", "all"};
- * 根据不同类型展示不同界面
- */
 public class MovieAdapter extends BaseDataBindingAdapter<DoubanMovie, ItemMovieBinding> {
 
     public MovieAdapter() {

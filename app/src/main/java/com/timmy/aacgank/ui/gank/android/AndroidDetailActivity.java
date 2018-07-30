@@ -67,31 +67,30 @@ public class AndroidDetailActivity extends TBaseContentActivity<ActivityAndroidD
 //        StaggeredGridLayoutManager staggeredGridLayoutManager;
 
         final GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                LogUtils.d("AndroidDetailActivity > getSpanSize > position:" + position);
-                switch (mAdapter.getItemViewType(position)) {
-                    case AndroidDetailAdapter.TYPE_IMAGE:
-                    case AndroidDetailAdapter.TYPE_MAIN:
-                    case AndroidDetailAdapter.TYPE_REVIEW:
-                    case AndroidDetailAdapter.TYPE_WEBVIEW:
-
-                        LogUtils.d("AndroidDetailActivity > getSpanSize >position:" + position +
-                                " > getSpanCount:" + layoutManager.getSpanCount());
-                        return layoutManager.getSpanCount();
-                    default:
-                        return 1;
-                }
-            }
-        });
+//        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(int position) {
+//                LogUtils.d("AndroidDetailActivity > getSpanSize > position:" + position);
+//                switch (mAdapter.getItemViewType(position)) {
+//                    case AndroidDetailAdapter.TYPE_IMAGE:
+//                    case AndroidDetailAdapter.TYPE_MAIN:
+//                    case AndroidDetailAdapter.TYPE_REVIEW:
+//                    case AndroidDetailAdapter.TYPE_WEBVIEW:
+//
+//                        LogUtils.d("AndroidDetailActivity > getSpanSize >position:" + position +
+//                                " > getSpanCount:" + layoutManager.getSpanCount());
+//                        return layoutManager.getSpanCount();
+//                    default:
+//                        return 1;
+//                }
+//            }
+//        });
 
 //        TestLayoutManager layoutManager = new TestLayoutManager(this);
 //        mAdapter.notifyDataSetChanged();
 //        mAdapter.notifyItemInserted();
-
-        binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.setLayoutManager(layoutManager);
+        binding.recyclerView.setAdapter(mAdapter);
         binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -101,7 +100,7 @@ public class AndroidDetailActivity extends TBaseContentActivity<ActivityAndroidD
 //                if (binding.tvScrollIndex != null) {
 //                    binding.tvScrollIndex.setText(firstVisibleItemPosition);
 //                }
-                LogUtils.d("firstVisibleItemPosition:"+firstVisibleItemPosition);
+//                LogUtils.d("firstVisibleItemPosition:"+firstVisibleItemPosition);
 
 //                int top = layoutManager.findViewByPosition(0).getTop();
 //                double gap = (double) top / 300;
@@ -128,11 +127,4 @@ public class AndroidDetailActivity extends TBaseContentActivity<ActivityAndroidD
         }
         return list;
     }
-
-
-
-
-
-
-
 }
