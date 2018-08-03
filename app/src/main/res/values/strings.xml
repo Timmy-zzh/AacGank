@@ -7,4 +7,10 @@
     bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
     cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
     the big cheese.</string>
+
+
+    <string name="behavior_sample_title">com.timmy.aacgank.ui.person.behavior.simple.TitleBehavior</string>
+    <string name="behavior_recycler_view">com.timmy.aacgank.ui.person.behavior.simple.RecyclerViewBehavior</string>
+    <string name="behavior_header">com.timmy.aacgank.ui.person.behavior.simple.HeaderBehavior</string>
+
 </resources>

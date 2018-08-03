@@ -33,6 +33,7 @@ android {
                     'src/main/res/layout/book',
                     'src/main/res/layout/music',
                     'src/main/res/layout/other',
+                    'src/main/res/layout/behavior',
             ]
         }
     }

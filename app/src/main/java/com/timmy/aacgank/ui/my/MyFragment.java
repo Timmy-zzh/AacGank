@@ -14,6 +14,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentMyBinding;
 import com.timmy.aacgank.ui.cityselect.CitySelectActivity;
+import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
 import com.timmy.baselib.base.fragment.TBaseBindingFragment;
 
 import io.reactivex.functions.Consumer;
@@ -65,7 +66,8 @@ public class MyFragment extends TBaseBindingFragment<FragmentMyBinding> {
     }
 
     public void onViewClicked(View view){
-        startActivity(new Intent(getContext(), CitySelectActivity.class));
+//        startActivity(new Intent(getContext(), CitySelectActivity.class));
+        startActivity(new Intent(getContext(), BehaviorActivity.class));
     }
 
     private void requestLocation() {
