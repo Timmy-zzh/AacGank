@@ -1,7 +1,10 @@
 package com.timmy.aacgank.ui.my;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +13,16 @@ import android.widget.TextView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
+import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
 import com.timmy.baselib.utils.LogUtils;
+import com.timmy.baselib.utils.ToastUtils;
+import com.timmy.tdialog.TDialog;
+import com.timmy.tdialog.base.BindViewHolder;
+import com.timmy.tdialog.base.TBaseAdapter;
+import com.timmy.tdialog.list.TListDialog;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.TabHolder> {
@@ -44,8 +54,38 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
             @Override
             public void onClick(View v) {
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
+                switch (model.getTag()) {
+                    case MainTag.ANDROID.TAG_FOUR_COMPONENT:
+                        fourComponent();
+                        break;
+                    case MainTag.ANDROID.TAG_BEHAVIOR:
+                        gotoNextActivity(BehaviorActivity.class);
+                        break;
+                }
             }
         });
+    }
+
+    private void fourComponent() {
+        new TListDialog.Builder(((FragmentActivity) context).getSupportFragmentManager())
+                .setAdapter(new TBaseAdapter<String>(R.layout.item_simple_text,
+                        Arrays.asList(new String[]{"Activity", "Service", "ContentProvide", "BroadcastReceiver"})) {
+                    @Override
+                    protected void onBind(BindViewHolder holder, int position, String item) {
+                        holder.setText(R.id.tv, item);
+                    }
+                })
+                .setOnAdapterItemClickListener(new TBaseAdapter.OnAdapterItemClickListener<String>() {
+                    @Override
+                    public void onItemClick(BindViewHolder holder, int position, String item, TDialog tDialog) {
+                        ToastUtils.showShort(item);
+                        tDialog.dismiss();
+                    }
+                })
+                .setScreenWidthAspect((Activity) context, 0.8f)
+                .setDimAmount(0.5f)
+                .create()
+                .show();
     }
 
     //                switch (model.getTag()) {

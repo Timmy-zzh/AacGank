@@ -48,11 +48,12 @@ public class UcContentBehavior extends HeaderScrollingViewBehavior {
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
         float translationY = dependency.getTranslationY();//头部移动的距离
-        int height = dependency.getHeight();
+        int headerHeight = dependency.getHeight();
+        int headerOffset = getHeaderOffset(dependency);
 //        Log.d(TAG, "onDependentViewChanged--translationY:" + translationY);
-        float y = height + translationY;
-        if (y < getTabHeight() + getTitleHeight()) {//头部内容全部滑出屏幕
-            y = getTabHeight() + getTitleHeight();
+        float y = headerHeight + translationY;
+        if (y < headerOffset) {//头部内容全部滑出屏幕
+            y = headerOffset;
         }
         child.setY(y);
         return super.onDependentViewChanged(parent, child, dependency);
@@ -71,14 +72,6 @@ public class UcContentBehavior extends HeaderScrollingViewBehavior {
         return null;
     }
 
-    private int getTabHeight() {
-        return mContext.getResources().getDimensionPixelOffset(R.dimen.tab_height);
-    }
-
-    private int getTitleHeight() {
-        return mContext.getResources().getDimensionPixelOffset(R.dimen.tab_height);
-    }
-
     @Override
     protected int getScrollRange(View v) {
         return super.getScrollRange(v);
@@ -86,5 +79,14 @@ public class UcContentBehavior extends HeaderScrollingViewBehavior {
 
     private boolean isDependOn(View dependency) {
         return dependency != null && dependency.getId() == R.id.header;
+    }
+
+    /**
+     * 头部滑动的距离
+     */
+    private int getHeaderOffset(View headerView) {
+        return headerView.getHeight()
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.tab_height)
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.title_height);
     }
 }

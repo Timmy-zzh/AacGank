@@ -35,15 +35,14 @@ public class UcTitleBehavior extends CoordinatorLayout.Behavior<View> {
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
         //头部滑动的距离
         float headerTranslationY = dependency.getTranslationY();
-        int headerHeight = dependency.getHeight();//头部的高度
+        int headerOffset = getHeaderOffset(dependency);//头部的高度
         int titleHeight = getTitleHeight();
 
         /**
          * 默认刚开始 scrollY : -titleHeight ~ 0
          * (-headerTranslationY / headerHeight): 0~1
          */
-        float scrollY = -(1 - (-headerTranslationY / headerHeight)) * titleHeight;
-
+        float scrollY = -(1 - (-headerTranslationY / headerOffset)) * titleHeight;
         child.setY(scrollY);
         return super.onDependentViewChanged(parent, child, dependency);
     }
@@ -55,5 +54,14 @@ public class UcTitleBehavior extends CoordinatorLayout.Behavior<View> {
 
     private boolean isDependOn(View dependency) {
         return dependency != null && dependency.getId() == R.id.header;
+    }
+
+    /**
+     * 头部滑动的距离
+     */
+    private int getHeaderOffset(View headerView) {
+        return headerView.getHeight()
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.tab_height)
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.title_height);
     }
 }

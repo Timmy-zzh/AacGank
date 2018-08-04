@@ -26,6 +26,7 @@
     网络框架:Retrofit+OkHttp+RxJava2
     图片加载:Glide
     状态栏:StatusBarUtil
+    弹窗:TDialog
 
 
 

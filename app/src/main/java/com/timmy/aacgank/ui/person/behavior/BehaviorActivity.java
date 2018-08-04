@@ -1,14 +1,15 @@
 package com.timmy.aacgank.ui.person.behavior;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.timmy.aacgank.R;
-import com.timmy.aacgank.ui.movie.layoutManager.MyLayoutManager;
-import com.timmy.aacgank.ui.movie.layoutManager.SimpleAdapter;
+import com.timmy.aacgank.ui.simple.SimpleAdapter;
+import com.timmy.aacgank.ui.simple.SimplePagerAdapter;
 
 import java.util.Arrays;
 
@@ -23,6 +24,7 @@ import java.util.Arrays;
  * 3.实现头部控件的滑动:仿照AppbarLayout写法
  * ----NestedLinearLayout实现NestedScrollingChild接口,并进行事件传递
  * ----头部Behavior处理
+ * 4.滑动视差处理:定义好Header部分需要向上滑动的距离
  */
 public class BehaviorActivity extends AppCompatActivity {
 
@@ -32,14 +34,19 @@ public class BehaviorActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_behavior);
 //        setContentView(R.layout.activity_behavior2);
         setContentView(R.layout.activity_behavior3);
-        initRecyclerView();
+        initView();
     }
 
-    private void initRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        String[] datas = getResources().getStringArray(R.array.date);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new SimpleAdapter(this, Arrays.asList(datas)));
-    }
+    private void initView() {
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager viewPager = findViewById(R.id.view_pager);
 
+        viewPager.setAdapter(new SimplePagerAdapter(getSupportFragmentManager()));
+        tabLayout.setupWithViewPager(viewPager);
+
+//        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+//        String[] datas = getResources().getStringArray(R.array.date);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setAdapter(new SimpleAdapter(this, Arrays.asList(datas)));
+    }
 }

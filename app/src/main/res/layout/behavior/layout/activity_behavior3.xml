@@ -10,15 +10,15 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/T_33"
         app:layout_behavior="com.timmy.aacgank.ui.person.behavior.ucmainpager.UcHeaderBehavior">
 
         <com.timmy.aacgank.ui.person.behavior.ucmainpager.NestedLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/_200sdp"
+            android:background="@mipmap/ic_001">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_200sdp"
                 android:background="@color/c_redeem"
                 android:gravity="center"
@@ -43,20 +43,21 @@
     </LinearLayout>
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tab_height"
+        app:tabMode="scrollable"
         android:background="@color/orange"
         app:layout_behavior="com.timmy.aacgank.ui.person.behavior.ucmainpager.UcTabBehavior"
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabTextColor="#000000" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:background="@color/T_FF"
         android:layout_height="match_parent"
+        android:background="@color/T_FF"
         app:layout_behavior="com.timmy.aacgank.ui.person.behavior.ucmainpager.UcContentBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>

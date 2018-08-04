@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.timmy.aacgank.R;
 import com.timmy.aacgank.ui.person.behavior.helper.ViewOffsetBehavior;
 
 /**
@@ -17,9 +18,14 @@ import com.timmy.aacgank.ui.person.behavior.helper.ViewOffsetBehavior;
  * 作用:
  * 1监听当主页内容Content部分滑动时,头部需要跟着滑动
  * 2.Header部分控件滑动时,内容部分也需要有滑动效果
+ * 3.头部滑动的距离为: header.getHeight()  - TitleHeight-TabHeight
+ *
+ * -->添加头部打开,关闭两种状态:
+ * 4.
  */
 public class UcHeaderBehavior extends ViewOffsetBehavior<View> {
 
+    private Context mContext;
     private String TAG = this.getClass().getSimpleName();
 
     public UcHeaderBehavior() {
@@ -27,6 +33,7 @@ public class UcHeaderBehavior extends ViewOffsetBehavior<View> {
 
     public UcHeaderBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.mContext = context;
     }
 
     /**
@@ -51,27 +58,28 @@ public class UcHeaderBehavior extends ViewOffsetBehavior<View> {
         float scrollY;
 
         if (target instanceof NestedLinearLayout) {//头部控件的包裹布局NestedLinearLayout滑动时
-             scrollY = child.getTranslationY() - dy;
-            Log.d(TAG, "NestedLinearLayout  onDependentViewChanged--scrollY:" + scrollY);
-            if (scrollY < -child.getHeight()) {
-                scrollY = -child.getHeight();
+            scrollY = child.getTranslationY() - dy;
+            Log.d(TAG, "NestedLinearLayout  onDependentViewChanged--scrollY 111  :" + scrollY);
+            if (scrollY < -getHeaderOffset(child)) {
+                scrollY = -getHeaderOffset(child);
             } else if (scrollY > 0) {
                 scrollY = 0;
             }
+            Log.d(TAG, "NestedLinearLayout  onDependentViewChanged--scrollY 111  :" + scrollY);
             child.setTranslationY(scrollY);
             consumed[1] = dy;
-
         } else if (target instanceof RecyclerView) {       //内容控件的RecyclerView滑动
             RecyclerView recyclerView = (RecyclerView) target;
             int position = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
             if (canScroll(child, dy) && position == 0) {
-                 scrollY = child.getTranslationY() - dy;
-
-                if (scrollY < -child.getHeight()) {
-                    scrollY = -child.getHeight();
+                scrollY = child.getTranslationY() - dy;
+                Log.d(TAG, "RecyclerView  onDependentViewChanged--scrollY 111  :" + scrollY);
+                if (scrollY < -getHeaderOffset(child)) {
+                    scrollY = -getHeaderOffset(child);
                 } else if (scrollY > 0) {
                     scrollY = 0;
                 }
+                Log.d(TAG, "RecyclerView  onDependentViewChanged--scrollY 222  :" + scrollY);
                 child.setTranslationY(scrollY);
                 consumed[1] = dy;
             }
@@ -85,12 +93,22 @@ public class UcHeaderBehavior extends ViewOffsetBehavior<View> {
      */
     private boolean canScroll(View child, int dy) {
 //        Log.d(TAG, "child.getTranslationY():" + child.getTranslationY());
-        if (-child.getTranslationY() < child.getHeight()) { // RecyclerView往上(往下)滑动,但头部控件未全部滑出屏幕
+        if (-child.getTranslationY() < getHeaderOffset(child)) { // RecyclerView往上(往下)滑动,但头部控件未全部滑出屏幕
             return true;
-        } else if (-child.getTranslationY() == child.getHeight() && dy < 0) {
+        } else if (-child.getTranslationY() == getHeaderOffset(child) && dy < 0) {
             // RecyclerView往下滑动,第一个Item刚全部出现,临界值
             return true;
         }
         return false;
     }
+
+    /**
+     * 头部滑动的距离
+     */
+    private int getHeaderOffset(View headerView) {
+        return headerView.getHeight()
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.tab_height)
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.title_height);
+    }
+
 }

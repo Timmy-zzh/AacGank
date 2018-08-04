@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.timmy.aacgank.R;
+import com.timmy.aacgank.ui.simple.SimpleAdapter;
 
 import java.util.Arrays;
 

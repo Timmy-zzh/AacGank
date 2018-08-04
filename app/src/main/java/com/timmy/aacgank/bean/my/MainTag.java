@@ -2,27 +2,28 @@ package com.timmy.aacgank.bean.my;
 
 public class MainTag {
 
-    public static final int TAG_XIUXIU = 1;
-    public static final int TAG_QQ_ZONE_STRETCH = 2;
-    public static final int TAG_RECYCLER_VIEW = 3;
-    public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 4;
-    public static final int TAG_SLIDESLIP = 5;
-    public static final int TAG_SNACKBAR = 6;
-    public static final int TAG_TEXT_INPUT_LAYOUT = 7;
-    public static final int TAG_TOOLBAR = 8;
-    public static final int TAG_SEARCH_VIEW = 9;
-    public static final int TAG_LINEAR_LAYOUT_COMPAT = 10;
-    public static final int TAG_TAB_LAYOUT = 11;
-    public static final int TAG_PALETTE = 12;
-    public static final int TAG_CARD_VIEW = 13;
-    public static final int TAG_COORDINATOR_LAYOUT = 14;
-    public static final int TAG_ANIMATION_VIEW = 15;
-    public static final int TAG_MOTION_EVENT = 16;
-    public static final int TAG_PATH = 17;
-    public static final int TAG_SHADER = 18;
-    public static final int TAG_TOAST = 19;
-    public static final int TAG_DIALOG = 20;
-
+    public class ANDROID {
+        public static final int TAG_FOUR_COMPONENT = 1;
+        public static final int TAG_BEHAVIOR = 2;
+        public static final int TAG_RECYCLER_VIEW = 3;
+        public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 4;
+        public static final int TAG_SLIDESLIP = 5;
+        public static final int TAG_SNACKBAR = 6;
+        public static final int TAG_TEXT_INPUT_LAYOUT = 7;
+        public static final int TAG_TOOLBAR = 8;
+        public static final int TAG_SEARCH_VIEW = 9;
+        public static final int TAG_LINEAR_LAYOUT_COMPAT = 10;
+        public static final int TAG_TAB_LAYOUT = 11;
+        public static final int TAG_PALETTE = 12;
+        public static final int TAG_CARD_VIEW = 13;
+        public static final int TAG_COORDINATOR_LAYOUT = 14;
+        public static final int TAG_ANIMATION_VIEW = 15;
+        public static final int TAG_MOTION_EVENT = 16;
+        public static final int TAG_PATH = 17;
+        public static final int TAG_SHADER = 18;
+        public static final int TAG_TOAST = 19;
+        public static final int TAG_DIALOG = 20;
+    }
 
     //项目总结
     public class PROJECT {
@@ -37,7 +38,7 @@ public class MainTag {
         public static final int TAG_DATA_PERSIST = 108;
         public static final int TAG_COUNT_DOWN = 109;
         public static final int TAG_SCREEN_ADAPTER = 110;
-        
+
     }
 
     //自定义控件

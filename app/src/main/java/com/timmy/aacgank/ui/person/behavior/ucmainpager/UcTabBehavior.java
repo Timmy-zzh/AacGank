@@ -31,15 +31,16 @@ public class UcTabBehavior extends CoordinatorLayout.Behavior<View> {
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
         //头部滑动的距离
         float headerTranslationY = dependency.getTranslationY();
+        int headerOffset = getHeaderOffset(dependency);
         int headerHeight = dependency.getHeight();//头部的高度
         int titleHeight = getTitleHeight();
         int tabHeight = getTabHeight();
 
         /**
-         * 默认刚开始 scrollY : headerHeight ~ titleHeight
+         *  scrollY : headerHeight ~ titleHeight
          * (-headerTranslationY / headerHeight): 0~1
          */
-        float scrollY = headerHeight + headerTranslationY - (-headerTranslationY / headerHeight) * tabHeight;
+        float scrollY = headerHeight + headerTranslationY - (-headerTranslationY / headerOffset) * tabHeight;
         if (scrollY < titleHeight) {
             scrollY = titleHeight;
         }
@@ -58,5 +59,14 @@ public class UcTabBehavior extends CoordinatorLayout.Behavior<View> {
 
     private boolean isDependOn(View dependency) {
         return dependency != null && dependency.getId() == R.id.header;
+    }
+
+    /**
+     * 头部滑动的距离
+     */
+    private int getHeaderOffset(View headerView) {
+        return headerView.getHeight()
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.tab_height)
+                - mContext.getResources().getDimensionPixelOffset(R.dimen.title_height);
     }
 }

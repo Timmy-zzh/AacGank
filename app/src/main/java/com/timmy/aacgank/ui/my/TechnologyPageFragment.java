@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.person;
+package com.timmy.aacgank.ui.my;
 
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -6,16 +6,13 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 
 import com.timmy.aacgank.C;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
 import com.timmy.aacgank.databinding.ViewRecyclerViewBinding;
-import com.timmy.aacgank.ui.my.MainContentAdapter;
 import com.timmy.baselib.base.fragment.TPageLazyBaseFragment;
-import com.timmy.baselib.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,26 +85,26 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
     private void subscribeUI() {
         switch (mPage) {
             case 1://高级ui
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义控件--支付宝咻一咻"));
-                pageListOne.add(new MainModel(MainTag.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_QQ_ZONE_STRETCH, "QQ空间可拉伸头部ListView控件"));
-                pageListOne.add(new MainModel(MainTag.TAG_RECYCLER_VIEW, "RecyclerView使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_SLIDESLIP, "MD侧滑"));
-                pageListOne.add(new MainModel(MainTag.TAG_SNACKBAR, "SnackBar解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_TOAST, "Toast源码解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_DIALOG, "Dialog源码解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_TEXT_INPUT_LAYOUT, "TextInputLayout使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_TOOLBAR, "Toolbar源码解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_SEARCH_VIEW, "SearchView源码解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_LINEAR_LAYOUT_COMPAT, "LinearLayoutCompat源码解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_TAB_LAYOUT, "TabLayout源码解析"));
-                pageListOne.add(new MainModel(MainTag.TAG_PALETTE, "Palette调色板的使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_CARD_VIEW, "CardView的使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_COORDINATOR_LAYOUT, "CoordinatorLayout的使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_ANIMATION_VIEW, "动画的使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_MOTION_EVENT, "事件分发"));
-                pageListOne.add(new MainModel(MainTag.TAG_PATH, "Path高级使用"));
-                pageListOne.add(new MainModel(MainTag.TAG_SHADER, "高级渲染"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_RECYCLER_VIEW, "RecyclerView使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SLIDESLIP, "MD侧滑"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SNACKBAR, "SnackBar解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_TOAST, "Toast源码解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DIALOG, "Dialog源码解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_TEXT_INPUT_LAYOUT, "TextInputLayout使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_TOOLBAR, "Toolbar源码解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SEARCH_VIEW, "SearchView源码解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_LINEAR_LAYOUT_COMPAT, "LinearLayoutCompat源码解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_TAB_LAYOUT, "TabLayout源码解析"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PALETTE, "Palette调色板的使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_CARD_VIEW, "CardView的使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COORDINATOR_LAYOUT, "CoordinatorLayout的使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ANIMATION_VIEW, "动画的使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PATH, "Path高级使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SHADER, "高级渲染"));
 
                 adapter.setData(pageListOne);
                 break;

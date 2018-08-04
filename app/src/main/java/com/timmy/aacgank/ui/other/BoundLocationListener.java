@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.my;
+package com.timmy.aacgank.ui.other;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.Lifecycle;
