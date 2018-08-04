@@ -2,12 +2,6 @@
     <string name="app_name">AACGank</string>
 
 
-    <string name="cheese_ipsum">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
-    cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian
-    bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
-    cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
-    the big cheese.</string>
-
 
     <string name="behavior_sample_title">com.timmy.aacgank.ui.person.behavior.simple.TitleBehavior</string>
     <string name="behavior_recycler_view">com.timmy.aacgank.ui.person.behavior.simple.RecyclerViewBehavior</string>

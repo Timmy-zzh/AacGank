@@ -37,35 +37,34 @@ import io.reactivex.schedulers.Schedulers;
  * 因为ViewPager的缓存机制,
  * 1.导致加载第一页Fragment时,第二页Fragment在不可见的时候其生命周期方法都调用了
  * (如果在生命周期方法中加载数据,这样就会浪费用户流量)
- *  第一页初始化: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *  第一页可见: 再次调用setUserVisibleHint(isVisibleToUser)方法,isVisibleToUser = true
- *  第二页不可见:setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *  第二页生命周期方法执行
- *
+ * 第一页初始化: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 第一页可见: 再次调用setUserVisibleHint(isVisibleToUser)方法,isVisibleToUser = true
+ * 第二页不可见:setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 第二页生命周期方法执行
+ * <p>
  * 2.当滑动到第二页可见的时候:
- *  第一页不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *  第二页的生命周期方法不会再调用,只会调用setUserVisibleHint(isVisibleToUser)方法,isVisibleToUser = true
- *  第三页不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *  第三页生命周期方法调用
- *
+ * 第一页不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 第二页的生命周期方法不会再调用,只会调用setUserVisibleHint(isVisibleToUser)方法,isVisibleToUser = true
+ * 第三页不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 第三页生命周期方法调用
+ * <p>
  * 3.使用TabLayout 直接从第一页跳转到底四页
- *  第一页不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *  第四页初始化: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *  第四页可见: 再次调用setUserVisibleHint(isVisibleToUser)方法,isVisibleToUser = true
- *  第四页生命周期方法调用
- *
- *  第三页和第五页:
- *      不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
- *      生命周期方法调用
- *
+ * 第一页不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 第四页初始化: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 第四页可见: 再次调用setUserVisibleHint(isVisibleToUser)方法,isVisibleToUser = true
+ * 第四页生命周期方法调用
+ * <p>
+ * 第三页和第五页:
+ * 不可见: setUserVisibleHint(isVisibleToUser)方法调用,isVisibleToUser = false
+ * 生命周期方法调用
+ * <p>
  * 懒加载Framgnt: 当界面可见时才进行数据加载
  * 当使用ViewPager + Fragment实现界面时,Fragment使用该类的集继承类
- *
+ * <p>
  * 懒加载处理部分:
- *      1.onCreateView()方法,根据rootView是否为null,控制只调用一次 (初始化调用一次)
- *      2.onViewCreated()方法,(初始化调用一次),并且在界面可见情况才加载数据
- *      3.setUserVisibleHint()可见时,且之前没有加载过,再会加载数据
- *
+ * 1.onCreateView()方法,根据rootView是否为null,控制只调用一次 (初始化调用一次)
+ * 2.onViewCreated()方法,(初始化调用一次),并且在界面可见情况才加载数据
+ * 3.setUserVisibleHint()可见时,且之前没有加载过,再会加载数据
  */
 public abstract class TPageLazyBaseFragment<DB extends ViewDataBinding> extends Fragment implements ILoadingLayout {
 
@@ -77,10 +76,12 @@ public abstract class TPageLazyBaseFragment<DB extends ViewDataBinding> extends 
     private boolean isInited; // Fragment初始化完成
     private boolean isLoadedData;//是否已经加载过数据
     private StatusLayoutManager statusLayoutManager;
+
     /**
      * 每个Fragment自己的布局
      */
-    protected abstract @LayoutRes int getLayoutRes();
+    protected abstract @LayoutRes
+    int getLayoutRes();
 
     protected abstract void onRefresh();
 
@@ -96,10 +97,10 @@ public abstract class TPageLazyBaseFragment<DB extends ViewDataBinding> extends 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (rootView == null){  //初始化调用
+        if (rootView == null) {  //初始化调用
             return;
         }
-        if (isVisibleToUser && !isLoadedData){//可见,布局填充完成 rootView
+        if (isVisibleToUser && !isLoadedData) {//可见,布局填充完成 rootView
             //加载数据
             lazyLoadData();
             isLoadedData = true;
@@ -123,7 +124,7 @@ public abstract class TPageLazyBaseFragment<DB extends ViewDataBinding> extends 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView == null) {     //之前没有填充过布局
-           baseBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_base, null, false);
+            baseBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_base, null, false);
             binding = DataBindingUtil.inflate(inflater, getLayoutRes(), null, false);
             FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             binding.getRoot().setLayoutParams(params);

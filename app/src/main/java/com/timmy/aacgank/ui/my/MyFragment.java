@@ -1,28 +1,22 @@
 package com.timmy.aacgank.ui.my;
 
-import android.Manifest;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.Observer;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationListener;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.View;
 
-import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentMyBinding;
-import com.timmy.aacgank.ui.cityselect.CitySelectActivity;
+import com.timmy.aacgank.ui.person.TechnologyPageFragment;
 import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
-import com.timmy.baselib.base.fragment.TBaseBindingFragment;
-
-import io.reactivex.functions.Consumer;
+import com.timmy.baselib.base.fragment.TBaseContentFragment;
 
 /**
  * 高仿京东个人中心
  */
-public class MyFragment extends TBaseBindingFragment<FragmentMyBinding> {
+public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
 
     public static MyFragment newInstance() {
         MyFragment fragment = new MyFragment();
@@ -35,73 +29,54 @@ public class MyFragment extends TBaseBindingFragment<FragmentMyBinding> {
     }
 
     @Override
-    protected void onRefresh() {
-    }
-
-    @Override
     protected void initBase() {
-        showContentLayout();
+        super.initBase();
         binding.setFragment(this);
-//        final RxPermissions rxPermissions = new RxPermissions(this);
-//        rxPermissions.request(Manifest.permission.ACCESS_FINE_LOCATION)
-//                .subscribe(new Consumer<Boolean>() {
-//                    @Override
-//                    public void accept(Boolean aBoolean) throws Exception {
-//                        if (aBoolean) {
-//                            requestLocation();
-//                        }
-//                    }
-//                });
+        initView();
+    }
 
+    private void initView() {
+        binding.tlTab.setupWithViewPager(binding.viewPager);
+        binding.viewPager.setAdapter(new TabPagerAdapter(this.getChildFragmentManager()));
+        binding.viewPager.setOffscreenPageLimit(4);
 
-//        binding.tvSelect.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getContext(), CitySelectActivity.class));
-//            }
-//        });
-//
-//        getLifecycle().getCurrentState();
+        binding.appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                //设置Toolbar背景色变化
+
+            }
+        });
+
 
     }
 
-    public void onViewClicked(View view){
+    public void onViewClicked(View view) {
 //        startActivity(new Intent(getContext(), CitySelectActivity.class));
         startActivity(new Intent(getContext(), BehaviorActivity.class));
     }
 
-    private void requestLocation() {
-//        binding.tvLocation.setText("check");
-////        //请求定位权限
-//        LiveData<Location> locationLiveData = LocationLiveData.getInstance(getActivity().getApplication());
-//        locationLiveData.observe(this, new Observer<Location>() {
-//            @Override
-//            public void onChanged(@Nullable Location location) {
-//                if (location != null)
-//                    binding.tvLocation.setText("Latitude:" + location.getLatitude() + ",Longitude" + location.getLongitude());
-//            }
-//        });
+    public class TabPagerAdapter extends FragmentStatePagerAdapter {
+        private String tabTitles[] = new String[]{"高级ui", "自定义控件", "项目技术点", "框架"};
 
-//        new BoundLocationListener(this, new LocationListener() {
-//            @Override
-//            public void onLocationChanged(Location location) {
-//                binding.tvLocation.setText("Latitude:" + location.getLatitude() + ",Longitude" + location.getLongitude());
-//            }
-//
-//            @Override
-//            public void onStatusChanged(String provider, int status, Bundle extras) {
-//
-//            }
-//
-//            @Override
-//            public void onProviderEnabled(String provider) {
-//
-//            }
-//
-//            @Override
-//            public void onProviderDisabled(String provider) {
-//
-//            }
-//        },getActivity());
+        public TabPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return TechnologyPageFragment.newInstance(position + 1);
+        }
+
+        @Override
+        public int getCount() {
+            return tabTitles.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabTitles[position];
+        }
     }
+
 }
