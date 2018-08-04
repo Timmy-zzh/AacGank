@@ -11,6 +11,7 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.bean.movie.BaseDoubanResult;
 import com.timmy.aacgank.bean.movie.DoubanMovie;
+import com.timmy.aacgank.databinding.FragmentMovieBinding;
 import com.timmy.aacgank.ui.movie.aac.MovieViewModel;
 import com.timmy.aacgank.ui.movie.adapter.MovieAdapter;
 import com.timmy.aacgank.ui.movie.layoutManager.MyLayoutManagerActivity;
@@ -27,7 +28,7 @@ import java.util.List;
 /**
  * 豆瓣电影
  */
-public class MovieFragment extends TBaseBindingFragment<ActivityRefreshListBinding> {
+public class MovieFragment extends TBaseBindingFragment<FragmentMovieBinding> {
 
     private MovieAdapter mAdapter;
     private MovieViewModel viewModel;
@@ -46,7 +47,7 @@ public class MovieFragment extends TBaseBindingFragment<ActivityRefreshListBindi
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.activity_refresh_list;
+        return R.layout.fragment_movie;
     }
 
     @Override

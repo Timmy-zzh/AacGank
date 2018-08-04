@@ -1,6 +1,7 @@
 package com.timmy.aacgank.ui.my;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +13,8 @@ import com.timmy.aacgank.databinding.FragmentMyBinding;
 import com.timmy.aacgank.ui.person.TechnologyPageFragment;
 import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
 import com.timmy.baselib.base.fragment.TBaseContentFragment;
+import com.timmy.baselib.statusbar.StatusBarUtil;
+import com.timmy.baselib.utils.LogUtils;
 
 /**
  * 高仿京东个人中心
@@ -36,6 +39,10 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
     }
 
     private void initView() {
+        binding.toolbar.setTitle(getContext().getResources().getString(R.string.app_name));
+        String webDesc = "CSDN:https://blog.csdn.net/Timmy_zzh\n" + "GitHub: https://github.com/Timmy-zzh";
+        binding.tvWeb.setText(webDesc);
+
         binding.tlTab.setupWithViewPager(binding.viewPager);
         binding.viewPager.setAdapter(new TabPagerAdapter(this.getChildFragmentManager()));
         binding.viewPager.setOffscreenPageLimit(4);
@@ -44,11 +51,21 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 //设置Toolbar背景色变化
-
+                LogUtils.d("verticalOffset:" + verticalOffset);
+                binding.toolbar.setBackgroundColor(
+                        changeAlpha(getResources().getColor(R.color.c_wallet_negative),
+                                Math.abs(verticalOffset * 1.0f) / appBarLayout.getTotalScrollRange()));
+                binding.tvToolbar.setAlpha(Math.abs(verticalOffset * 1.0f) / appBarLayout.getTotalScrollRange() * 255);
             }
         });
+    }
 
-
+    public int changeAlpha(int color, float fraction) {
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        int alpha = (int) (Color.alpha(color) * fraction);
+        return Color.argb(alpha, red, green, blue);
     }
 
     public void onViewClicked(View view) {
@@ -57,7 +74,7 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"高级ui", "自定义控件", "项目技术点", "框架"};
+        private String tabTitles[] = new String[]{"Android基础", "自定义控件", "性能优化", "框架源码"};
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);

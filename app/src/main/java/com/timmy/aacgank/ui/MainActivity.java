@@ -18,6 +18,9 @@ import com.timmy.aacgank.ui.home.TextFrgment;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
 
+/**
+ *
+ */
 public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> implements BottomNavigationBar.OnTabSelectedListener {
 
     BottomNavigationBar bottomNavigationBar;
@@ -38,11 +41,11 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
         if (mFragmensts[0] == null && fragment instanceof HomeFragment) {
             mFragmensts[0] = fragment;
         }
-//        if (mFragmensts[1] == null && fragment instanceof ShoppingFragment) {
-//            mFragmensts[1] = fragment;
-//        }
         if (mFragmensts[2] == null && fragment instanceof MovieFragment) {
             mFragmensts[2] = fragment;
+        }
+        if (mFragmensts[4] == null && fragment instanceof MyFragment) {
+            mFragmensts[4] = fragment;
         }
     }
 
@@ -58,6 +61,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
     }
 
     private void initView() {
+        StatusBarUtil.setTranslucentForImageViewInFragment(this, null);
         //为底部导航栏设置展示数据
         //设置展示模式
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_DEFAULT);
@@ -97,33 +101,33 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
             case 0:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = HomeFragment.newInstance();
-//                    mFragmensts[position] = MovieLiveDataFragment.newInstance();
                 }
-                StatusBarUtil.setColor(this,getResources().getColor(R.color.orange));
+//                StatusBarUtil.setColor(this,getResources().getColor(R.color.orange));
                 break;
             case 1:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = TextFrgment.newInstance();
                 }
-                StatusBarUtil.setColor(this,getResources().getColor(R.color.teal));
+//                StatusBarUtil.setColor(this,getResources().getColor(R.color.teal));
                 break;
             case 2:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = MovieFragment.newInstance();
                 }
-                StatusBarUtil.setColor(this,getResources().getColor(R.color.blue));
+//                StatusBarUtil.setColor(this,getResources().getColor(R.color.blue));
                 break;
             case 3:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = TextFrgment.newInstance();
                 }
-                StatusBarUtil.setColor(this,getResources().getColor(R.color.pink));
+//                StatusBarUtil.setColor(this,getResources().getColor(R.color.pink));
                 break;
             case 4:
                 if (mFragmensts[position] == null) {
                     mFragmensts[position] = MyFragment.newInstance();
                 }
-                StatusBarUtil.setColor(this,getResources().getColor(R.color.c_wallet_negative));
+//                StatusBarUtil.setColor(this,getResources().getColor(R.color.c_wallet_negative),0);
+//                StatusBarUtil.setTranslucent(this);
                 break;
         }
         FragmentTransaction trx = fragmentManager.beginTransaction();

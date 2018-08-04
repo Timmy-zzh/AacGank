@@ -47,19 +47,16 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
     @Override
     protected void onRefresh() {
         subscribeUI();
-        LogUtils.d("onRefresh");
     }
 
     @Override
     protected void lazyLoadData() {
         //加载数据
         subscribeUI();
-        LogUtils.d("lazyLoadData");
     }
 
     @Override
     protected void initBase() {
-        LogUtils.d("initBase");
         mPage = getArguments().getInt(C.Params);
         switch (mPage) {
             case 1:
@@ -89,7 +86,6 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
     }
 
     private void subscribeUI() {
-        LogUtils.d("subscribeUI");
         switch (mPage) {
             case 1://高级ui
                 pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义控件--支付宝咻一咻"));
