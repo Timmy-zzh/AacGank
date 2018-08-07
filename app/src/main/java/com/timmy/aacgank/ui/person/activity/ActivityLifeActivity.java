@@ -188,6 +188,4 @@ public class ActivityLifeActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         Log.d(TAG, "onNewIntent");
     }
-
-
 }

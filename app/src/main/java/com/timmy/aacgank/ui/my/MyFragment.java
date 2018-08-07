@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentMyBinding;
-import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
+import com.timmy.aacgank.ui.person.audio.AudioStudyActivity;
 import com.timmy.baselib.base.fragment.TBaseContentFragment;
 import com.timmy.baselib.utils.LogUtils;
 
@@ -68,7 +68,8 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
 
     public void onViewClicked(View view) {
 //        startActivity(new Intent(getContext(), CitySelectActivity.class));
-        startActivity(new Intent(getContext(), BehaviorActivity.class));
+//        startActivity(new Intent(getContext(), BehaviorActivity.class));
+        startActivity(new Intent(getContext(), AudioStudyActivity.class));
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
