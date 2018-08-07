@@ -59,7 +59,8 @@
         <activity android:name=".ui.cityselect.CitySelectActivity" />
         <activity android:name=".ui.movie.MovieDetailActivity" />
         <activity android:name=".ui.movie.layoutManager.MyLayoutManagerActivity" />
-        <activity android:name=".ui.person.behavior.BehaviorActivity"></activity>
+        <activity android:name=".ui.person.behavior.BehaviorActivity" />
+        <activity android:name=".ui.person.exoplayer.ExoPlayerActivity"/>
     </application>
 
 </manifest>

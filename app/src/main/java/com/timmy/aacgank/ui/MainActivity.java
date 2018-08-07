@@ -15,11 +15,17 @@ import com.timmy.aacgank.ui.movie.MovieFragment;
 import com.timmy.aacgank.ui.movie.MovieLiveDataFragment;
 import com.timmy.aacgank.ui.my.MyFragment;
 import com.timmy.aacgank.ui.home.TextFrgment;
+import com.timmy.aacgank.ui.video.VideoFragment;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
 
 /**
- *
+ * 项目结构:
+ * Tab1:Gank
+ * Tab2:音视频
+ * Tab3:豆瓣  电影,图书,
+ * Tab4:音乐
+ * Tab5:个人中心--技术总结
  */
 public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -32,6 +38,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
     protected void onRefresh() {
 
     }
+
     /**
      * 处理Fragment界面重叠问题
      */
@@ -40,6 +47,9 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
         super.onAttachFragment(fragment);
         if (mFragmensts[0] == null && fragment instanceof HomeFragment) {
             mFragmensts[0] = fragment;
+        }
+        if (mFragmensts[1] == null && fragment instanceof VideoFragment) {
+            mFragmensts[1] = fragment;
         }
         if (mFragmensts[2] == null && fragment instanceof MovieFragment) {
             mFragmensts[2] = fragment;
@@ -68,11 +78,11 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
         //设置背景样式
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_DEFAULT);
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Gank").setActiveColorResource(R.color.orange))//简书首页
-                .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp , "Music").setActiveColorResource(R.color.teal))//网易云音乐
-                .addItem(new BottomNavigationItem(R.drawable.ic_favorite_white_24dp, "Movie").setActiveColorResource(R.color.blue))//腾讯视频-视屏播放
-                .addItem(new BottomNavigationItem(R.drawable.ic_book_white_24dp, "Book").setActiveColorResource(R.color.pink))//书籍 GitHub
-                .addItem(new BottomNavigationItem(R.drawable.ic_github_circle_white_24dp, "My").setActiveColorResource(R.color.c_wallet_negative))//个人中心
+                .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Gank").setActiveColorResource(R.color.orange))
+                .addItem(new BottomNavigationItem(R.drawable.ic_tv_white_24dp, "Video").setActiveColorResource(R.color.teal))
+                .addItem(new BottomNavigationItem(R.drawable.ic_favorite_white_24dp, "Douban").setActiveColorResource(R.color.blue))
+                .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp, "Music").setActiveColorResource(R.color.pink))
+                .addItem(new BottomNavigationItem(R.drawable.ic_github_circle_white_24dp, "My").setActiveColorResource(R.color.c_wallet_negative))
                 .setFirstSelectedPosition(lastSelectedPosition)
                 .initialise();
 
@@ -106,7 +116,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 break;
             case 1:
                 if (mFragmensts[position] == null) {
-                    mFragmensts[position] = TextFrgment.newInstance();
+                    mFragmensts[position] = VideoFragment.newInstance();
                 }
 //                StatusBarUtil.setColor(this,getResources().getColor(R.color.teal));
                 break;

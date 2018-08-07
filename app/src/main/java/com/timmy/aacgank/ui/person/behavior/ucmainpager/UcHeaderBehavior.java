@@ -20,7 +20,7 @@ import com.timmy.aacgank.ui.person.behavior.helper.ViewOffsetBehavior;
  * 2.Header部分控件滑动时,内容部分也需要有滑动效果
  * 3.头部滑动的距离为: header.getHeight()  - TitleHeight-TabHeight
  *
- * -->添加头部打开,关闭两种状态:
+ * -->添加头部打开,关闭两种状态:添加Fling状态监听
  * 4.
  */
 public class UcHeaderBehavior extends ViewOffsetBehavior<View> {

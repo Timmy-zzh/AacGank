@@ -25,6 +25,8 @@ import java.util.Arrays;
  * ----NestedLinearLayout实现NestedScrollingChild接口,并进行事件传递
  * ----头部Behavior处理
  * 4.滑动视差处理:定义好Header部分需要向上滑动的距离
+ * 5.手指放开后的事件处理
+ * ----fling事件
  */
 public class BehaviorActivity extends AppCompatActivity {
 
