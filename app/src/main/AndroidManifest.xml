@@ -60,7 +60,11 @@
         <activity android:name=".ui.movie.MovieDetailActivity" />
         <activity android:name=".ui.movie.layoutManager.MyLayoutManagerActivity" />
         <activity android:name=".ui.person.behavior.BehaviorActivity" />
-        <activity android:name=".ui.person.exoplayer.ExoPlayerActivity"/>
+        <activity android:name=".ui.person.exoplayer.ExoPlayerActivity" />
+        <activity
+            android:name=".ui.person.activity.ActivityLifeActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:label="Activity生命周期方法" />
     </application>
 
 </manifest>

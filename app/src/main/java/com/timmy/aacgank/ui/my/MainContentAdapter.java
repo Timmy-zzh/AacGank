@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
+import com.timmy.aacgank.ui.person.activity.ActivityLifeActivity;
 import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
 import com.timmy.baselib.utils.LogUtils;
 import com.timmy.baselib.utils.ToastUtils;
@@ -55,7 +56,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
             public void onClick(View v) {
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
                 switch (model.getTag()) {
-                    case MainTag.ANDROID.TAG_FOUR_COMPONENT:
+                    case MainTag.ANDROID.TAG_FOUR_COMPONENT://四大组件
                         fourComponent();
                         break;
                     case MainTag.ANDROID.TAG_BEHAVIOR:
@@ -80,6 +81,11 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     public void onItemClick(BindViewHolder holder, int position, String item, TDialog tDialog) {
                         ToastUtils.showShort(item);
                         tDialog.dismiss();
+                        switch (item) {
+                            case "Activity":
+                                context.startActivity(new Intent(context, ActivityLifeActivity.class));
+                                break;
+                        }
                     }
                 })
                 .setScreenWidthAspect((Activity) context, 0.8f)
