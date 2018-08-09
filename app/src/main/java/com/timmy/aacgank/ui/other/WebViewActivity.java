@@ -39,7 +39,7 @@ public class WebViewActivity extends TBaseContentActivity<ActivityWebViewBinding
         context.startActivity(intent);
     }
 
-    public static void startAction(Context context, String url,String title) {
+    public static void startAction(Context context, String url, String title) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra(C.Params, url);
         intent.putExtra(C.Params2, title);
@@ -91,8 +91,7 @@ public class WebViewActivity extends TBaseContentActivity<ActivityWebViewBinding
     }
 
     //事件处理函数，控制显示下一个字符串
-    public void next(String title)
-    {
+    public void next(String title) {
         binding.title.setText(title);
     }
 
@@ -202,7 +201,7 @@ public class WebViewActivity extends TBaseContentActivity<ActivityWebViewBinding
                                                public void onReceivedTitle(WebView view, String title) {
                                                    super.onReceivedTitle(view, title);
                                                    if (!TextUtils.isEmpty(title)) {
-//                                                       next(title);
+                                                       next(title);
                                                    }
                                                }
 

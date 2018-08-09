@@ -19,18 +19,20 @@ import java.util.List;
 
 public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerViewBinding> {
 
-    private int mPage;
+    private String mPage;
     private RecyclerView.LayoutManager layoutManager;
     private MainContentAdapter adapter;
     private List<MainModel> pageListOne = new ArrayList<>();
     private List<MainModel> pageListTwo = new ArrayList<>();
     private List<MainModel> pageListThree = new ArrayList<>();
     private List<MainModel> pageListFour = new ArrayList<>();
+    private List<MainModel> pageListFive = new ArrayList<>();
     private RecyclerView.ItemDecoration mDivider;
+    private String tabTitles[] = new String[]{"Android基础","Java基础", "自定义控件", "性能优化", "框架源码"};
 
-    public static TechnologyPageFragment newInstance(int page) {
+    public static TechnologyPageFragment newInstance(String page) {
         Bundle bundle = new Bundle();
-        bundle.putInt(C.Params, page);
+        bundle.putString(C.Params, page);
         TechnologyPageFragment fragment = new TechnologyPageFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -54,19 +56,19 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
     @Override
     protected void initBase() {
-        mPage = getArguments().getInt(C.Params);
+        mPage = getArguments().getString(C.Params);
         switch (mPage) {
-            case 1:
+            case "Android基础":
                 layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
                 mDivider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
 //                layoutManager = new GridLayoutManager(getActivity(), 2);
 //                mDivider = new DividerGridItemDecoration(getContext());
                 break;
-            case 2:
+            case "Java基础":
                 layoutManager = new GridLayoutManager(getActivity(), 2);
 //                mDivider = new DividerGridItemDecoration(getContext());
                 break;
-            case 3:
+            case "自定义控件":
                 layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
 //                mDivider = new DividerGridItemDecoration(getContext());
                 break;
@@ -84,7 +86,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
     private void subscribeUI() {
         switch (mPage) {
-            case 1://高级ui
+            case "Android基础"://高级ui
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
@@ -108,7 +110,12 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
                 adapter.setData(pageListOne);
                 break;
-            case 2://自定义控件
+            case "Java基础":
+                pageListFive.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CIRCLE_MENU, "线程Thread"));
+
+                adapter.setData(pageListFive);
+                break;
+            case "自定义控件":
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION, "右侧A-Z字母导航栏"));
@@ -125,7 +132,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
                 adapter.setData(pageListFour);
                 break;
-            case 3://项目知识点总结
+            case "性能优化":
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_LAUNCH, "App广告页3秒倒计时处理"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_SPLASH, "App闪屏页动画效果"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SVG, "SVG图片效果"));
@@ -141,7 +148,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
                 adapter.setData(pageListTwo);
                 break;
-            case 4://框架学习
+            case "框架源码":
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANNOTATIONS, "运行时注解框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_COMPILE_ANNOTATIONS, "编译时时注解框架(注解处理器使用)"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_NETWORK_REQUEST, "网络请求框架"));

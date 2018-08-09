@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':adapterlib',':ssp-android', ':sdp-android'
+include ':app', ':baselib', ':adapterlib',':ssp-android', ':sdp-android', ':aidlclient'

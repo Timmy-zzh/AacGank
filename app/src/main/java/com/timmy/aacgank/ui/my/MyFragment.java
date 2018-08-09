@@ -73,7 +73,7 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"Android基础", "自定义控件", "性能优化", "框架源码"};
+        private String tabTitles[] = new String[]{"Android基础","Java基础", "自定义控件", "性能优化", "框架源码"};
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -81,7 +81,7 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
 
         @Override
         public Fragment getItem(int position) {
-            return TechnologyPageFragment.newInstance(position + 1);
+            return TechnologyPageFragment.newInstance(tabTitles[position]);
         }
 
         @Override

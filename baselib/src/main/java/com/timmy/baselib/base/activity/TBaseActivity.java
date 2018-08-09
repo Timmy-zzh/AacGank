@@ -61,7 +61,7 @@ public abstract class TBaseActivity extends AppCompatActivity implements ILoadin
      * https://github.com/laobie/StatusBarUtil
      */
     protected void setStatusBar() {
-        StatusBarUtil.setColor(this,getResources().getColor(R.color.c_redeem));
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorPrimary));
     }
 
     @Override

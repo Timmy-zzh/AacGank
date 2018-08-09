@@ -12,9 +12,11 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import com.timmy.aacgank.R;
+import com.timmy.aacgank.ui.other.WebViewActivity;
 
 /**
  * Activity所有生命周期调用方法
@@ -33,9 +35,18 @@ public class ActivityLifeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_text);
+        setContentView(R.layout.activity_study);
         Log.d(TAG, "onCreate");
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.tv_content);
+    }
+
+    public void launcherActivity(View view){
+        WebViewActivity.startAction(this,"https://blog.csdn.net/Timmy_zzh/article/details/81533602");
+    }
+
+
+    public void launcherMode(View view) {
+        WebViewActivity.startAction(this,"https://blog.csdn.net/Timmy_zzh/article/details/81536035");
     }
 
     @Override
@@ -188,4 +199,5 @@ public class ActivityLifeActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         Log.d(TAG, "onNewIntent");
     }
+
 }

@@ -15,6 +15,7 @@ import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
 import com.timmy.aacgank.ui.person.activity.ActivityLifeActivity;
 import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
+import com.timmy.aacgank.ui.person.service.ServiceStudyActivity;
 import com.timmy.baselib.utils.LogUtils;
 import com.timmy.baselib.utils.ToastUtils;
 import com.timmy.tdialog.TDialog;
@@ -79,11 +80,19 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                 .setOnAdapterItemClickListener(new TBaseAdapter.OnAdapterItemClickListener<String>() {
                     @Override
                     public void onItemClick(BindViewHolder holder, int position, String item, TDialog tDialog) {
-                        ToastUtils.showShort(item);
                         tDialog.dismiss();
                         switch (item) {
                             case "Activity":
                                 context.startActivity(new Intent(context, ActivityLifeActivity.class));
+                                break;
+                            case "Service":
+                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
+                                break;
+                            case "ContentProvide":
+                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
+                                break;
+                            case "BroadcastReceiver":
+                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
                                 break;
                         }
                     }
