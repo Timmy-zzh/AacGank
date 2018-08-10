@@ -12,10 +12,9 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityMainBinding;
 import com.timmy.aacgank.ui.home.HomeFragment;
 import com.timmy.aacgank.ui.movie.MovieFragment;
-import com.timmy.aacgank.ui.movie.MovieLiveDataFragment;
 import com.timmy.aacgank.ui.my.MyFragment;
 import com.timmy.aacgank.ui.home.TextFrgment;
-import com.timmy.aacgank.ui.video.VideoFragment;
+import com.timmy.aacgank.ui.video.ui.VideoFragment;
 import com.timmy.baselib.base.activity.TBaseBindingActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
 

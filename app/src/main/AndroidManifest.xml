@@ -7,8 +7,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- 粗略的位置权限 -->
@@ -19,7 +21,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
 
     <application
         android:name=".App"
@@ -41,7 +42,6 @@
         <activity android:name=".ui.gank.WelfareDetailActivity" />
         <activity android:name=".ui.other.WebViewActivity" />
         <activity android:name=".ui.other.ImmersionActivity" />
-
         <activity
             android:name=".ui.gank.VideoActivity"
             android:screenOrientation="portrait"
@@ -51,24 +51,24 @@
         <activity android:name=".ui.cityselect.CitySelectActivity" />
         <activity android:name=".ui.movie.MovieDetailActivity" />
         <activity android:name=".ui.movie.layoutManager.MyLayoutManagerActivity" />
-        <activity android:name=".ui.person.behavior.BehaviorActivity" />
-        <activity android:name=".ui.person.exoplayer.ExoPlayerActivity" />
+        <activity android:name=".ui.android.behavior.BehaviorActivity" />
+        <activity android:name=".ui.video.exoplayer.ExoPlayerActivity" />
         <activity
-            android:name=".ui.person.activity.ActivityLifeActivity"
+            android:name=".ui.android.activity.ActivityLifeActivity"
             android:label="Activity知识点"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
-            android:name=".ui.person.audio.AudioStudyActivity"
+            android:name=".ui.video.audio.AudioStudyActivity"
             android:label="AudioRecord音频采集" />
         <activity
-            android:name=".ui.person.service.ServiceStudyActivity"
+            android:name=".ui.android.service.ServiceStudyActivity"
             android:label="Service知识点"
             android:theme="@style/Theme.AppCompat.Light" />
 
-        <service android:name=".ui.person.service.DemoService" />
+        <service android:name=".ui.android.service.DemoService" />
         <!-- 远程服务  process表示RemoteService位于另一个进程 -->
         <service
-            android:name=".ui.person.aidl.RemoteService"
+            android:name=".ui.android.aidl.RemoteService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -78,8 +78,13 @@
             </intent-filter>
         </service>
         <service
-            android:name=".ui.person.service.UploadImgIntentService"
+            android:name=".ui.android.service.UploadImgIntentService"
             android:exported="false" />
+
+        <activity
+            android:name=".ui.android.broadcastReceiver.BroadcaseReceiverActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:label="BroadcaseReceiver知识点" />
     </application>
 
 </manifest>

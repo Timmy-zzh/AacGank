@@ -3,7 +3,6 @@ package com.timmy.aacgank.ui.my;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,12 +12,11 @@ import android.widget.TextView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
-import com.timmy.aacgank.ui.person.activity.ActivityLifeActivity;
-import com.timmy.aacgank.ui.person.audio.AudioStudyActivity;
-import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
-import com.timmy.aacgank.ui.person.service.ServiceStudyActivity;
-import com.timmy.baselib.utils.LogUtils;
-import com.timmy.baselib.utils.ToastUtils;
+import com.timmy.aacgank.ui.android.activity.ActivityLifeActivity;
+import com.timmy.aacgank.ui.video.audio.AudioStudyActivity;
+import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
+import com.timmy.aacgank.ui.android.broadcastReceiver.BroadcaseReceiverActivity;
+import com.timmy.aacgank.ui.android.service.ServiceStudyActivity;
 import com.timmy.tdialog.TDialog;
 import com.timmy.tdialog.base.BindViewHolder;
 import com.timmy.tdialog.base.TBaseAdapter;
@@ -72,7 +70,6 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                 }
 
-
             }
         });
     }
@@ -101,7 +98,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                                 context.startActivity(new Intent(context, ServiceStudyActivity.class));
                                 break;
                             case "BroadcastReceiver":
-                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
+                                context.startActivity(new Intent(context, BroadcaseReceiverActivity.class));
                                 break;
                         }
                     }

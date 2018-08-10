@@ -11,8 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.timmy.aacgank.ui.person.aidl.Book;
-import com.timmy.aacgank.ui.person.aidl.BookController;
+import com.timmy.aacgank.ui.android.aidl.Book;
+import com.timmy.aacgank.ui.android.aidl.BookController;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BookController bookController;
     private boolean connect;
-    private List<com.timmy.aacgank.ui.person.aidl.Book> bookList;
+    private List<Book> bookList;
     private TextView books;
 
     @Override
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void log() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (com.timmy.aacgank.ui.person.aidl.Book book : bookList) {
+        for (Book book : bookList) {
             stringBuilder.append(book.getName() + "\n");
         }
         books.setText(stringBuilder);
@@ -86,6 +86,14 @@ public class MainActivity extends AppCompatActivity {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (connect) {
+            unbindService(serviceConnection);
         }
     }
 }

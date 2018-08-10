@@ -93,6 +93,7 @@
             android:layout_marginTop="8dp"
             android:onClick="intentServiceUse"
             android:padding="@dimen/_5sdp"
+            android:textAllCaps="false"
             android:text="6.IntentService 模拟图片上传 (Add Task)"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />

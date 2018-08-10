@@ -2,8 +2,8 @@
     <string name="app_name">AACGank</string>
 
 
-    <string name="behavior_sample_title">com.timmy.aacgank.ui.person.behavior.simple.TitleBehavior</string>
-    <string name="behavior_recycler_view">com.timmy.aacgank.ui.person.behavior.simple.RecyclerViewBehavior</string>
-    <string name="behavior_header">com.timmy.aacgank.ui.person.behavior.simple.HeaderBehavior</string>
+    <string name="behavior_sample_title">com.timmy.aacgank.ui.android.behavior.simple.TitleBehavior</string>
+    <string name="behavior_recycler_view">com.timmy.aacgank.ui.android.behavior.simple.RecyclerViewBehavior</string>
+    <string name="behavior_header">com.timmy.aacgank.ui.android.behavior.simple.HeaderBehavior</string>
 
 </resources>
