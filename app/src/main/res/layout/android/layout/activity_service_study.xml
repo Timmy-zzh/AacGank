@@ -78,6 +78,31 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="5.进程保活 "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="intentServiceUse"
+            android:padding="@dimen/_5sdp"
+            android:text="6.IntentService 模拟图片上传 (Add Task)"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
 </ScrollView>
