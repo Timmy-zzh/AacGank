@@ -73,7 +73,7 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"Android基础","Java基础", "自定义控件", "性能优化", "框架源码"};
+        private String tabTitles[] = new String[]{"Android基础", "音视频开发", "Java基础", "自定义控件", "性能优化", "框架源码"};
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);

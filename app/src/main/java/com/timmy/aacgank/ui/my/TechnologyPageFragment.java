@@ -27,8 +27,9 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
     private List<MainModel> pageListThree = new ArrayList<>();
     private List<MainModel> pageListFour = new ArrayList<>();
     private List<MainModel> pageListFive = new ArrayList<>();
+    private List<MainModel> pageListSix = new ArrayList<>();
     private RecyclerView.ItemDecoration mDivider;
-    private String tabTitles[] = new String[]{"Android基础","Java基础", "自定义控件", "性能优化", "框架源码"};
+    private String tabTitles[] = new String[]{"Android基础", "音视频开发", "Java基础", "自定义控件", "性能优化", "框架源码"};
 
     public static TechnologyPageFragment newInstance(String page) {
         Bundle bundle = new Bundle();
@@ -111,10 +112,16 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 adapter.setData(pageListOne);
                 break;
             case "Java基础":
-                pageListFive.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CIRCLE_MENU, "线程Thread"));
+                pageListFive.add(new MainModel(MainTag.JAVA.TAG_THREAD, "线程Thread"));
 
                 adapter.setData(pageListFive);
                 break;
+            case "音视频开发":
+                pageListSix.add(new MainModel(MainTag.VIDEO.TAG_AUDIO, "音频数据采集"));
+
+                adapter.setData(pageListSix);
+                break;
+
             case "自定义控件":
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));

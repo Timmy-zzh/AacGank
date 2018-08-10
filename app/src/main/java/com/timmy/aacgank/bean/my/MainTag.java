@@ -25,6 +25,7 @@ public class MainTag {
         public static final int TAG_DIALOG = 20;
     }
 
+
     //项目总结
     public class PROJECT {
         public static final int TAG_ACTIVITY_LAUNCH = 100;
@@ -77,6 +78,18 @@ public class MainTag {
         public static final int TAG_CUSTOME_RETROFIT2 = 314;
         public static final int TAG_ALIBABA_V_LAYOUT = 315;
     }
+
+    //Java基础
+    public class JAVA {
+        public static final int TAG_THREAD = 400;
+    }
+
+    //音视频开发
+    public class VIDEO {
+        public static final int TAG_AUDIO = 500;
+    }
+
+
 }
 
 

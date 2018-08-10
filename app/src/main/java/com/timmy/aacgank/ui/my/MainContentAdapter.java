@@ -14,6 +14,7 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
 import com.timmy.aacgank.ui.person.activity.ActivityLifeActivity;
+import com.timmy.aacgank.ui.person.audio.AudioStudyActivity;
 import com.timmy.aacgank.ui.person.behavior.BehaviorActivity;
 import com.timmy.aacgank.ui.person.service.ServiceStudyActivity;
 import com.timmy.baselib.utils.LogUtils;
@@ -56,7 +57,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
             @Override
             public void onClick(View v) {
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
-                switch (model.getTag()) {
+                switch (model.getTag()) {//Android
                     case MainTag.ANDROID.TAG_FOUR_COMPONENT://四大组件
                         fourComponent();
                         break;
@@ -64,6 +65,14 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         gotoNextActivity(BehaviorActivity.class);
                         break;
                 }
+
+                switch (model.getTag()) {//音视频开发
+                    case MainTag.VIDEO.TAG_AUDIO:
+                        gotoNextActivity(AudioStudyActivity.class);
+                        break;
+                }
+
+
             }
         });
     }
