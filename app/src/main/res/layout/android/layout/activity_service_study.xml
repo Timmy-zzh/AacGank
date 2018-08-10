@@ -78,12 +78,13 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="5.进程保活 "
+            android:onClick="sourceLook"
+            android:text="5.Service源码解析 "
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 

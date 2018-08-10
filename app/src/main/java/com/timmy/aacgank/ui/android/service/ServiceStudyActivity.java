@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.timmy.aacgank.R;
+import com.timmy.aacgank.ui.other.WebViewActivity;
 
 /**
  * Android知识体系:服务
@@ -131,6 +132,7 @@ public class ServiceStudyActivity extends AppCompatActivity {
     };
 
     int i = 0;
+
     /**
      * IntentService使用
      * 源码解析
@@ -144,5 +146,9 @@ public class ServiceStudyActivity extends AppCompatActivity {
         llContainer.addView(tv);
         tv.setText(path + " is uploading ...");
         tv.setTag(path);
+    }
+
+    public void sourceLook(View view) {
+        WebViewActivity.startAction(this, "https://blog.csdn.net/pihailailou/article/details/78570067");
     }
 }

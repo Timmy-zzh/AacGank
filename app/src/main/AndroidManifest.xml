@@ -7,6 +7,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -17,10 +21,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 精确的位置权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!--广播私有权限-->
+    <permission
+        android:name="com.timmy.broadcast.timmy"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.timmy.broadcast.timmy"/>
 
     <application
         android:name=".App"
@@ -53,13 +59,19 @@
         <activity android:name=".ui.movie.layoutManager.MyLayoutManagerActivity" />
         <activity android:name=".ui.android.behavior.BehaviorActivity" />
         <activity android:name=".ui.video.exoplayer.ExoPlayerActivity" />
+
+        <!--********************************Activity*******************************************-->
         <activity
             android:name=".ui.android.activity.ActivityLifeActivity"
             android:label="Activity知识点"
             android:theme="@style/Theme.AppCompat.Light" />
+
         <activity
             android:name=".ui.video.audio.AudioStudyActivity"
             android:label="AudioRecord音频采集" />
+        <!--********************************Activity*******************************************-->
+
+        <!--********************************Service*******************************************-->
         <activity
             android:name=".ui.android.service.ServiceStudyActivity"
             android:label="Service知识点"
@@ -80,11 +92,39 @@
         <service
             android:name=".ui.android.service.UploadImgIntentService"
             android:exported="false" />
+        <!--********************************Service*******************************************-->
 
+        <!--********************************BroadcaseReceiver*******************************************-->
         <activity
             android:name=".ui.android.broadcastReceiver.BroadcaseReceiverActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            android:label="BroadcaseReceiver知识点" />
+            android:label="BroadcaseReceiver知识点"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+
+        <receiver android:name=".ui.android.broadcastReceiver.NormalReceiver">
+            <intent-filter>
+                <action android:name="com.timmy.broadcast.action.normal" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".ui.android.broadcastReceiver.OrderReceiver1">
+            <intent-filter android:priority="100">
+                <action android:name="com.timmy.broadcast.action.order" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ui.android.broadcastReceiver.OrderReceiver2">
+            <intent-filter android:priority="99">
+                <action android:name="com.timmy.broadcast.action.order" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ui.android.broadcastReceiver.OrderReceiver3">
+            <intent-filter android:priority="98">
+                <action android:name="com.timmy.broadcast.action.order" />
+            </intent-filter>
+        </receiver>
+
+
+        <!--********************************BroadcaseReceiver*******************************************-->
     </application>
+
 
 </manifest>

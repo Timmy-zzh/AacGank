@@ -11,12 +11,13 @@
         android:orientation="vertical">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:onClick="launcherMode"
             android:padding="@dimen/_5sdp"
             android:text="1.Activity生命周期"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp" />
 
@@ -33,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:gravity="left|center_vertical"
+            android:textAllCaps="false"
             android:onClick="launcherActivity"
             android:padding="@dimen/_5sdp"
             android:text="3.Activity启动流程"
