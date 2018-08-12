@@ -31,10 +31,32 @@
                 android:text="AudioRecord音频采集" />
 
             <Button
+                android:id="@+id/btn_start"
                 android:layout_width="match_parent"
                 android:onClick="startAudioRecord"
                 android:layout_height="wrap_content"
-                android:text="采集" />
+                android:text="1.音频采集" />
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="match_parent"
+                android:onClick="stopAudioRecord"
+                android:layout_height="wrap_content"
+                android:text="2.停止采集" />
+
+            <Button
+                android:id="@+id/btn_convet"
+                android:layout_width="match_parent"
+                android:onClick="convetPcmToWav"
+                android:layout_height="wrap_content"
+                android:text="3.PCM文件转换成WAV文件" />
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="match_parent"
+                android:onClick="playAudioRecord"
+                android:layout_height="wrap_content"
+                android:text="播放采集的音频数据" />
 
         </LinearLayout>
 
