@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -67,6 +68,42 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
         bottomNavigationBar = binding.bottomNavigationBar;
         fragmentManager = getSupportFragmentManager();
         initView();
+
+        /**
+         * 给你两个从小到大已排序好的数组A和B，
+         * 例如A: [3,7,8,13,16,18, 27]
+         * B: [2,5,6,7,9,12,12,13,15,18,23,31]
+         * 请你编写一段代码，输出数组A和B中出现的重复元素。对于上面这个例子，
+         * 应该输出[7,12,13,18] 编写代码时，请考虑执行效率，尽可能以最优的方式（比较次数最少）去实现
+         */
+
+
+        Integer[] array1 = {3,7,8,13,16,18, 27};
+        Integer[] array2 = {2,5,6,7,9,12,12,13,15,18,23,31};
+
+        int i=0,j=0;
+        find(i,array1, j,array2);
+    }
+
+    /**
+     * 因为是已经排好序的，所有可边比较大小，边进行数据位置移动
+     * 采用递归方式
+     * 方式二：
+     * 建立一个排序好的并集数组，和临时数组
+     * 通过遍历并集数组，找到相邻相等的元素
+     */
+    private void find(int i,Integer[] array1, int j,Integer[] array2) {
+        if (i==array1.length || j==array2.length){//去除边界异常
+            return;
+        }
+        if (array1[i] > array2[j]){
+            find(i,array1,j+1,array2);
+        }else if (array1[i] < array2[j]){
+            find(i+1,array1,j,array2);
+        }else{
+            Log.d("Timmy","相同元素："+array1[i]);
+            find(i+1,array1,j+1,array2);
+        }
     }
 
     private void initView() {
@@ -152,6 +189,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
                 }
             }
         }
+//        trx.commit();
         trx.commitAllowingStateLoss();
     }
 

@@ -26,6 +26,10 @@ import com.timmy.aacgank.ui.other.WebViewActivity;
  * ---setResult(RESULT_OK, intent);
  * ---super.finish();
  * }
+ * Activity知识点：
+ * 1。启动模式
+ * 2。声明周期方法调用时机
+ * 3。
  */
 public class ActivityLifeActivity extends AppCompatActivity {
 

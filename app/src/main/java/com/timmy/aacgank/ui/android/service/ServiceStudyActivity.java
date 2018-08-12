@@ -149,6 +149,7 @@ public class ServiceStudyActivity extends AppCompatActivity {
     }
 
     public void sourceLook(View view) {
-        WebViewActivity.startAction(this, "https://blog.csdn.net/pihailailou/article/details/78570067");
+        WebViewActivity.startAction(this,
+                "https://blog.csdn.net/pihailailou/article/details/78570067");
     }
 }
