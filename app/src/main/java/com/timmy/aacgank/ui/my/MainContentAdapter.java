@@ -13,6 +13,8 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
 import com.timmy.aacgank.ui.android.activity.ActivityLifeActivity;
+import com.timmy.aacgank.ui.android.contentProvider.ContentProviderStudyActivity;
+import com.timmy.aacgank.ui.android.database.DatabaseActivity;
 import com.timmy.aacgank.ui.video.audio.AudioStudyActivity;
 import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
 import com.timmy.aacgank.ui.android.broadcastReceiver.BroadcaseReceiverActivity;
@@ -62,6 +64,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.ANDROID.TAG_BEHAVIOR:
                         gotoNextActivity(BehaviorActivity.class);
                         break;
+                    case MainTag.ANDROID.TAG_DATA_BASE:
+                        gotoNextActivity(DatabaseActivity.class);
+                        break;
                 }
 
                 switch (model.getTag()) {//音视频开发
@@ -77,7 +82,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
     private void fourComponent() {
         new TListDialog.Builder(((FragmentActivity) context).getSupportFragmentManager())
                 .setAdapter(new TBaseAdapter<String>(R.layout.item_simple_text,
-                        Arrays.asList(new String[]{"Activity", "Service", "ContentProvide", "BroadcastReceiver"})) {
+                        Arrays.asList(new String[]{"Activity", "Service", "BroadcastReceiver", "ContentProvide"})) {
                     @Override
                     protected void onBind(BindViewHolder holder, int position, String item) {
                         holder.setText(R.id.tv, item);
@@ -94,11 +99,11 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                             case "Service":
                                 context.startActivity(new Intent(context, ServiceStudyActivity.class));
                                 break;
-                            case "ContentProvide":
-                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
-                                break;
                             case "BroadcastReceiver":
                                 context.startActivity(new Intent(context, BroadcaseReceiverActivity.class));
+                                break;
+                            case "ContentProvide":
+                                context.startActivity(new Intent(context, ContentProviderStudyActivity.class));
                                 break;
                         }
                     }

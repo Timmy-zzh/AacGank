@@ -90,8 +90,10 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
             case "Android基础"://高级ui
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));
+
+
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
-                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_RECYCLER_VIEW, "RecyclerView使用"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SLIDESLIP, "MD侧滑"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SNACKBAR, "SnackBar解析"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_TOAST, "Toast源码解析"));

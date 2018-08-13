@@ -5,7 +5,7 @@ public class MainTag {
     public class ANDROID {
         public static final int TAG_FOUR_COMPONENT = 1;
         public static final int TAG_BEHAVIOR = 2;
-        public static final int TAG_RECYCLER_VIEW = 3;
+        public static final int TAG_DATA_BASE = 3;
         public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 4;
         public static final int TAG_SLIDESLIP = 5;
         public static final int TAG_SNACKBAR = 6;

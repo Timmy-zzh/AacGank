@@ -115,7 +115,6 @@ public class ServiceStudyActivity extends AppCompatActivity {
     private void registerBroadCast() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_UPLOAD_RESULT);
-        ;
         registerReceiver(broadcastReceiver, filter);
     }
 
