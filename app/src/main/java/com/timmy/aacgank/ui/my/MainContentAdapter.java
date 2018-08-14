@@ -72,6 +72,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.ANDROID.TAG_MOTION_EVENT://事件分发
                         gotoNextActivity(MotionEventActivity.class);
                         break;
+                    case MainTag.ANDROID.TAG_UI_DRAW://UI绘制流程
+                        gotoNextActivity(MotionEventActivity.class);
+                        break;
                 }
 
                 switch (model.getTag()) {

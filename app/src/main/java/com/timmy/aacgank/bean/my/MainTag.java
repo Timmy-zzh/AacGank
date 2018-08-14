@@ -7,6 +7,7 @@ public class MainTag {
         public static final int TAG_BEHAVIOR = 2;
         public static final int TAG_DATA_BASE = 3;
         public static final int TAG_MOTION_EVENT = 4;
+        public static final int TAG_UI_DRAW = 5;
 
         public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 4;
         public static final int TAG_SLIDESLIP = 5;

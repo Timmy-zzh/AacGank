@@ -92,6 +92,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_UI_DRAW, "UI绘制流程"));
 
 
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
