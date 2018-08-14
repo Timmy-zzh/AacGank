@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="3.现象解释:子控件的在Down事件的onTouchEvent()方法中返回false,(不消费该事件),后续的MOVE,UP事件都不会传递到该控件"
+            android:text="3.只要接受ACTION_DOWN就意味着接受所有的事件,拒绝ACTION_DOWN则不会收到后续内容。"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
@@ -67,6 +67,15 @@
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
             android:text="4.设置ImageView的clickable属性为true,则其onTouchEvent()方法返回true,会消费事件"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="不论 View 自身是否注册点击事件，只要 View 是可点击的就会消费事件。"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
