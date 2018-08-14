@@ -28,10 +28,19 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="3.现象解释:子控件的在Down事件的onTouchEvent()方法中返回false,(不消费该事件),后续的MOVE,UP事件都不会传递到该控件"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
         <com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout
             android:id="@+id/frame_layout"
             android:layout_width="@dimen/_200sdp"
-            android:layout_height="@dimen/_300sdp"
+            android:layout_height="@dimen/_200sdp"
             android:background="@color/c_redeem">
 
             <com.timmy.aacgank.ui.android.motionEvent.MyTextView
@@ -52,7 +61,21 @@
 
         </com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="4.设置ImageView的clickable属性为true,则其onTouchEvent()方法返回true,会消费事件"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
 
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_001" />
     </LinearLayout>
 
 </ScrollView>
