@@ -91,6 +91,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));
 
 
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
@@ -107,7 +108,6 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_CARD_VIEW, "CardView的使用"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COORDINATOR_LAYOUT, "CoordinatorLayout的使用"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ANIMATION_VIEW, "动画的使用"));
-                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PATH, "Path高级使用"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SHADER, "高级渲染"));
 

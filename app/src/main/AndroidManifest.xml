@@ -62,7 +62,7 @@
         <activity android:name=".ui.android.behavior.BehaviorActivity" />
 
         <!-- ********************************Android******************************************* -->
-        <!--Activity-->
+        <!-- Activity -->
         <activity
             android:name=".ui.android.activity.ActivityLifeActivity"
             android:label="Activity知识点"
@@ -71,7 +71,7 @@
             android:name=".ui.video.audio.AudioStudyActivity"
             android:label="AudioRecord音频采集" />
 
-        <!--Service-->
+        <!-- Service -->
         <activity
             android:name=".ui.android.service.ServiceStudyActivity"
             android:label="Service知识点"
@@ -93,7 +93,7 @@
             android:name=".ui.android.service.UploadImgIntentService"
             android:exported="false" />
 
-        <!--BroadcaseReceiver-->
+        <!-- BroadcaseReceiver -->
         <activity
             android:name=".ui.android.broadcastReceiver.BroadcaseReceiverActivity"
             android:label="BroadcaseReceiver知识点"
@@ -120,7 +120,7 @@
             </intent-filter>
         </receiver>
 
-        <!--ContentProvider-->
+        <!-- ContentProvider -->
         <activity
             android:name=".ui.android.contentProvider.ContentProviderStudyActivity"
             android:label="ContentProvider知识点整理"
@@ -130,10 +130,16 @@
             android:name=".ui.android.contentProvider.MyContentProvider"
             android:authorities="com.timmy.myprovider" />
 
-        <!--数据存储-->
+        <!-- 数据存储 -->
         <activity
             android:name=".ui.android.database.DatabaseActivity"
             android:label="数据存储"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <!--事件分发-->
+        <activity
+            android:name=".ui.android.motionEvent.MotionEventActivity"
+            android:label="事件分发"
             android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- ********************************音视频开发******************************************* -->
@@ -145,7 +151,6 @@
         <activity android:name=".ui.cityselect.CitySelectActivity" />
 
         <!-- ********************************其他******************************************* -->
-
 
     </application>
 

@@ -15,6 +15,7 @@ import com.timmy.aacgank.bean.my.MainTag;
 import com.timmy.aacgank.ui.android.activity.ActivityLifeActivity;
 import com.timmy.aacgank.ui.android.contentProvider.ContentProviderStudyActivity;
 import com.timmy.aacgank.ui.android.database.DatabaseActivity;
+import com.timmy.aacgank.ui.android.motionEvent.MotionEventActivity;
 import com.timmy.aacgank.ui.video.audio.AudioStudyActivity;
 import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
 import com.timmy.aacgank.ui.android.broadcastReceiver.BroadcaseReceiverActivity;
@@ -57,24 +58,28 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
             @Override
             public void onClick(View v) {
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
-                switch (model.getTag()) {//Android
+                switch (model.getTag()) {
+                    //Android
                     case MainTag.ANDROID.TAG_FOUR_COMPONENT://四大组件
                         fourComponent();
                         break;
-                    case MainTag.ANDROID.TAG_BEHAVIOR:
+                    case MainTag.ANDROID.TAG_BEHAVIOR://自定义Behavior
                         gotoNextActivity(BehaviorActivity.class);
                         break;
-                    case MainTag.ANDROID.TAG_DATA_BASE:
+                    case MainTag.ANDROID.TAG_DATA_BASE://数据存储
                         gotoNextActivity(DatabaseActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_MOTION_EVENT://事件分发
+                        gotoNextActivity(MotionEventActivity.class);
                         break;
                 }
 
-                switch (model.getTag()) {//音视频开发
+                switch (model.getTag()) {
+                    //音视频开发
                     case MainTag.VIDEO.TAG_AUDIO:
                         gotoNextActivity(AudioStudyActivity.class);
                         break;
                 }
-
             }
         });
     }

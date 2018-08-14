@@ -6,6 +6,8 @@ public class MainTag {
         public static final int TAG_FOUR_COMPONENT = 1;
         public static final int TAG_BEHAVIOR = 2;
         public static final int TAG_DATA_BASE = 3;
+        public static final int TAG_MOTION_EVENT = 4;
+
         public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 4;
         public static final int TAG_SLIDESLIP = 5;
         public static final int TAG_SNACKBAR = 6;
@@ -18,7 +20,6 @@ public class MainTag {
         public static final int TAG_CARD_VIEW = 13;
         public static final int TAG_COORDINATOR_LAYOUT = 14;
         public static final int TAG_ANIMATION_VIEW = 15;
-        public static final int TAG_MOTION_EVENT = 16;
         public static final int TAG_PATH = 17;
         public static final int TAG_SHADER = 18;
         public static final int TAG_TOAST = 19;
