@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="fragment"
             type="com.timmy.aacgank.ui.my.MyFragment" />
@@ -112,7 +113,7 @@
                         android:layout_height="?attr/actionBarSize"
                         android:alpha="0"
                         android:gravity="center"
-                        android:text="个人中心"
+                        android:text="技能中心"
                         android:textColor="@color/T_FF"
                         android:textSize="@dimen/_16ssp" />
 
@@ -126,12 +127,12 @@
                 android:layout_height="wrap_content"
                 android:background="@color/T_FF"
                 app:tabBackground="@color/T_FF"
-                app:tabTextAppearance="@style/TechnologyTextAppearance"
                 app:tabContentStart="0dp"
                 app:tabIndicatorColor="@color/colorPrimary"
                 app:tabIndicatorHeight="3dp"
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/TechnologyTextAppearance"
                 app:tabTextColor="@color/black" />
 
         </android.support.design.widget.AppBarLayout>
