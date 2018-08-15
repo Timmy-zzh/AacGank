@@ -16,6 +16,7 @@ import com.timmy.aacgank.ui.android.activity.ActivityLifeActivity;
 import com.timmy.aacgank.ui.android.contentProvider.ContentProviderStudyActivity;
 import com.timmy.aacgank.ui.android.database.DatabaseActivity;
 import com.timmy.aacgank.ui.android.motionEvent.MotionEventActivity;
+import com.timmy.aacgank.ui.android.uiDraw.UIDrawActivity;
 import com.timmy.aacgank.ui.video.audio.AudioStudyActivity;
 import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
 import com.timmy.aacgank.ui.android.broadcastReceiver.BroadcaseReceiverActivity;
@@ -73,7 +74,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         gotoNextActivity(MotionEventActivity.class);
                         break;
                     case MainTag.ANDROID.TAG_UI_DRAW://UI绘制流程
-                        gotoNextActivity(MotionEventActivity.class);
+                        gotoNextActivity(UIDrawActivity.class);
                         break;
                 }
 

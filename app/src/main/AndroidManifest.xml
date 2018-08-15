@@ -136,7 +136,7 @@
             android:label="数据存储"
             android:theme="@style/Theme.AppCompat.Light" />
 
-        <!--事件分发-->
+        <!-- 事件分发 -->
         <activity
             android:name=".ui.android.motionEvent.MotionEventActivity"
             android:label="事件分发"
@@ -152,6 +152,7 @@
 
         <!-- ********************************其他******************************************* -->
 
+        <activity android:name=".ui.android.uiDraw.UIDrawActivity"></activity>
     </application>
 
 </manifest>

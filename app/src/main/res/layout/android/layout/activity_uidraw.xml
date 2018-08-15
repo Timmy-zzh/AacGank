@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="1.事件分发流程:"
+            android:text="1.UI绘制流程入口方法为:ActivityThread.handleResumeActivity()"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="点击事件在DOWN与UP事件触发，长按事件在DOWN事件中触发"
+            android:text="相关类:WindowManage.addView()-> ViewRootImpl.setView()->requestLayout()-> scheduleTraversals()"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="2.事件拦截处理"
+            android:text="2.测量:ViewRootImpl.performMeasure()-> View.measure()->onMeasure()"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
@@ -42,40 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="3.只要接受ACTION_DOWN就意味着接受所有的事件,拒绝ACTION_DOWN则不会收到后续内容。"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
-
-        <com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout
-            android:id="@+id/frame_layout"
-            android:layout_width="@dimen/_200sdp"
-            android:layout_height="@dimen/_200sdp"
-            android:background="@color/c_redeem">
-
-            <com.timmy.aacgank.ui.android.motionEvent.MyTextView
-                android:id="@+id/tv"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
-                android:layout_gravity="top"
-                android:background="@color/orange" />
-
-
-            <com.timmy.aacgank.ui.android.motionEvent.MyButton
-                android:id="@+id/btn"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
-                android:layout_gravity="bottom"
-                android:text="点击事件"
-                android:textAllCaps="false" />
-
-        </com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
-            android:text="4.设置ImageView的clickable属性为true,则其onTouchEvent()方法返回true,会消费事件"
+            android:text="MeasureSpec:获取mode与size"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
@@ -84,16 +51,37 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="不论 View 自身是否注册点击事件，只要 View 是可点击的就会消费事件。"
+            android:text="3.布局 performLayout()->View.layout()->onLayout()"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
 
-        <ImageView
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:clickable="true"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_001" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="4.绘制 performDraw()->drawSoftware()->View.draw()-> onDraw()->dispatchDraw()"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="常用方法区别:\n    view.requestLayout();\n    view.invalidate();\n    view.postInvalidate();"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sourceLook"
+            android:text="5.源码解析"
+            android:textAllCaps="false" />
+
+
     </LinearLayout>
 
 </ScrollView>
