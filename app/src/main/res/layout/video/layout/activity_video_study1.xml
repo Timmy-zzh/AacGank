@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:padding="@dimen/_5sdp"-->
+            <!--android:text="1.使用Camera采集视频数据"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:textSize="@dimen/_14ssp" />-->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="userMediaExtractor"
+            android:text="1.MediaExtractor的API使用"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="textureViewDisplay"
+            android:text="使用TextureView来预览Camera数据"
+            android:textAllCaps="false" />
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp" />
+
+        <TextureView
+            android:id="@+id/texture_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

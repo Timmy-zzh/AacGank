@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.audio;
+package com.timmy.aacgank.ui.multimedia.audio;
 
 import android.Manifest;
 import android.media.AudioAttributes;
@@ -46,19 +46,24 @@ public class AudioStudyActivity extends AppCompatActivity {
     private FileOutputStream outputStream;
     private Button btnStart;
     private Button btnStop;
-
-    // 缓存的音频大小
+    /**
+     * 缓存的音频大小
+     */
     private int bufferSize;
-    //采样率
+    /**
+     * 采样率
+     */
     private int mSampleRate = 44100;
-    //声道数
+    /**
+     * AudioRecord能接受的最小缓存大小
+     */
     private int mChannel = AudioFormat.CHANNEL_IN_MONO;
-    //数据位宽
+    /**
+     * 数据位宽
+     */
     private int mAudioFormat = AudioFormat.ENCODING_PCM_16BIT;
     private AudioTrack audioTrack;
     private FileInputStream fileInputStream;
-    private byte[] audioData;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +88,7 @@ public class AudioStudyActivity extends AppCompatActivity {
     }
 
     private void init() {
+        //AudioRecord能接受的最小缓存大小
         bufferSize = AudioRecord.getMinBufferSize(
                 mSampleRate
                 , mChannel
@@ -94,18 +100,18 @@ public class AudioStudyActivity extends AppCompatActivity {
                 , mAudioFormat//数据位宽  ENCODING_PCM_16BIT（16bit) 兼容
                 , bufferSize * 2 //音频缓冲区的大小  值不能低于一帧“音频帧”（Frame）的大小
         );
+
+        initModeStaticSource();
     }
 
     //开始音频采集
     public void startAudioRecord(View view) {
         btnStart.setText("采集中...");
         setAudioPath();
-
         //判断之前是否有线程在运行，如有则取消该线程
         if (captureThread != null) {
 
         }
-
         audioRecord.startRecording();
         isStart = true;
         //启动录音线程
@@ -129,10 +135,9 @@ public class AudioStudyActivity extends AppCompatActivity {
      */
     private void setAudioPath() {
         File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), "timAudio.pcm");
-
-//        if (file.exists()){
-//            file.delete();
-//        }
+        if (file.exists()){
+            file.delete();
+        }
         try {
             outputStream = new FileOutputStream(file);
         } catch (Exception e) {
@@ -152,17 +157,6 @@ public class AudioStudyActivity extends AppCompatActivity {
             wavFile.delete();
         }
         pcmToWavUtil.pcmToWav(pcmFile.getAbsolutePath(), wavFile.getAbsolutePath());
-
-    }
-
-    /**
-     * 音频数据播放：
-     * 采集的音频数据为pcm文件，为最原始的文件，不能播放
-     * 需要将其转换为wav格式后播放
-     */
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void playAudioRecord(View view) {
-        playInModeStream();
     }
 
     /**
@@ -185,7 +179,6 @@ public class AudioStudyActivity extends AppCompatActivity {
                         continue;
                     }
                     Log.d(TAG, "获取到音频数据：" + captureRecord);
-
                     //获取到数据
                     if (captureRecord != 0 && captureRecord != -1) {
                         /**
@@ -199,11 +192,22 @@ public class AudioStudyActivity extends AppCompatActivity {
                 }
 
                 outputStream.close();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    /**
+     * 音频数据播放：
+     * 采集的音频数据为pcm文件，为最原始的文件，不能播放
+     * 需要将其转换为wav格式后播放
+     * 使用AudioTrack进行音频播放
+     */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void playAudioRecord(View view) {
+        playInModeStream();
     }
 
     /**
@@ -260,67 +264,81 @@ public class AudioStudyActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    private byte[] audioData;
+
     /**
      * 播放，使用static模式
      */
-//        private void playInModeStatic(){
-//            // static模式，需要将音频数据一次性write到AudioTrack的内部缓冲区
-//
-//            new AsyncTask<Void, Void, Void>() {
-//                @Override
-//                protected Void doInBackground(Void... params) {
-//                    try {
-//                        InputStream in = getResources().openRawResource(R.raw.ding);
-//                        try {
-//                            ByteArrayOutputStream out = new ByteArrayOutputStream();
-//                            for (int b; (b = in.read()) != -1; ) {
-//                                out.write(b);
-//                            }
-//                            Log.d(TAG, "Got the data");
-//                            audioData = out.toByteArray();
-//                        } finally {
-//                            in.close();
-//                        }
-//                    } catch (IOException e) {
-//                        Log.wtf(TAG, "Failed to read", e);
-//                    }
-//                    return null;
-//                }
-//
-//
-//                @Override
-//                protected void onPostExecute(Void v) {
-//                    Log.i(TAG, "Creating track...audioData.length = " + audioData.length);
-//
-//                    // R.raw.ding铃声文件的相关属性为 22050Hz, 8-bit, Mono
-//                    audioTrack = new AudioTrack(
-//                            new AudioAttributes.Builder()
-//                                    .setUsage(AudioAttributes.USAGE_MEDIA)
-//                                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-//                                    .build(),
-//                            new AudioFormat.Builder().setSampleRate(22050)
-//                                    .setEncoding(AudioFormat.ENCODING_PCM_8BIT)
-//                                    .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
-//                                    .build(),
-//                            audioData.length,
-//                            AudioTrack.MODE_STATIC,
-//                            AudioManager.AUDIO_SESSION_ID_GENERATE);
-//                    Log.d(TAG, "Writing audio data...");
-//                    audioTrack.write(audioData, 0, audioData.length);
-//                    Log.d(TAG, "Starting playback");
-//                    audioTrack.play();
-//                    Log.d(TAG, "Playing");
-//                }
-//
-//            }.execute();
-//
-//        }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void playInModeStatic(View view) {
+        // static模式，需要将音频数据一次性write到AudioTrack的内部缓冲区
+// R.raw.ding铃声文件的相关属性为 22050Hz, 8-bit, Mono
+//        AudioTrack audioTrack1 = new AudioTrack(AudioManager.STREAM_MUSIC, 44100
+//                , AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT
+//                , audioData.length, AudioTrack.MODE_STATIC);
+//        audioTrack1.write(audioData, 0, audioData.length);
+//        audioTrack1.play();
 
+        audioTrack = new AudioTrack(
+                new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .build(),
+                new AudioFormat.Builder().setSampleRate(22050)
+                        .setEncoding(AudioFormat.ENCODING_PCM_8BIT)
+                        .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+                        .build(),
+                audioData.length,
+                AudioTrack.MODE_STATIC,
+                AudioManager.AUDIO_SESSION_ID_GENERATE);
+        Log.d(TAG, "Writing audio data...");
+        audioTrack.write(audioData, 0, audioData.length);
+        Log.d(TAG, "Starting playback");
+        audioTrack.play();
+        Log.d(TAG, "Playing");
+    }
+
+    /**
+     * MODE_STATIC：这种模式下，在play之前只需要把所有数据通过一次write调用传递到AudioTrack中的内部缓冲区，后续就不必再传递数据了。
+     * 这种模式适用于像铃声这种内存占用量较小，延时要求较高的文件。但它也有一个缺点，就是一次write的数据不能太多，
+     * 否则系统无法分配足够的内存来存储全部数据。
+     */
+    private void initModeStaticSource() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    InputStream in = getResources().openRawResource(R.raw.ding);
+                    try {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        for (int b; (b = in.read()) != -1; ) {
+                            out.write(b);
+                        }
+                        Log.d(TAG, "Got the data");
+                        audioData = out.toByteArray();
+                    } finally {
+                        in.close();
+                    }
+                } catch (IOException e) {
+                    Log.wtf(TAG, "Failed to read", e);
+                }
+                return null;
+            }
+
+
+            @Override
+            protected void onPostExecute(Void v) {
+                Log.i(TAG, "Creating track...audioData.length = " + audioData.length);
+            }
+
+        }.execute();
+    }
 
     /**
      * 停止播放
      */
-    private void stopPlay() {
+    public void pauseAudioRecord(View view) {
         if (audioTrack != null) {
             Log.d(TAG, "Stopping");
             audioTrack.stop();

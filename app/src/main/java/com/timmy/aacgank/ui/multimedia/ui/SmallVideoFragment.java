@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.ui;
+package com.timmy.aacgank.ui.multimedia.ui;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

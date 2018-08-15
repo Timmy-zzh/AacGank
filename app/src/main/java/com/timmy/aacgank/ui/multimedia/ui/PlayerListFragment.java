@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.ui;
+package com.timmy.aacgank.ui.multimedia.ui;
 
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -10,17 +10,18 @@ import com.timmy.baselib.utils.LogUtils;
 
 import java.util.Arrays;
 
-public class RecommendFragment extends TPageLazyBaseFragment<ViewPaddingRecyclerBinding> {
+/**
+ * 播单
+ */
+public class PlayerListFragment extends TPageLazyBaseFragment<ViewPaddingRecyclerBinding> {
 
-
-    public static RecommendFragment newInstance() {
-        RecommendFragment fragment = new RecommendFragment();
+    public static PlayerListFragment newInstance() {
+        PlayerListFragment fragment = new PlayerListFragment();
         return fragment;
     }
 
     @Override
     protected int getLayoutRes() {
-        LogUtils.d("RecommendFragment  getLayoutRes  ");
         return R.layout.view_padding_recycler;
     }
 
@@ -31,7 +32,7 @@ public class RecommendFragment extends TPageLazyBaseFragment<ViewPaddingRecycler
 
     @Override
     protected void lazyLoadData() {
-        LogUtils.d("RecommendFragment  lazyLoadData  ");
+        LogUtils.d("PlayerListFragment  lazyLoadData  ");
         String[] stringArray = getResources().getStringArray(R.array.date);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         binding.recyclerView.setAdapter(new SimpleAdapter(this.getContext(), Arrays.asList(stringArray)));
@@ -41,6 +42,5 @@ public class RecommendFragment extends TPageLazyBaseFragment<ViewPaddingRecycler
     protected void initBase() {
         super.initBase();
         showContentLayout();
-        LogUtils.d("RecommendFragment  initBase  ");
     }
 }

@@ -17,10 +17,12 @@ import com.timmy.aacgank.ui.android.contentProvider.ContentProviderStudyActivity
 import com.timmy.aacgank.ui.android.database.DatabaseActivity;
 import com.timmy.aacgank.ui.android.motionEvent.MotionEventActivity;
 import com.timmy.aacgank.ui.android.uiDraw.UIDrawActivity;
-import com.timmy.aacgank.ui.video.audio.AudioStudyActivity;
+import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
 import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
 import com.timmy.aacgank.ui.android.broadcastReceiver.BroadcaseReceiverActivity;
 import com.timmy.aacgank.ui.android.service.ServiceStudyActivity;
+import com.timmy.aacgank.ui.multimedia.video.CameraStudyActivity;
+import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.tdialog.TDialog;
 import com.timmy.tdialog.base.BindViewHolder;
 import com.timmy.tdialog.base.TBaseAdapter;
@@ -61,27 +63,45 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
                 switch (model.getTag()) {
                     //Android
-                    case MainTag.ANDROID.TAG_FOUR_COMPONENT://四大组件
+                    case MainTag.ANDROID.TAG_FOUR_COMPONENT:
+                        //四大组件
                         fourComponent();
                         break;
-                    case MainTag.ANDROID.TAG_BEHAVIOR://自定义Behavior
+                    case MainTag.ANDROID.TAG_BEHAVIOR:
+                        //自定义Behavior
                         gotoNextActivity(BehaviorActivity.class);
                         break;
-                    case MainTag.ANDROID.TAG_DATA_BASE://数据存储
+                    case MainTag.ANDROID.TAG_DATA_BASE:
+                        //数据存储
                         gotoNextActivity(DatabaseActivity.class);
                         break;
-                    case MainTag.ANDROID.TAG_MOTION_EVENT://事件分发
+                    case MainTag.ANDROID.TAG_MOTION_EVENT:
+                        //事件分发
                         gotoNextActivity(MotionEventActivity.class);
                         break;
-                    case MainTag.ANDROID.TAG_UI_DRAW://UI绘制流程
+                    case MainTag.ANDROID.TAG_UI_DRAW:
+                        //UI绘制流程
                         gotoNextActivity(UIDrawActivity.class);
+                        break;
+                    default:
                         break;
                 }
 
                 switch (model.getTag()) {
-                    //音视频开发
+                    //多媒体 音视频开发
                     case MainTag.VIDEO.TAG_AUDIO:
+                        //音频数据采集
                         gotoNextActivity(AudioStudyActivity.class);
+                        break;
+                    case MainTag.VIDEO.TAG_VIDEO_CAMERA:
+                        //Camera采集视频数据
+                        gotoNextActivity(CameraStudyActivity.class);
+                        break;
+                    case MainTag.VIDEO.TAG_VIDEO_BASE:
+                        //使用MediaExtractor与MediaMuxer解析和封装mp4文件
+                        gotoNextActivity(VideoStudyActivity1.class);
+                        break;
+                    default:
                         break;
                 }
             }
@@ -113,6 +133,8 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                                 break;
                             case "ContentProvide":
                                 context.startActivity(new Intent(context, ContentProviderStudyActivity.class));
+                                break;
+                            default:
                                 break;
                         }
                     }

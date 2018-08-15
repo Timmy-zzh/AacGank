@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.ui;
+package com.timmy.aacgank.ui.multimedia.ui;
 
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;

@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentMyBinding;
-import com.timmy.aacgank.ui.video.audio.AudioStudyActivity;
+import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
 import com.timmy.baselib.base.fragment.TBaseContentFragment;
 import com.timmy.baselib.utils.LogUtils;
 
@@ -49,7 +49,7 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 //设置Toolbar背景色变化
-                LogUtils.d("verticalOffset:" + verticalOffset);
+//                LogUtils.d("verticalOffset:" + verticalOffset);
                 binding.toolbar.setBackgroundColor(
                         changeAlpha(getResources().getColor(R.color.c_wallet_negative),
                                 Math.abs(verticalOffset * 1.0f) / appBarLayout.getTotalScrollRange()));

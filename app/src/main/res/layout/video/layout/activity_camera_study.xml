@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="1.使用Camera采集视频数据"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="surfaceViewDisplay"
+            android:text="使用SurfaceView来预览Camera数据"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="textureViewDisplay"
+            android:text="使用TextureView来预览Camera数据"
+            android:textAllCaps="false" />
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp" />
+
+        <TextureView
+            android:id="@+id/texture_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            android:visibility="gone" />
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_bind"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="bindService"-->
+        <!--android:text="bindService"-->
+        <!--android:textAllCaps="false" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_unbind"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="unbindService"-->
+        <!--android:text="unbindService"-->
+        <!--android:textAllCaps="false" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="2.Service与Thread "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="3.创建前台服务 "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="4.AIDL进程间通信,请运行AidlClient客户端 "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:onClick="sourceLook"-->
+        <!--android:text="5.Service源码解析 "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:onClick="intentServiceUse"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:text="6.IntentService 模拟图片上传 (Add Task)"-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/ll_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    </LinearLayout>
+
+</ScrollView>

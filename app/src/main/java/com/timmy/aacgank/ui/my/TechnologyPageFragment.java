@@ -87,7 +87,8 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
     private void subscribeUI() {
         switch (mPage) {
-            case "Android基础"://高级ui
+            case "Android基础":
+                //高级ui
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));
@@ -120,6 +121,8 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 break;
             case "音视频开发":
                 pageListSix.add(new MainModel(MainTag.VIDEO.TAG_AUDIO, "音频数据采集"));
+                pageListSix.add(new MainModel(MainTag.VIDEO.TAG_VIDEO_CAMERA, "使用Camera采集视频数据"));
+                pageListSix.add(new MainModel(MainTag.VIDEO.TAG_VIDEO_BASE, "使用MediaExtractor与MediaMuxer解析和封装mp4文件"));
 
                 adapter.setData(pageListSix);
                 break;
@@ -176,6 +179,8 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ALIBABA_V_LAYOUT, "Alibaba V-Layout框架使用"));
 
                 adapter.setData(pageListThree);
+                break;
+            default:
                 break;
         }
         showContentLayout();

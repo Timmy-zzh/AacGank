@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.audio;
+package com.timmy.aacgank.ui.multimedia.audio;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;

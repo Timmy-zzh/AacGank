@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.ui;
+package com.timmy.aacgank.ui.multimedia.ui;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentVideoHotBinding;

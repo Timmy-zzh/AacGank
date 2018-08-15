@@ -67,9 +67,6 @@
             android:name=".ui.android.activity.ActivityLifeActivity"
             android:label="Activity知识点"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity
-            android:name=".ui.video.audio.AudioStudyActivity"
-            android:label="AudioRecord音频采集" />
 
         <!-- Service -->
         <activity
@@ -143,7 +140,11 @@
             android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- ********************************音视频开发******************************************* -->
-        <activity android:name=".ui.video.exoplayer.ExoPlayerActivity" />
+        <activity
+            android:name=".ui.multimedia.audio.AudioStudyActivity"
+            android:label="AudioRecord音频采集"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".ui.multimedia.exoplayer.ExoPlayerActivity" />
 
         <!-- ********************************其他******************************************* -->
         <activity android:name=".ui.other.WebViewActivity" />
@@ -152,7 +153,12 @@
 
         <!-- ********************************其他******************************************* -->
 
-        <activity android:name=".ui.android.uiDraw.UIDrawActivity"></activity>
+        <activity android:name=".ui.android.uiDraw.UIDrawActivity" />
+        <activity android:name=".ui.multimedia.video.CameraStudyActivity" />
+        <activity
+            android:name=".ui.multimedia.video.VideoStudyActivity1"
+            android:label="@string/title_activity_video_study1"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

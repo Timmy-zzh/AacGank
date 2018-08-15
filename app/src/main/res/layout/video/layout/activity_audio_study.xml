@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.video.audio.AudioStudyActivity">
+    tools:context=".ui.multimedia.audio.AudioStudyActivity">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/toolbar" />
-
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:padding="@dimen/_10sdp"
+            android:text="使用AudioRecord进行音频数据采集" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
-                android:text="AudioRecord音频采集" />
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startAudioRecord"
+            android:text="1.音频采集" />
 
-            <Button
-                android:id="@+id/btn_start"
-                android:layout_width="match_parent"
-                android:onClick="startAudioRecord"
-                android:layout_height="wrap_content"
-                android:text="1.音频采集" />
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="stopAudioRecord"
+            android:text="2.停止采集" />
 
-            <Button
-                android:id="@+id/btn_stop"
-                android:layout_width="match_parent"
-                android:onClick="stopAudioRecord"
-                android:layout_height="wrap_content"
-                android:text="2.停止采集" />
+        <Button
+            android:id="@+id/btn_convet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="convetPcmToWav"
+            android:text="3.PCM文件转换成WAV文件" />
 
-            <Button
-                android:id="@+id/btn_convet"
-                android:layout_width="match_parent"
-                android:onClick="convetPcmToWav"
-                android:layout_height="wrap_content"
-                android:text="3.PCM文件转换成WAV文件" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text="使用AudioTrack进行音频数据播放" />
 
-            <Button
-                android:id="@+id/btn_play"
-                android:layout_width="match_parent"
-                android:onClick="playAudioRecord"
-                android:layout_height="wrap_content"
-                android:text="播放采集的音频数据" />
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="playAudioRecord"
+            android:text="4.MODE_STREAM模式播放采集的音频数据" />
 
-        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="playInModeStatic"
+            android:text="4.1 MODE_STATIC模式播放音频数据" />
 
-    </ScrollView>
+        <Button
+            android:id="@+id/btn_pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="pauseAudioRecord"
+            android:text="5.停止播放音频数据" />
 
-
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

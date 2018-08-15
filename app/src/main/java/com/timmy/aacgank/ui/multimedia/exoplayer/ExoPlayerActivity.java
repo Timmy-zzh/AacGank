@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.video.exoplayer;
+package com.timmy.aacgank.ui.multimedia.exoplayer;
 
 import android.net.Uri;
 import android.os.Handler;

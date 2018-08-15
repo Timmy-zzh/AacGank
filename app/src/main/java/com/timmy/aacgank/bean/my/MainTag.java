@@ -89,6 +89,8 @@ public class MainTag {
     //音视频开发
     public class VIDEO {
         public static final int TAG_AUDIO = 500;
+        public static final int TAG_VIDEO_CAMERA = 501;
+        public static final int TAG_VIDEO_BASE = 502;
     }
 
 
