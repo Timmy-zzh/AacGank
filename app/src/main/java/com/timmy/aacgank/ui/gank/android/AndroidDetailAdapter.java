@@ -19,7 +19,6 @@ import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.other.helper.MyWebViewClient;
 import com.timmy.aacgank.widget.IAdapter;
 import com.timmy.aacgank.widget.ScrollableTabView;
-import com.timmy.baselib.utils.LogUtils;
 import com.timmy.baselib.utils.ToastUtils;
 
 import java.util.List;
@@ -154,9 +153,9 @@ public class AndroidDetailAdapter extends RecyclerView.Adapter<AndroidDetailAdap
                 TextView dealName = holder.itemView.findViewById(R.id.tv_deal_name);
                 dealName.setText("DealName :" + position);
                 if (position % 2 == 0) {
-                    imageView.setImageResource(R.mipmap.ic_002);
+                    imageView.setImageResource(R.mipmap.img_002);
                 } else {
-                    imageView.setImageResource(R.mipmap.ic_001);
+                    imageView.setImageResource(R.mipmap.img_001);
                 }
 
                 break;

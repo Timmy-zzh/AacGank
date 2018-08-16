@@ -5,8 +5,7 @@ import android.view.View;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentTextBinding;
-import com.timmy.aacgank.ui.movie.layoutManager.MyLayoutManagerActivity;
-import com.timmy.aacgank.ui.other.HandlerActivity;
+import com.timmy.aacgank.ui.android.recyclveriew.layoutmanager.MyLayoutManagerActivity;
 import com.timmy.baselib.base.fragment.TBaseBindingFragment;
 import com.timmy.baselib.utils.LogUtils;
 

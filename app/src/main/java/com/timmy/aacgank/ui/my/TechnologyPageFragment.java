@@ -94,6 +94,9 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_UI_DRAW, "UI绘制流程"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PAINT, "绘图操作:Canvas,Path与Paint使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ANIMATION, "动画"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_RECYCLER_VIEW, "RecycleView解析"));
 
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SLIDESLIP, "MD侧滑"));
@@ -108,7 +111,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PALETTE, "Palette调色板的使用"));
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_CARD_VIEW, "CardView的使用"));
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_COORDINATOR_LAYOUT, "CoordinatorLayout的使用"));
-//                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ANIMATION_VIEW, "动画的使用"));
+//
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PATH, "Path高级使用"));
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SHADER, "高级渲染"));
 

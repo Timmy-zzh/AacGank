@@ -4,22 +4,17 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.timmy.aacgank.R;
-import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.bean.movie.BaseDoubanResult;
 import com.timmy.aacgank.bean.movie.DoubanMovie;
 import com.timmy.aacgank.databinding.FragmentMovieBinding;
 import com.timmy.aacgank.ui.movie.aac.MovieViewModel;
 import com.timmy.aacgank.ui.movie.adapter.MovieAdapter;
-import com.timmy.aacgank.ui.movie.layoutManager.MyLayoutManagerActivity;
+import com.timmy.aacgank.ui.android.recyclveriew.layoutmanager.MyLayoutManagerActivity;
 import com.timmy.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.base.fragment.TBaseBindingFragment;
-import com.timmy.baselib.bean.PageList;
-import com.timmy.baselib.bean.PageListResult;
-import com.timmy.baselib.databinding.ActivityRefreshListBinding;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.http.rxjava2.BConsumer;
 

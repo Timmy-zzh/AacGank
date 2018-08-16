@@ -3,6 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="500dp"
     android:scaleType="centerCrop"
-    android:src="@mipmap/ic_002">
+    android:src="@mipmap/img_002">
 
 </ImageView>

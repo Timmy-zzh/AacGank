@@ -93,7 +93,7 @@
             android:layout_height="@dimen/_100sdp"
             android:clickable="true"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic_001" />
+            android:src="@mipmap/img_001" />
     </LinearLayout>
 
 </ScrollView>

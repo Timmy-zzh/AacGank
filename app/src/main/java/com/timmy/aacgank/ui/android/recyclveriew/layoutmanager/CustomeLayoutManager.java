@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.movie.layoutManager;
+package com.timmy.aacgank.ui.android.recyclveriew.layoutmanager;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;

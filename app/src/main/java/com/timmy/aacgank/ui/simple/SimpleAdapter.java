@@ -25,13 +25,13 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
 
     @Override
     public SimpleAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_name, parent,false);
+        View view = mInflater.inflate(R.layout.item_name, parent, false);
         return new SimpleAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final SimpleAdapter.ViewHolder holder, final int position) {
-        holder.tvName.setText(this.mData.get(position));
+        holder.tvName.setText("item:" + position + ":  " + this.mData.get(position));
     }
 
     @Override

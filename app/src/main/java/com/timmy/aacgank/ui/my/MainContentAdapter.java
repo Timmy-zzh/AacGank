@@ -16,6 +16,8 @@ import com.timmy.aacgank.ui.android.activity.ActivityLifeActivity;
 import com.timmy.aacgank.ui.android.contentProvider.ContentProviderStudyActivity;
 import com.timmy.aacgank.ui.android.database.DatabaseActivity;
 import com.timmy.aacgank.ui.android.motionEvent.MotionEventActivity;
+import com.timmy.aacgank.ui.android.paint.PaintUseActivity;
+import com.timmy.aacgank.ui.android.recyclveriew.RecyclerViewActivity;
 import com.timmy.aacgank.ui.android.uiDraw.UIDrawActivity;
 import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
 import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
@@ -82,6 +84,13 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.ANDROID.TAG_UI_DRAW:
                         //UI绘制流程
                         gotoNextActivity(UIDrawActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_PAINT:
+                        //Paint使用
+                        gotoNextActivity(PaintUseActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_RECYCLER_VIEW:
+                        gotoNextActivity(RecyclerViewActivity.class);
                         break;
                     default:
                         break;

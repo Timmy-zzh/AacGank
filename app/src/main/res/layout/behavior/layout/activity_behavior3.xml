@@ -15,7 +15,7 @@
         <com.timmy.aacgank.ui.android.behavior.ucmainpager.NestedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_200sdp"
-            android:background="@mipmap/ic_001">
+            android:background="@mipmap/img_001">
 
             <TextView
                 android:layout_width="@dimen/_100sdp"
