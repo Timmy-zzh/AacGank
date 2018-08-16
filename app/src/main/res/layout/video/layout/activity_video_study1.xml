@@ -10,14 +10,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:padding="@dimen/_5sdp"-->
-            <!--android:text="1.使用Camera采集视频数据"-->
-            <!--android:textColor="@color/black"-->
-            <!--android:textSize="@dimen/_14ssp" />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="使用MediaExtractor提取MP4文件中的视频部分"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
 
         <Button
             android:layout_width="match_parent"
@@ -26,23 +26,23 @@
             android:text="1.MediaExtractor的API使用"
             android:textAllCaps="false" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="textureViewDisplay"
-            android:text="使用TextureView来预览Camera数据"
-            android:textAllCaps="false" />
+        <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="textureViewDisplay"-->
+        <!--android:text="使用TextureView来预览Camera数据"-->
+        <!--android:textAllCaps="false" />-->
 
-        <SurfaceView
-            android:id="@+id/surface_view"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_300sdp" />
+        <!--<SurfaceView-->
+        <!--android:id="@+id/surface_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_300sdp" />-->
 
-        <TextureView
-            android:id="@+id/texture_view"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_300sdp"
-            android:visibility="gone" />
+        <!--<TextureView-->
+        <!--android:id="@+id/texture_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_300sdp"-->
+        <!--android:visibility="gone" />-->
 
     </LinearLayout>
 
