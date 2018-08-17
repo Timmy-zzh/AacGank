@@ -29,7 +29,6 @@ import io.reactivex.functions.Consumer;
  * 使用MediaExtractor与MediaMuxer解析和封装mp4文件
  * 角色:读取器(Extractor)
  * MediaExtractor的作用是把音频和视频的数据进行分离。
- * <p>
  * MediaMuxer的作用是生成音频或视频文件；还可以把音频与视频混合成一个音视频文件。
  */
 public class VideoStudyActivity1 extends AppCompatActivity {
@@ -99,7 +98,6 @@ public class VideoStudyActivity1 extends AppCompatActivity {
                 if (mime.startsWith("video/")) {
                     //选择轨道
                     extractor.selectTrack(i);
-
                     sourceAudioTrack = i;
                     break;
                 }
@@ -150,5 +148,4 @@ public class VideoStudyActivity1 extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 }

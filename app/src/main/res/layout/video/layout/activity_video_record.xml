@@ -13,27 +13,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="使用MediaExtractor提取MP4文件中的视频部分"
+            android:text="目标:串联整个音视频录制流程，完成音视频的采集、编码、封包成 mp4 输出。"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="userMediaExtractor"
-            android:text="MediaExtractor提取视频数据"
-            android:textAllCaps="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:padding="@dimen/_5sdp"
-            android:text="MediaExtractor的作用是把音频和视频的数据进行分离。\nMediaMuxer的作用是生成音频或视频文件；还可以把音频与视频混合成一个音视频文件。"
+            android:text="方案:\n1.Android音视频采集的方法：预览用SurfaceView，视频采集用Camera类，音频采集用AudioRecord。\n2.使用MediaCodec 类进行编码压缩，视频压缩为H.264，音频压缩为aac，使用MediaMuxer 将音视频合成为MP4。"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="@dimen/_12ssp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startVideoRecord"
+            android:text="开始视频录制"
+            android:textAllCaps="false" />
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp" />
 
     </LinearLayout>
 

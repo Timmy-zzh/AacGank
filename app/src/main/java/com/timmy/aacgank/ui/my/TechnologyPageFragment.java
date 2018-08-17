@@ -126,6 +126,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 pageListSix.add(new MainModel(MainTag.VIDEO.TAG_AUDIO, "音频数据采集"));
                 pageListSix.add(new MainModel(MainTag.VIDEO.TAG_VIDEO_CAMERA, "使用Camera采集视频数据"));
                 pageListSix.add(new MainModel(MainTag.VIDEO.TAG_VIDEO_BASE, "使用MediaExtractor与MediaMuxer解析和封装mp4文件"));
+                pageListSix.add(new MainModel(MainTag.VIDEO.TAG_VIDEO_RECORD, "音视频录制"));
 
                 adapter.setData(pageListSix);
                 break;

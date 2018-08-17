@@ -24,6 +24,7 @@ import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
 import com.timmy.aacgank.ui.android.broadcastReceiver.BroadcaseReceiverActivity;
 import com.timmy.aacgank.ui.android.service.ServiceStudyActivity;
 import com.timmy.aacgank.ui.multimedia.video.CameraStudyActivity;
+import com.timmy.aacgank.ui.multimedia.video.VideoRecordActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.tdialog.TDialog;
 import com.timmy.tdialog.base.BindViewHolder;
@@ -109,6 +110,10 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.VIDEO.TAG_VIDEO_BASE:
                         //使用MediaExtractor与MediaMuxer解析和封装mp4文件
                         gotoNextActivity(VideoStudyActivity1.class);
+                        break;
+                    case MainTag.VIDEO.TAG_VIDEO_RECORD:
+                        //使用MediaExtractor与MediaMuxer解析和封装mp4文件
+                        gotoNextActivity(VideoRecordActivity.class);
                         break;
                     default:
                         break;
