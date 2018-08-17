@@ -27,10 +27,11 @@
             android:textSize="@dimen/_12ssp" />
 
         <Button
+            android:id="@+id/btn_record"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startVideoRecord"
-            android:text="开始视频录制"
+            android:text="开始录制"
             android:textAllCaps="false" />
 
         <SurfaceView
