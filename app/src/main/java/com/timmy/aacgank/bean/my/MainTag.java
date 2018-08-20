@@ -95,6 +95,7 @@ public class MainTag {
         public static final int TAG_VIDEO_CAMERA = 501;
         public static final int TAG_VIDEO_BASE = 502;
         public static final int TAG_VIDEO_RECORD = 503;
+        public static final int TAG_OPENGL = 504;
     }
 
 

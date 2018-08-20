@@ -12,7 +12,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -31,6 +33,14 @@
 
     <uses-permission android:name="com.timmy.broadcast.timmy" />
 
+    <!-- OpenGl权限 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!-- 纹理 -->
+    <!-- <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" /> -->
+    <!-- <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" /> -->
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -145,7 +155,10 @@
             android:label="AudioRecord音频采集"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".ui.multimedia.exoplayer.ExoPlayerActivity" />
-        <activity android:name=".ui.multimedia.video.VideoRecordActivity"/>
+        <activity android:name=".ui.multimedia.video.VideoRecordActivity" />
+
+        <!-- OpenGL -->
+        <activity android:name=".ui.multimedia.openGL.OpenGLStudyActivity" />
 
         <!-- ********************************其他******************************************* -->
         <activity android:name=".ui.other.WebViewActivity" />
@@ -168,6 +181,7 @@
             android:name=".ui.android.recyclveriew.itemdecoration.ItemDecorationActivity"
             android:label="RecyclerView分割线"
             android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".ui.multimedia.openGL.OpenGLTriangleActivity"></activity>
     </application>
 
 </manifest>

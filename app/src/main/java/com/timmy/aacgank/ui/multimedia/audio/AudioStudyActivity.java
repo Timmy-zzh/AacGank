@@ -208,6 +208,7 @@ public class AudioStudyActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void playAudioRecord(View view) {
         playInModeStream();
+//        playInModeStatic(null);
     }
 
     /**
@@ -347,5 +348,4 @@ public class AudioStudyActivity extends AppCompatActivity {
             Log.d(TAG, "Nulling");
         }
     }
-
 }
