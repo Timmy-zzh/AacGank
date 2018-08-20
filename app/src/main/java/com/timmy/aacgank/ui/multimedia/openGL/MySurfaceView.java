@@ -12,7 +12,8 @@ public class MySurfaceView extends GLSurfaceView {
         setEGLContextClientVersion(2);
 
         //创建GLSurfaceView渲染对象
-        MyRenderer renderer = new MyRenderer();
+//        MyRenderer renderer = new MyRenderer();
+        MyRenderer2 renderer = new MyRenderer2();
 
         //GLSurfaceView是一个控件,真正控制绘制渲染的是Renderer
         setRenderer(renderer);
