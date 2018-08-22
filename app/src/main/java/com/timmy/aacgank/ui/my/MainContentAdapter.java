@@ -13,6 +13,7 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
 import com.timmy.aacgank.ui.android.activity.ActivityLifeActivity;
+import com.timmy.aacgank.ui.android.animation.AnimationUseActivity;
 import com.timmy.aacgank.ui.android.contentProvider.ContentProviderStudyActivity;
 import com.timmy.aacgank.ui.android.database.DatabaseActivity;
 import com.timmy.aacgank.ui.android.motionEvent.MotionEventActivity;
@@ -90,6 +91,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.ANDROID.TAG_PAINT:
                         //Paint使用
                         gotoNextActivity(PaintUseActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_ANIMATION:
+                        gotoNextActivity(AnimationUseActivity.class);
                         break;
                     case MainTag.ANDROID.TAG_RECYCLER_VIEW:
                         gotoNextActivity(RecyclerViewActivity.class);
