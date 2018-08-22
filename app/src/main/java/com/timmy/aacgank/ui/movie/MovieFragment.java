@@ -82,7 +82,6 @@ public class MovieFragment extends TBaseBindingFragment<FragmentMovieBinding> {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 DoubanMovie doubanMovie = mAdapter.getData().get(position);
-                startActivity(new Intent(getContext(), MyLayoutManagerActivity.class));
             }
         });
     }

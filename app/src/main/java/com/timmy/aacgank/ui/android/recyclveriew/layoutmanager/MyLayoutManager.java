@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
+ * 将所有子控件都排放出来了
  * 自定义LayoutManager,主要实现
  * 1.对RecyclerView子控件的排放
  * 2.滑动
@@ -18,8 +19,10 @@ import android.view.ViewGroup;
  */
 public class MyLayoutManager extends RecyclerView.LayoutManager {
 
-    private int mTotalHeight; //整个RecyclerView高度
-    private int mMoveDistance;// 手指整体滑动的距离
+    private int mTotalHeight;
+    //整个RecyclerView高度
+    private int mMoveDistance;
+    // 手指整体滑动的距离
     private SparseArray<Rect> itemRects = null;
 
     /**
@@ -144,7 +147,6 @@ public class MyLayoutManager extends RecyclerView.LayoutManager {
                 Log.e("handleRecycle", "回收喽");
             }
         }
-
     }
 
     /**

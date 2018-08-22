@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.ui.android.recyclveriew.itemdecoration.ItemDecorationActivity;
+import com.timmy.aacgank.ui.android.recyclveriew.layoutmanager.MyLayoutManagerActivity;
 
 /**
  * @author zhuzhonghua
@@ -27,5 +28,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
      */
     public void addItemDecoration(View view) {
         startActivity(new Intent(this, ItemDecorationActivity.class));
+    }
+
+    public void simpleLayoutManager(View view) {
+        startActivity(new Intent(this, MyLayoutManagerActivity.class));
     }
 }

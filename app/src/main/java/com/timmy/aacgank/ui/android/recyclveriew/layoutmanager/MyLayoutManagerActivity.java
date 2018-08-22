@@ -11,6 +11,10 @@ import com.timmy.aacgank.ui.simple.SimpleAdapter;
 
 import java.util.Arrays;
 
+/**
+ * 自定义LayoutManager
+ *
+ */
 public class MyLayoutManagerActivity extends AppCompatActivity {
 
     @Override
@@ -26,8 +30,9 @@ public class MyLayoutManagerActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         String[] datas = getResources().getStringArray(R.array.date);
-        recyclerView.setLayoutManager(new MyLayoutManager());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+//        recyclerView.setLayoutManager(new MyLayoutManager());
+        recyclerView.setLayoutManager(new FlowayoutManager());
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(new SimpleAdapter(this, Arrays.asList(datas)));
     }
 }
