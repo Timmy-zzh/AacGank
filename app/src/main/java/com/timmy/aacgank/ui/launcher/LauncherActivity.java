@@ -12,6 +12,7 @@ import android.view.WindowManager;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.ui.MainActivity;
+import com.timmy.tdialog.TDialog;
 
 public class LauncherActivity extends AppCompatActivity {
 
@@ -61,6 +62,10 @@ public class LauncherActivity extends AppCompatActivity {
                 LauncherActivity.this.finish();
             }
         });
+    }
+
+    public void goLogin(View view) {
+        startActivity(new Intent(this,GestureLoginActivity.class));
     }
 }
 

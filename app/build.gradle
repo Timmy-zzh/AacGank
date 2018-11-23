@@ -65,6 +65,6 @@ dependencies {
     //Google视频播放
     implementation 'com.google.android.exoplayer:exoplayer:2.8.2'
 
-    implementation 'com.timmy.tdialog:tdialog:2.0.0'
+    implementation 'com.timmy.tdialog:tdialog:2.1.1'
 
 }

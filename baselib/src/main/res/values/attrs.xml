@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GestureLockLayout">
+        <!--自定义手势键盘控件-->
+        <attr name="gesture_lock_custome" format="string"/>
+        <!--是否开启绘制背景框-->
+        <attr name="draw_bg_enable" format="boolean" />
+        <attr name="bg_line_width" format="dimension" />
+        <attr name="bg_line_color" format="color|reference" />
+
+        <!--连接线颜色：连接-->
+        <attr name="link_select_color" format="color|reference" />
+        <!--连接线颜色：出现错误-->
+        <attr name="link_error_color" format="color|reference" />
+        <!--连接线宽度-->
+        <attr name="link_width" format="dimension" />
+        <!--连接动画-->
+        <attr name="link_selected_anim" format="reference" />
+
+        <!--三种状态 normal  select error 两种圆 inner outter-->
+        <attr name="normal_inner_color" format="color|reference" />
+        <attr name="normal_outter_color" format="color|reference" />
+        <attr name="select_inner_color" format="color|reference" />
+        <attr name="select_outter_color" format="color|reference" />
+        <attr name="error_inner_color" format="color|reference" />
+        <attr name="error_outter_color" format="color|reference" />
+
+        <!--自动连接间隔点-->
+        <attr name="auto_link" format="boolean" />
+        <!--开启抖动动画功能-->
+        <attr name="vibrate_enable" format="boolean" />
+        <!--抖动动画时间-->
+        <attr name="vibrate_animat_time" format="integer" />
+        <!--depth 深度 -->
+        <attr name="depth" format="integer" />
+    </declare-styleable>
+
+</resources>

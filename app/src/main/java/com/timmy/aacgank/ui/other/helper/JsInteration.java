@@ -3,8 +3,6 @@ package com.timmy.aacgank.ui.other.helper;
 import android.content.Context;
 import android.webkit.JavascriptInterface;
 
-import com.orhanobut.logger.Logger;
-
 
 
 /**
@@ -25,7 +23,7 @@ public class JsInteration {
      */
     @JavascriptInterface
     public void activeProject(String idJson) {
-        Logger.d("题H5页面:" + idJson);
+//        Logger.d("题H5页面:" + idJson);
 //        ID idObj = JsonUtil.fromJson(idJson, ID.class);
 //        GoodsDetailActivity.startActionNewTask(mContext, idObj.id);
     }

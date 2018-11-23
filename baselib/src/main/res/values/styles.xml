@@ -37,7 +37,7 @@
     </style>
 
 
-    <!--开始0000000000000000000000000000000000000线条样式00000000000000000000000000000000-->
+    <!--开始1111111111111111111111111111111111111线条样式11111111111111111111111111111111-->
     <style name="HorizontalLine">
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@color/T_F2</item>

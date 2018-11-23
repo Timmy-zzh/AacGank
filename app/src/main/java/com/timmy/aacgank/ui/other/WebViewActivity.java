@@ -19,14 +19,13 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
-
-import com.orhanobut.logger.Logger;
 import com.timmy.aacgank.C;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityWebViewBinding;
 import com.timmy.aacgank.ui.other.helper.JsInteration;
 import com.timmy.aacgank.ui.other.helper.MyWebViewClient;
 import com.timmy.baselib.base.activity.TBaseContentActivity;
+import com.timmy.baselib.utils.LogUtils;
 
 
 public class WebViewActivity extends TBaseContentActivity<ActivityWebViewBinding> {
@@ -106,7 +105,7 @@ public class WebViewActivity extends TBaseContentActivity<ActivityWebViewBinding
         binding.webView.clearCache(true);
 
         if (!TextUtils.isEmpty(url)) {
-            Logger.d(url);
+            LogUtils.d(url);
 //            binding.webView.loadData("", "text/html", null);
             binding.webView.loadUrl(url);
         } else if (!TextUtils.isEmpty(urlData)) {

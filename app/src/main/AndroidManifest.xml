@@ -182,7 +182,9 @@
             android:label="RecyclerView分割线"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".ui.multimedia.openGL.OpenGLTriangleActivity" />
-        <activity android:name=".ui.android.animation.AnimationUseActivity"></activity>
+        <activity android:name=".ui.android.animation.AnimationUseActivity" />
+        <activity android:name=".ui.launcher.LoginActivity" />
+        <activity android:name=".ui.launcher.GestureLoginActivity"/>
     </application>
 
 </manifest>

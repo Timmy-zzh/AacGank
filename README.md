@@ -18,6 +18,7 @@
         个人技术接收
 
 技术:
+    组件化
     Android-Architecture-Components:AAC
     DataBinding
     Adapter:BRVH
@@ -27,6 +28,7 @@
     图片加载:Glide
     状态栏:StatusBarUtil
     弹窗:TDialog
+    日志打印：Log
 
 
 

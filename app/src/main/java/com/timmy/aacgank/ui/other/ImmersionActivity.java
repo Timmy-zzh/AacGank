@@ -38,4 +38,5 @@ public class ImmersionActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();//ActionBar隐藏
     }
+
 }

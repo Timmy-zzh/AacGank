@@ -5,13 +5,13 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.orhanobut.logger.Logger;
+import com.timmy.baselib.utils.LogUtils;
 
 
 public class MyWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(final WebView view, final String url) {
-        Logger.d("shouldOverrideUrlLoading  URL:" + url);
+        LogUtils.d("shouldOverrideUrlLoading  URL:" + url);
         view.postDelayed(new Runnable() {
             @Override
             public void run() {

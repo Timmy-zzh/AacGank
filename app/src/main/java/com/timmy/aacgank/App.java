@@ -20,7 +20,7 @@ public class App extends Application {
 
     private void initLib() {
         //开启Logger
-        LogUtils.init(BuildConfig.DEBUG);
+//        LogUtils.init(BuildConfig.DEBUG);
         Utils.init(this);
     }
 }
