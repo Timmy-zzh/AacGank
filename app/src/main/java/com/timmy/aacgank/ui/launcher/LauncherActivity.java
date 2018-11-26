@@ -65,7 +65,12 @@ public class LauncherActivity extends AppCompatActivity {
     }
 
     public void goLogin(View view) {
-        startActivity(new Intent(this,GestureLoginActivity.class));
+//        startActivity(new Intent(this, LoginActivity.class));
+
+    }
+
+    public void goLoginGesture(View view) {
+        startActivity(new Intent(this, GestureLoginActivity.class));
     }
 }
 

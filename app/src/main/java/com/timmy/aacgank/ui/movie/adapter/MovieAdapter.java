@@ -5,8 +5,8 @@ import android.widget.ImageView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.movie.DoubanMovie;
 import com.timmy.aacgank.databinding.ItemMovieBinding;
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.adapterlib.BaseViewHolder;
+import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
+import com.timmy.baselib.adapterlib.BaseViewHolder;
 import com.timmy.baselib.image.ImageUtil;
 
 public class MovieAdapter extends BaseDataBindingAdapter<DoubanMovie, ItemMovieBinding> {

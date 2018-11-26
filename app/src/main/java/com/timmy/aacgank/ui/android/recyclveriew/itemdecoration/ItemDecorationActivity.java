@@ -2,7 +2,6 @@ package com.timmy.aacgank.ui.android.recyclveriew.itemdecoration;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,14 +11,8 @@ import android.view.MenuItem;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.ui.simple.SimpleAdapter;
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.baselib.base.activity.TBaseListBindingActivity;
-import com.timmy.baselib.base.helper.BaseListViewModel;
-import com.timmy.baselib.bean.PageListResult;
 
 import java.util.Arrays;
-
-import io.reactivex.Flowable;
 
 /**
  * @author zhuzhonghua

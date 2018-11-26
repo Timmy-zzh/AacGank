@@ -6,8 +6,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ItemWelfareBinding;
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.adapterlib.BaseViewHolder;
+import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
+import com.timmy.baselib.adapterlib.BaseViewHolder;
 import com.timmy.baselib.image.ImageUtil;
 
 /**

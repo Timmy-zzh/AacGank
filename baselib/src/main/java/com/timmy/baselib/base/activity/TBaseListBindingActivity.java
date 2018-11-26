@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.R;
+import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
+import com.timmy.baselib.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.base.helper.BaseListViewModel;
 import com.timmy.baselib.bean.PageList;
 import com.timmy.baselib.bean.PageListResult;

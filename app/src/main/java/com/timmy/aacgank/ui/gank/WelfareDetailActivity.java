@@ -1,7 +1,6 @@
 package com.timmy.aacgank.ui.gank;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
@@ -23,7 +22,7 @@ import com.timmy.aacgank.ui.gank.aac.GankViewModel;
 import com.timmy.aacgank.ui.gank.adapter.WelfareDetailAdapter;
 import com.timmy.aacgank.ui.other.WebViewActivity;
 import com.timmy.aacgank.util.DateUtil;
-import com.timmy.adapterlib.BaseQuickAdapter;
+import com.timmy.baselib.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.base.activity.TBaseContentActivity;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.image.ImageUtil;

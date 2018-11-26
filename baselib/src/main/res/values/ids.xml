@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="id" name="statusbarutil_fake_status_bar_view" />
-    <item type="id" name="statusbarutil_translucent_view" />
+    <item name="statusbarutil_fake_status_bar_view" type="id" />
+    <item name="statusbarutil_translucent_view" type="id" />
 
-    <item type="color" name="colorPrimary"/>
-    <item type="color" name="colorPrimaryDark"/>
-    <item type="color" name="colorAccent"/>
+    <item name="colorPrimary" type="color" />
+    <item name="colorPrimaryDark" type="color" />
+    <item name="colorAccent" type="color" />
+
+    <item name="BaseQuickAdapter_viewholder_support" type="id" />
+    <item name="BaseQuickAdapter_swiping_support" type="id" />
+    <item name="BaseQuickAdapter_dragging_support" type="id" />
+    <item name="BaseQuickAdapter_databinding_support" type="id" />
 
 </resources>

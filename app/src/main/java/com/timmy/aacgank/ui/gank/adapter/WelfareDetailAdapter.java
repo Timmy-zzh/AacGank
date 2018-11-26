@@ -8,8 +8,8 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ItemAndroidBinding;
 import com.timmy.aacgank.databinding.ItemWelfareDetailBinding;
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.adapterlib.BaseViewHolder;
+import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
+import com.timmy.baselib.adapterlib.BaseViewHolder;
 
 import java.util.List;
 

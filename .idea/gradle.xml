@@ -8,10 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/adapterlib" />
             <option value="$PROJECT_DIR$/aidlclient" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baselib" />
+            <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/sdp-android" />
             <option value="$PROJECT_DIR$/ssp-android" />
           </set>

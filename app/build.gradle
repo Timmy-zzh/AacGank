@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+//ext.mainApp = true
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -49,7 +50,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':baselib')
-    implementation project(':adapterlib')
     implementation project(':ssp-android')
     implementation project(':sdp-android')
 

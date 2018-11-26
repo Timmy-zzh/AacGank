@@ -4,8 +4,8 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ItemAndroidBinding;
 import com.timmy.aacgank.util.DateUtil;
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.adapterlib.BaseViewHolder;
+import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
+import com.timmy.baselib.adapterlib.BaseViewHolder;
 
 /**
  * {"福利", "Android", "iOS", "休息视频", "拓展资源", "前端", "all"};

@@ -12,8 +12,8 @@ import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.gank.adapter.AndroidAdapter;
 import com.timmy.aacgank.ui.gank.adapter.WelfareAdapter;
 import com.timmy.aacgank.ui.gank.android.AndroidDetailActivity;
-import com.timmy.adapterlib.BaseDataBindingAdapter;
-import com.timmy.adapterlib.BaseQuickAdapter;
+import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
+import com.timmy.baselib.adapterlib.BaseQuickAdapter;
 
 /**
  * Gank数据不同类型展示的界面

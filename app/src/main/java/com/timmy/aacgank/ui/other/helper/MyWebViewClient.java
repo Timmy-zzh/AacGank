@@ -7,7 +7,6 @@ import android.webkit.WebViewClient;
 
 import com.timmy.baselib.utils.LogUtils;
 
-
 public class MyWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(final WebView view, final String url) {
