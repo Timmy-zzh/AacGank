@@ -1,13 +1,12 @@
 package com.timmy.aacgank.ui.gank;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
-import com.timmy.aacgank.C;
+import com.timmy.baselib.C;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.gank.adapter.AndroidAdapter;
 import com.timmy.aacgank.ui.gank.adapter.WelfareAdapter;

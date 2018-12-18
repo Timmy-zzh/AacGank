@@ -14,13 +14,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         initLib();
     }
 
     private void initLib() {
-        //开启Logger
-//        LogUtils.init(BuildConfig.DEBUG);
         Utils.init(this);
     }
 }

@@ -17,7 +17,16 @@
     个人中心:
         个人技术接收
 
-技术:
+个人技术栈
+Android体系：
+Android基础
+自定义控件
+UI控件解析
+技术框架
+组件化+插件化+热修复
+性能优化
+
+Android技术:
     组件化
     Android-Architecture-Components:AAC
     DataBinding

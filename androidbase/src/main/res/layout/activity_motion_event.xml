@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="1.事件分发流程:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="点击事件在DOWN与UP事件触发，长按事件在DOWN事件中触发"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="2.事件拦截处理"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="3.只要接受ACTION_DOWN就意味着接受所有的事件,拒绝ACTION_DOWN则不会收到后续内容。"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:background="@color/c_redeem">
+
+            <com.timmy.aacgank.ui.android.motionEvent.MyTextView
+                android:id="@+id/tv"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="top"
+                android:background="@color/orange" />
+
+
+            <com.timmy.aacgank.ui.android.motionEvent.MyButton
+                android:id="@+id/btn"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="bottom"
+                android:text="点击事件"
+                android:textAllCaps="false" />
+
+        </com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="4.设置ImageView的clickable属性为true,则其onTouchEvent()方法返回true,会消费事件"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="不论 View 自身是否注册点击事件，只要 View 是可点击的就会消费事件。"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_001" />
+    </LinearLayout>
+
+</ScrollView>

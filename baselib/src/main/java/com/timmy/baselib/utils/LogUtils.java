@@ -32,15 +32,6 @@ public class LogUtils {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
-//    public static void init(final boolean isDebug){
-//        Logger.addLogAdapter(new AndroidLogAdapter() {
-//            @Override public boolean isLoggable(int priority, String tag) {
-//                return isDebug;
-//            }
-//        });
-//    }
-//
-
     public static void d(@NonNull String message, @Nullable Object... args) {
         log(DEBUG, null, message, args);
     }

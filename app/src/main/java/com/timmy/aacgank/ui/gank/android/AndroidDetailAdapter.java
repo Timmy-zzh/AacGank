@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
-import com.timmy.aacgank.ui.other.helper.MyWebViewClient;
+import com.timmy.baselib.webview.MyWebViewClient;
 import com.timmy.aacgank.widget.IAdapter;
 import com.timmy.aacgank.widget.ScrollableTabView;
 import com.timmy.baselib.utils.ToastUtils;

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFF</color>
+
+    <color name="T_CC_80">#aaCCCCCC</color>
     <color name="text_c">#242424</color>
     <!-- 主页背景 -->
     <color name="bg_main">#f1f1f1</color>
@@ -45,7 +47,6 @@
     <color name="T_FF_TRANS90">#ddFFFFFF</color>
     <color name="T_FF_TRANS35">#66FFFFFF</color>
     <color name="c_focus">#455F6B </color>
-    <color name="bg_launcer">#F22C26</color>
     <color name="T_F3">#F3F3F3</color>
     <color name="c_wallet_negative">#5ECFBB</color>
     <color name="yellow">#FFCF40</color>

@@ -24,6 +24,7 @@ public final class Utils {
      */
     public static void init(Context context) {
         Utils.context = context.getApplicationContext();
+        SpHelper.init(context);
     }
 
     /**

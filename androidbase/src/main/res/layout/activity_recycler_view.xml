@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addItemDecoration"
+            android:text="1.添加分割线"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/_5sdp"
+            android:text="2.自定义LayoutManager"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <Button
+            android:id="@+id/btn_ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="simpleLayoutManager"
+            android:text="Simple自定义"
+            android:textAllCaps="false" />
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_bind"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="bindService"-->
+        <!--android:text="bindService"-->
+        <!--android:textAllCaps="false" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_unbind"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="unbindService"-->
+        <!--android:text="unbindService"-->
+        <!--android:textAllCaps="false" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="2.Service与Thread "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="3.创建前台服务 "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:text="4.AIDL进程间通信,请运行AidlClient客户端 "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:onClick="sourceLook"-->
+        <!--android:text="5.Service源码解析 "-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:onClick="intentServiceUse"-->
+        <!--android:padding="@dimen/_5sdp"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:text="6.IntentService 模拟图片上传 (Add Task)"-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="@dimen/_14ssp" />-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/ll_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    </LinearLayout>
+
+</ScrollView>

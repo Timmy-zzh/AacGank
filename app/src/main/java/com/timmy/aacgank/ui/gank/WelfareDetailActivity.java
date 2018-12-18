@@ -20,7 +20,7 @@ import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ActivityWelfareDetailBinding;
 import com.timmy.aacgank.ui.gank.aac.GankViewModel;
 import com.timmy.aacgank.ui.gank.adapter.WelfareDetailAdapter;
-import com.timmy.aacgank.ui.other.WebViewActivity;
+import com.timmy.baselib.webview.WebViewActivity;
 import com.timmy.aacgank.util.DateUtil;
 import com.timmy.baselib.adapterlib.BaseQuickAdapter;
 import com.timmy.baselib.base.activity.TBaseContentActivity;

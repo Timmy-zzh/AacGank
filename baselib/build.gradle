@@ -33,6 +33,7 @@ android {
                     'src/main/res/layout/base',
                     'src/main/res/layout/statusview',
                     'src/main/res/layout/widget',
+                    'src/main/res/layout/other',
             ]
         }
     }
@@ -71,4 +72,5 @@ dependencies {
     //权限
     api 'com.github.tbruyelle:rxpermissions:0.10.2'
 
+    api 'com.timmy.tdialog:tdialog:2.1.1'
 }

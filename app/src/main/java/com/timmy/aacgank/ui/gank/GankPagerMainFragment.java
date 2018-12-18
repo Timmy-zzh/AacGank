@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 
-import com.timmy.aacgank.C;
+import com.timmy.baselib.C;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.base.BaseGankResult;
 import com.timmy.aacgank.bean.gank.Gank;

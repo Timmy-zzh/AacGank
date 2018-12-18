@@ -2,6 +2,9 @@ package com.timmy.aacgank.ui.movie.aac;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.SweepGradient;
 
 import com.timmy.aacgank.bean.movie.BaseDoubanResult;
 import com.timmy.aacgank.bean.movie.DoubanMovie;

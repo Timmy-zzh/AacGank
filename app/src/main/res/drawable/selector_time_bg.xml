@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--注意各种状态的摆放的位置 先pressed,再不可用的时候,最后是普通状态-->
+    <!--手指按下去的时候-->
+    <item  android:state_pressed="true">
+        <shape android:shape="oval" android:useLevel="false">
+            <!--填充-->
+            <solid android:color="@color/topic_trans" />
+            <!--边界-->
+            <stroke android:width="1dp" android:color="@color/white" />
+            <!--大小-->
+            <size android:width="50dp" android:height="50dp" />
+            <!--间隔-->
+            <padding android:bottom="4dp" android:left="4dp" android:right="4dp" android:top="4dp" />
+        </shape>
+    </item>
+
+    <!--不可用的时候-->
+    <item  android:state_enabled="false">
+        <shape android:shape="oval" android:useLevel="false">
+            <!--填充-->
+            <solid android:color="@color/T_CC" />
+            <!--边界-->
+            <stroke android:width="1dp" android:color="@color/white" />
+            <!--大小-->
+            <size android:width="50dp" android:height="50dp" />
+            <!--间隔-->
+            <padding android:bottom="4dp" android:left="4dp" android:right="4dp" android:top="4dp" />
+        </shape>
+    </item>
+
+    <!--普通状态-->
+    <item >
+        <shape android:shape="oval" android:useLevel="false">
+            <!--填充-->
+            <solid android:color="@color/T_CC_80" />
+            <!--边界-->
+            <stroke android:width="1dp" android:color="@color/T_FF_TRANS90" />
+            <!--大小-->
+            <size android:width="50dp" android:height="50dp" />
+            <!--间隔-->
+            <padding android:bottom="4dp" android:left="4dp" android:right="4dp" android:top="4dp" />
+            <!--圆角-->
+            <!--<corners android:radius="5dp"/>-->
+            <!--渐变-->
+            <!--<gradient android:endColor="@color/Black" android:startColor="@color/white" />-->
+        </shape>
+    </item>
+</selector>

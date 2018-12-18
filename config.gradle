@@ -1,9 +1,9 @@
 ext {
     android = [
-            compileSdkVersion: 27,
+            compileSdkVersion: 28,
             buildToolsVersion: '27.0.3',
             minSdkVersion    : 18,
-            targetSdkVersion : 27,
+            targetSdkVersion : 28,
             versionCode      : 2,
             versionName      : "2.0.0"
     ]
@@ -24,7 +24,7 @@ ext {
     ]
 
     def dependVersion = [
-            support    : "27.1.1",
+            support    : "28.0.0",
             aac_version: "1.1.1",
             retrofit   : "2.4.0",
             okhttp     : "3.10.0",

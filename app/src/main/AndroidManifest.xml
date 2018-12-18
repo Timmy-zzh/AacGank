@@ -49,7 +49,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.launcher.LauncherActivity">
+        <activity
+            android:name=".ui.launcher.LauncherActivity"
+            android:theme="@style/LauncherTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -74,17 +76,17 @@
         <!-- ********************************Android******************************************* -->
         <!-- Activity -->
         <activity
-            android:name=".ui.android.activity.ActivityLifeActivity"
+            android:name="com.timmy.androidbase.activity.ActivityLifeActivity"
             android:label="Activity知识点"
             android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- Service -->
         <activity
-            android:name=".ui.android.service.ServiceStudyActivity"
+            android:name="com.timmy.androidbase.service.ServiceStudyActivity"
             android:label="Service知识点"
             android:theme="@style/Theme.AppCompat.Light" />
 
-        <service android:name=".ui.android.service.DemoService" />
+        <service android:name="com.timmy.androidbase.service.DemoService" />
         <!-- 远程服务  process表示RemoteService位于另一个进程 -->
         <service
             android:name=".ui.android.aidl.RemoteService"
@@ -97,31 +99,31 @@
             </intent-filter>
         </service>
         <service
-            android:name=".ui.android.service.UploadImgIntentService"
+            android:name="com.timmy.androidbase.service.UploadImgIntentService"
             android:exported="false" />
 
         <!-- BroadcaseReceiver -->
         <activity
-            android:name=".ui.android.broadcastReceiver.BroadcaseReceiverActivity"
+            android:name="com.timmy.androidbase.broadcastReceiver.BroadcaseReceiverActivity"
             android:label="BroadcaseReceiver知识点"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
-        <receiver android:name=".ui.android.broadcastReceiver.NormalReceiver">
+        <receiver android:name="com.timmy.androidbase.broadcastReceiver.NormalReceiver">
             <intent-filter>
                 <action android:name="com.timmy.broadcast.action.normal" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".ui.android.broadcastReceiver.OrderReceiver1">
+        <receiver android:name="com.timmy.androidbase.broadcastReceiver.OrderReceiver1">
             <intent-filter android:priority="100">
                 <action android:name="com.timmy.broadcast.action.order" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".ui.android.broadcastReceiver.OrderReceiver2">
+        <receiver android:name="com.timmy.androidbase.broadcastReceiver.OrderReceiver2">
             <intent-filter android:priority="99">
                 <action android:name="com.timmy.broadcast.action.order" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".ui.android.broadcastReceiver.OrderReceiver3">
+        <receiver android:name="com.timmy.androidbase.broadcastReceiver.OrderReceiver3">
             <intent-filter android:priority="98">
                 <action android:name="com.timmy.broadcast.action.order" />
             </intent-filter>
@@ -129,12 +131,12 @@
 
         <!-- ContentProvider -->
         <activity
-            android:name=".ui.android.contentProvider.ContentProviderStudyActivity"
+            android:name="com.timmy.androidbase.contentProvider.ContentProviderStudyActivity"
             android:label="ContentProvider知识点整理"
             android:theme="@style/Theme.AppCompat.Light" />
 
         <provider
-            android:name=".ui.android.contentProvider.MyContentProvider"
+            android:name="com.timmy.androidbase.contentProvider.MyContentProvider"
             android:authorities="com.timmy.myprovider" />
 
         <!-- 数据存储 -->
@@ -161,7 +163,7 @@
         <activity android:name=".ui.multimedia.openGL.OpenGLStudyActivity" />
 
         <!-- ********************************其他******************************************* -->
-        <activity android:name=".ui.other.WebViewActivity" />
+        <activity android:name="com.timmy.baselib.webview.WebViewActivity" />
         <activity android:name=".ui.other.ImmersionActivity" />
         <activity android:name=".ui.cityselect.CitySelectActivity" />
 
@@ -183,7 +185,9 @@
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".ui.multimedia.openGL.OpenGLTriangleActivity" />
         <activity android:name=".ui.android.animation.AnimationUseActivity" />
-        <activity android:name=".ui.launcher.GestureLoginActivity"/>
+        <activity android:name=".ui.login.GestureLoginActivity" />
+        <activity android:name=".ui.launcher.AdvertiseActivity" />
+        <activity android:name=".ui.login.LoginActivity"></activity>
     </application>
 
 </manifest>

@@ -52,6 +52,7 @@ dependencies {
     implementation project(':baselib')
     implementation project(':ssp-android')
     implementation project(':sdp-android')
+    implementation project(':androidbase')
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.2'
@@ -65,6 +66,5 @@ dependencies {
     //Google视频播放
     implementation 'com.google.android.exoplayer:exoplayer:2.8.2'
 
-    implementation 'com.timmy.tdialog:tdialog:2.1.1'
 
 }

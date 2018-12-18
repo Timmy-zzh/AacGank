@@ -1,4 +1,4 @@
-include ':app', ':baselib'
+include ':app', ':baselib', ':androidbase'
 include ':ssp-android', ':sdp-android'
 include ':aidlclient'
 include ':login'
