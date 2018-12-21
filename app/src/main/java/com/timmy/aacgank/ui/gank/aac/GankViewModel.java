@@ -5,8 +5,7 @@ import com.timmy.aacgank.bean.base.BaseGankResult;
 import com.timmy.aacgank.bean.gank.DailyData;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.http.HttpHelper;
-import com.timmy.baselib.base.helper.BaseListViewModel;
-import com.timmy.baselib.bean.BaseResult;
+import com.timmy.baselib.basemvvm.helper.BaseListViewModel;
 import com.timmy.baselib.bean.PageListResult;
 
 import java.util.ArrayList;

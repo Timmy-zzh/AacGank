@@ -49,19 +49,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="permissionBroadcast"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="6.系统广播:网络状态,电量变化,应用安装卸载等"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/T_00" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sourceLook"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="7.源码解析:"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/T_00" />
 
     </LinearLayout>
 

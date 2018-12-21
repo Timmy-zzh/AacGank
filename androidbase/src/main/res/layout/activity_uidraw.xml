@@ -14,64 +14,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="1.UI绘制流程入口方法为:ActivityThread.handleResumeActivity()"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="相关类:WindowManage.addView()-> ViewRootImpl.setView()->requestLayout()-> scheduleTraversals()"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="2.测量:ViewRootImpl.performMeasure()-> View.measure()->onMeasure()"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="MeasureSpec:获取mode与size"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="3.布局 performLayout()->View.layout()->onLayout()"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="4.绘制 performDraw()->drawSoftware()->View.draw()-> onDraw()->dispatchDraw()"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="常用方法区别:\n    view.requestLayout();\n    view.invalidate();\n    view.postInvalidate();"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btn_stop"

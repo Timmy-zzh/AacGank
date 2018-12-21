@@ -16,7 +16,7 @@ import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.ui.gank.aac.GankViewModel;
 import com.timmy.baselib.adapterlib.BaseDataBindingAdapter;
 import com.timmy.baselib.adapterlib.BaseQuickAdapter;
-import com.timmy.baselib.base.fragment.TPageLazyBaseFragment;
+import com.timmy.baselib.basemvvm.fragment.TPageLazyBaseFragment;
 import com.timmy.baselib.databinding.ActivityRefreshListBinding;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.http.rxjava2.BConsumer;

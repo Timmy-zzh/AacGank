@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentVideoBinding;
-import com.timmy.baselib.base.fragment.TBaseContentFragment;
+import com.timmy.baselib.basemvvm.fragment.TBaseContentFragment;
 
 /**
  * 高仿UC浏览器视频模块功能

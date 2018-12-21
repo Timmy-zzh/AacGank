@@ -10,12 +10,9 @@ import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.movie.BaseDoubanResult;
 import com.timmy.aacgank.bean.movie.DoubanMovie;
 import com.timmy.aacgank.ui.movie.aac.DoubanViewModel;
-import com.timmy.aacgank.ui.movie.aac.MovieViewModel;
 import com.timmy.aacgank.ui.movie.adapter.MovieAdapter;
-import com.timmy.baselib.base.fragment.TBaseBindingFragment;
+import com.timmy.baselib.basemvvm.fragment.TBaseBindingFragment;
 import com.timmy.baselib.databinding.ActivityRefreshListBinding;
-import com.timmy.baselib.http.rxjava2.AConsumer;
-import com.timmy.baselib.http.rxjava2.BConsumer;
 
 import java.util.List;
 

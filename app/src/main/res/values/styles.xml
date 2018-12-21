@@ -1,16 +1,39 @@
 <resources>
+
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/topic</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
+    <!--启动页-->
     <style name="LauncherTheme" parent="AppBaseTheme">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@drawable/layer_launcher_bg</item>
     </style>
 
+    <!--登陆页面-->
+    <style name="CounterText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CounterErrorText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/c_redeem</item>
+    </style>
+
+    <style name="InputErrorText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#666</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--skjdhfk-->
     <style name="ViaTextAppearance">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/T_BD</item>

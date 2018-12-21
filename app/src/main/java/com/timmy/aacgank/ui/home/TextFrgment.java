@@ -5,8 +5,7 @@ import android.view.View;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentTextBinding;
-import com.timmy.aacgank.ui.android.recyclveriew.layoutmanager.MyLayoutManagerActivity;
-import com.timmy.baselib.base.fragment.TBaseBindingFragment;
+import com.timmy.baselib.basemvvm.fragment.TBaseBindingFragment;
 import com.timmy.baselib.utils.LogUtils;
 
 import java.io.IOException;
@@ -95,7 +94,7 @@ public class TextFrgment extends TBaseBindingFragment<FragmentTextBinding> {
     }
 
     public void handlerUse(View view) {
-        startActivity(new Intent(getContext(), MyLayoutManagerActivity.class));
+//        startActivity(new Intent(getContext(), MyLayoutManagerActivity.class));
 //        startActivity(new Intent(getContext(), HandlerActivity.class));
     }
 }

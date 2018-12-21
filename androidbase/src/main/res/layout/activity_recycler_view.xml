@@ -22,10 +22,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="2.自定义LayoutManager"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btn_ll1"

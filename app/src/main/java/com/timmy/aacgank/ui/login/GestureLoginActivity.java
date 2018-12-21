@@ -8,7 +8,8 @@ import android.widget.Toast;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.ui.MainActivity;
-import com.timmy.baselib.gesturelock.GestureLockLayout;
+import com.timmy.baselib.utils.SpHelper;
+import com.timmy.customeview.gesturelock.GestureLockLayout;
 
 /**
  * 手势密码登陆
@@ -52,7 +53,7 @@ public class GestureLoginActivity extends AppCompatActivity {
                 gestureLockLayout.cleanDrawLineState(1500);
                 Toast.makeText(GestureLoginActivity.this, "密码设置成功", Toast.LENGTH_SHORT).show();
 
-
+                SpHelper.put("isLogin", true);
                 startActivity(new Intent(GestureLoginActivity.this, MainActivity.class));
                 GestureLoginActivity.this.finish();
             }

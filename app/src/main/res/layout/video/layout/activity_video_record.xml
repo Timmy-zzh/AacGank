@@ -13,18 +13,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="目标:串联整个音视频录制流程，完成音视频的采集、编码、封包成 mp4 输出。"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="方案:\n1.Android音视频采集的方法：预览用SurfaceView，视频采集用Camera类，音频采集用AudioRecord。\n2.使用MediaCodec 类进行编码压缩，视频压缩为H.264，音频压缩为aac，使用MediaMuxer 将音视频合成为MP4。"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btn_record"
@@ -37,7 +37,7 @@
         <SurfaceView
             android:id="@+id/surface_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_300sdp" />
+            android:layout_height="300dp" />
 
     </LinearLayout>
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcHeaderBehavior">
+
+        <com.timmy.aacgank.ui.android.behavior.ucmainpager.NestedLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@mipmap/img_001">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:background="@color/c_redeem"
+                android:gravity="center"
+                android:text="Timmy" />
+        </com.timmy.aacgank.ui.android.behavior.ucmainpager.NestedLinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcTitleBehavior">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+            android:src="@mipmap/ic_launcher" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        app:tabMode="scrollable"
+        android:background="@color/orange"
+        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcTabBehavior"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="#000000" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/T_FF"
+        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcContentBehavior" />
+
+</android.support.design.widget.CoordinatorLayout>

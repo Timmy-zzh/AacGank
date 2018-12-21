@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="1.轻量级数据:SQLite"
             android:textAllCaps="false"
             android:textColor="@color/black" />
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="2.ContentProvider"
             android:textAllCaps="false"
             android:textColor="@color/black" />
@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="3.File存储"
             android:textAllCaps="false"
             android:textColor="@color/black" />
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="4.SharedPreferences"
             android:textAllCaps="false"
             android:textColor="@color/black" />
@@ -45,7 +45,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:onClick="androidPath"
             android:text="5.Android环境下各种存储路径展示"
             android:textAllCaps="false"
@@ -55,7 +55,7 @@
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:textAllCaps="false"
             android:textColor="@color/black" />
     </LinearLayout>

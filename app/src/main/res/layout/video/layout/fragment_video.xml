@@ -25,7 +25,7 @@
         <FrameLayout
             android:id="@+id/fl_content"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
+            android:layout_height="45dp"
             android:background="@color/teal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
                 android:layout_gravity="center"
                 app:tabContentStart="0dp"
                 app:tabIndicatorColor="@color/T_FF"
-                app:tabIndicatorHeight="@dimen/_2sdp"
+                app:tabIndicatorHeight="2dp"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/T_FF"
                 app:tabTextAppearance="@style/TechnologyTextAppearance"

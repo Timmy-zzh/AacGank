@@ -1,9 +1,7 @@
 package com.timmy.aacgank.ui.my;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +10,22 @@ import android.widget.TextView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
-import com.timmy.androidbase.activity.ActivityLifeActivity;
-import com.timmy.aacgank.ui.android.animation.AnimationUseActivity;
-import com.timmy.androidbase.contentProvider.ContentProviderStudyActivity;
-import com.timmy.aacgank.ui.android.database.DatabaseActivity;
-import com.timmy.aacgank.ui.android.motionEvent.MotionEventActivity;
-import com.timmy.aacgank.ui.android.paint.PaintUseActivity;
-import com.timmy.aacgank.ui.android.recyclveriew.RecyclerViewActivity;
-import com.timmy.aacgank.ui.android.uiDraw.UIDrawActivity;
 import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
-import com.timmy.aacgank.ui.android.behavior.BehaviorActivity;
+import com.timmy.androidbase.activity.ActivityStudyActivity;
+import com.timmy.androidbase.animation.AnimationUseActivity;
+import com.timmy.androidbase.behavior.BehaviorActivity;
 import com.timmy.androidbase.broadcastReceiver.BroadcaseReceiverActivity;
+import com.timmy.androidbase.contentProvider.ContentProviderStudyActivity;
+import com.timmy.androidbase.database.DatabaseActivity;
+import com.timmy.androidbase.motionEvent.MotionEventActivity;
+import com.timmy.androidbase.paint.PaintUseActivity;
+import com.timmy.androidbase.recyclveriew.RecyclerViewActivity;
 import com.timmy.androidbase.service.ServiceStudyActivity;
 import com.timmy.aacgank.ui.multimedia.openGL.OpenGLStudyActivity;
 import com.timmy.aacgank.ui.multimedia.video.CameraStudyActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoRecordActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
+import com.timmy.androidbase.uiDraw.UIDrawActivity;
 import com.timmy.tdialog.TDialog;
 import com.timmy.tdialog.base.BindViewHolder;
 import com.timmy.tdialog.base.TBaseAdapter;
@@ -68,9 +66,21 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
                 switch (model.getTag()) {
                     //Android
-                    case MainTag.ANDROID.TAG_FOUR_COMPONENT:
-                        //四大组件
-                        fourComponent();
+//                    case MainTag.ANDROID.TAG_FOUR_COMPONENT:
+//                        //四大组件
+//                        fourComponent();
+//                        break;
+                    case MainTag.ANDROID.TAG_ACTIVITY:
+                        gotoNextActivity(ActivityStudyActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_SERVICE:
+                        gotoNextActivity(ServiceStudyActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_BROADCASTRECEIVER:
+                        gotoNextActivity(BroadcaseReceiverActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_CONTENTPROVIDER:
+                        gotoNextActivity(ContentProviderStudyActivity.class);
                         break;
                     case MainTag.ANDROID.TAG_BEHAVIOR:
                         //自定义Behavior
@@ -130,42 +140,42 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
         });
     }
 
-    private void fourComponent() {
-        new TListDialog.Builder(((FragmentActivity) context).getSupportFragmentManager())
-                .setAdapter(new TBaseAdapter<String>(R.layout.item_simple_text,
-                        Arrays.asList(new String[]{"Activity", "Service", "BroadcastReceiver", "ContentProvide"})) {
-                    @Override
-                    protected void onBind(BindViewHolder holder, int position, String item) {
-                        holder.setText(R.id.tv, item);
-                    }
-                })
-                .setOnAdapterItemClickListener(new TBaseAdapter.OnAdapterItemClickListener<String>() {
-                    @Override
-                    public void onItemClick(BindViewHolder holder, int position, String item, TDialog tDialog) {
-                        tDialog.dismiss();
-                        switch (item) {
-                            case "Activity":
-                                context.startActivity(new Intent(context, ActivityLifeActivity.class));
-                                break;
-                            case "Service":
-                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
-                                break;
-                            case "BroadcastReceiver":
-                                context.startActivity(new Intent(context, BroadcaseReceiverActivity.class));
-                                break;
-                            case "ContentProvide":
-                                context.startActivity(new Intent(context, ContentProviderStudyActivity.class));
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                })
-                .setScreenWidthAspect((Activity) context, 0.8f)
-                .setDimAmount(0.5f)
-                .create()
-                .show();
-    }
+//    private void fourComponent() {
+//        new TListDialog.Builder(((FragmentActivity) context).getSupportFragmentManager())
+//                .setAdapter(new TBaseAdapter<String>(R.layout.item_simple_text,
+//                        Arrays.asList(new String[]{"Activity", "Service", "BroadcastReceiver", "ContentProvide"})) {
+//                    @Override
+//                    protected void onBind(BindViewHolder holder, int position, String item) {
+//                        holder.setText(R.id.tv, item);
+//                    }
+//                })
+//                .setOnAdapterItemClickListener(new TBaseAdapter.OnAdapterItemClickListener<String>() {
+//                    @Override
+//                    public void onItemClick(BindViewHolder holder, int position, String item, TDialog tDialog) {
+//                        tDialog.dismiss();
+//                        switch (item) {
+//                            case "Activity":
+//                                context.startActivity(new Intent(context, ActivityLifeActivity.class));
+//                                break;
+//                            case "Service":
+//                                context.startActivity(new Intent(context, ServiceStudyActivity.class));
+//                                break;
+//                            case "BroadcastReceiver":
+//                                context.startActivity(new Intent(context, BroadcaseReceiverActivity.class));
+//                                break;
+//                            case "ContentProvide":
+//                                context.startActivity(new Intent(context, ContentProviderStudyActivity.class));
+//                                break;
+//                            default:
+//                                break;
+//                        }
+//                    }
+//                })
+//                .setScreenWidthAspect((Activity) context, 0.8f)
+//                .setDimAmount(0.5f)
+//                .create()
+//                .show();
+//    }
 
     //                switch (model.getTag()) {
 //                    case MainTag.TAG_XIUXIU:

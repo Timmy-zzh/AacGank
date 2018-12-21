@@ -11,13 +11,14 @@ import android.view.View;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentMyBinding;
 import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
-import com.timmy.baselib.base.fragment.TBaseContentFragment;
-import com.timmy.baselib.utils.LogUtils;
+import com.timmy.baselib.basemvvm.fragment.TBaseContentFragment;
 
 /**
  * 高仿京东个人中心
  */
 public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
+
+    private String tabTitles[] = new String[]{"Android基础", "自定义控件", "音视频开发", "Java基础", "性能优化", "框架源码"};
 
     public static MyFragment newInstance() {
         MyFragment fragment = new MyFragment();
@@ -73,7 +74,6 @@ public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"Android基础", "音视频开发", "Java基础", "自定义控件", "性能优化", "框架源码"};
 
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);

@@ -11,8 +11,8 @@ import com.timmy.baselib.C;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
-import com.timmy.aacgank.databinding.ViewRecyclerViewBinding;
-import com.timmy.baselib.base.fragment.TPageLazyBaseFragment;
+import com.timmy.baselib.basemvvm.fragment.TPageLazyBaseFragment;
+import com.timmy.baselib.databinding.ViewRecyclerViewBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
     private List<MainModel> pageListFive = new ArrayList<>();
     private List<MainModel> pageListSix = new ArrayList<>();
     private RecyclerView.ItemDecoration mDivider;
-    private String tabTitles[] = new String[]{"Android基础", "音视频开发", "Java基础", "自定义控件", "性能优化", "框架源码"};
+//    private String tabTitles[] = new String[]{"Android基础", "自定义控件","音视频开发", "Java基础",  "性能优化", "框架源码"};
 
     public static TechnologyPageFragment newInstance(String page) {
         Bundle bundle = new Bundle();
@@ -89,7 +89,12 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
         switch (mPage) {
             case "Android基础":
                 //高级ui
-                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
+//                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ACTIVITY, "Activty"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SERVICE, "Service"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BROADCASTRECEIVER, "BroadcastReceiver"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_CONTENTPROVIDER, "ContentProvider"));
+
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BEHAVIOR, "Behavior"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));

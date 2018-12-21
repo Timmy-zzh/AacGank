@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentSmallVideoBinding;
-import com.timmy.baselib.base.fragment.TPageLazyBaseFragment;
+import com.timmy.baselib.basemvvm.fragment.TPageLazyBaseFragment;
 import com.timmy.baselib.utils.LogUtils;
 
 public class SmallVideoFragment extends TPageLazyBaseFragment<FragmentSmallVideoBinding> {

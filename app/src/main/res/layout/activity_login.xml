@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginActivity">
+    android:id="@+id/root_view">
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -14,15 +14,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_logo" />
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_user_name"
+        android:id="@+id/til_test"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
+        android:visibility="gone"
+        app:counterEnabled="true"
+        app:counterMaxLength="5"
+        app:counterOverflowTextAppearance="@style/CounterErrorText"
+        app:counterTextAppearance="@style/CounterText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/InputErrorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_logo">
@@ -30,29 +37,84 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="账号" />
+            android:hint="测试" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="11"
+        app:counterOverflowTextAppearance="@style/CounterErrorText"
+        app:counterTextAppearance="@style/CounterText"
+        app:hintTextAppearance="@style/HintText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_test">
+
+        <com.timmy.aacgank.ui.login.CleanEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="手机号"
+            android:inputType="phone"
+            android:textColor="#000"
+            android:textColorHint="#999"
+            android:textSize="16sp" />
+
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/til_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/til_user_name"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/InputErrorText"
+        app:layout_constraintEnd_toStartOf="@+id/cb_password_show"
         app:layout_constraintStart_toStartOf="@+id/til_user_name"
         app:layout_constraintTop_toBottomOf="@+id/til_user_name">
 
-        <android.support.design.widget.TextInputEditText
+        <com.timmy.aacgank.ui.login.CleanEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="密码" />
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:textColor="#000"
+            android:textColorHint="#999"
+            android:textSize="16sp" />
+
     </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/cb_password_show"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/selector_password_show"
+        android:button="@null"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/til_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/til_user_name" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/selector_login_btn"
+        android:enabled="false"
+        android:onClick="login"
         android:text="登录"
+        android:textColor="#FFF"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/til_user_name"
         app:layout_constraintStart_toStartOf="@+id/til_user_name"
         app:layout_constraintTop_toBottomOf="@+id/til_password" />
@@ -62,9 +124,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:onClick="forgetPassword"
         android:padding="10dp"
         android:text="忘记密码"
-        android:textColor="@color/black"
+        android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/til_user_name"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
@@ -73,11 +136,11 @@
         android:id="@+id/tv_login_gesture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
+        android:onClick="loginGesture"
         android:padding="10dp"
         android:text="手势密码登陆"
-        android:textColor="@color/black"
+        android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/til_user_name"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />

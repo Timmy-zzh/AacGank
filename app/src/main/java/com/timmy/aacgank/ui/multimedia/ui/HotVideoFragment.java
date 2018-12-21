@@ -2,7 +2,7 @@ package com.timmy.aacgank.ui.multimedia.ui;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentVideoHotBinding;
-import com.timmy.baselib.base.fragment.TPageLazyBaseFragment;
+import com.timmy.baselib.basemvvm.fragment.TPageLazyBaseFragment;
 import com.timmy.baselib.utils.LogUtils;
 
 public class HotVideoFragment extends TPageLazyBaseFragment<FragmentVideoHotBinding> {

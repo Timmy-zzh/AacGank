@@ -3,6 +3,7 @@ package com.timmy.aacgank.ui.launcher;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -20,8 +21,16 @@ public class LauncherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startActivity(new Intent(this, AdvertiseActivity.class));
-        finish();
+//        startActivity(new Intent(LauncherActivity.this, AdvertiseActivity.class));
+//        finish();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(LauncherActivity.this, AdvertiseActivity.class));
+                finish();
+            }
+        }, 1000);
     }
 }
 

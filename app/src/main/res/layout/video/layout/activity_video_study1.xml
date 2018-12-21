@@ -14,10 +14,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="使用MediaExtractor提取MP4文件中的视频部分"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
         <Button
             android:layout_width="match_parent"
@@ -30,10 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="MediaExtractor的作用是把音频和视频的数据进行分离。\nMediaMuxer的作用是生成音频或视频文件；还可以把音频与视频混合成一个音视频文件。"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

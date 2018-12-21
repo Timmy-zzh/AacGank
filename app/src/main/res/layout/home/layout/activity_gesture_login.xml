@@ -7,7 +7,8 @@
     tools:context=".ui.login.GestureLoginActivity">
 
 
-    <com.timmy.baselib.gesturelock.GestureLockLayout
+    <!--<com.timmy.customeview.gesturelock.GestureLockLayout-->
+    <com.timmy.customeview.gesturelock.GestureLockLayout
         android:id="@+id/gesture_lock_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

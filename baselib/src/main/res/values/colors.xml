@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#FFFFFF</color>
 
-    <color name="T_CC_80">#aaCCCCCC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
     <color name="text_c">#242424</color>
+    <!--白色-->
+    <color name="T_FF">#FFFFFF</color>
+    <!--黑色-->
+    <color name="T_00">#000000</color>
+    <color name="T_CC">#CCCCCC</color>
+    <color name="T_CC_80">#aaCCCCCC</color>
     <!-- 主页背景 -->
     <color name="bg_main">#f1f1f1</color>
     <color name="gray">#f1f1f1</color>
@@ -11,8 +18,6 @@
     <!--黑色-->
     <color name="T_24">#242424</color>
     <color name="T_26">#262626</color>
-    <!--白色-->
-    <color name="T_FF">#ffffff</color>
     <!--灰色-->
     <color name="T_54">#545454</color>
     <!--深灰-->
@@ -22,8 +27,6 @@
     <!--浅灰色-->
     <color name="T_99">#999999</color>
     <color name="T_F6">#f6f6f6</color>
-    <!--黑色-->
-    <color name="T_00">#000000</color>
     <!-- 文字黑色 -->
     <color name="T_BD">#bdbdbd</color>
     <color name="T_DB">#dbdbdb</color>
@@ -37,6 +40,9 @@
     <color name="T_4D">#4D4D4D</color>
     <color name="T_D9">#D9D9D9</color>
     <color name="T_F2">#F2F2F2</color>
+    <color name="T_FF_TRANS90">#ddFFFFFF</color>
+    <color name="T_FF_TRANS35">#66FFFFFF</color>
+    <color name="T_F3">#F3F3F3</color>
     <color name="green_light">#2BB0FC</color>
     <!--背景色-->
     <!--<color name="transparent">#aa000000</color>-->
@@ -44,13 +50,9 @@
     <color name="c_redeem">#ED5954</color>
     <color name="c_redeem_trans">#aaED5954</color>
     <color name="c_checkcode">#FE5850</color>
-    <color name="T_FF_TRANS90">#ddFFFFFF</color>
-    <color name="T_FF_TRANS35">#66FFFFFF</color>
     <color name="c_focus">#455F6B </color>
-    <color name="T_F3">#F3F3F3</color>
     <color name="c_wallet_negative">#5ECFBB</color>
     <color name="yellow">#FFCF40</color>
-    <color name="T_CC">#CCCCCC</color>
 
     <color name="cc">#59a9ff</color>
     <color name="bg_color">#EDEDED</color>

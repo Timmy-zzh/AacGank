@@ -58,7 +58,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".ui.other.HandlerActivity" />
 
         <!-- ********************************Gank******************************************* -->
@@ -74,19 +76,7 @@
         <activity android:name=".ui.android.behavior.BehaviorActivity" />
 
         <!-- ********************************Android******************************************* -->
-        <!-- Activity -->
-        <activity
-            android:name="com.timmy.androidbase.activity.ActivityLifeActivity"
-            android:label="Activity知识点"
-            android:theme="@style/Theme.AppCompat.Light" />
 
-        <!-- Service -->
-        <activity
-            android:name="com.timmy.androidbase.service.ServiceStudyActivity"
-            android:label="Service知识点"
-            android:theme="@style/Theme.AppCompat.Light" />
-
-        <service android:name="com.timmy.androidbase.service.DemoService" />
         <!-- 远程服务  process表示RemoteService位于另一个进程 -->
         <service
             android:name=".ui.android.aidl.RemoteService"
@@ -143,6 +133,7 @@
         <activity
             android:name=".ui.android.database.DatabaseActivity"
             android:label="数据存储"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- 事件分发 -->
@@ -165,7 +156,7 @@
         <!-- ********************************其他******************************************* -->
         <activity android:name="com.timmy.baselib.webview.WebViewActivity" />
         <activity android:name=".ui.other.ImmersionActivity" />
-        <activity android:name=".ui.cityselect.CitySelectActivity" />
+        <activity android:name="com.timmy.customeview.cityselect.CitySelectActivity" />
 
         <!-- ********************************其他******************************************* -->
 

@@ -20,7 +20,7 @@ public class LogUtils {
     public static final int ERROR = 6;
     public static final int ASSERT = 7;
 
-    private static final String TAG_DEFAULT = "ELog";
+    private static final String TAG_DEFAULT = "LogUtils";
     private static boolean isShowThread = false;
     private static String tag = "";
     private static boolean logEnable = true;

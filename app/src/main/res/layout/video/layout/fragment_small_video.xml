@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tabContentStart="0dp"
             app:tabIndicatorColor="@color/T_FF"
-            app:tabIndicatorHeight="@dimen/_0sdp"
+            app:tabIndicatorHeight="0dp"
             app:tabMode="fixed"
             app:tabSelectedTextColor="@color/T_FF"
             app:tabTextAppearance="@style/VideoTextAppearance"

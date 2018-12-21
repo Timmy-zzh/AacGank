@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AACGank</string>
+    <string name="app_name">TAac</string>
 
 
     <string name="behavior_sample_title">com.timmy.aacgank.ui.android.behavior.simple.TitleBehavior</string>

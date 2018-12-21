@@ -4,16 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.gank.Gank;
 import com.timmy.aacgank.databinding.ActivityAndroidDetailBinding;
-import com.timmy.baselib.base.activity.TBaseContentActivity;
+import com.timmy.baselib.basemvvm.activity.TBaseContentActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
-import com.timmy.baselib.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;

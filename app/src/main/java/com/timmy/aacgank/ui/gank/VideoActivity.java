@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.ActivityVideoBinding;
-import com.timmy.baselib.base.activity.TBaseContentActivity;
+import com.timmy.baselib.basemvvm.activity.TBaseContentActivity;
 import com.timmy.baselib.utils.LogUtils;
 
 import cn.jzvd.JZVideoPlayer;

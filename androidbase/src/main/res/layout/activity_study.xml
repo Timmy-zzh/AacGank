@@ -14,60 +14,173 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:gravity="left|center_vertical"
             android:onClick="launcherMode"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="1.Activity生命周期"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
-            android:text="2.四种启动模式,区别和使用场景"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
+            android:padding="5dp"
+            android:text="1) onCreate()\n
+    加载布局setContentView()\n
+    初始化数据\n
+2）onStart()  可见，不可编辑\n
+3）onResume() 可交互，前台\n
+4）onPause() 可见，不可编辑\n
+5）onStop() 不可见，资源回收\n
+6）onDestroy() 界面销毁\n
+7）onRestart() 界面未销毁，重新打开"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="2.Activity状态"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="1.运行状态：Activity位于返回栈的栈顶\n
+2.暂停状态：打开了Dialog对话框，onPause()方法被调用\n
+3.停止状态：完全不可见\n
+4.销毁状态："
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="3.界面跳转时生命周期方法的调用"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="MainActivity: MainActivity: onPause\n
+SecondActivity: SecondActivity: onCreate\n
+SecondActivity: SecondActivity: onStart\n
+SecondActivity: SecondActivity: onResume\n
+MainActivity: MainActivity: onStop\n
+按返回键时生命周期方法调用\n
+按Home键生命周期方法调用"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="4.Activity数据保存恢复"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="onSaveInstanceState与onRestoreInstanceState方法\n
+横竖屏切换"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="5.Activity数据传递"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="Intent/Bundle/实现Seralizable或Parcelable接口\n
+任务和返回栈"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="6.启动模式"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="1.standard\n
+2.singleTop\n
+3.singleTask\n
+4.singleInstance"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="7.Context上下文:Activity、Service、Application"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textAllCaps="false"
+            android:gravity="left|center_vertical"
             android:onClick="launcherActivity"
-            android:padding="@dimen/_5sdp"
-            android:text="3.Activity启动流程"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
+            android:padding="5dp"
+            android:text="8.Activity启动流程"
+            android:textAllCaps="false"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
-            android:text="4.界面A跳到界面B的生命周期方法调用流程"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
+            android:padding="5dp"
+            android:text="9.Actvity与Fragment通信方式"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
-            android:text="5.Actvity与Fragment通信方式"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
-
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
-            android:text="6.上下文:Application与Activity的区别"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp" />
     </LinearLayout>
 
 </ScrollView>

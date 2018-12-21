@@ -5,8 +5,7 @@ import android.support.design.widget.TabLayout;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.databinding.FragmentGankBinding;
 import com.timmy.aacgank.ui.gank.adapter.GankPagerAdapter;
-import com.timmy.baselib.base.fragment.TBaseContentFragment;
-import com.timmy.baselib.utils.LogUtils;
+import com.timmy.baselib.basemvvm.fragment.TBaseContentFragment;
 
 /**
  * 使用正常方式进行处理

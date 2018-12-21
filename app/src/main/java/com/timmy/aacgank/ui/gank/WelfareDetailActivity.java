@@ -23,7 +23,7 @@ import com.timmy.aacgank.ui.gank.adapter.WelfareDetailAdapter;
 import com.timmy.baselib.webview.WebViewActivity;
 import com.timmy.aacgank.util.DateUtil;
 import com.timmy.baselib.adapterlib.BaseQuickAdapter;
-import com.timmy.baselib.base.activity.TBaseContentActivity;
+import com.timmy.baselib.basemvvm.activity.TBaseContentActivity;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.image.ImageUtil;
 import com.timmy.baselib.utils.LogUtils;

@@ -14,10 +14,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="1.基本用法:启动Service,并查看Service的生命周期方法"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btn_start"
@@ -55,49 +55,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="2.Service与Thread "
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="3.创建前台服务 "
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:text="4.AIDL进程间通信,请运行AidlClient客户端 "
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="14sp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:onClick="sourceLook"
             android:text="5.Service源码解析 "
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="14sp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:onClick="intentServiceUse"
-            android:padding="@dimen/_5sdp"
+            android:padding="5dp"
             android:textAllCaps="false"
             android:text="6.IntentService 模拟图片上传 (Add Task)"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textColor="@color/T_00"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:id="@+id/ll_container"

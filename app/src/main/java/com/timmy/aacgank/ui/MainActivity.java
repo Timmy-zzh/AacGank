@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -16,7 +15,7 @@ import com.timmy.aacgank.ui.movie.MovieFragment;
 import com.timmy.aacgank.ui.my.MyFragment;
 import com.timmy.aacgank.ui.home.TextFrgment;
 import com.timmy.aacgank.ui.multimedia.ui.VideoFragment;
-import com.timmy.baselib.base.activity.TBaseBindingActivity;
+import com.timmy.baselib.basemvvm.activity.TBaseBindingActivity;
 import com.timmy.baselib.statusbar.StatusBarUtil;
 
 /**
@@ -41,6 +40,7 @@ public class MainActivity extends TBaseBindingActivity<ActivityMainBinding> impl
 
     /**
      * 处理Fragment界面重叠问题
+     * 该方法在onCreate方法之前调用
      */
     @Override
     public void onAttachFragment(Fragment fragment) {

@@ -13,10 +13,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:text="1.知识点:URI,MIME类型,ContentResolver"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/T_00" />
 
         <Button
             android:layout_width="match_parent"
@@ -44,9 +44,9 @@
             android:id="@+id/tv_contacts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/T_00" />
 
     </LinearLayout>
 

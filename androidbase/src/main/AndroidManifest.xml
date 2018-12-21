@@ -1,2 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.timmy.androidbase" />
+    package="com.timmy.androidbase">
+
+    <!--Android基础-->
+    <application>
+        <!-- Activity -->
+        <activity
+            android:name=".activity.ActivityStudyActivity"
+            android:label="Activity知识点" />
+        <!-- Service -->
+        <activity
+            android:name=".service.ServiceStudyActivity"
+            android:label="Service知识点"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <service android:name=".service.DemoService" />
+
+    </application>
+</manifest>

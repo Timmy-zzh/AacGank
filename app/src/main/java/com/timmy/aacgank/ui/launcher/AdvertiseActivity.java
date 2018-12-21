@@ -19,8 +19,10 @@ import com.timmy.baselib.utils.SpHelper;
 
 /**
  * 广告页面
- * 三秒倒计时
- * 判断登陆态：进入界面跳转
+ * 三秒倒计时:Handler
+ * SP判断登陆态：界面跳转
+ *
+ * todo 注意Handler内存泄漏问题
  */
 public class AdvertiseActivity extends AppCompatActivity {
 
@@ -52,6 +54,7 @@ public class AdvertiseActivity extends AppCompatActivity {
     }
 
     public void click(View view) {
+        clean();
         Intent intent;
         if ((boolean) SpHelper.get("isLogin", false)) {   //已登陆
             intent = new Intent(this, MainActivity.class);
@@ -65,6 +68,10 @@ public class AdvertiseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        clean();
+    }
+
+    private void clean() {
         if (mHandler != null) {
             mHandler.removeCallbacks(runnable);
             runnable = null;

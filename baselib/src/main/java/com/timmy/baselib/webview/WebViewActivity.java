@@ -22,7 +22,7 @@ import android.widget.ViewSwitcher;
 
 import com.timmy.baselib.C;
 import com.timmy.baselib.R;
-import com.timmy.baselib.base.activity.TBaseContentActivity;
+import com.timmy.baselib.basemvvm.activity.TBaseContentActivity;
 import com.timmy.baselib.databinding.ActivityWebViewBinding;
 import com.timmy.baselib.utils.LogUtils;
 

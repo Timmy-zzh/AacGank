@@ -1,7 +1,6 @@
 package com.timmy.aacgank.ui.movie;
 
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
@@ -13,7 +12,7 @@ import com.timmy.aacgank.databinding.FragmentMovieBinding;
 import com.timmy.aacgank.ui.movie.aac.MovieViewModel;
 import com.timmy.aacgank.ui.movie.adapter.MovieAdapter;
 import com.timmy.baselib.adapterlib.BaseQuickAdapter;
-import com.timmy.baselib.base.fragment.TBaseBindingFragment;
+import com.timmy.baselib.basemvvm.fragment.TBaseBindingFragment;
 import com.timmy.baselib.http.rxjava2.AConsumer;
 import com.timmy.baselib.http.rxjava2.BConsumer;
 
