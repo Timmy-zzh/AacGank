@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 
 import java.io.File;
 
-public class DatabaseActivity extends AppCompatActivity {
+public class DatabaseActivity extends BaseActivity {
 
     private String TAG = this.getClass().getSimpleName();
     private TextView tvContent;

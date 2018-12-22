@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidBase</string>
+
+    <string name="behavior_sample_title">com.timmy.androidbase.behavior.simple.TitleBehavior</string>
+    <string name="behavior_recycler_view">com.timmy.androidbase.behavior.simple.RecyclerViewBehavior</string>
+    <string name="behavior_header">com.timmy.androidbase.behavior.simple.HeaderBehavior</string>
+
 </resources>

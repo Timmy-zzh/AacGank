@@ -9,9 +9,9 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcHeaderBehavior">
+        app:layout_behavior="com.timmy.androidbase.behavior.ucmainpager.UcHeaderBehavior">
 
-        <com.timmy.aacgank.ui.android.behavior.ucmainpager.NestedLinearLayout
+        <com.timmy.androidbase.behavior.ucmainpager.NestedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@mipmap/img_001">
@@ -22,14 +22,14 @@
                 android:background="@color/c_redeem"
                 android:gravity="center"
                 android:text="Timmy" />
-        </com.timmy.aacgank.ui.android.behavior.ucmainpager.NestedLinearLayout>
+        </com.timmy.androidbase.behavior.ucmainpager.NestedLinearLayout>
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
         android:background="@color/colorPrimary"
-        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcTitleBehavior">
+        app:layout_behavior="com.timmy.androidbase.behavior.ucmainpager.UcTitleBehavior">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
         android:layout_height="@dimen/tab_height"
         app:tabMode="scrollable"
         android:background="@color/orange"
-        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcTabBehavior"
+        app:layout_behavior="com.timmy.androidbase.behavior.ucmainpager.UcTabBehavior"
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabTextColor="#000000" />
@@ -57,6 +57,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/T_FF"
-        app:layout_behavior="com.timmy.aacgank.ui.android.behavior.ucmainpager.UcContentBehavior" />
+        app:layout_behavior="com.timmy.androidbase.behavior.ucmainpager.UcContentBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>

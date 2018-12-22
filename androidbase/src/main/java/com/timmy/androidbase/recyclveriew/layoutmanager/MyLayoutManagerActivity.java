@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.simple.SimpleAdapter;
 
 import java.util.Arrays;
@@ -14,7 +15,7 @@ import java.util.Arrays;
  * 自定义LayoutManager
  *
  */
-public class MyLayoutManagerActivity extends AppCompatActivity {
+public class MyLayoutManagerActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

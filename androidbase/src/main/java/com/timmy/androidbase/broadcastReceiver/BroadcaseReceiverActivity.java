@@ -12,10 +12,11 @@ import android.view.View;
 
 import com.timmy.androidbase.R;
 import com.timmy.baselib.C;
+import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.webview.WebViewActivity;
 
 
-public class BroadcaseReceiverActivity extends AppCompatActivity {
+public class BroadcaseReceiverActivity extends BaseActivity {
 
     private static final String BROADCAST_NORMAL = "com.timmy.broadcast.action.normal";
     private static final String BROADCAST_ORDER = "com.timmy.broadcast.action.order";
@@ -122,6 +123,6 @@ public class BroadcaseReceiverActivity extends AppCompatActivity {
     }
 
     public void sourceLook(View view) {
-        WebViewActivity.startAction(this, "https://blog.csdn.net/pihailailou/article/details/78640128");
+//        WebViewActivity.startAction(this, "https://blog.csdn.net/pihailailou/article/details/78640128");
     }
 }

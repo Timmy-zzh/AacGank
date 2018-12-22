@@ -139,19 +139,22 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 break;
 
             case "自定义控件":
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION, "右侧A-Z字母导航栏"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_NOTE_PAD, "自定义NotePad"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_VIEWPAGER, "自定义ViewPager"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_INDICATOR, "自定义ViewPager指示器"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_GUAGUA_WINNING, "刮刮乐"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_PHOTO_VIEW, "高仿今日头条图片功能"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT, "加载控件"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW, "雷达展示控件"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE, "仿慕课网下拉刷新水波纹"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME, "广告页倒计时控件"));
-                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CIRCLE_MENU, "圆形菜单"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CITY_SELECT, "城市选择"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_GESTURE_LOCK, "手势密码锁"));
+
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION, "右侧A-Z字母导航栏"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_NOTE_PAD, "自定义NotePad"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_VIEWPAGER, "自定义ViewPager"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_INDICATOR, "自定义ViewPager指示器"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_GUAGUA_WINNING, "刮刮乐"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_PHOTO_VIEW, "高仿今日头条图片功能"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT, "加载控件"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW, "雷达展示控件"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE, "仿慕课网下拉刷新水波纹"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME, "广告页倒计时控件"));
+//                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CIRCLE_MENU, "圆形菜单"));
 
                 adapter.setData(pageListFour);
                 break;

@@ -6,10 +6,7 @@ import android.util.Log;
 import java.util.Arrays;
 
 /**
- * @author: lex
- * @Email: ldlywt@gmail.com
- * @Time: 2018/1/11 10:56
- * @Description: 对logger的库进行一层包装，方便以后更换其他库
+ * Logger精简版
  */
 public class LogUtils {
 

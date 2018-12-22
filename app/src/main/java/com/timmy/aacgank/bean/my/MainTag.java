@@ -67,6 +67,9 @@ public class MainTag {
         public static final int TAG_IMOOC_RIPPLE = 210;
         public static final int TAG_COUNT_DOWN_TIME = 211;
         public static final int TAG_CIRCLE_MENU = 212;
+
+        public static final int TAG_CITY_SELECT = 213;
+        public static final int TAG_GESTURE_LOCK = 214;
     }
 
     //框架学习

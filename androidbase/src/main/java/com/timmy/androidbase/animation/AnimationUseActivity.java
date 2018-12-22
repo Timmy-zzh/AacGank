@@ -15,12 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 
 
 /**
  * 动画的使用
  */
-public class AnimationUseActivity extends AppCompatActivity {
+public class AnimationUseActivity extends BaseActivity {
 
     private ImageView imageView;
     private TextView textView;

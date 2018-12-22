@@ -46,13 +46,13 @@
             android:textColor="@color/black"
             android:textSize="14sp" />
 
-        <com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout
+        <com.timmy.androidbase.motionEvent.MyFrameLayout
             android:id="@+id/frame_layout"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:background="@color/c_redeem">
 
-            <com.timmy.aacgank.ui.android.motionEvent.MyTextView
+            <com.timmy.androidbase.motionEvent.MyTextView
                 android:id="@+id/tv"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -60,7 +60,7 @@
                 android:background="@color/orange" />
 
 
-            <com.timmy.aacgank.ui.android.motionEvent.MyButton
+            <com.timmy.androidbase.motionEvent.MyButton
                 android:id="@+id/btn"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -68,7 +68,7 @@
                 android:text="点击事件"
                 android:textAllCaps="false" />
 
-        </com.timmy.aacgank.ui.android.motionEvent.MyFrameLayout>
+        </com.timmy.androidbase.motionEvent.MyFrameLayout>
 
         <TextView
             android:layout_width="wrap_content"

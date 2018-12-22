@@ -31,8 +31,8 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void initToolbar(Toolbar toolbar, TextView toolbarTitle) {
         toolbarTitle.setText(getTitle());
-        toolbar.setBackgroundColor(getResources().getColor(R.color.white));//设置Toolbar背景色
-        toolbar.setNavigationIcon(R.mipmap.ic_back);
+//        toolbar.setBackgroundColor(getResources().getColor(R.color.white));//设置Toolbar背景色
+//        toolbar.setNavigationIcon(R.mipmap.ic_back);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

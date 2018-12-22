@@ -5,12 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 
 
 /**
  * UI绘制流程
  */
-public class UIDrawActivity extends AppCompatActivity {
+public class UIDrawActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

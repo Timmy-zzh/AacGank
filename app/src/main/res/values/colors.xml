@@ -3,27 +3,5 @@
     <color name="colorPrimary">#92AAF5</color>
     <color name="colorPrimaryDark">#6495ED</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="bg_launcer">#E57B7B</color>
-    <color name="red">#FF0000</color>
-
-    <color name="teal">#00796B</color>
-    <color name="brown">#8D6E63</color>
-    <color name="blue">#2196F3</color>
-    <color name="grey">#607D8B</color>
-    <color name="orange">#F57C00</color>
-    <!-- 主页背景 -->
-    <color name="bg_main">#f1f1f1</color>
-    <color name="green_light">#2BB0FC</color>
-    <!--背景色-->
-    <color name="transparent">#aa000000</color>
-    <color name="pink">#E57B7B</color>
-    <color name="c_redeem">#ED5954</color>
-    <color name="c_redeem_trans">#aaED5954</color>
-    <color name="c_checkcode">#FE5850</color>
-    <color name="c_focus">#455F6B </color>
-    <color name="T_F3">#F3F3F3</color>
-    <color name="c_wallet_negative">#5ECFBB</color>
-    <color name="yellow">#FFCF40</color>
-
 </resources>

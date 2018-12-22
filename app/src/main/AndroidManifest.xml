@@ -72,8 +72,6 @@
         <activity android:name=".ui.gank.android.AndroidDetailActivity" />
         <activity android:name=".ui.gank.IOSDetailActivity" />
         <activity android:name=".ui.movie.MovieDetailActivity" />
-        <activity android:name=".ui.android.recyclveriew.layoutmanager.MyLayoutManagerActivity" />
-        <activity android:name=".ui.android.behavior.BehaviorActivity" />
 
         <!-- ********************************Android******************************************* -->
 
@@ -88,59 +86,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-        <service
-            android:name="com.timmy.androidbase.service.UploadImgIntentService"
-            android:exported="false" />
-
-        <!-- BroadcaseReceiver -->
-        <activity
-            android:name="com.timmy.androidbase.broadcastReceiver.BroadcaseReceiverActivity"
-            android:label="BroadcaseReceiver知识点"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
-
-        <receiver android:name="com.timmy.androidbase.broadcastReceiver.NormalReceiver">
-            <intent-filter>
-                <action android:name="com.timmy.broadcast.action.normal" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.timmy.androidbase.broadcastReceiver.OrderReceiver1">
-            <intent-filter android:priority="100">
-                <action android:name="com.timmy.broadcast.action.order" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.timmy.androidbase.broadcastReceiver.OrderReceiver2">
-            <intent-filter android:priority="99">
-                <action android:name="com.timmy.broadcast.action.order" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.timmy.androidbase.broadcastReceiver.OrderReceiver3">
-            <intent-filter android:priority="98">
-                <action android:name="com.timmy.broadcast.action.order" />
-            </intent-filter>
-        </receiver>
-
-        <!-- ContentProvider -->
-        <activity
-            android:name="com.timmy.androidbase.contentProvider.ContentProviderStudyActivity"
-            android:label="ContentProvider知识点整理"
-            android:theme="@style/Theme.AppCompat.Light" />
-
-        <provider
-            android:name="com.timmy.androidbase.contentProvider.MyContentProvider"
-            android:authorities="com.timmy.myprovider" />
-
-        <!-- 数据存储 -->
-        <activity
-            android:name=".ui.android.database.DatabaseActivity"
-            android:label="数据存储"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light" />
-
-        <!-- 事件分发 -->
-        <activity
-            android:name=".ui.android.motionEvent.MotionEventActivity"
-            android:label="事件分发"
-            android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- ********************************音视频开发******************************************* -->
         <activity
@@ -155,27 +100,17 @@
 
         <!-- ********************************其他******************************************* -->
         <activity android:name="com.timmy.baselib.webview.WebViewActivity" />
-        <activity android:name=".ui.other.ImmersionActivity" />
-        <activity android:name="com.timmy.customeview.cityselect.CitySelectActivity" />
 
         <!-- ********************************其他******************************************* -->
 
-        <activity android:name=".ui.android.uiDraw.UIDrawActivity" />
         <activity android:name=".ui.multimedia.video.CameraStudyActivity" />
         <activity
             android:name=".ui.multimedia.video.VideoStudyActivity1"
             android:label="@string/title_activity_video_study1"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.android.paint.PaintUseActivity" />
-        <activity
-            android:name=".ui.android.recyclveriew.RecyclerViewActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
-        <activity
-            android:name=".ui.android.recyclveriew.itemdecoration.ItemDecorationActivity"
-            android:label="RecyclerView分割线"
-            android:theme="@style/Theme.AppCompat.Light" />
+
+
         <activity android:name=".ui.multimedia.openGL.OpenGLTriangleActivity" />
-        <activity android:name=".ui.android.animation.AnimationUseActivity" />
         <activity android:name=".ui.login.GestureLoginActivity" />
         <activity android:name=".ui.launcher.AdvertiseActivity" />
         <activity android:name=".ui.login.LoginActivity"></activity>

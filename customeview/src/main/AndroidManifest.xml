@@ -1,2 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.timmy.customeview" />
+    package="com.timmy.customeview">
+
+    <application>
+
+        <activity
+            android:name=".cityselect.CitySelectActivity"
+            android:label="城市选择" />
+
+    </application>
+</manifest>

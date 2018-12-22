@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.webview.WebViewActivity;
 
 /**
@@ -29,11 +30,11 @@ import com.timmy.baselib.webview.WebViewActivity;
  * ----c.当前Activity销毁后,Service也会销毁,属于同生共死
  * 3.混合模式启动Service
  */
-public class ServiceStudyActivity extends AppCompatActivity {
+public class ServiceStudyActivity extends BaseActivity {
 
     public static final String ACTION_UPLOAD_RESULT = "intetnService.uploadimg.result";
     private String TAG = this.getClass().getSimpleName();
-    private DemoService.DemoBinder demoBinder;
+    private BindService.DemoBinder demoBinder;
     private boolean isBinded;
     private LinearLayout llContainer;
 
@@ -54,12 +55,12 @@ public class ServiceStudyActivity extends AppCompatActivity {
      * @param view
      */
     public void startService(View view) {
-        Intent serviceIntent = new Intent(this, DemoService.class);
+        Intent serviceIntent = new Intent(this, StartedService.class);
         startService(serviceIntent);
     }
 
     public void stopService(View view) {
-        Intent serviceIntent = new Intent(this, DemoService.class);
+        Intent serviceIntent = new Intent(this, StartedService.class);
         stopService(serviceIntent);
     }
 
@@ -68,7 +69,7 @@ public class ServiceStudyActivity extends AppCompatActivity {
      * 实现Activity与Service进行通信
      */
     public void bindService(View view) {
-        Intent serviceIntent = new Intent(this, DemoService.class);
+        Intent serviceIntent = new Intent(this, BindService.class);
         isBinded = bindService(serviceIntent, serviceConnection, BIND_AUTO_CREATE);
     }
 
@@ -76,7 +77,7 @@ public class ServiceStudyActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             Log.d(TAG, "onServiceConnected");
-            demoBinder = (DemoService.DemoBinder) service;
+            demoBinder = (BindService.DemoBinder) service;
             demoBinder.startDownload();
         }
 

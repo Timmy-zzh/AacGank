@@ -10,11 +10,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--<com.timmy.aacgank.ui.android.paint.PaintUseView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="@dimen/_300sdp" />-->
+        <!--<com.timmy.androidbase.paint.PaintUseView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="300dp" />-->
 
-        <com.timmy.aacgank.ui.android.paint.PathUseView
+        <com.timmy.androidbase.paint.PathUseView
             android:layout_width="match_parent"
             android:layout_height="300dp" />
 

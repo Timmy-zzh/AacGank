@@ -8,12 +8,13 @@ import android.view.View;
 import com.timmy.androidbase.R;
 import com.timmy.androidbase.recyclveriew.itemdecoration.ItemDecorationActivity;
 import com.timmy.androidbase.recyclveriew.layoutmanager.MyLayoutManagerActivity;
+import com.timmy.baselib.base.BaseActivity;
 
 /**
  * @author zhuzhonghua
  * RecyclerView使用
  */
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

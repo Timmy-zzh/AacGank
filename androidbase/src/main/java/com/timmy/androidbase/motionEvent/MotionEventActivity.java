@@ -6,12 +6,13 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 
 /**
  * 事件分发:
  * Activity->ViewGroup->View
  */
-public class MotionEventActivity extends AppCompatActivity {
+public class MotionEventActivity extends BaseActivity {
 
     private String TAG = this.getClass().getSimpleName();
 

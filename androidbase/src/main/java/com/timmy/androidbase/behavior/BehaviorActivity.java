@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.simple.SimplePagerAdapter;
 
 /**
@@ -23,7 +24,7 @@ import com.timmy.baselib.simple.SimplePagerAdapter;
  * 5.手指放开后的事件处理
  * ----fling事件
  */
-public class BehaviorActivity extends AppCompatActivity {
+public class BehaviorActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

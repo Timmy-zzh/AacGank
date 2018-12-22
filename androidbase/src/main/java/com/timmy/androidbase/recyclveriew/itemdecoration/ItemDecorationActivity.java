@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.simple.SimpleAdapter;
 
 import java.util.Arrays;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 /**
  * @author zhuzhonghua
  */
-public class ItemDecorationActivity extends AppCompatActivity {
+public class ItemDecorationActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
 

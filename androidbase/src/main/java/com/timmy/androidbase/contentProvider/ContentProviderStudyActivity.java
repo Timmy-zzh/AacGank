@@ -14,13 +14,14 @@ import android.widget.TextView;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.timmy.androidbase.R;
+import com.timmy.baselib.base.BaseActivity;
 
 import io.reactivex.functions.Consumer;
 
 /**
  * 内容提供者:
  */
-public class ContentProviderStudyActivity extends AppCompatActivity {
+public class ContentProviderStudyActivity extends BaseActivity {
 
     private String TAG = this.getClass().getSimpleName();
     private TextView tvContact;

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.timmy.aacgank.R;
 import com.timmy.aacgank.bean.my.MainModel;
 import com.timmy.aacgank.bean.my.MainTag;
+import com.timmy.aacgank.ui.login.GestureLoginActivity;
 import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
 import com.timmy.androidbase.activity.ActivityStudyActivity;
 import com.timmy.androidbase.animation.AnimationUseActivity;
@@ -26,6 +27,7 @@ import com.timmy.aacgank.ui.multimedia.video.CameraStudyActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoRecordActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.androidbase.uiDraw.UIDrawActivity;
+import com.timmy.customeview.cityselect.CitySelectActivity;
 import com.timmy.tdialog.TDialog;
 import com.timmy.tdialog.base.BindViewHolder;
 import com.timmy.tdialog.base.TBaseAdapter;
@@ -64,6 +66,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
             @Override
             public void onClick(View v) {
                 android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
+                //Android基础
                 switch (model.getTag()) {
                     //Android
 //                    case MainTag.ANDROID.TAG_FOUR_COMPONENT:
@@ -112,6 +115,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                 }
 
+                //多媒体开发
                 switch (model.getTag()) {
                     //多媒体 音视频开发
                     case MainTag.VIDEO.TAG_AUDIO:
@@ -136,6 +140,21 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     default:
                         break;
                 }
+
+                //自定义控件
+                switch (model.getTag()) {
+                    case MainTag.CUSTOMEVIEW.TAG_CITY_SELECT:
+                        gotoNextActivity(CitySelectActivity.class);
+                        break;
+                    case MainTag.CUSTOMEVIEW.TAG_GESTURE_LOCK:
+                        gotoNextActivity(GestureLoginActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+
+
+
             }
         });
     }

@@ -10,10 +10,92 @@
         <!-- Service -->
         <activity
             android:name=".service.ServiceStudyActivity"
-            android:label="Service知识点"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:label="Service知识点" />
 
-        <service android:name=".service.DemoService" />
+        <service
+            android:name=".service.StartedService"
+            android:exported="true"
+            android:process=":Tim">
+            <intent-filter>
+                <action android:name="com.timmy.test.startService" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.BindService" />
+        <service
+            android:name="com.timmy.androidbase.service.UploadImgIntentService"
+            android:exported="false" />
 
+        <!-- BroadcaseReceiver -->
+        <activity
+            android:name=".broadcastReceiver.BroadcaseReceiverActivity"
+            android:label="BroadcaseReceiver知识点" />
+
+        <receiver android:name=".broadcastReceiver.NormalReceiver">
+            <intent-filter>
+                <action android:name="com.timmy.broadcast.action.normal" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastReceiver.OrderReceiver1">
+            <intent-filter android:priority="100">
+                <action android:name="com.timmy.broadcast.action.order" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastReceiver.OrderReceiver2">
+            <intent-filter android:priority="99">
+                <action android:name="com.timmy.broadcast.action.order" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastReceiver.OrderReceiver3">
+            <intent-filter android:priority="98">
+                <action android:name="com.timmy.broadcast.action.order" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ContentProvider -->
+        <activity
+            android:name=".contentProvider.ContentProviderStudyActivity"
+            android:label="ContentProvider知识点整理" />
+        <provider
+            android:name=".contentProvider.MyContentProvider"
+            android:authorities="com.timmy.myprovider" />
+
+        <!-- 数据存储 -->
+        <activity
+            android:name=".database.DatabaseActivity"
+            android:label="数据存储"
+            android:launchMode="singleTop" />
+
+        <!-- 事件分发 -->
+        <activity
+            android:name=".motionEvent.MotionEventActivity"
+            android:label="事件分发" />
+
+        <!--RecyclerView-->
+        <activity
+            android:name=".recyclveriew.RecyclerViewActivity"
+            android:label="RecyclerView" />
+        <activity
+            android:name=".recyclveriew.layoutmanager.MyLayoutManagerActivity"
+            android:label="自定义LayoutManager" />
+        <activity
+            android:name=".recyclveriew.itemdecoration.ItemDecorationActivity"
+            android:label="RecyclerView分割线" />
+
+        <!--Behavior-->
+        <activity
+            android:name=".behavior.BehaviorActivity"
+            android:label="Behavior" />
+        <!--Paint-->
+        <activity
+            android:name=".paint.PaintUseActivity"
+            android:label="图形绘制" />
+        <!--动画-->
+        <activity
+            android:name=".animation.AnimationUseActivity"
+            android:label="动画" />
+        <!--UI绘制-->
+        <activity
+            android:name=".uiDraw.UIDrawActivity"
+            android:label="UI绘制" />
     </application>
 </manifest>

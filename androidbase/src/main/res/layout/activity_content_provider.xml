@@ -39,7 +39,6 @@
             android:text="3.获取联系人信息"
             android:textAllCaps="false" />
 
-
         <TextView
             android:id="@+id/tv_contacts"
             android:layout_width="match_parent"

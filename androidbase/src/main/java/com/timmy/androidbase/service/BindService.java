@@ -12,11 +12,11 @@ import android.util.Log;
 import com.timmy.androidbase.R;
 
 
-public class DemoService extends Service {
+public class BindService extends Service {
 
     private String TAG = this.getClass().getSimpleName();
 
-    public DemoService() {
+    public BindService() {
         Log.d(TAG, "DemoService");
     }
 
