@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.timmy.androidbase">
-
-    <!--Android基础-->
+    <!-- Android基础 -->
     <application>
+
         <!-- Activity -->
         <activity
             android:name=".activity.ActivityStudyActivity"
@@ -22,8 +23,24 @@
         </service>
         <service android:name=".service.BindService" />
         <service
-            android:name="com.timmy.androidbase.service.UploadImgIntentService"
+            android:name=".service.UploadImgIntentService"
             android:exported="false" />
+
+        <!--Binder-->
+        <activity
+            android:name=".binder.BinderActivity"
+            android:label="Binder知识点" />
+        <!-- 远程服务  process表示RemoteService位于另一个进程 -->
+        <service
+            android:name=".binder.aidl.RemoteService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.timmy.aacgank.aidl.action" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
 
         <!-- BroadcaseReceiver -->
         <activity
@@ -55,6 +72,7 @@
         <activity
             android:name=".contentProvider.ContentProviderStudyActivity"
             android:label="ContentProvider知识点整理" />
+
         <provider
             android:name=".contentProvider.MyContentProvider"
             android:authorities="com.timmy.myprovider" />
@@ -70,7 +88,7 @@
             android:name=".motionEvent.MotionEventActivity"
             android:label="事件分发" />
 
-        <!--RecyclerView-->
+        <!-- RecyclerView -->
         <activity
             android:name=".recyclveriew.RecyclerViewActivity"
             android:label="RecyclerView" />
@@ -81,21 +99,22 @@
             android:name=".recyclveriew.itemdecoration.ItemDecorationActivity"
             android:label="RecyclerView分割线" />
 
-        <!--Behavior-->
+        <!-- Behavior -->
         <activity
             android:name=".behavior.BehaviorActivity"
             android:label="Behavior" />
-        <!--Paint-->
+        <!-- Paint -->
         <activity
             android:name=".paint.PaintUseActivity"
             android:label="图形绘制" />
-        <!--动画-->
+        <!-- 动画 -->
         <activity
             android:name=".animation.AnimationUseActivity"
             android:label="动画" />
-        <!--UI绘制-->
+        <!-- UI绘制 -->
         <activity
             android:name=".uiDraw.UIDrawActivity"
             android:label="UI绘制" />
     </application>
+
 </manifest>

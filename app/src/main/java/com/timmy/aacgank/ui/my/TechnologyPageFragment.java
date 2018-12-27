@@ -92,6 +92,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 //                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_FOUR_COMPONENT, "四大组件"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ACTIVITY, "Activty"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_SERVICE, "Service"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BINDER, "Binder"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_BROADCASTRECEIVER, "BroadcastReceiver"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_CONTENTPROVIDER, "ContentProvider"));
 

@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.android.aidl;
+package com.timmy.androidbase.binder.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -8,6 +8,7 @@ public class MainTag {
         public static final int TAG_SERVICE = 10;
         public static final int TAG_BROADCASTRECEIVER = 11;
         public static final int TAG_CONTENTPROVIDER = 12;
+        public static final int TAG_BINDER = 13;
 
         public static final int TAG_BEHAVIOR = 2;
         public static final int TAG_DATA_BASE = 3;

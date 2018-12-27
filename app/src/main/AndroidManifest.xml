@@ -75,17 +75,6 @@
 
         <!-- ********************************Android******************************************* -->
 
-        <!-- 远程服务  process表示RemoteService位于另一个进程 -->
-        <service
-            android:name=".ui.android.aidl.RemoteService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.timmy.aacgank.aidl.action" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
 
         <!-- ********************************音视频开发******************************************* -->
         <activity

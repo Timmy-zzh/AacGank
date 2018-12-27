@@ -10,9 +10,8 @@ import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-
-import com.timmy.aacgank.ui.android.aidl.Book;
-import com.timmy.aacgank.ui.android.aidl.BookController;
+import com.timmy.androidbase.binder.aidl.Book;
+import com.timmy.androidbase.binder.aidl.BookController;
 
 import java.util.List;
 

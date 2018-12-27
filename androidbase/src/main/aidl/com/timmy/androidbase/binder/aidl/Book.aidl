@@ -1,5 +1,5 @@
 // Book.aidl
-package com.timmy.aacgank.ui.android.aidl;
+package com.timmy.androidbase.binder.aidl;
 
 // Declare any non-default types here with import statements
 //改为声明Parcelable数据类型的AIDL文件

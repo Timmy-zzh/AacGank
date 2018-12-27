@@ -15,6 +15,7 @@ import com.timmy.aacgank.ui.multimedia.audio.AudioStudyActivity;
 import com.timmy.androidbase.activity.ActivityStudyActivity;
 import com.timmy.androidbase.animation.AnimationUseActivity;
 import com.timmy.androidbase.behavior.BehaviorActivity;
+import com.timmy.androidbase.binder.BinderActivity;
 import com.timmy.androidbase.broadcastReceiver.BroadcaseReceiverActivity;
 import com.timmy.androidbase.contentProvider.ContentProviderStudyActivity;
 import com.timmy.androidbase.database.DatabaseActivity;
@@ -78,6 +79,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.ANDROID.TAG_SERVICE:
                         gotoNextActivity(ServiceStudyActivity.class);
+                        break;
+                    case MainTag.ANDROID.TAG_BINDER:
+                        gotoNextActivity(BinderActivity.class);
                         break;
                     case MainTag.ANDROID.TAG_BROADCASTRECEIVER:
                         gotoNextActivity(BroadcaseReceiverActivity.class);

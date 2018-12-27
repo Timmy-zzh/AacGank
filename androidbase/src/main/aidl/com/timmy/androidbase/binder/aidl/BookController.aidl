@@ -1,6 +1,6 @@
 // BookController.aidl
-package com.timmy.aacgank.ui.android.aidl;
-import com.timmy.aacgank.ui.android.aidl.Book;
+package com.timmy.androidbase.binder.aidl;
+import com.timmy.androidbase.binder.aidl.Book;
 
 // Declare any non-default types here with import statements
 

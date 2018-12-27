@@ -1,4 +1,4 @@
-package com.timmy.aacgank.ui.android.aidl;
+package com.timmy.androidbase.binder.aidl;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.timmy.aacgank.ui.android.aidl.Book;
 
 public class RemoteService extends Service {
 
