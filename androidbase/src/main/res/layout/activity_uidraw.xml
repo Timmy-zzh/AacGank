@@ -15,63 +15,152 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="1.UI绘制流程入口方法为:ActivityThread.handleResumeActivity()"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="1.UI绘制准备：setContentView()"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="相关类:WindowManage.addView()-> ViewRootImpl.setView()->requestLayout()-> scheduleTraversals()"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="Activity.attach()-->new PhoneWindow()
+Activity.onCreate()-->setContentView()-->PhoneWindow.setContentView()-->DecorView()"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="2.测量:ViewRootImpl.performMeasure()-> View.measure()->onMeasure()"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="2.UI绘制入口：ActivityThread.handleResumeActivity()"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="MeasureSpec:获取mode与size"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="WindowManager.addView(decorView,1)
+-->WindowManagerGlobal.addView()
+-->ViewRootImpl.setView()
+-->ViewRootImpl.requestLayout()
+-->scheduleTraversals()-->performTraversals()
+-->performMeasure()-->performLayout()
+-->performDraw()"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="3.布局 performLayout()->View.layout()->onLayout()"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="3.UI绘制流程--测量"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="4.绘制 performDraw()->drawSoftware()->View.draw()-> onDraw()->dispatchDraw()"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="ViewRootImpl.performMeasure()-->View.measure()
+获取测量模式：MeasureSpec.getMode(widthMeasureSpec);
+EXACTLY ,ATMOST ,UNSPECIFIED三模式
+获取测量大小：MeasureSpec.getSize(widthMeasureSpec);"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="常用方法区别:\n    view.requestLayout();\n    view.invalidate();\n    view.postInvalidate();"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:text="获取控件的宽高时机："
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="1).Activity/View的onWindowFocusChanged
+2).view.post（runnable）
+3).ViewTreeObserver"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="4.UI绘制流程--布局"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="ViewRootImpl.performLayout()-->View.layout()-->真正布局方法setFrame()
+requestLayout()与invalidate()方法区别"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="5.UI绘制流程--绘制"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="ViewRootImpl.performDraw()-->ViewRootImpl.draw()-->ViewRootImpl.drawSoftware()-->View.draw()"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="draw()方法主要流程为:"
+            android:textColor="@color/T_00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="1).对View的背景进行绘制
+2).保存当前的图层信息
+3).绘制View的内容
+4).对View的子View进行绘制(如果有子View)  -->dispatchDraw(Canvas canvas)
+5).绘制View的褪色的边缘，类似于阴影效果
+6).绘制View的装饰
+画背景:调用了Drawable.draw(canves)方法"
+            android:textColor="@color/T_00"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_stop"
