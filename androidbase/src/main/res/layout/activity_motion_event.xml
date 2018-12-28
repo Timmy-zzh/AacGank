@@ -15,7 +15,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="1.事件分发流程:"
+            android:text="1.View事件分发流程"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="dispatchTouchEvent() --> onTouchListener.onTouch() --> onTouchEvent()"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="1).onTouch()事件，如果返回true，表示消费掉触摸事件，不会调用后面的onTouchEvent()分发
+\n2).view控件只要设置了clickable或者longclickable，则该view控件就会消费掉该事件
+\n3).onTouchEvent方法中的ACTION_UP分支中触发onclick事件监听"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -24,76 +46,37 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="点击事件在DOWN与UP事件触发，长按事件在DOWN事件中触发"
+            android:text="2.ViewGroup事件分发流程"
             android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="2.事件拦截处理"
+            android:text="dispatchTouchEvent() --> onInterceptTouchEvent() -->ChildView.dispatchTouchEvent()"
             android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="3.只要接受ACTION_DOWN就意味着接受所有的事件,拒绝ACTION_DOWN则不会收到后续内容。"
+            android:text="1).ViewGroup默认事件分发不拦截onInterceptTouchEvent()分发返回false,可复写该分发
+\n2).如果ViewGroup对事件进行拦截，说明ViewGroup想消费掉该事件,会调用ViewGroup的super.dispatchTouchEvent()分发，事件停止往下传递
+\n3).如果ViewGroup对事件不拦截,则遍历ViewGroup内部的每个子view，通过询问每个子view是否需要消费掉该事件"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
-        <com.timmy.androidbase.motionEvent.MyFrameLayout
-            android:id="@+id/frame_layout"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@color/c_redeem">
-
-            <com.timmy.androidbase.motionEvent.MyTextView
-                android:id="@+id/tv"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="top"
-                android:background="@color/orange" />
-
-
-            <com.timmy.androidbase.motionEvent.MyButton
-                android:id="@+id/btn"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="bottom"
-                android:text="点击事件"
-                android:textAllCaps="false" />
-
-        </com.timmy.androidbase.motionEvent.MyFrameLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="5dp"
-            android:text="4.设置ImageView的clickable属性为true,则其onTouchEvent()方法返回true,会消费事件"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="5dp"
-            android:text="不论 View 自身是否注册点击事件，只要 View 是可点击的就会消费事件。"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:clickable="true"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/img_dongman" />
+        <Button
+            android:layout_width="match_parent"
+            android:text="代码查看事件分发过程"
+            android:onClick="eventCode"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </ScrollView>

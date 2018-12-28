@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.timmy.androidbase.motionEvent.MyFrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/c_redeem">
+
+            <com.timmy.androidbase.motionEvent.MyTextView
+                android:id="@+id/tv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="top"
+                android:background="@color/orange"
+                android:gravity="center"
+                android:text="TextView" />
+
+
+            <com.timmy.androidbase.motionEvent.MyButton
+                android:id="@+id/btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:background="@color/c_wallet_negative"
+                android:gravity="center"
+                android:text="Button"
+                android:textAllCaps="false" />
+
+        </com.timmy.androidbase.motionEvent.MyFrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>

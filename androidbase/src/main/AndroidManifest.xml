@@ -34,7 +34,7 @@
             android:name=".service.UploadImgIntentService"
             android:exported="false" />
 
-        <!--Binder-->
+        <!-- Binder -->
         <activity
             android:name=".binder.BinderActivity"
             android:label="Binder知识点" />
@@ -54,7 +54,7 @@
         <activity
             android:name=".broadcastReceiver.BroadcaseReceiverActivity"
             android:label="BroadcaseReceiver知识点" />
-        <!--静态注册广播-->
+        <!-- 静态注册广播 -->
         <receiver android:name=".broadcastReceiver.NormalReceiver">
             <intent-filter>
                 <action android:name="com.timmy.broadcast.action.normal" />
@@ -123,6 +123,7 @@
         <activity
             android:name=".uiDraw.UIDrawActivity"
             android:label="UI绘制" />
+        <activity android:name=".motionEvent.EventSecondActivity"></activity>
     </application>
 
 </manifest>
