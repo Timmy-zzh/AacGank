@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="operateMethod1"
-            android:text="2.进程内访问ContentProvider数据"
+            android:text="1.进程内访问ContentProvider数据"
             android:textAllCaps="false" />
 
         <Button

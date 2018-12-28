@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.timmy.androidbase">
+
+    <!-- 广播私有权限 -->
+    <permission
+        android:name="com.timmy.broadcast.timmy"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.timmy.broadcast.timmy" />
+
     <!-- Android基础 -->
     <application>
 
@@ -46,7 +54,7 @@
         <activity
             android:name=".broadcastReceiver.BroadcaseReceiverActivity"
             android:label="BroadcaseReceiver知识点" />
-
+        <!--静态注册广播-->
         <receiver android:name=".broadcastReceiver.NormalReceiver">
             <intent-filter>
                 <action android:name="com.timmy.broadcast.action.normal" />

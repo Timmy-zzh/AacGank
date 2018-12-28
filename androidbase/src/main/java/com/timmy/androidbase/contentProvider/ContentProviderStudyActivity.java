@@ -50,7 +50,7 @@ public class ContentProviderStudyActivity extends BaseActivity {
         Uri uri = Uri.parse("content://com.timmy.myprovider/user");
         //准备需要操作的数据
         ContentValues values = new ContentValues();
-        values.put("_id", 3);
+//        values.put("_id", 3);
         values.put("name", "Groable");
 
         //获取ContentResolver
@@ -58,14 +58,26 @@ public class ContentProviderStudyActivity extends BaseActivity {
         //通过ContentResolver向数据库表中插入数据
         contentResolver.insert(uri, values);
 
+        StringBuilder sb = new StringBuilder();
         //获取数据
         Cursor cursor = contentResolver.query(uri, new String[]{"_id", "name"}, null, null, null);
-        while (cursor.moveToNext()) {
-            int _id = cursor.getInt(0);
-            String name = cursor.getString(1);
-            Log.d(TAG, "id:" + _id + " ,name:" + name);
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                int _id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                sb.append("_id:" + _id);
+                sb.append("\t\t");
+                sb.append("name:" + name);
+                sb.append("\n");
+//                Log.d(TAG, "id:" + _id + " ,name:" + name);
+            }
+            cursor.close();
         }
-        cursor.close();
+        tvContact.setText(sb.toString());
+    }
+
+    public void operateMethod2(View view) {
+
 
     }
 
