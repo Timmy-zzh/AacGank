@@ -23,10 +23,6 @@ import android.view.View;
 
 import com.timmy.androidbase.R;
 
-/**
- * 使用Paint在Canvas上绘制各种图形
- * 其中Paint
- */
 public class MaskFilterView extends View {
 
     private Paint mPaint;
@@ -101,41 +97,4 @@ public class MaskFilterView extends View {
                         23f));
         canvas.drawRect(50, 600, 500, 1000, mPaint);
     }
-
-    /**
-     * @param canvas
-     */
-//    @Override
-//    protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
-////        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.img_food);
-////        canvas.drawBitmap(bitmap, 0, 0, mPaint);
-////
-////        canvas.drawText("Paint API使用", 50, 200, mPaint);
-//
-////        int radius = Math.min(bitmap.getHeight(), bitmap.getWidth());
-////        canvas.drawCircle(radius, radius, radius, mPaint);
-//
-////        canvas.drawCircle(500, 500, 300, mPaint);
-//
-//        //画背景色
-//        canvas.drawARGB(255, 139, 139, 186);
-//
-//        int saved = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);
-//        //绘制黄色圆形
-//        int radius = 100;
-//        mPaint.setColor(Color.YELLOW);
-//        canvas.drawCircle(radius, radius, radius, mPaint);
-//
-//        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-//
-//        //绘制蓝色矩形
-//        mPaint.setColor(Color.BLUE);
-//        RectF rectf = new RectF(radius, radius, radius * 2.5f, radius * 2.5f);
-//        canvas.drawRect(rectf, mPaint);
-//        mPaint.setXfermode(null);
-//
-//        canvas.restoreToCount(saved);
-//
-//    }
 }

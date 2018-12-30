@@ -150,6 +150,12 @@
         <activity
             android:name=".graphicsDraw.XfermodeActivity"
             android:label="Xfermode" />
+        <activity
+            android:name=".graphicsDraw.TextDrawActivity"
+            android:label="文本绘制" />
+        <activity
+            android:name=".graphicsDraw.PathStudyActivity"
+            android:label="Path路径" />
     </application>
 
 </manifest>

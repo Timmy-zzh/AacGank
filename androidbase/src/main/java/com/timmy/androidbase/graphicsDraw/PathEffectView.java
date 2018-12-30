@@ -31,10 +31,6 @@ import android.view.View;
 
 import com.timmy.androidbase.R;
 
-/**
- * 使用Paint在Canvas上绘制各种图形
- * 其中Paint
- */
 public class PathEffectView extends View {
 
     private Paint mPaint;

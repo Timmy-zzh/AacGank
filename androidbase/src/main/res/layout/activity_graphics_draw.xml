@@ -148,23 +148,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center_vertical"
-            android:onClick="drawText"
+            android:onClick="pathUse"
             android:padding="5dp"
             android:text="6.Path使用"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="5dp"
-            android:text="图形绘制准备：
-    a.图形的位置和形状(Canvas);
-    b.画笔使用的色彩和样式"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
     </LinearLayout>
 
 </ScrollView>

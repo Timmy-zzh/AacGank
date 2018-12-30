@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathMeasure;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -14,7 +15,6 @@ import android.view.View;
  * 轨迹Path的使用
  */
 public class PathUseView extends View {
-
 
     private Paint mPaint;
     private Path mPath;
@@ -37,40 +37,35 @@ public class PathUseView extends View {
         mPaint.setColor(Color.RED);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(5);
+        mPaint.setTextSize(40);
 
         mPath = new Path();
 
-        initPath();
-    }
-
-    /**
-     *
-     */
-    private void initPath() {
-        /**
-         * 画线操作
-         */
-        // 设置起始点位置
-        mPath.moveTo(50, 50);
-        //设置连接点位置
-        mPath.lineTo(500, 500);
-
-        //添加路径
-        //添加圆弧
-        mPath.addArc(new RectF(400, 400, 500, 500), 45, -180);
-
-        //贝塞尔曲线
-//        mPath.quadTo();
-
-//        mPath.close();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.drawText("二阶贝塞尔曲线", 50, 50, mPaint);
 
-        canvas.drawRect(50, 50, 500, 500, mPaint);
-
+        mPath.moveTo(0, 200);
+        mPath.quadTo(200, 100, 400, 200);
         canvas.drawPath(mPath, mPaint);
+        canvas.translate(0, 200);
+        mPath.reset();
+
+        canvas.drawText("三阶届贝塞尔曲线", 50, 50, mPaint);
+        mPath.moveTo(0, 200);
+        mPath.cubicTo(100, 100, 250, 455, 400, 200);
+        canvas.drawPath(mPath, mPaint);
+        mPath.reset();
+
+        canvas.translate(0, 400);
+        canvas.drawText("PathMeasure", 50, 50, mPaint);
+        RectF rect = new RectF(300,300,600,600);
+        mPath.addRect(rect, Path.Direction.CW);
+        PathMeasure pathMeasure = new PathMeasure();
+        pathMeasure.setPath(mPath,false);
+        canvas.drawPath(mPath,mPaint);
     }
 }

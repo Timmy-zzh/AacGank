@@ -54,6 +54,10 @@ public class GraphicsDrawActivity extends BaseActivity {
     }
 
     public void drawText(View view) {
-        startActivity(new Intent(this, XfermodeActivity.class));
+        startActivity(new Intent(this, TextDrawActivity.class));
+    }
+
+    public void pathUse(View view) {
+        startActivity(new Intent(this, PathStudyActivity.class));
     }
 }
