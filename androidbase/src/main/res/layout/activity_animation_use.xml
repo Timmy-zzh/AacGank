@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    tools:context=".animation.AnimationUseActivity"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -14,7 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1.帧动画"
+            android:onClick="frameAnimation"
             android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/iv_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
 
         <Button
             android:layout_width="match_parent"
@@ -42,7 +50,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="4.插值器 Interpolator 与估值器：\n    时间插值器计算得到当前时间点的时间流逝百分比,TypeEvaluator根据这个百分比,属性的起始值,目标值来计算出当前时刻该属性的值,最后这个值被设置给View,不断的重复这个过程就形成了动画."
+            android:text="4.插值器 Interpolator 与估值器：
+\n时间插值器计算得到当前时间点的时间流逝百分比
+\nTypeEvaluator根据这个百分比,属性的起始值,目标值来计算出当前时刻该属性的值,最后这个值被设置给View,不断的重复这个过程就形成了动画."
             android:textColor="@color/black"
             android:textSize="14sp" />
 

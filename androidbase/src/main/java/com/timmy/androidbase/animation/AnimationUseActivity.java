@@ -2,6 +2,7 @@ package com.timmy.androidbase.animation;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -25,6 +26,7 @@ public class AnimationUseActivity extends BaseActivity {
 
     private ImageView imageView;
     private TextView textView;
+    private ImageView ivFrame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,23 @@ public class AnimationUseActivity extends BaseActivity {
         setContentView(R.layout.activity_animation_use);
 
         imageView = findViewById(R.id.iv);
+        ivFrame = findViewById(R.id.iv_frame);
         textView = findViewById(R.id.tv_num);
+    }
+
+    /**
+     * 帧动画
+     * ﻿渐变透明度动画效果 AlphaAnimation
+     * 渐变尺寸缩放动画效果  ScaleAnimation
+     * 画面位置移动动画效果  TranslateAnimation
+     * 画面旋转动画效果  RotateAnimation
+     * <p>
+     * 代码实现/xml文件实现
+     */
+    public void frameAnimation(View view) {
+        ivFrame.setImageResource(R.drawable.animation_frame_study);
+        AnimationDrawable animationDrawable = (AnimationDrawable) ivFrame.getDrawable();
+        animationDrawable.start();
     }
 
     /**
