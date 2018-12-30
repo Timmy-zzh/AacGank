@@ -98,7 +98,7 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
 
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_MOTION_EVENT, "事件分发"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_UI_DRAW, "UI绘制流程"));
-                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_PAINT, "图形绘制:Canvas,Paint,Path使用"));
+                pageListOne.add(new MainModel(MainTag.ANDROID.TAG_GRAPHICS_DRAW, "图形绘制:Canvas,Paint,Path使用"));
 
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_ANIMATION, "动画"));
                 pageListOne.add(new MainModel(MainTag.ANDROID.TAG_DATA_BASE, "数据存储"));

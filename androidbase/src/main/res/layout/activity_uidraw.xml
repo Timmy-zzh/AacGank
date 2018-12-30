@@ -71,9 +71,9 @@ Activity.onCreate()-->setContentView()-->PhoneWindow.setContentView()-->DecorVie
             android:layout_marginTop="8dp"
             android:padding="5dp"
             android:text="ViewRootImpl.performMeasure()-->View.measure()
-获取测量模式：MeasureSpec.getMode(widthMeasureSpec);
-EXACTLY ,ATMOST ,UNSPECIFIED三模式
-获取测量大小：MeasureSpec.getSize(widthMeasureSpec);"
+\n获取测量模式：MeasureSpec.getMode(widthMeasureSpec);
+\nEXACTLY ,ATMOST ,UNSPECIFIED三模式
+\n获取测量大小：MeasureSpec.getSize(widthMeasureSpec);"
             android:textColor="@color/T_00"
             android:textSize="16sp" />
 
@@ -93,8 +93,8 @@ EXACTLY ,ATMOST ,UNSPECIFIED三模式
             android:layout_marginTop="8dp"
             android:padding="5dp"
             android:text="1).Activity/View的onWindowFocusChanged
-2).view.post（runnable）
-3).ViewTreeObserver"
+\n2).view.post（runnable）
+\n3).ViewTreeObserver"
             android:textColor="@color/T_00"
             android:textSize="16sp" />
 
@@ -114,7 +114,7 @@ EXACTLY ,ATMOST ,UNSPECIFIED三模式
             android:layout_marginTop="8dp"
             android:padding="5dp"
             android:text="ViewRootImpl.performLayout()-->View.layout()-->真正布局方法setFrame()
-requestLayout()与invalidate()方法区别"
+\nrequestLayout()与invalidate()方法区别"
             android:textColor="@color/T_00"
             android:textSize="16sp" />
 
@@ -153,12 +153,12 @@ requestLayout()与invalidate()方法区别"
             android:layout_marginTop="8dp"
             android:padding="5dp"
             android:text="1).对View的背景进行绘制
-2).保存当前的图层信息
-3).绘制View的内容
-4).对View的子View进行绘制(如果有子View)  -->dispatchDraw(Canvas canvas)
-5).绘制View的褪色的边缘，类似于阴影效果
-6).绘制View的装饰
-画背景:调用了Drawable.draw(canves)方法"
+\n2).保存当前的图层信息
+\n3).绘制View的内容
+\n4).对View的子View进行绘制(如果有子View)  -->dispatchDraw(Canvas canvas)
+\n5).绘制View的褪色的边缘，类似于阴影效果
+\n6).绘制View的装饰
+\n画背景:调用了Drawable.draw(canves)方法"
             android:textColor="@color/T_00"
             android:textSize="16sp" />
 

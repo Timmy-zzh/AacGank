@@ -14,7 +14,7 @@ public class MainTag {
         public static final int TAG_DATA_BASE = 3;
         public static final int TAG_MOTION_EVENT = 4;
         public static final int TAG_UI_DRAW = 5;
-        public static final int TAG_PAINT = 6;
+        public static final int TAG_GRAPHICS_DRAW = 6;
         public static final int TAG_ANIMATION = 7;
         public static final int TAG_RECYCLER_VIEW = 8;
 

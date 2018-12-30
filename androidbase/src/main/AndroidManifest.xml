@@ -10,6 +10,7 @@
     <uses-permission android:name="com.timmy.broadcast.timmy" />
 
     <!-- Android基础 -->
+    <!-- <application android:hardwareAccelerated="false"> -->
     <application>
 
         <!-- Activity -->
@@ -95,6 +96,7 @@
         <activity
             android:name=".motionEvent.MotionEventActivity"
             android:label="事件分发" />
+        <activity android:name=".motionEvent.EventSecondActivity" />
 
         <!-- RecyclerView -->
         <activity
@@ -111,10 +113,6 @@
         <activity
             android:name=".behavior.BehaviorActivity"
             android:label="Behavior" />
-        <!-- Paint -->
-        <activity
-            android:name=".paint.PaintUseActivity"
-            android:label="图形绘制" />
         <!-- 动画 -->
         <activity
             android:name=".animation.AnimationUseActivity"
@@ -123,7 +121,35 @@
         <activity
             android:name=".uiDraw.UIDrawActivity"
             android:label="UI绘制" />
-        <activity android:name=".motionEvent.EventSecondActivity"></activity>
+        <activity
+            android:name=".graphicsDraw.GraphicsDrawActivity"
+            android:label="图形绘制" />
+        <!-- Canvas -->
+        <activity
+            android:name=".graphicsDraw.CanvasStudyActivity"
+            android:label="Canvas设置图形形状" />
+        <activity
+            android:name=".graphicsDraw.PaintStudyActivity"
+            android:label="Paint基本使用" />
+        <activity
+            android:name=".graphicsDraw.PathEffectActivity"
+            android:label="PathEffect" />
+        <activity
+            android:name=".graphicsDraw.ColorFilterActivity"
+            android:label="ColorFilter" />
+        <activity
+            android:name=".graphicsDraw.ShaderActivity"
+            android:label="Shader" />
+        <activity
+            android:name=".graphicsDraw.MaskFilterActivity"
+            android:hardwareAccelerated="false"
+            android:label="MaskFilter" />
+        <activity
+            android:name=".graphicsDraw.ShadowLayerActivity"
+            android:label="ShadowLayer" />
+        <activity
+            android:name=".graphicsDraw.XfermodeActivity"
+            android:label="Xfermode" />
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@ import com.timmy.androidbase.broadcastReceiver.BroadcaseReceiverActivity;
 import com.timmy.androidbase.contentProvider.ContentProviderStudyActivity;
 import com.timmy.androidbase.database.DatabaseActivity;
 import com.timmy.androidbase.motionEvent.MotionEventActivity;
-import com.timmy.androidbase.paint.PaintUseActivity;
+import com.timmy.androidbase.graphicsDraw.GraphicsDrawActivity;
 import com.timmy.androidbase.recyclveriew.RecyclerViewActivity;
 import com.timmy.androidbase.service.ServiceStudyActivity;
 import com.timmy.aacgank.ui.multimedia.openGL.OpenGLStudyActivity;
@@ -29,13 +29,8 @@ import com.timmy.aacgank.ui.multimedia.video.VideoRecordActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.androidbase.uiDraw.UIDrawActivity;
 import com.timmy.customeview.cityselect.CitySelectActivity;
-import com.timmy.tdialog.TDialog;
-import com.timmy.tdialog.base.BindViewHolder;
-import com.timmy.tdialog.base.TBaseAdapter;
-import com.timmy.tdialog.list.TListDialog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.TabHolder> {
@@ -105,9 +100,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         //UI绘制流程
                         gotoNextActivity(UIDrawActivity.class);
                         break;
-                    case MainTag.ANDROID.TAG_PAINT:
+                    case MainTag.ANDROID.TAG_GRAPHICS_DRAW:
                         //Paint使用
-                        gotoNextActivity(PaintUseActivity.class);
+                        gotoNextActivity(GraphicsDrawActivity.class);
                         break;
                     case MainTag.ANDROID.TAG_ANIMATION:
                         gotoNextActivity(AnimationUseActivity.class);

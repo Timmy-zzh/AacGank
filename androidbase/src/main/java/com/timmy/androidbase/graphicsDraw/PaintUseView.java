@@ -1,4 +1,4 @@
-package com.timmy.androidbase.paint;
+package com.timmy.androidbase.graphicsDraw;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -21,6 +21,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.SumPathEffect;
@@ -57,6 +58,114 @@ public class PaintUseView extends View {
     }
 
     private void init() {
+        //初始化
+        mPaint = new Paint();
+//        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        //设置是否抗锯齿
+        mPaint.setAntiAlias(true);
+        //设置画笔颜色   --代码中用十六进制0x来表示
+        mPaint.setColor(Color.RED);
+        //设置线条宽度
+        mPaint.setStrokeWidth(5);
+        //设置alpha透明度，范围为0~255 -- 0为全透明
+//        mPaint.setAlpha(255);
+        //设定是否使用图像抖动处理，会使绘制出来的图片颜色更加平滑和饱满，图像更加清晰
+//        mPaint.setDither(true);
+        //设置文本大小
+//        mPaint.setTextSize(60);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        drawStyle(canvas);
+        drawStrokeCap(canvas);
+        drawStrokeJoin(canvas);
+        drawStrokeMiter(canvas);
+    }
+
+    /**
+     * 设置画笔倾斜度
+     * @param canvas
+     */
+    private void drawStrokeMiter(Canvas canvas) {
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(30);
+        Path path = new Path();
+        path.moveTo(50, 950);
+        path.lineTo(250, 1000);
+        path.lineTo(50, 1150);
+        mPaint.setStrokeJoin(Paint.Join.BEVEL);
+        mPaint.setStrokeMiter(170f);
+        canvas.drawPath(path, mPaint);
+    }
+
+    /**
+     * 多线条连接拐角弧度
+     * @param canvas
+     */
+    private void drawStrokeJoin(Canvas canvas) {
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(30);
+        Path path = new Path();
+        path.moveTo(50, 700);
+        path.lineTo(250, 750);
+        path.lineTo(50, 900);
+        mPaint.setStrokeJoin(Paint.Join.BEVEL);
+        canvas.drawPath(path, mPaint);
+
+        path.moveTo(300, 700);
+        path.lineTo(500, 750);
+        path.lineTo(300, 900);
+        mPaint.setStrokeJoin(Paint.Join.MITER);
+        canvas.drawPath(path, mPaint);
+
+        path.moveTo(550, 700);
+        path.lineTo(750, 750);
+        path.lineTo(550, 900);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        canvas.drawPath(path, mPaint);
+    }
+
+    /**
+     * 设置笔刷的图形样式
+     * 如圆形样式Cap.ROUND
+     * 方形样式Cap.SQUARE
+     */
+    private void drawStrokeCap(Canvas canvas) {
+        mPaint.setStrokeWidth(50);
+        canvas.drawLine(50, 400, 800, 400, mPaint);
+
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        canvas.drawLine(50, 500, 800, 500, mPaint);
+
+        mPaint.setStrokeCap(Paint.Cap.SQUARE);
+        canvas.drawLine(50, 600, 800, 600, mPaint);
+    }
+
+    /**
+     * 设置绘制样式
+     * FILL            (0),  绘制内容
+     * STROKE          (1),  绘制边框
+     * FILL_AND_STROKE (2);  一起绘制
+     */
+    private void drawStyle(Canvas canvas) {
+        mPaint.setStrokeWidth(30);
+        Rect rect = new Rect(50, 50, 350, 250);
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawRect(rect, mPaint);
+
+        Rect rect2 = new Rect(400, 50, 700, 250);
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(rect2, mPaint);
+
+        Rect rect3 = new Rect(750, 50, 1050, 250);
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        canvas.drawRect(rect3, mPaint);
+    }
+
+
+    private void init2() {
         //初始化
         mPaint = new Paint();
 //        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -151,38 +260,6 @@ public class PaintUseView extends View {
         mPaint.setShader(sweepGradient);
     }
 
-    /**
-     * 设置路径效果，PathEffect有6个子类实现
-     * ComposePathEffect, CornerPathEffect, DashPathEffect, DiscretePathEffect, PathDashPathEffect, SumPathEffect
-     */
-    private void initPathEffect() {
-        // 实例化路径
-        mPath = new Path();
-        // 定义路径的起点
-        mPath.moveTo(10, 50);
-        // 定义路径的各个点
-        for (int i = 0; i <= 30; i++) {
-            mPath.lineTo(i * 35, (float) (Math.random() * 100));
-        }
-        //什么都不处理
-        pathEffects[0] = null;
-        //虚实线间距
-        float mPhase = 5;
-        //参数1：线段之间的圆滑程度
-        pathEffects[1] = new CornerPathEffect(10);
-        //参数1：间隔线条长度(length>=2)，如float[] {20, 10}的偶数参数20定义了我们第一条实线的长度，
-        //而奇数参数10则表示第一条虚线的长度，后面不再有数据则重复第一个数以此往复循环；参数2：虚实线间距
-        pathEffects[2] = new DashPathEffect(new float[]{20, 10}, mPhase);
-        //参数1:值越小杂点越密集；参数2:杂点突出的大小，值越大突出的距离越大
-        pathEffects[3] = new DiscretePathEffect(5.0f, 10.0f);
-        Path path = new Path();
-        path.addRect(0, 0, 8, 8, Path.Direction.CCW);
-        //定义路径虚线的样式,参数1：path；参数2：实线的长度；参数3：虚实线间距
-        pathEffects[4] = new PathDashPathEffect(path, 20, mPhase, PathDashPathEffect.Style.ROTATE);
-        pathEffects[5] = new ComposePathEffect(pathEffects[2], pathEffects[4]);
-        //ComposePathEffect和SumPathEffect都可以用来组合两种路径效果,具体区别（不知道如何描述）小伙伴们自己试试
-        pathEffects[6] = new SumPathEffect(pathEffects[4], pathEffects[3]);
-    }
 
     /**
      * 设置滤镜的效果，MaskFilter有两个子类实现BlurMaskFilter, EmbossMaskFilter
@@ -213,85 +290,40 @@ public class PaintUseView extends View {
 
     }
 
-    /**
-     * 设置颜色过滤 ColorFilter有三个子类去实现ColorMatrixColorFilter、LightingColorFilter和PorterDuffColorFilter
-     */
-    private void initColorMatrix() {
-        /**
-         * 第一行表示的R（红色）的向量，
-         * 第二行表示的G（绿色）的向量，
-         * 第三行表示的B（蓝色）的向量，
-         * 最后一行表示A（透明度）的向量，
-         * 这一顺序必须要正确不能混淆！这个矩阵不同的位置表示的RGBA值，
-         * 其范围在0.0F至2.0F之间，1为保持原图的RGB值。
-         * 每一行的第五列数字表示偏移值。
-         */
-        ColorMatrix colorMatrix = new ColorMatrix(new float[]{
-                0.5f, 0, 0, 0, 0,
-                0, 0.5f, 0, 0, 0,
-                0, 0, 0.5f, 0, 0,
-                0, 0, 0, 1, 0,
-        });
-//        mPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-
-        /**
-         * LightingColorFilter (int mul, int add)
-         * mul全称是colorMultiply意为色彩倍增
-         * 参数2：add全称是colorAdd意为色彩添加
-         */
-//        mPaint.setColorFilter(new LightingColorFilter(0xFFFF00, 0x000000));
-        /**
-         * PorterDuffColorFilter (int color, PorterDuff.Mode mode)，
-         * 参数1：16进制表示的颜色值；
-         * 参数2：PorterDuff内部类Mode中的一个常量值，这个值表示混合模式
-         */
-        mPaint.setColorFilter(new PorterDuffColorFilter(Color.BLUE, PorterDuff.Mode.ADD));
-    }
-
-    /**
-     * @param canvas
-     */
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.img_food);
-//        canvas.drawBitmap(bitmap, 0, 0, mPaint);
+//    /**
+//     * @param canvas
+//     */
+//    @Override
+//    protected void onDraw(Canvas canvas) {
+//        super.onDraw(canvas);
+////        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.img_food);
+////        canvas.drawBitmap(bitmap, 0, 0, mPaint);
+////
+////        canvas.drawText("Paint API使用", 50, 200, mPaint);
 //
-//        canvas.drawText("Paint API使用", 50, 200, mPaint);
-
-        /*
-         * 绘制路径效果PathEffect
-         */
-//        for (int i = 0; i < pathEffects.length; i++) {
-//            mPaint.setPathEffect(pathEffects[i]);
-//            canvas.drawPath(mPath, mPaint);
-//            // 每绘制一条将画布向下平移250个像素
-//            canvas.translate(0, 250);
-//        }
-
-//        int radius = Math.min(bitmap.getHeight(), bitmap.getWidth());
+////        int radius = Math.min(bitmap.getHeight(), bitmap.getWidth());
+////        canvas.drawCircle(radius, radius, radius, mPaint);
+//
+////        canvas.drawCircle(500, 500, 300, mPaint);
+//
+//        //画背景色
+//        canvas.drawARGB(255, 139, 139, 186);
+//
+//        int saved = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);
+//        //绘制黄色圆形
+//        int radius = 100;
+//        mPaint.setColor(Color.YELLOW);
 //        canvas.drawCircle(radius, radius, radius, mPaint);
-
-//        canvas.drawCircle(500, 500, 300, mPaint);
-
-        //画背景色
-        canvas.drawARGB(255, 139, 139, 186);
-
-        int saved = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);
-        //绘制黄色圆形
-        int radius = 100;
-        mPaint.setColor(Color.YELLOW);
-        canvas.drawCircle(radius, radius, radius, mPaint);
-
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-
-        //绘制蓝色矩形
-        mPaint.setColor(Color.BLUE);
-        RectF rectf = new RectF(radius, radius, radius * 2.5f, radius * 2.5f);
-        canvas.drawRect(rectf, mPaint);
-        mPaint.setXfermode(null);
-
-        canvas.restoreToCount(saved);
-
-    }
+//
+//        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+//
+//        //绘制蓝色矩形
+//        mPaint.setColor(Color.BLUE);
+//        RectF rectf = new RectF(radius, radius, radius * 2.5f, radius * 2.5f);
+//        canvas.drawRect(rectf, mPaint);
+//        mPaint.setXfermode(null);
+//
+//        canvas.restoreToCount(saved);
+//
+//    }
 }

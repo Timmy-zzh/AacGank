@@ -10,14 +10,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--<com.timmy.androidbase.paint.PaintUseView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="300dp" />-->
-
-        <com.timmy.androidbase.paint.PathUseView
+        <com.timmy.androidbase.graphicsDraw.ShadowLayerView
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="800dp" />
 
     </LinearLayout>
-
 </ScrollView>
