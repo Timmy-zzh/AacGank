@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    tools:context=".animation.AnimationUseActivity"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".animation.AnimationUseActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,8 +14,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1.帧动画"
             android:onClick="frameAnimation"
+            android:text="1.帧动画"
             android:textAllCaps="false" />
 
         <ImageView
@@ -38,6 +38,20 @@
             android:text="3.属性动画"
             android:textAllCaps="false" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="propertyValuesHolder"
+            android:text="4.PropertyValuesHolder"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="reset"
+            android:text="重置"
+            android:textAllCaps="false" />
+
         <ImageView
             android:id="@+id/iv"
             android:layout_width="wrap_content"
@@ -50,11 +64,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="4.插值器 Interpolator 与估值器：
-\n时间插值器计算得到当前时间点的时间流逝百分比
-\nTypeEvaluator根据这个百分比,属性的起始值,目标值来计算出当前时刻该属性的值,最后这个值被设置给View,不断的重复这个过程就形成了动画."
+            android:text="5.Interpolator时间插值器：计算得到当前时间点的时间流逝百分比
+\n  TypeEvaluator根据这个百分比,属性的起始值,目标值来计算出当前时刻该属性的值,最后这个值被设置给View,不断的重复这个过程就形成了动画."
             android:textColor="@color/black"
             android:textSize="14sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="typeEvaluatorUse"
+            android:text="5.1 自定义估值器实现购物车抛物线动画效果"
+            android:textAllCaps="false" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,9 +96,9 @@
             android:id="@+id/tv_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:layout_gravity="center_horizontal"
             android:text="1"
             android:textColor="@color/c_redeem"
             android:textSize="14sp" />
@@ -87,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="circularReveral"
-            android:text="5.CircularReveral"
+            android:text="6.CircularReveral"
             android:textAllCaps="false" />
 
         <TextView
@@ -95,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:padding="5dp"
-            android:text="6.Activity转场动画：Explode、Slide、Fade、Share"
+            android:text="7.Activity转场动画：Explode、Slide、Fade、Share"
             android:textColor="@color/black"
             android:textSize="14sp" />
 

@@ -1,7 +1,10 @@
 package com.timmy.androidbase.animation;
 
 import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -113,6 +116,23 @@ public class AnimationUseActivity extends BaseActivity {
 //                .start();
     }
 
+    public void propertyValuesHolder(View view) {
+        PropertyValuesHolder scaleXPro = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 0, 1.0f);
+        PropertyValuesHolder scaleYPro = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 0, 1.0f);
+        PropertyValuesHolder alphaPro = PropertyValuesHolder.ofFloat("alpha", 1.0f, 0, 1.0f);
+        ObjectAnimator.ofPropertyValuesHolder(imageView, scaleXPro, scaleYPro, alphaPro).setDuration(1000).start();
+    }
+
+    public void reset(View view) {
+        imageView.clearAnimation();
+    }
+
+
+    public void typeEvaluatorUse(View view) {
+        startActivity(new Intent(this, CartAnimatorActivity.class));
+    }
+
+
     /**
      * 金额变化
      *
@@ -144,4 +164,13 @@ public class AnimationUseActivity extends BaseActivity {
         circularReveal.setDuration(2000);
         circularReveal.start();
     }
+
+    /**
+     * 转场动画
+     *
+     进入退出效果 注意这里 创建的效果对象是 Fade()
+     getWindow().setEnterTransition(new Fade().setDuration(2000));
+     getWindow().setExitTransition(new Fade().setDuration(2000));
+     */
+
 }
