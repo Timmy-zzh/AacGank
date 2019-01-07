@@ -1,5 +1,6 @@
 package com.timmy.androidbase.database;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,10 @@ public class DatabaseActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
         tvContent = findViewById(R.id.tv_content);
+    }
+
+    public void 创建本地日程(View view) {
+        startActivity(new Intent(this, ScheduleManagerActivity.class));
     }
 
     /**

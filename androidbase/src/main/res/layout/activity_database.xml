@@ -14,42 +14,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="1.轻量级数据:SQLite"
+            android:text="1.SharedPreferences"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="2.ContentProvider"
+            android:text="2.File存储"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:onClick="androidPath"
             android:padding="10dp"
-            android:text="3.File存储"
+            android:text="Android环境下各种存储路径展示"
             android:textAllCaps="false"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="4.SharedPreferences"
-            android:textAllCaps="false"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:onClick="androidPath"
-            android:text="5.Android环境下各种存储路径展示"
+            android:text="3.SQLite"
+            android:textAllCaps="false"
+            android:gravity="center_vertical|left"
+            android:onClick="创建本地日程"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1.各种sql语句
+\n2.创建索引
+\n3.数据库升级
+\n4.
+"
             android:textAllCaps="false"
             android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="4."
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_content"

@@ -156,7 +156,9 @@
         <activity
             android:name=".graphicsDraw.PathStudyActivity"
             android:label="Path路径" />
-        <activity android:name=".animation.CartAnimatorActivity"></activity>
+        <activity android:name=".animation.CartAnimatorActivity" />
+        <activity android:name=".database.ScheduleManagerActivity" />
+        <activity android:name=".database.ScheduleAddOrEditActivity"></activity>
     </application>
 
 </manifest>
