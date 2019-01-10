@@ -1,8 +1,9 @@
-package com.timmy.androidbase.database;
+package com.timmy.androidbase.calendar;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Schedule {
+public class Schedule implements Serializable {
 
     public String scheduleId;   //日程id
     public String createTime;//创建时间
@@ -10,7 +11,7 @@ public class Schedule {
     public String description;  //日程描述
     public long startTime;  //日程开始时间
     public long endTime;    //日程结束时间
-    public int  allDay;     //是否是全天事件 0全天 1非全天
+    public int allDay;     //是否是全天事件 0非全天 1全天
     public long remindAheadTime; //提前多久提醒
     public long eventId;    //日程事件id
     public long remindId;   //日程提醒id

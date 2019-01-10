@@ -4,6 +4,10 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.timmy.androidbase.calendar.CalendarCallback;
+import com.timmy.androidbase.calendar.CalendarUtil;
+import com.timmy.androidbase.calendar.Schedule;
+import com.timmy.baselib.App;
 import com.timmy.baselib.utils.LogUtils;
 
 import java.util.ArrayList;
@@ -19,8 +23,18 @@ public class ScheduleDao {
      * 2。加入数据库
      */
     public static void add(Schedule schedule) {
-        LogUtils.d(schedule.toString());
         SQLiteDatabase database = ScheduleDbManager.getInstance().getDatabase();
+        CalendarUtil.addCalendarEvent(App.getContext(), schedule, new CalendarCallback() {
+            @Override
+            public void onSuccess(Schedule schedule) {
+                LogUtils.e(schedule.toString());
+            }
+
+            @Override
+            public void onFail(Schedule schedule) {
+                LogUtils.e(schedule.toString());
+            }
+        });
 
         ContentValues values = new ContentValues();
         values.put("title", schedule.title);
@@ -29,9 +43,37 @@ public class ScheduleDao {
         values.put("endTime", schedule.endTime);
         values.put("allDay", schedule.allDay);
         values.put("remindAheadTime", schedule.remindAheadTime);
+        values.put("eventId", schedule.eventId);
+        values.put("remindId", schedule.remindId);
+        LogUtils.d(schedule.toString());
 
         database.insert(ScheduleDbHelper.NAME_TABLE_SCHEDULE, null, values);
 //    database.execSQL();
+    }
+
+    public static void delete(Schedule schedule) {
+        CalendarUtil.deleteCalendarEvent(App.getContext(), schedule);
+
+        SQLiteDatabase database = ScheduleDbManager.getInstance().getDatabase();
+        database.delete(ScheduleDbHelper.NAME_TABLE_SCHEDULE, "title = ?", new String[]{schedule.title});
+    }
+
+    public static void update(long scheduleId, Schedule schedule) {
+//        CalendarUtil.deleteCalendarEvent(App.getContext(), schedule);
+
+        SQLiteDatabase database = ScheduleDbManager.getInstance().getDatabase();
+        ContentValues values = new ContentValues();
+        values.put("title", schedule.title);
+        values.put("description", schedule.description);
+        values.put("startTime", schedule.startTime);
+        values.put("endTime", schedule.endTime);
+        values.put("allDay", schedule.allDay);
+        values.put("remindAheadTime", schedule.remindAheadTime);
+        values.put("eventId", schedule.eventId);
+        values.put("remindId", schedule.remindId);
+
+        database.update(ScheduleDbHelper.NAME_TABLE_SCHEDULE, values,
+                "scheduleId = ?", new String[]{String.valueOf(scheduleId)});
     }
 
     public static List<Schedule> findSchedules(int page, int size) {

@@ -15,69 +15,79 @@
             android:id="@+id/et_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             android:hint="日程标题"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:hint="日程描述"
-            android:textSize="16sp"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <Switch
             android:id="@+id/switch_allday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:textSize="16sp"
+            android:text="全天日程"
             android:textColor="@color/black"
-            android:text="全天日程" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_remindAheadTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:hint="提前多久提醒"
-            android:textSize="16sp"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_start_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:padding="15dp"
             android:onClick="switchStartTime"
-            android:textSize="16sp"
-            android:text="日程开始时间" />
+            android:padding="15dp"
+            android:text="日程开始时间"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-        <View style="@style/Line"/>
+        <View style="@style/Line" />
 
         <TextView
             android:id="@+id/tv_end_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             android:onClick="switchEndTime"
             android:padding="15dp"
-            android:text="日程结束时间" />
+            android:text="日程结束时间"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-        <View style="@style/Line"/>
+        <View style="@style/Line" />
+
         <Button
             android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             android:onClick="addSchedule"
-            android:text="添加日程" />
+            android:text="添加日程"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="deleteSchedule"
+            android:text="删除日程"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
