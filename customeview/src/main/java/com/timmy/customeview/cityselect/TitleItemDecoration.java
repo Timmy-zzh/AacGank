@@ -17,7 +17,6 @@ import java.util.List;
 /**
  * 有分类title的 ItemDecoration
  */
-
 public class TitleItemDecoration extends RecyclerView.ItemDecoration {
     private static final String TAG = "TitleItemDecoration";
     private List<SortModel> mData;

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AacGank.iml" filepath="$PROJECT_DIR$/AacGank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThirdFramework/ThirdFramework.iml" filepath="$PROJECT_DIR$/ThirdFramework/ThirdFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidbase/androidbase.iml" filepath="$PROJECT_DIR$/androidbase/androidbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

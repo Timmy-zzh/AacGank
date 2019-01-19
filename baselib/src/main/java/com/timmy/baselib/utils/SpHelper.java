@@ -53,6 +53,26 @@ public class SpHelper {
         }
     }
 
+    public String getString(String key, String defValue) {
+        return sharedPreferences.getString(key, defValue);
+    }
+
+    public boolean getBoolean(String key, boolean defValue) {
+        return sharedPreferences.getBoolean(key, defValue);
+    }
+
+    public float getFloat(String key, float defValue) {
+        return sharedPreferences.getFloat(key, defValue);
+    }
+
+    public int getInt(String key, int defValue) {
+        return sharedPreferences.getInt(key, defValue);
+    }
+
+    public long getLong(String key, long defValue) {
+        return sharedPreferences.getLong(key, defValue);
+    }
+
 //    public static <T> T getValue(String key, T defaultObject) {
 //        if (defaultObject instanceof String) {
 //            return (T) sharedPreferences.getString(key, (String) defaultObject);

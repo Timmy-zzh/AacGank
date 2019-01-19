@@ -29,6 +29,7 @@ import com.timmy.aacgank.ui.multimedia.video.VideoRecordActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.androidbase.uiDraw.UIDrawActivity;
 import com.timmy.customeview.cityselect.CitySelectActivity;
+import com.timmy.thirdframework.DataBaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,6 +153,12 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                 }
 
+                //框架源码
+                switch (model.getTag()) {
+                    case MainTag.FRAMEWORK.TAG_DATABASE:
+                        gotoNextActivity( DataBaseActivity.class);
+                        break;
+                }
 
 
             }

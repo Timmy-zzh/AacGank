@@ -51,6 +51,7 @@ dependencies {
 //    implementation project(':ssp-android')
 //    implementation project(':sdp-android')
     implementation project(':androidbase')
+    implementation project(':ThirdFramework')
     implementation project(':customeview')
 
     //gson

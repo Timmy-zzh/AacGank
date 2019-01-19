@@ -18,7 +18,7 @@ import com.timmy.baselib.basemvvm.fragment.TBaseContentFragment;
  */
 public class MyFragment extends TBaseContentFragment<FragmentMyBinding> {
 
-    private String tabTitles[] = new String[]{"Android基础", "自定义控件", "音视频开发", "Java基础", "性能优化", "框架源码"};
+    private String tabTitles[] = new String[]{"Android基础", "框架源码", "自定义控件", "音视频开发", "Java基础", "性能优化"};
 
     public static MyFragment newInstance() {
         MyFragment fragment = new MyFragment();

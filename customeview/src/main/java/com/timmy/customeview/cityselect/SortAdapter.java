@@ -33,7 +33,7 @@ public class SortAdapter extends RecyclerView.Adapter<SortAdapter.ViewHolder> {
     public SortAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.item_name, parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
-        viewHolder.tvName = (TextView) view.findViewById(R.id.tvName);
+        viewHolder.tvName = view.findViewById(R.id.tvName);
         return viewHolder;
     }
 
