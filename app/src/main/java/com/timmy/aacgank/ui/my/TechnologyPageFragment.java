@@ -177,13 +177,14 @@ public class TechnologyPageFragment extends TPageLazyBaseFragment<ViewRecyclerVi
                 break;
             case "框架源码":
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_DATABASE, "数据库框架"));
-
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANNOTATIONS, "运行时注解框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_EVENT_BUS, "EventBus"));
+
+
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_COMPILE_ANNOTATIONS, "编译时时注解框架(注解处理器使用)"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_NETWORK_REQUEST, "网络请求框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_CUSTOME_RETROFIT2, "自定义网络请求Retrofit2.0"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_IMAGE_LOADER, "图片加载框架"));
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_EVENT_BUS, "EventBus"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_TENCENT_TINKER, "腾讯Tinker框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_RAJAVA, "RxJava响应式编程"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_HOT_FIX, "热更新-热修复框架"));

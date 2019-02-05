@@ -1,4 +1,4 @@
-package com.timmy.thirdframework.database;
+package com.timmy.thirdframework.database.framework;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -6,9 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
 import com.timmy.baselib.utils.LogUtils;
-import com.timmy.baselib.utils.TextUtil;
-import com.timmy.thirdframework.database.annotation.DbField;
-import com.timmy.thirdframework.database.annotation.DbTable;
+import com.timmy.thirdframework.database.framework.annotation.DbField;
+import com.timmy.thirdframework.database.framework.annotation.DbTable;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ public class BaseDao<T> implements IBaseDao<T> {
      * 1.因为传入了JavaBean Class
      * 根据类上的注解，拿到表明和字段名，进行数据库创建
      */
-    protected boolean init(SQLiteDatabase sqLiteDatabase, Class<T> tClass) {
+    public boolean init(SQLiteDatabase sqLiteDatabase, Class<T> tClass) {
         if (!isInit) {
             LogUtils.d(isInit);
             this.sqLiteDatabase = sqLiteDatabase;
@@ -160,8 +159,8 @@ public class BaseDao<T> implements IBaseDao<T> {
         Map<String, String> map = getValues(entity);
         //把数据转移到ContentValues中
         ContentValues values = getContentValues(map);
-        sqLiteDatabase.insert(tableName, null, values);
-        return 0;
+        long insertResult = sqLiteDatabase.insert(tableName, null, values);
+        return insertResult;
     }
 
     @Override
@@ -234,7 +233,7 @@ public class BaseDao<T> implements IBaseDao<T> {
      * 拿到java对象真实的属性值存储起来，
      *
      * @param entity
-     * @return Map<String                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               String>  字段名-真实值
+     * @return 数据库表字段名与实际值的map集合                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               String>  字段名-真实值
      */
     private Map<String, String> getValues(T entity) {
         Map<String, String> resultMap = new HashMap<>();
@@ -249,6 +248,7 @@ public class BaseDao<T> implements IBaseDao<T> {
                     continue;
                 }
                 String value = object.toString();
+                LogUtils.d(value);
                 if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
                     resultMap.put(key, value);
                 }

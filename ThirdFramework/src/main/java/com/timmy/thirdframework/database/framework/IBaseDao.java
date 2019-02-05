@@ -1,4 +1,4 @@
-package com.timmy.thirdframework.database;
+package com.timmy.thirdframework.database.framework;
 
 import java.util.List;
 

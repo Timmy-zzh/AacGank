@@ -29,7 +29,8 @@ import com.timmy.aacgank.ui.multimedia.video.VideoRecordActivity;
 import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.androidbase.uiDraw.UIDrawActivity;
 import com.timmy.customeview.cityselect.CitySelectActivity;
-import com.timmy.thirdframework.DataBaseActivity;
+import com.timmy.thirdframework.database.DataBaseActivity;
+import com.timmy.thirdframework.eventbus.EventBusActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -157,6 +158,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                 switch (model.getTag()) {
                     case MainTag.FRAMEWORK.TAG_DATABASE:
                         gotoNextActivity( DataBaseActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_EVENT_BUS:
+                        gotoNextActivity( EventBusActivity.class);
                         break;
                 }
 

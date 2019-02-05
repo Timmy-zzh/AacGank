@@ -3,7 +3,9 @@
     package="com.timmy.thirdframework">
 
     <application>
-        <activity android:name=".DataBaseActivity"></activity>
+        <activity android:name=".database.DataBaseActivity" />
+        <activity android:name=".eventbus.EventBusActivity"/>
+        <activity android:name=".eventbus.SendEventActivity"/>
     </application>
 
 </manifest>

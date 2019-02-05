@@ -1,25 +1,30 @@
-package com.timmy.thirdframework;
+package com.timmy.thirdframework.database;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.utils.LogUtils;
-import com.timmy.thirdframework.database.BaseDao;
-import com.timmy.thirdframework.database.BaseDaoFactory;
+import com.timmy.thirdframework.R;
+import com.timmy.thirdframework.database.bean.Photo;
 import com.timmy.thirdframework.database.bean.User;
+import com.timmy.thirdframework.database.framework.BaseDao;
+import com.timmy.thirdframework.database.framework.BaseDaoFactory;
+import com.timmy.thirdframework.database.sub_sqlite.BaseDaoSubFactory;
+import com.timmy.thirdframework.database.sub_sqlite.PhotoDao;
 
 import java.util.List;
 
+
 public class DataBaseActivity extends BaseActivity {
 
-    private BaseDao<User> baseDao;
+    private BaseDao baseDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_base);
-        baseDao = BaseDaoFactory.getInstance().getBaseDao(User.class);
+        baseDao = BaseDaoFactory.getInstance().getBaseDao(BaseDao.class,User.class);
     }
 
     public void insert(View view) {
@@ -47,6 +52,12 @@ public class DataBaseActivity extends BaseActivity {
     public void find(View view) {
         List<User> users = baseDao.queryAll();
         LogUtils.d(users.toString());
+    }
+
+    public void subDatabase(View view) {
+        PhotoDao photoDao = BaseDaoSubFactory.getOurInstance().getBaseDao(PhotoDao.class, Photo.class);
+        long insert = photoDao.insert(new Photo("123.jpg", "293749872"));
+        LogUtils.d(insert);
     }
 
 }
