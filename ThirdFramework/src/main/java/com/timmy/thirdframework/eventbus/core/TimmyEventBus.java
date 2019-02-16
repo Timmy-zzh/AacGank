@@ -1,4 +1,4 @@
-package com.timmy.thirdframework.eventbus.fw;
+package com.timmy.thirdframework.eventbus.core;
 
 import android.os.Handler;
 import android.os.Looper;

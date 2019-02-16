@@ -1,6 +1,6 @@
 package com.timmy.thirdframework.database.bean;
 
-import com.timmy.thirdframework.database.framework.annotation.DbTable;
+import com.timmy.thirdframework.database.core.annotation.DbTable;
 
 @DbTable("tb_photo")
 public class Photo {

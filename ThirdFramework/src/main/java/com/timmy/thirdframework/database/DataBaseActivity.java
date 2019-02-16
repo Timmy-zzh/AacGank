@@ -8,8 +8,8 @@ import com.timmy.baselib.utils.LogUtils;
 import com.timmy.thirdframework.R;
 import com.timmy.thirdframework.database.bean.Photo;
 import com.timmy.thirdframework.database.bean.User;
-import com.timmy.thirdframework.database.framework.BaseDao;
-import com.timmy.thirdframework.database.framework.BaseDaoFactory;
+import com.timmy.thirdframework.database.core.BaseDao;
+import com.timmy.thirdframework.database.core.BaseDaoFactory;
 import com.timmy.thirdframework.database.sub_sqlite.BaseDaoSubFactory;
 import com.timmy.thirdframework.database.sub_sqlite.PhotoDao;
 

@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import com.timmy.baselib.base.BaseActivity;
 import com.timmy.baselib.utils.LogUtils;
-import com.timmy.thirdframework.eventbus.fw.Subscribe;
-import com.timmy.thirdframework.eventbus.fw.ThreadMode;
-import com.timmy.thirdframework.eventbus.fw.TimmyEventBus;
+import com.timmy.thirdframework.eventbus.core.Subscribe;
+import com.timmy.thirdframework.eventbus.core.ThreadMode;
+import com.timmy.thirdframework.eventbus.core.TimmyEventBus;
 import com.timmy.thirdframework.R;
 
 public class EventBusActivity extends BaseActivity {

@@ -2,8 +2,8 @@ package com.timmy.thirdframework.database.sub_sqlite;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.timmy.thirdframework.database.framework.BaseDao;
-import com.timmy.thirdframework.database.framework.BaseDaoFactory;
+import com.timmy.thirdframework.database.core.BaseDao;
+import com.timmy.thirdframework.database.core.BaseDaoFactory;
 
 /**
  * 分数据库：路径和数据库名

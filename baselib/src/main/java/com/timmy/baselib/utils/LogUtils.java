@@ -38,7 +38,7 @@ public class LogUtils {
     }
 
     public static void e(@NonNull String message, @Nullable Object... args) {
-        e(null, message, args);
+        log(ERROR,null, message, args);
     }
 
     public static void e(@Nullable Throwable throwable, @NonNull String message, @Nullable Object... args) {

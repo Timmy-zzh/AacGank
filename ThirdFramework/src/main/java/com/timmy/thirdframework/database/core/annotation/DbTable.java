@@ -1,4 +1,4 @@
-package com.timmy.thirdframework.database.framework.annotation;
+package com.timmy.thirdframework.database.core.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

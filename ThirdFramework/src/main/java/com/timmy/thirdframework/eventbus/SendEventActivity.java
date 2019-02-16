@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.timmy.baselib.base.BaseActivity;
-import com.timmy.thirdframework.eventbus.fw.TimmyEventBus;
+import com.timmy.thirdframework.eventbus.core.TimmyEventBus;
 import com.timmy.thirdframework.R;
 
 public class SendEventActivity extends BaseActivity {

@@ -91,6 +91,11 @@ public class MainTag {
         public static final int TAG_COMPILE_ANNOTATIONS = 313;
         public static final int TAG_CUSTOME_RETROFIT2 = 314;
         public static final int TAG_ALIBABA_V_LAYOUT = 315;
+
+        public static final int TAG_BUTTER_KNIFE = 316;
+        public static final int TAG_PERMISSIONS = 317;
+
+
     }
 
     //Java基础

@@ -1,7 +1,7 @@
 package com.timmy.thirdframework.database.bean;
 
-import com.timmy.thirdframework.database.framework.annotation.DbField;
-import com.timmy.thirdframework.database.framework.annotation.DbTable;
+import com.timmy.thirdframework.database.core.annotation.DbField;
+import com.timmy.thirdframework.database.core.annotation.DbTable;
 
 /**
  * 注解表示：创建一个数据库表

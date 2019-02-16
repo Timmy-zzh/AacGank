@@ -4,8 +4,12 @@
 
     <application>
         <activity android:name=".database.DataBaseActivity" />
-        <activity android:name=".eventbus.EventBusActivity"/>
-        <activity android:name=".eventbus.SendEventActivity"/>
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".eventbus.SendEventActivity" />
+        <activity android:name=".permissions.PermissionsActivity"/>
+
+        <activity android:name=".permissions.core.TPermissionActivity"
+            android:theme="@style/translucent"/>
     </application>
 
 </manifest>

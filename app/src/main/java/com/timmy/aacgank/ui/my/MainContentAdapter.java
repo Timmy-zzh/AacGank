@@ -31,6 +31,7 @@ import com.timmy.androidbase.uiDraw.UIDrawActivity;
 import com.timmy.customeview.cityselect.CitySelectActivity;
 import com.timmy.thirdframework.database.DataBaseActivity;
 import com.timmy.thirdframework.eventbus.EventBusActivity;
+import com.timmy.thirdframework.permissions.PermissionsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -157,10 +158,15 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                 //框架源码
                 switch (model.getTag()) {
                     case MainTag.FRAMEWORK.TAG_DATABASE:
-                        gotoNextActivity( DataBaseActivity.class);
+                        gotoNextActivity(DataBaseActivity.class);
                         break;
                     case MainTag.FRAMEWORK.TAG_EVENT_BUS:
-                        gotoNextActivity( EventBusActivity.class);
+                        gotoNextActivity(EventBusActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_BUTTER_KNIFE:
+                        break;
+                    case MainTag.FRAMEWORK.TAG_PERMISSIONS:
+                        gotoNextActivity(PermissionsActivity.class);
                         break;
                 }
 

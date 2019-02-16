@@ -1,7 +1,7 @@
 package com.timmy.thirdframework.database.sub_sqlite;
 
 import com.timmy.thirdframework.database.bean.Photo;
-import com.timmy.thirdframework.database.framework.BaseDao;
+import com.timmy.thirdframework.database.core.BaseDao;
 
 public class PhotoDao extends BaseDao<Photo> {
 

@@ -1,4 +1,4 @@
-package com.timmy.thirdframework.database.framework;
+package com.timmy.thirdframework.database.core;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
 import com.timmy.baselib.utils.LogUtils;
-import com.timmy.thirdframework.database.framework.annotation.DbField;
-import com.timmy.thirdframework.database.framework.annotation.DbTable;
+import com.timmy.thirdframework.database.core.annotation.DbField;
+import com.timmy.thirdframework.database.core.annotation.DbTable;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

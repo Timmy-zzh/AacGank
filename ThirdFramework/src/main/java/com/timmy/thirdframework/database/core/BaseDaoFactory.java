@@ -1,4 +1,4 @@
-package com.timmy.thirdframework.database.framework;
+package com.timmy.thirdframework.database.core;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
