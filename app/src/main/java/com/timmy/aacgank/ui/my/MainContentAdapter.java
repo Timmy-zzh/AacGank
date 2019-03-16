@@ -30,7 +30,9 @@ import com.timmy.aacgank.ui.multimedia.video.VideoStudyActivity1;
 import com.timmy.androidbase.uiDraw.UIDrawActivity;
 import com.timmy.customeview.cityselect.CitySelectActivity;
 import com.timmy.thirdframework.database.DataBaseActivity;
+import com.timmy.thirdframework.downrefresh.DownRefreshActivity;
 import com.timmy.thirdframework.eventbus.EventBusActivity;
+import com.timmy.thirdframework.net.NetHttpActivity;
 import com.timmy.thirdframework.permissions.PermissionsActivity;
 
 import java.util.ArrayList;
@@ -168,9 +170,13 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.FRAMEWORK.TAG_PERMISSIONS:
                         gotoNextActivity(PermissionsActivity.class);
                         break;
+                    case MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH://下拉刷新
+                        gotoNextActivity(DownRefreshActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_NETWORK_REQUEST:
+                        gotoNextActivity(NetHttpActivity.class);
+                        break;
                 }
-
-
             }
         });
     }
@@ -382,9 +388,6 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
 //                        break;
 //                    case MainTag.FRAMEWORK.TAG_ALIBABA_V_LAYOUT:
 //                       gotoNextActivity(context, VLayoutActivity.class);
-//                        break;
-//                    case MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH://下拉刷新
-//                       gotoNextActivity(context, DownRefreshActivity.class);
 //                        break;
 //
 //                    default:

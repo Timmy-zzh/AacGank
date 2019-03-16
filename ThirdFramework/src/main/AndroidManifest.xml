@@ -3,13 +3,25 @@
     package="com.timmy.thirdframework">
 
     <application>
-        <activity android:name=".database.DataBaseActivity" />
-        <activity android:name=".eventbus.EventBusActivity" />
+        <activity
+            android:name=".database.DataBaseActivity"
+            android:label="DB数据库" />
+        <activity
+            android:name=".eventbus.EventBusActivity"
+            android:label="EventBus" />
         <activity android:name=".eventbus.SendEventActivity" />
-        <activity android:name=".permissions.PermissionsActivity"/>
-
-        <activity android:name=".permissions.core.TPermissionActivity"
-            android:theme="@style/translucent"/>
+        <activity
+            android:name=".permissions.PermissionsActivity"
+            android:label="权限申请" />
+        <activity
+            android:name=".permissions.core.TPermissionActivity"
+            android:theme="@style/translucent" />
+        <activity
+            android:name=".downrefresh.DownRefreshActivity"
+            android:label="下拉刷新" />
+        <activity
+            android:name=".net.NetHttpActivity"
+            android:label="网络请求框架" />
     </application>
 
 </manifest>
